@@ -2,6 +2,7 @@
 
 Rodar: python3 -m unittest tests.test_fases -v
 """
+import itertools
 import math
 import unittest
 from collections import deque
@@ -27,6 +28,12 @@ def entrada(level_id):
     return next(e["id"] for e in lv["entities"] if e.get("type") == "spawn")
 
 
+class _Ligacao:
+    """Atalho do alcance: tocar uma célula de `origem` torna alcançáveis as células de `destino`."""
+    def __init__(self, origem, destino):
+        self.origem, self.destino = origem, destino
+
+
 PULO = 1.4   # pulo do jogador sobe ~1,54 (JUMP_SPEED² / 2·GRAVITY); margem para a borda
 
 
@@ -48,11 +55,21 @@ def alcance(level):
                         if 0 <= cx < nav.w and 0 <= cz < nav.d and nav.ok[cz][cx] and nav.h[cz][cx] <= py + PULO:
                             celulas.add((cx, cz))
             paradas.append(celulas)
-    while q or any(c & seen and not c <= seen for c in paradas):
+    # portais ligados: quem chega a um portal sai ao sul do portal ligado
+    portais = {e.get("id"): e for e in level.entities if e.get("type") == "portal"}
+    for e in portais.values():
+        o = portais.get(e.get("link"))
+        if o is None:
+            continue
+        perto = lambda p: {(int(p["x"]) + dx, int(p["z"]) + dz) for dx in (-1, 0, 1) for dz in (-1, 0, 1)}
+        chegada = (int(o["x"]), int(o["z"] - 0.9))
+        paradas.append(_Ligacao(perto(e), {chegada}))
+    paradas = [p if isinstance(p, _Ligacao) else _Ligacao(p, p) for p in paradas]
+    while q or any(p.origem & seen and not p.destino <= seen for p in paradas):
         if not q:
-            for c in paradas:
-                if c & seen:
-                    for cell in c - seen:
+            for p in paradas:
+                if p.origem & seen:
+                    for cell in p.destino - seen:
                         seen.add(cell)
                         q.append(cell)
             continue
@@ -157,6 +174,13 @@ class TestPuzzles(unittest.TestCase):
                 else:
                     if not p.state:
                         p.interact(w.player)
+        elif t == "beam":
+            # gira os espelhos da fase por todas as orientações ('/' e '\\'); os cristais com latch acumulam
+            espelhos = [p for p in w.props if p.spec.get("type") == "mirror"]
+            for estados in itertools.product(range(2), repeat=len(espelhos)):
+                for m, e in zip(espelhos, estados):
+                    m.state = e
+                step(w, 2)
         else:
             return False
         step(w, 3)
@@ -165,7 +189,7 @@ class TestPuzzles(unittest.TestCase):
     def test_puzzles_resolviveis(self):
         for lid, lv in DB.levels.items():
             for pz in lv.get("puzzles", []):
-                if pz["type"] in ("network", "beam", "gears"):
+                if pz["type"] in ("network", "gears"):
                     continue   # cobertos por testes específicos quando existirem
                 s, w = self.mundo(lid)
                 if not self.resolver(w, pz):

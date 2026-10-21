@@ -1,0 +1,277 @@
+{
+ "id": "ato4_arena",
+ "name": "Cúpula Partida",
+ "act": 4,
+ "theme": "ato4",
+ "env": "observatorio_arena",
+ "music": "chefe4",
+ "rows": [
+  "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
+  "H############################H",
+  "H############################H",
+  "H###########;;;;;;;##########H",
+  "H#########;;;;;;;;;;;########H",
+  "H########;;;;;;;;;;;;;#######H",
+  "H#######;;;;;.....;;;;;######H",
+  "H######;;;;..:::::..;;;;#####H",
+  "H#####;;;;.:::::::::.;;;;####H",
+  "H#####;;;.:::::::::::.;;;####H",
+  "H####;;;;.:::::::::::.;;;;###H",
+  "H####;;;.:::::::::::::.;;;###H",
+  "H####;;;.:::::::::::::.;;;###H",
+  "H####;;;.:::::::::::::.;;;###H",
+  "H####;;;.:::::::::::::.;;;###H",
+  "H####;;;.:::::::::::::.;;;###H",
+  "H####;;;;.:::::::::::.;;;;###H",
+  "H#####;;;.:::::::::::.;;;####H",
+  "H#####;;;;.:::::::::.;;;;####H",
+  "H######;;;;..:::::..;;;;#####H",
+  "H#######;;;;;.....;;;;;######H",
+  "H########;;;;;;;;;;;;;#######H",
+  "H#########;;;;;;;;;;;########H",
+  "H###########;;;;;;;##########H",
+  "H#############...############H",
+  "H#############...############H",
+  "H#############...############H",
+  "H#############...############H",
+  "H#############...############H",
+  "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHH"
+ ],
+ "entities": [
+  {
+   "type": "spawn",
+   "id": "entrada",
+   "angle": 90,
+   "x": 15.5,
+   "z": 2.5
+  },
+  {
+   "type": "exit",
+   "id": "saida_arena",
+   "to": "ato4_observatorio",
+   "spawn": "graca_planetario",
+   "label": "Voltar ao planetário",
+   "auto": false,
+   "sprite": "stairs_down",
+   "x": 15.5,
+   "z": 1.5
+  },
+  {
+   "type": "door",
+   "id": "nevoa_arena",
+   "sprite": "fog_gate",
+   "half": [
+    1.5,
+    0.5
+   ],
+   "top": 3.0,
+   "open": true,
+   "transient": true,
+   "close_on": "boss_start",
+   "open_on": "boss_defeated",
+   "x": 15.5,
+   "z": 5.5
+  },
+  {
+   "type": "boss",
+   "boss": "malachar",
+   "angle": -90,
+   "x": 15.5,
+   "z": 23.5
+  },
+  {
+   "type": "exit",
+   "id": "portal_vitoria",
+   "to": "santuario",
+   "spawn": "retorno_ato4",
+   "label": "Retornar ao Santuário",
+   "auto": false,
+   "sprite": "portal_gate",
+   "color": [
+    0.6,
+    0.45,
+    1.0
+   ],
+   "if": {
+    "flag": "boss:malachar"
+   },
+   "x": 15.5,
+   "z": 16.5
+  },
+  {
+   "type": "grace",
+   "id": "graca_cupula",
+   "name": "Cúpula Partida",
+   "if": {
+    "flag": "boss:malachar"
+   },
+   "x": 13.5,
+   "z": 16.5
+  },
+  {
+   "type": "decor",
+   "sprite": "crystal_cluster",
+   "light": {
+    "color": [
+     0.55,
+     0.5,
+     1.0
+    ],
+    "intensity": 1.4,
+    "radius": 5,
+    "h": 1.0,
+    "flicker": 0.15
+   },
+   "x": 24.5,
+   "z": 16.5
+  },
+  {
+   "type": "decor",
+   "sprite": "crystal_cluster",
+   "light": {
+    "color": [
+     0.55,
+     0.5,
+     1.0
+    ],
+    "intensity": 1.4,
+    "radius": 5,
+    "h": 1.0,
+    "flicker": 0.15
+   },
+   "x": 22.5,
+   "z": 9.5
+  },
+  {
+   "type": "decor",
+   "sprite": "crystal_cluster",
+   "light": {
+    "color": [
+     0.55,
+     0.5,
+     1.0
+    ],
+    "intensity": 1.4,
+    "radius": 5,
+    "h": 1.0,
+    "flicker": 0.15
+   },
+   "x": 15.5,
+   "z": 7.5
+  },
+  {
+   "type": "decor",
+   "sprite": "crystal_cluster",
+   "light": {
+    "color": [
+     0.55,
+     0.5,
+     1.0
+    ],
+    "intensity": 1.4,
+    "radius": 5,
+    "h": 1.0,
+    "flicker": 0.15
+   },
+   "x": 8.5,
+   "z": 9.5
+  },
+  {
+   "type": "decor",
+   "sprite": "crystal_cluster",
+   "light": {
+    "color": [
+     0.55,
+     0.5,
+     1.0
+    ],
+    "intensity": 1.4,
+    "radius": 5,
+    "h": 1.0,
+    "flicker": 0.15
+   },
+   "x": 6.5,
+   "z": 16.5
+  },
+  {
+   "type": "decor",
+   "sprite": "crystal_cluster",
+   "light": {
+    "color": [
+     0.55,
+     0.5,
+     1.0
+    ],
+    "intensity": 1.4,
+    "radius": 5,
+    "h": 1.0,
+    "flicker": 0.15
+   },
+   "x": 8.5,
+   "z": 23.5
+  },
+  {
+   "type": "decor",
+   "sprite": "crystal_cluster",
+   "light": {
+    "color": [
+     0.55,
+     0.5,
+     1.0
+    ],
+    "intensity": 1.4,
+    "radius": 5,
+    "h": 1.0,
+    "flicker": 0.15
+   },
+   "x": 15.5,
+   "z": 25.5
+  },
+  {
+   "type": "decor",
+   "sprite": "crystal_cluster",
+   "light": {
+    "color": [
+     0.55,
+     0.5,
+     1.0
+    ],
+    "intensity": 1.4,
+    "radius": 5,
+    "h": 1.0,
+    "flicker": 0.15
+   },
+   "x": 22.5,
+   "z": 23.5
+  },
+  {
+   "type": "decor",
+   "sprite": "telescope",
+   "solid": true,
+   "half": [
+    0.5,
+    0.5
+   ],
+   "top": 2.0,
+   "x": 15.5,
+   "z": 26.5
+  }
+ ],
+ "arena_center": [
+  15.5,
+  16.5
+ ],
+ "boss_arena": true,
+ "regions": [
+  {
+   "id": "arena",
+   "name": "Cúpula Partida",
+   "rect": [
+    0,
+    0,
+    30,
+    30
+   ]
+  }
+ ]
+}

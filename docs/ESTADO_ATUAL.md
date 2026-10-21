@@ -33,10 +33,11 @@ Medições de desempenho (feitas pelo PR #1, offscreen, Intel Iris Xe, 1280x720,
 | Ato II `ato2_cidade`, `ato2_fabrica` | ✅ | ⚠️ só carregamento/capturas, sem *playthrough* |
 | Ato II `ato2_arena` (Serafim-09) | ✅ | ✅ `test_chefes` (3 fases, névoa fecha/reabre, jatos sobre o chão, flags `ato2_concluido`) + captura; ⚠️ não jogado por humano |
 | Ato III `ato3_catedral`, `ato3_laboratorio`, `ato3_arena` | ✅ | ✅ `test_fases` (alcance, puzzles sinos/soro/diagrama/Abade), Santo vencido pelo bot, capturas; ⚠️ não jogado por humano |
-| Atos IV–V (6 mapas) | ❌ mapas (dados de inimigos, chefes, NPCs, documentos e missões existem) | — |
+| Ato IV `ato4_biblioteca`, `ato4_observatorio`, `ato4_arena` | ✅ | ✅ `test_fases` (portais, plataforma, Corvin, selo, espelhos, relógio), Malachar vencido pelo bot (8/8 seeds), capturas; ⚠️ não jogado por humano |
+| Ato V (3 mapas) | ❌ mapas (dados de inimigos, chefe, NPC, documentos e missões existem) | — |
 | 9 classes, árvore (126 nós), 37 runas, 29 armas, 23 artes | ✅ | ✅ parcial: `test_basico` (rotas das classes, árvore, save); menus vistos em `ui_tour` |
-| 6 chefes (Condessa com 2 fases, demais com 3) | ✅ código | ✅ Varkhan, Condessa, Serafim, Santo vencidos pelo bot (`test_chefes`); ❌ Malachar, Aurelion sem fase |
-| Puzzles (combinação, sequência, feixe, rede, engrenagens, all_on, kill) | ✅ | ✅ combinação, sequência, kill, all_on resolvidos pela dica em `test_fases`; ⚠️ rede, feixe e engrenagens sem teste automático |
+| 6 chefes (Condessa com 2 fases, demais com 3) | ✅ código | ✅ Varkhan, Condessa, Serafim, Santo, Malachar vencidos pelo bot (`test_chefes`); ❌ Aurelion sem fase |
+| Puzzles (combinação, sequência, feixe, rede, engrenagens, all_on, kill) | ✅ | ✅ combinação, sequência, kill, all_on e feixe resolvidos pela dica em `test_fases`; ⚠️ rede e engrenagens sem teste automático |
 | 3 finais | ✅ lógica (`Session.ending_options`) | ❌ não alcançáveis (faltam Atos III–V) |
 | Projeção semi-isométrica, 4 faces, WASD da tela | ✅ | ✅ `test_render` + capturas do PR #1 |
 | Pipeline de assets externos + pacote gótico (arena/castelo) | ✅ | ✅ `validar_assets.py`, `test_render` |
@@ -58,6 +59,8 @@ Medições de desempenho (feitas pelo PR #1, offscreen, Intel Iris Xe, 1280x720,
 4. Propagar o padrão visual da arena do Ato I (assets góticos) para Ato II e demais fases; balanceamento.
 
 ## Histórico curto
+- 2026-10-21 — `main`: Ato IV completo. Bugs de IA corrigidos: teleporte (`blink_away`) caía em topo de parede e
+  atravessava portas fechadas; invocações (`summon`) nasciam sobre paredes. Bot verifica chefe × névoa por região do grid.
 - 2026-10-21 — `main`: Ato III completo; `tests/test_fases.py`; topo da fábrica (Ato II) estava inalcançável — corrigido;
   documento da floresta dentro de casa fechada — corrigido. Bot de nível 1 leva ~5 min simulados contra o Santo (balanceamento).
 - 2026-10-21 — branch `feature/ato2-arena`: mapa `ato2_arena`; bot e `tests/test_chefes.py`; correções: braços do Serafim

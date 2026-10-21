@@ -1,0 +1,770 @@
+{
+ "id": "ato4_biblioteca",
+ "name": "Biblioteca Abissal",
+ "act": 4,
+ "theme": "ato4",
+ "env": "observatorio",
+ "music": "ato4",
+ "rows": [
+  "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
+  "H###############################:##############################H",
+  "H###############################:##############################H",
+  "H###########################:::::::::##########################H",
+  "H###########################:::::::::###########~~~~~~~~~~~~~~#H",
+  "H###########################:::::::::###########~~~~~~~~~~~~~~#H",
+  "H###########################:::::::::###########~~;;;;~~~~~~~~#H",
+  "H###########################:::::::::###########~~;;;;~~~~~~~~#H",
+  "H#####################.....................#####~~;;;;~~~~~~~~#H",
+  "H#####################.....................#####~~;;;;~~~~~~~~#H",
+  "H#####################.....................#####~~~~~~~~~~~~~~#H",
+  "H#####################.....................#####~~~~~~~~~~~~~~#H",
+  "H#####################.....................#####~~~~~~~~~~~~~~#H",
+  "H#####################.....................#####~~~~~~~~~~~~~~#H",
+  "H#####################.....................#####~~~~~~~~~;;;;~#H",
+  "H#####################.....................#####~~~~~~~~~;;;;~#H",
+  "H#####################.....................#####~~~~~~~~~;;;;~#H",
+  "H#####################.....................#####~~~~~~~~~;;;;~#H",
+  "H#####################.....................#####~~~~~~~~~;;;;~#H",
+  "H#####################.....................#####~~~~~~~~~~~~~~#H",
+  "H#####################.....................#####~~~~~~~~~~~~~~#H",
+  "H#####################.....................####################H",
+  "H###############,,,,,,,,,,,,,,___,,,,,,,,,,,,,,#,,,,,,,,,,,####H",
+  "H###############,,,,,,,,,,,,,,___,,,,,,,,,,,,,,#,,,,,,,,,,,####H",
+  "H###############,,,,,,,,,,,,,,___,,,,,,,,,,,,,,#,,,,,,,,,,,####H",
+  "H###############,,BBBBBBBBBB,,___,,BBBBBBBBBB,,#,BBBBBBBBB,####H",
+  "H###############,,,,,,,,,,,,,,___,,,,,,,,,,,,,,,,,,,,,,,,,,####H",
+  "H###############,,,,,,,,,,,,,,___,,,,,,,,,,,,,,,,,,,,,,,,,,####H",
+  "H####::::::::###,,,,,,,,,,,,,,___,,,,,,,,,,,,,,,,BBBBBBBBB,####H",
+  "H####::::::::###,,BBBBBBBBBB,,___,,BBBBBBBBBB,,#,,,,,,,,,,,####H",
+  "H####::::::::###,,,,,,,,,,,,,,___,,,,,,,,,,,,,,#,,,,,,,,,,,####H",
+  "H####::::::::###,,,,,,,,,,,,,,___,,,,,,,,,,,,,,#,BBBBBBBB,,####H",
+  "H####:::::::::::,,,,,,,,,,,,,,___,,,,,,,,,,,,,,#,,,,,,,,,,,####H",
+  "H####::::::::###,,BBBBBBBBBB,,___,,BBBBBBBBBB,,#,BBBBBBBBB,####H",
+  "H####::::::::###,,,,,,,,,,,,,,___,,,,,,,,,,,,,,#,,,,,,,,,,,####H",
+  "H####::::::::###,,,,,,,,,,,,,,___,,,,,,,,,,,,,,################H",
+  "H####::::::::###,,,,,,,,,,,,,,___,,,,,,,,,,,,,,################H",
+  "H###############,,BBBBBBBBBB,,___,,BBBBBBBBBB,,################H",
+  "H###############,,,,,,,,,,,,,,___,,,,,,,,,,,,,,################H",
+  "H###############,,,,,,,,,,,,,,___,,,,,,,,,,,,,,################H",
+  "H###############,,,,,,,,,,,,,,___,,,,,,,,,,,,,,################H",
+  "H###############,,BBBBBBBBBB,,___,,BBBBBBBBBB,,################H",
+  "H###############,,,,,,,,,,,,,,___,,,,,,,,,,,,,,################H",
+  "H###############,,,,,,,,,,,,,,___,,,,,,,,,,,,,,################H",
+  "H###;;;;;;##############.................######################H",
+  "H###;;;;;;##############.................######################H",
+  "H###;;;;;;,,,,,,,,,,,,,,.................######################H",
+  "H###;;;;;;##############.................######################H",
+  "H###;;;;;;##############.................######################H",
+  "H###;;;;;;##############.................######################H",
+  "H#######################.................######################H",
+  "H#######################.................######################H",
+  "H##############################...#############################H",
+  "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH"
+ ],
+ "entities": [
+  {
+   "type": "spawn",
+   "id": "inicio",
+   "angle": 90,
+   "x": 32.5,
+   "z": 3.5
+  },
+  {
+   "type": "exit",
+   "id": "volta_santuario",
+   "to": "santuario",
+   "spawn": "retorno_ato4",
+   "label": "Voltar ao Santuário",
+   "auto": false,
+   "sprite": "portal_gate",
+   "color": [
+    0.5,
+    0.4,
+    1.0
+   ],
+   "x": 32.5,
+   "z": 1.5
+  },
+  {
+   "type": "grace",
+   "id": "graca_saguao",
+   "name": "Saguão da Academia",
+   "x": 27.5,
+   "z": 6.5
+  },
+  {
+   "type": "document",
+   "doc": "tratado_runas",
+   "sprite": "lectern",
+   "x": 38.5,
+   "z": 7.5
+  },
+  {
+   "type": "npc",
+   "npc": "corvin",
+   "angle": 0,
+   "x": 8.5,
+   "z": 21.5
+  },
+  {
+   "type": "door",
+   "id": "gaiola_corvin",
+   "sprite": "gate_iron_small",
+   "half": [
+    0.5,
+    0.5
+   ],
+   "top": 3.0,
+   "message": "A gaiola rúnica se apaga. Corvin está livre!",
+   "x": 13.5,
+   "z": 21.5
+  },
+  {
+   "type": "document",
+   "doc": "carta_corvin",
+   "sprite": "note",
+   "x": 15.5,
+   "z": 19.5
+  },
+  {
+   "type": "lever",
+   "id": "alavanca_bronze",
+   "sprite": "lever",
+   "one_shot": true,
+   "x": 57.5,
+   "z": 24.5
+  },
+  {
+   "type": "grace",
+   "id": "graca_biblioteca",
+   "name": "Salão de Leitura",
+   "x": 17.5,
+   "z": 30.5
+  },
+  {
+   "type": "portal",
+   "id": "portal_salao",
+   "link": "portal_ilha_a",
+   "color": [
+    0.6,
+    0.4,
+    1.0
+   ],
+   "x": 45.5,
+   "z": 30.5
+  },
+  {
+   "type": "portal",
+   "id": "portal_ilha_a",
+   "link": "portal_salao",
+   "color": [
+    0.6,
+    0.4,
+    1.0
+   ],
+   "x": 51.5,
+   "z": 46.5
+  },
+  {
+   "type": "portal",
+   "id": "portal_ilha_a2",
+   "link": "portal_ilha_b",
+   "color": [
+    0.4,
+    0.8,
+    1.0
+   ],
+   "x": 53.5,
+   "z": 45.5
+  },
+  {
+   "type": "portal",
+   "id": "portal_ilha_b",
+   "link": "portal_ilha_a2",
+   "color": [
+    0.4,
+    0.8,
+    1.0
+   ],
+   "x": 58.5,
+   "z": 38.5
+  },
+  {
+   "type": "chest",
+   "id": "bau_ilha_estrelas",
+   "loot": [
+    {
+     "item": "chave_torre"
+    },
+    {
+     "materials": 3
+    }
+   ],
+   "x": 59.5,
+   "z": 36.5
+  },
+  {
+   "type": "document",
+   "doc": "fragmento_ciclo_4",
+   "sprite": "item_glow",
+   "x": 52.5,
+   "z": 44.5
+  },
+  {
+   "type": "document",
+   "doc": "selo_academia",
+   "sprite": "stone_tablet",
+   "x": 23.5,
+   "z": 44.5
+  },
+  {
+   "type": "dial",
+   "id": "selo_0",
+   "sprite": "rune_dial",
+   "symbols": [
+    "círculo",
+    "triângulo",
+    "quadrado",
+    "cruz",
+    "losango",
+    "x"
+   ],
+   "state": 5,
+   "prompt": "Girar selo rúnico",
+   "x": 26.5,
+   "z": 41.5
+  },
+  {
+   "type": "dial",
+   "id": "selo_1",
+   "sprite": "rune_dial",
+   "symbols": [
+    "círculo",
+    "triângulo",
+    "quadrado",
+    "cruz",
+    "losango",
+    "x"
+   ],
+   "state": 5,
+   "prompt": "Girar selo rúnico",
+   "x": 30.5,
+   "z": 41.5
+  },
+  {
+   "type": "dial",
+   "id": "selo_2",
+   "sprite": "rune_dial",
+   "symbols": [
+    "círculo",
+    "triângulo",
+    "quadrado",
+    "cruz",
+    "losango",
+    "x"
+   ],
+   "state": 5,
+   "prompt": "Girar selo rúnico",
+   "x": 34.5,
+   "z": 41.5
+  },
+  {
+   "type": "dial",
+   "id": "selo_3",
+   "sprite": "rune_dial",
+   "symbols": [
+    "círculo",
+    "triângulo",
+    "quadrado",
+    "cruz",
+    "losango",
+    "x"
+   ],
+   "state": 5,
+   "prompt": "Girar selo rúnico",
+   "x": 38.5,
+   "z": 41.5
+  },
+  {
+   "type": "door",
+   "id": "porta_escadaria",
+   "sprite": "gate",
+   "half": [
+    4.5,
+    0.5
+   ],
+   "top": 3.0,
+   "message": "Os quatro selos formam a pergunta proibida. A escadaria se abre.",
+   "x": 32.5,
+   "z": 46.5
+  },
+  {
+   "type": "spawn",
+   "id": "escadaria",
+   "angle": -90,
+   "x": 32.5,
+   "z": 44.5
+  },
+  {
+   "type": "exit",
+   "id": "sobe_observatorio",
+   "to": "ato4_observatorio",
+   "spawn": "inicio",
+   "label": "Subir ao Observatório",
+   "auto": true,
+   "x": 32.5,
+   "z": 52.5
+  },
+  {
+   "type": "breakable_wall",
+   "id": "parede_alcova",
+   "sprite": "cracked_wall",
+   "x": 10.5,
+   "z": 7.5
+  },
+  {
+   "type": "chest",
+   "id": "bau_alcova",
+   "loot": [
+    {
+     "item": "lagrima_eter"
+    },
+    {
+     "materials": 2
+    }
+   ],
+   "x": 5.5,
+   "z": 8.5
+  },
+  {
+   "type": "decor",
+   "sprite": "wall_torch",
+   "light": {
+    "color": [
+     0.55,
+     0.5,
+     1.0
+    ],
+    "intensity": 1.7,
+    "radius": 6,
+    "h": 1.8,
+    "flicker": 0.2
+   },
+   "x": 24.5,
+   "z": 9.5
+  },
+  {
+   "type": "decor",
+   "sprite": "wall_torch",
+   "light": {
+    "color": [
+     0.55,
+     0.5,
+     1.0
+    ],
+    "intensity": 1.7,
+    "radius": 6,
+    "h": 1.8,
+    "flicker": 0.2
+   },
+   "x": 40.5,
+   "z": 9.5
+  },
+  {
+   "type": "decor",
+   "sprite": "wall_torch",
+   "light": {
+    "color": [
+     0.55,
+     0.5,
+     1.0
+    ],
+    "intensity": 1.7,
+    "radius": 6,
+    "h": 1.8,
+    "flicker": 0.2
+   },
+   "x": 16.5,
+   "z": 23.5
+  },
+  {
+   "type": "decor",
+   "sprite": "wall_torch",
+   "light": {
+    "color": [
+     0.55,
+     0.5,
+     1.0
+    ],
+    "intensity": 1.7,
+    "radius": 6,
+    "h": 1.8,
+    "flicker": 0.2
+   },
+   "x": 46.5,
+   "z": 23.5
+  },
+  {
+   "type": "decor",
+   "sprite": "wall_torch",
+   "light": {
+    "color": [
+     0.55,
+     0.5,
+     1.0
+    ],
+    "intensity": 1.7,
+    "radius": 6,
+    "h": 1.8,
+    "flicker": 0.2
+   },
+   "x": 16.5,
+   "z": 13.5
+  },
+  {
+   "type": "decor",
+   "sprite": "wall_torch",
+   "light": {
+    "color": [
+     0.55,
+     0.5,
+     1.0
+    ],
+    "intensity": 1.7,
+    "radius": 6,
+    "h": 1.8,
+    "flicker": 0.2
+   },
+   "x": 46.5,
+   "z": 13.5
+  },
+  {
+   "type": "decor",
+   "sprite": "wall_torch",
+   "light": {
+    "color": [
+     0.55,
+     0.5,
+     1.0
+    ],
+    "intensity": 1.7,
+    "radius": 6,
+    "h": 1.8,
+    "flicker": 0.2
+   },
+   "x": 22.5,
+   "z": 43.5
+  },
+  {
+   "type": "decor",
+   "sprite": "wall_torch",
+   "light": {
+    "color": [
+     0.55,
+     0.5,
+     1.0
+    ],
+    "intensity": 1.7,
+    "radius": 6,
+    "h": 1.8,
+    "flicker": 0.2
+   },
+   "x": 42.5,
+   "z": 43.5
+  },
+  {
+   "type": "decor",
+   "sprite": "wall_torch",
+   "light": {
+    "color": [
+     0.55,
+     0.5,
+     1.0
+    ],
+    "intensity": 1.7,
+    "radius": 6,
+    "h": 1.8,
+    "flicker": 0.2
+   },
+   "x": 5.5,
+   "z": 24.5
+  },
+  {
+   "type": "decor",
+   "sprite": "wall_torch",
+   "light": {
+    "color": [
+     0.55,
+     0.5,
+     1.0
+    ],
+    "intensity": 1.7,
+    "radius": 6,
+    "h": 1.8,
+    "flicker": 0.2
+   },
+   "x": 58.5,
+   "z": 30.5
+  },
+  {
+   "type": "decor",
+   "sprite": "brazier_blue",
+   "solid": true,
+   "half": [
+    0.3,
+    0.3
+   ],
+   "top": 1.0,
+   "light": {
+    "color": [
+     0.5,
+     0.6,
+     1.0
+    ],
+    "intensity": 2.0,
+    "radius": 7,
+    "h": 1.3,
+    "flicker": 0.2
+   },
+   "x": 29.5,
+   "z": 38.5
+  },
+  {
+   "type": "decor",
+   "sprite": "brazier_blue",
+   "solid": true,
+   "half": [
+    0.3,
+    0.3
+   ],
+   "top": 1.0,
+   "light": {
+    "color": [
+     0.5,
+     0.6,
+     1.0
+    ],
+    "intensity": 2.0,
+    "radius": 7,
+    "h": 1.3,
+    "flicker": 0.2
+   },
+   "x": 35.5,
+   "z": 38.5
+  },
+  {
+   "type": "decor",
+   "sprite": "crystal_cluster",
+   "light": {
+    "color": [
+     0.6,
+     0.8,
+     1.0
+    ],
+    "intensity": 1.5,
+    "radius": 5,
+    "h": 1.0
+   },
+   "x": 54.5,
+   "z": 34.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "livro_voador",
+   "x": 28.5,
+   "z": 5.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "livro_voador",
+   "x": 36.5,
+   "z": 4.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "bruxo",
+   "x": 22.5,
+   "z": 26.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "bruxa",
+   "x": 40.5,
+   "z": 22.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "bruxo",
+   "x": 24.5,
+   "z": 14.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "bruxa",
+   "x": 38.5,
+   "z": 16.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "armadura_encantada",
+   "x": 31.5,
+   "z": 19.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "sombra_arcana",
+   "x": 52.5,
+   "z": 30.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "sombra_arcana",
+   "x": 55.5,
+   "z": 21.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "livro_voador",
+   "x": 9.5,
+   "z": 19.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "sentinela_runica",
+   "x": 25.5,
+   "z": 36.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "sentinela_runica",
+   "x": 39.5,
+   "z": 36.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "armadura_encantada",
+   "elite": true,
+   "unique": "a4_guarda_selo",
+   "x": 32.5,
+   "z": 38.5
+  }
+ ],
+ "puzzles": [
+  {
+   "id": "gaiola_corvin",
+   "type": "all_on",
+   "props": [
+    "alavanca_bronze"
+   ],
+   "open": [
+    "gaiola_corvin"
+   ],
+   "reward": [
+    {
+     "flag": "corvin_livre"
+    }
+   ],
+   "message": "Um estalo de bronze ecoa pelas estantes.",
+   "grace": 300
+  },
+  {
+   "id": "selo_academia",
+   "type": "combination",
+   "props": [
+    "selo_0",
+    "selo_1",
+    "selo_2",
+    "selo_3"
+   ],
+   "solution": [
+    0,
+    1,
+    3,
+    4
+   ],
+   "open": [
+    "porta_escadaria"
+   ],
+   "lock": [
+    "selo_0",
+    "selo_1",
+    "selo_2",
+    "selo_3"
+   ],
+   "message": "Os selos brilham em uníssono.",
+   "grace": 600
+  }
+ ],
+ "regions": [
+  {
+   "id": "saguao",
+   "name": "Saguão da Academia",
+   "rect": [
+    23,
+    0,
+    42,
+    10
+   ]
+  },
+  {
+   "id": "leitura",
+   "name": "Salão de Leitura",
+   "rect": [
+    15,
+    10,
+    48,
+    32
+   ]
+  },
+  {
+   "id": "gaiola",
+   "name": "Gaiola Rúnica",
+   "rect": [
+    4,
+    16,
+    16,
+    27
+   ]
+  },
+  {
+   "id": "astronomia",
+   "name": "Estantes de Astronomia",
+   "rect": [
+    47,
+    18,
+    60,
+    33
+   ]
+  },
+  {
+   "id": "vazio",
+   "name": "Ilhas do Vazio",
+   "rect": [
+    48,
+    32,
+    63,
+    51
+   ]
+  },
+  {
+   "id": "escadaria",
+   "name": "Escadaria do Selo",
+   "rect": [
+    21,
+    32,
+    44,
+    54
+   ]
+  },
+  {
+   "id": "biblioteca",
+   "name": "Biblioteca Abissal",
+   "rect": [
+    0,
+    0,
+    64,
+    54
+   ]
+  }
+ ]
+}

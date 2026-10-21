@@ -421,16 +421,32 @@ class Brain:
                             unblockable=any(h.get("unblockable") for h in move.hits),
                             time=move.hits[0]["t"][0] if move.hits else 0.3)
 
+    def _sem_portas(self, x0, z0, x1, z1, y):
+        """O segmento não atravessa props sólidos (portas fechadas, névoa da arena)."""
+        w = self.e.world
+        n = max(2, int(math.hypot(x1 - x0, z1 - z0) * 4))
+        for i in range(n + 1):
+            px, pz = x0 + (x1 - x0) * i / n, z0 + (z1 - z0) * i / n
+            for s in w.solids:
+                if s.solid and s.contains_point(px, y + 1.0, pz):
+                    return False
+        return True
+
     def blink_away(self, t):
         e = self.e
         w = e.world
         for k in range(8):
             ang = t.angle_to(e) + (k - 4) * 0.4
             x, z = t.x + math.cos(ang) * 7.0, t.z + math.sin(ang) * 7.0
-            if w.level.walkable(int(x), int(z)) and w.level.line_clear(t.x, t.z, x, z):
-                w.fx.push("teleport", x0=e.x, y0=e.y, z0=e.z, x=x, y=w.level.ground_at(x, z), z=z, actor=e.id)
+            g = w.level.ground_at(x, z)
+            # mesmo nível do chão atual: topo de parede também é "andável" e virava destino
+            if g is None or abs(g - e.y) > 0.5:
+                continue
+            if w.level.walkable(int(x), int(z)) and w.level.line_clear(t.x, t.z, x, z) and \
+                    self._sem_portas(t.x, t.z, x, z, e.y):
+                w.fx.push("teleport", x0=e.x, y0=e.y, z0=e.z, x=x, y=g, z=z, actor=e.id)
                 e.x, e.z = x, z
-                e.y = w.level.ground_at(x, z)
+                e.y = g
                 self.react_cd = 3.0
                 return True
         return False

@@ -294,6 +294,7 @@ class SymbolDial(Prop):
     def __init__(self, spec):
         super().__init__(spec)
         self.symbols = spec.get("symbols", ["lua_nova", "crescente", "cheia", "minguante"])
+        self.prompt = spec.get("prompt", self.prompt)
         self.locked = False
 
     def can_interact(self, player):

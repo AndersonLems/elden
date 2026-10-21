@@ -33,7 +33,27 @@ class Luta:
         self.door_closed = False
         self.zones_seen = {}
         self.boss_na_parede = 0   # quadros com o chefe sobre células de parede (empurrado para fora da arena)
+        self.separados = 0        # quadros com a névoa fechada e chefe/jogador em lados opostos dela
         self._path, self._repath, self._stuck, self._side, self._last = [], 0.0, 0.0, 0.0, None
+
+    def _mesmo_lado(self):
+        """Jogador e chefe na mesma região do grid quando as células da névoa contam como bloqueadas."""
+        nav = nav_for(self.world.level)
+        d = self.door
+        hx, hz = d.half
+        porta = {(x, z) for x in range(int(d.x - hx), int(d.x + hx) + 1) for z in range(int(d.z - hz), int(d.z + hz) + 1)
+                 if abs(x + 0.5 - d.x) < hx + 0.01 and abs(z + 0.5 - d.z) < hz + 0.01}
+        ini, fim = (int(self.player.x), int(self.player.z)), (int(self.boss.x), int(self.boss.z))
+        vistos, pilha = {ini}, [ini]
+        while pilha:
+            c = pilha.pop()
+            if c == fim:
+                return True
+            for nx, nz, _ in nav.nbrs.get(c, ()):
+                if (nx, nz) not in vistos and (nx, nz) not in porta:
+                    vistos.add((nx, nz))
+                    pilha.append((nx, nz))
+        return fim not in nav.nbrs   # chefe fora do grid navegável (no ar, por exemplo): não conta
 
     def _morte(self, killer):
         self.mortes += 1
@@ -87,6 +107,8 @@ class Luta:
                 self.boss_na_parede += 1
             if self.door is not None and not self.door.open:
                 self.door_closed = True
+                if i % 30 == 0 and not self.boss.dead and not self._mesmo_lado():
+                    self.separados += 1
             for z in w.zones:
                 self.zones_seen.setdefault(z.id, z)
             self.time += DT

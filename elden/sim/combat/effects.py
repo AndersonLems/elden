@@ -81,7 +81,9 @@ def _summon(world, a, eff, action):
     for i in range(n):
         ang = a.facing + math.tau * i / max(1, n) + 0.4
         x, z = a.x + math.cos(ang) * r, a.z + math.sin(ang) * r
-        if world.level.ground_at(x, z) is None:
+        g = world.level.ground_at(x, z)
+        # fora do mapa, no vazio ou em outro nível (topo de parede): nasce junto do invocador
+        if g is None or abs(g - a.y) > 0.5 or not world.level.walkable(int(x), int(z)):
             x, z = a.x, a.z
         world.spawn_enemy(eff["enemy"], x, z, summoned=True, aggro=True)
 

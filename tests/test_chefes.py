@@ -13,7 +13,8 @@ from elden.core.data import DB
 CHEFES = {"varkhan": ("ato1_arena", "entrada", None),
           "condessa_rubra": ("ato1_castelo", "salao", 5),
           "serafim_09": ("ato2_arena", "entrada", None),
-          "santo_imperfeito": ("ato3_arena", "entrada", None)}
+          "santo_imperfeito": ("ato3_arena", "entrada", None),
+          "malachar": ("ato4_arena", "entrada", None)}
 
 
 class TestChefes(unittest.TestCase):
@@ -29,6 +30,7 @@ class TestChefes(unittest.TestCase):
         luta = Luta(level, spawn, seed=seed, perto=perto).lutar(limite=900)   # bot nível 1: chefes tardios demoram
         self.assertTrue(luta.boss.dead, f"{boss_id} (seed {seed}) não foi vencido em {luta.time:.0f}s")
         self.assertEqual(luta.boss_na_parede, 0, f"{boss_id} (seed {seed}) saiu da arena")
+        self.assertEqual(luta.separados, 0, f"{boss_id} (seed {seed}) atravessou a névoa")
         self.assertEqual(len(luta.phases), len(DB.bosses[boss_id]["phases"]), f"{boss_id}: fases vistas {luta.phases}")
         self.assertTrue(luta.door_closed, f"{boss_id}: a arena não fechou")
         self.assertTrue(luta.door.open, f"{boss_id}: a arena não reabriu")
@@ -43,6 +45,9 @@ class TestChefes(unittest.TestCase):
 
     def test_santo(self):
         self.lutar("santo_imperfeito")
+
+    def test_malachar(self):
+        self.lutar("malachar")
 
     def test_serafim(self):
         luta = self.lutar("serafim_09")

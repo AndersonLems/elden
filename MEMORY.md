@@ -47,6 +47,13 @@ Movido para `docs/ESTADO_ATUAL.md` (fonte única de progresso e validação). Es
 - **Bot de chefe (`tests/bot.py`):** mede distância até a borda do alvo (`radius`), mira antes de atacar, foca chefe + partes
   e intercepta `player.die` (restaurar vida depois do quadro não basta: golpes > vida máxima matam e travam a luta).
 
+- **Topo de parede é "andável"** (`level.walkable` só olha sólido/vazio): qualquer teleporte/invocação precisa exigir
+  altura do chão igual à de origem (`abs(g - y) <= 0.5`) e não atravessar props sólidos (`Brain._sem_portas`).
+- **Paredes `#` de altura 3 ao lado de piso `2`/`3` viram caminho** (pulo sobe ~1,54). Cerque patamares altos com `P`
+  (sólido); `test_fases` acusa "topo de parede alcançável".
+- **Resultados do bot dependem da ordem das lutas no processo** (contador global de ids). Para reproduzir uma seed,
+  rode as anteriores antes, na mesma ordem.
+
 ## Ideias anotadas
 - Telhados por tema (já existe `roof_slate`/`roof_red`), mais variações de decoração por ato.
 - Sprites de sinos e reagentes para os puzzles de sequência do Ato III (hoje caem no genérico `button`).

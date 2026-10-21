@@ -177,6 +177,8 @@ class Session:
         for item, chance in enemy.d.get("drops", []):
             if rng is not None and rng.random() < chance * (2.0 if enemy.elite else 1.0):
                 self.grant({"item": item} if item in DB.items else {"materials": 1}, None)
+        for entry in getattr(enemy, "loot", None) or []:
+            self.grant(entry, (enemy.x, enemy.y, enemy.z))
         if enemy.elite and enemy.d.get("elite", {}).get("reward"):
             for entry in enemy.d["elite"]["reward"]:
                 self.grant(entry, None)

@@ -170,6 +170,20 @@ class TestCampanha(unittest.TestCase):
                     fila.append(e["to"])
         self.assertEqual(sorted(set(DB.levels) - vistos), [])
 
+    def test_chaves_obteniveis(self):
+        """Toda porta com chave tem a chave em algum baú, saque de inimigo, recompensa ou diálogo do jogo."""
+        import json, os
+        fontes = json.dumps([DB.levels, DB.bosses, DB.quests, DB.lore], ensure_ascii=False)
+        pasta = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "dialogues")
+        for f in os.listdir(pasta):
+            fontes += open(os.path.join(pasta, f), encoding="utf-8").read()
+        for lid, lv in DB.levels.items():
+            for e in lv["entities"]:
+                if e.get("type") == "door" and e.get("key"):
+                    k = e["key"]
+                    concede = (f'"item": "{k}"' in fontes) or (f'"give": "{k}"' in fontes) or (f'"give": ["{k}"' in fontes)
+                    self.assertTrue(concede, f"{lid}: chave {k} da porta {e['id']} não é obtida em lugar nenhum")
+
     def test_cada_ato_tem_chefe_e_volta_ao_santuario(self):
         for aid, ato in DB.acts.items():
             arenas = [lid for lid, lv in DB.levels.items()

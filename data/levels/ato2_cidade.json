@@ -823,6 +823,11 @@
    "enemy": "operario_corrompido",
    "elite": true,
    "unique": "a2_capataz",
+   "loot": [
+    {
+     "item": "valvula_lise"
+    }
+   ],
    "x": 32.5,
    "z": 15.5
   }

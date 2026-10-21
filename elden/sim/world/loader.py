@@ -116,6 +116,7 @@ def _spawn_enemy(w, spec, aggro=False):
     e = w.spawn_enemy(spec["enemy"], spec["x"], spec["z"], elite=spec.get("elite", False), unique=uniq,
                       aggro=aggro)
     e.group = spec.get("group")
+    e.loot = spec.get("loot", [])     # saque fixo deste inimigo no mapa (ex.: a manivela do Capataz)
     if e.group:
         w._groups_spawned.add(e.group)
     if "angle" in spec:

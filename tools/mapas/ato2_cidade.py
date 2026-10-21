@@ -98,7 +98,7 @@ for (x, r) in ((32, 4), (52, 10)):
 for (x, r) in ((40, 14), (14, 16)):
     E(x, r, type="enemy", enemy="automato")
 E(46, 4, type="enemy", enemy="maquina_serra")
-E(32, 30, type="enemy", enemy="operario_corrompido", elite=True, unique="a2_capataz")
+E(32, 30, type="enemy", enemy="operario_corrompido", elite=True, unique="a2_capataz", loot=[{"item": "valvula_lise"}])
 puzzles = [{"id": "engrenagens_fundicao", "type": "gears", "props": ["engrenagem_1", "engrenagem_2", "engrenagem_3"], "solution": [1, 3, 2],
             "open": ["portao_fundicao"], "lock": [], "message": "As engrenagens giram em sincronia!", "grace": 250}]
 regions = [{"id": "portoes", "name": "Portões de Brasaferro", "rect": g.rect_world(1, 36, 14, 45)},

@@ -63,6 +63,9 @@ Movido para `docs/ESTADO_ATUAL.md` (fonte única de progresso e validação). Es
 - **Portas de puzzle/chave na mesma largura do corredor:** `test_fases` acusa "porta não bloqueia nada" se der para
   contornar.
 
+- **Inimigo de mapa pode carregar saque fixo** (`loot` na entidade `enemy`): use para chaves de progressão.
+  `tests/test_campanha.py` resolve cada ato logicamente; se mudar portas, chaves, plataformas ou saídas, rode-o.
+
 ## Ideias anotadas
 - Telhados por tema (já existe `roof_slate`/`roof_red`), mais variações de decoração por ato.
 - Sprites de sinos e reagentes para os puzzles de sequência do Ato III (hoje caem no genérico `button`).

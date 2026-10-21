@@ -13,7 +13,9 @@
 ## Última validação registrada (2026-10-21, `feature/ato2-arena`)
 | Verificação | Resultado |
 |---|---|
-| `python3 -m unittest discover -s tests` | ✅ 30 testes OK em ~22 s (`test_basico`, `test_render`, `test_chefes` 6 chefes, `test_fases`, `test_finais`) |
+| `python3 -m unittest discover -s tests` | ✅ 32 testes OK em ~23 s (`test_basico`, `test_render`, `test_chefes`, `test_fases`, `test_finais`, `test_campanha`) |
+| Solucionador lógico da campanha (`test_campanha`) | ✅ os 5 atos chegam ao chefe partindo do Santuário (baús, saques, puzzles, chaves, alavancas, plataformas) |
+| Inimigos comuns × personagem preparado (medição ad hoc) | ✅ 5–20% por golpe; elites 28–35%; pico ~50% (julgamento do Cavaleiro Divino, com aviso e imbloqueável) |
 | Bot de chefe (`tests/bot.py`), preparo do ato (arma +ato, ~5 níveis/ato em CORPO) | ✅ todos vencidos (Aurelion 268–525 s simulados). Golpe mediano/p90 em % da vida: Varkhan 15/33, Serafim 25/32, Santo 15/29, Malachar 12/23, Aurelion 17/42 |
 | Captura offscreen de todas as fases novas (`tour.py`) | ✅ Atos II–V renderizam (125–330 FPS offscreen) |
 | Lutas no app real (`scenarios/luta_chefe.py`): Santo, Malachar, Aurelion | ✅ 3 fases, efeitos, morte, portal/Graça revelados; achou e corrigiu travamento do HUD (alfa negativo) |
@@ -61,6 +63,9 @@ Medições de desempenho (feitas pelo PR #1, offscreen, Intel Iris Xe, 1280x720,
 4. Propagar o padrão visual da arena do Ato I (assets góticos) para as outras fases.
 
 ## Histórico curto
+- 2026-10-21 — `main`: **Ato II não podia ser terminado** — a Manivela de Lise (porta da distribuição de energia →
+  elevador → arena) não era entregue por ninguém. Agora o Capataz a carrega (`loot` em inimigo de mapa, novo).
+  `test_campanha` (solucionador lógico) e `test_chaves_obteniveis` impedem regressões desse tipo.
 - 2026-10-21 — `main`: balanceamento — vida +6/nível; sem crítico aleatório contra o jogador; costas só corpo a corpo;
   rajada inimiga acerta 1×; Aurelion −20% ataque e impacto/pilares/lanças menores; Santo e Malachar com picos menores.
 - 2026-10-21 — `main`: Ato V completo — **todas as 15 fases existem**. Portal/Graça/altar pós-chefe agora surgem na

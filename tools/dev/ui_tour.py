@@ -3,7 +3,8 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."
 OUT = sys.argv[1]
 from elden.app import App
 from panda3d.core import Filename
-app = App({"size": (1280, 720), "fullscreen": False, "novsync": True})
+app = App({"size": (1280, 720), "fullscreen": False, "novsync": True,
+           "offscreen": os.environ.get("ELDEN_OFFSCREEN") == "1"})
 st = {"f": 0, "step": 0, "t": 0.0}
 
 def shot(name):

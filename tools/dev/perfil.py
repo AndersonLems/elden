@@ -1,7 +1,8 @@
 import os, sys, time, cProfile, pstats, io
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")); sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "tests"))
 from elden.app import App
-app = App({"size": (1280, 720), "fullscreen": False, "novsync": True})
+app = App({"size": (1280, 720), "fullscreen": False, "novsync": True,
+           "offscreen": os.environ.get("ELDEN_OFFSCREEN") == "1"})
 st = {"f": 0, "times": [], "last": time.perf_counter(), "wall": []}
 prof = cProfile.Profile()
 orig = app._update

@@ -20,7 +20,7 @@
 - conecta luz breve aos rastros flamejantes e captura `mag_tempestade` passando pelo combate real;
 - corrige definitivamente o modo offscreen da Ursina, com uma asserção contra janelas onscreen.
 
-![Main original, PR #1 e Visual Overhaul 2.0](../artifacts/visual-overhaul/v2/comparacao_3_colunas.png)
+![Main original, PR #1 e Visual Overhaul 2.0](https://raw.githubusercontent.com/AndersonLems/elden/feature/visual-overhaul-25d/artifacts/visual-overhaul/v2/comparacao_3_colunas.png)
 
 As dez comparações V2 estão em `artifacts/visual-overhaul/v2/{before,after}`. A evidência do
 ataque não injeta FX: desbloqueia uma habilidade do Mago, envia entrada real e fotografa os eventos
@@ -33,16 +33,16 @@ e em pontos equivalentes. Não são conceitos gerados.
 
 | Cena | Antes | Depois |
 |---|---|---|
-| Santuário | ![](../artifacts/visual-overhaul/before/01_santuario.png) | ![](../artifacts/visual-overhaul/after/01_santuario.png) |
-| Floresta | ![](../artifacts/visual-overhaul/before/02_floresta.png) | ![](../artifacts/visual-overhaul/after/02_floresta.png) |
-| Vila | ![](../artifacts/visual-overhaul/before/03_vila.png) | ![](../artifacts/visual-overhaul/after/03_vila.png) |
-| Arena do primeiro chefe | ![](../artifacts/visual-overhaul/before/04_arena_chefe.png) | ![](../artifacts/visual-overhaul/after/04_arena_chefe.png) |
-| Cidade industrial | ![](../artifacts/visual-overhaul/before/05_cidade_industrial.png) | ![](../artifacts/visual-overhaul/after/05_cidade_industrial.png) |
-| Fábrica | ![](../artifacts/visual-overhaul/before/06_fabrica.png) | ![](../artifacts/visual-overhaul/after/06_fabrica.png) |
-| Múltiplos inimigos | ![](../artifacts/visual-overhaul/before/07_multiplos_inimigos.png) | ![](../artifacts/visual-overhaul/after/07_multiplos_inimigos.png) |
-| Ataque especial | ![](../artifacts/visual-overhaul/before/08_ataque_especial.png) | ![](../artifacts/visual-overhaul/after/08_ataque_especial.png) |
-| Interface do personagem | ![](../artifacts/visual-overhaul/before/09_interface_personagem.png) | ![](../artifacts/visual-overhaul/after/09_interface_personagem.png) |
-| Variação de altura | ![](../artifacts/visual-overhaul/before/10_variacao_altura.png) | ![](../artifacts/visual-overhaul/after/10_variacao_altura.png) |
+| Santuário | ![](https://raw.githubusercontent.com/AndersonLems/elden/feature/visual-overhaul-25d/artifacts/visual-overhaul/before/01_santuario.png) | ![](https://raw.githubusercontent.com/AndersonLems/elden/feature/visual-overhaul-25d/artifacts/visual-overhaul/after/01_santuario.png) |
+| Floresta | ![](https://raw.githubusercontent.com/AndersonLems/elden/feature/visual-overhaul-25d/artifacts/visual-overhaul/before/02_floresta.png) | ![](https://raw.githubusercontent.com/AndersonLems/elden/feature/visual-overhaul-25d/artifacts/visual-overhaul/after/02_floresta.png) |
+| Vila | ![](https://raw.githubusercontent.com/AndersonLems/elden/feature/visual-overhaul-25d/artifacts/visual-overhaul/before/03_vila.png) | ![](https://raw.githubusercontent.com/AndersonLems/elden/feature/visual-overhaul-25d/artifacts/visual-overhaul/after/03_vila.png) |
+| Arena do primeiro chefe | ![](https://raw.githubusercontent.com/AndersonLems/elden/feature/visual-overhaul-25d/artifacts/visual-overhaul/before/04_arena_chefe.png) | ![](https://raw.githubusercontent.com/AndersonLems/elden/feature/visual-overhaul-25d/artifacts/visual-overhaul/after/04_arena_chefe.png) |
+| Cidade industrial | ![](https://raw.githubusercontent.com/AndersonLems/elden/feature/visual-overhaul-25d/artifacts/visual-overhaul/before/05_cidade_industrial.png) | ![](https://raw.githubusercontent.com/AndersonLems/elden/feature/visual-overhaul-25d/artifacts/visual-overhaul/after/05_cidade_industrial.png) |
+| Fábrica | ![](https://raw.githubusercontent.com/AndersonLems/elden/feature/visual-overhaul-25d/artifacts/visual-overhaul/before/06_fabrica.png) | ![](https://raw.githubusercontent.com/AndersonLems/elden/feature/visual-overhaul-25d/artifacts/visual-overhaul/after/06_fabrica.png) |
+| Múltiplos inimigos | ![](https://raw.githubusercontent.com/AndersonLems/elden/feature/visual-overhaul-25d/artifacts/visual-overhaul/before/07_multiplos_inimigos.png) | ![](https://raw.githubusercontent.com/AndersonLems/elden/feature/visual-overhaul-25d/artifacts/visual-overhaul/after/07_multiplos_inimigos.png) |
+| Ataque especial | ![](https://raw.githubusercontent.com/AndersonLems/elden/feature/visual-overhaul-25d/artifacts/visual-overhaul/before/08_ataque_especial.png) | ![](https://raw.githubusercontent.com/AndersonLems/elden/feature/visual-overhaul-25d/artifacts/visual-overhaul/after/08_ataque_especial.png) |
+| Interface do personagem | ![](https://raw.githubusercontent.com/AndersonLems/elden/feature/visual-overhaul-25d/artifacts/visual-overhaul/before/09_interface_personagem.png) | ![](https://raw.githubusercontent.com/AndersonLems/elden/feature/visual-overhaul-25d/artifacts/visual-overhaul/after/09_interface_personagem.png) |
+| Variação de altura | ![](https://raw.githubusercontent.com/AndersonLems/elden/feature/visual-overhaul-25d/artifacts/visual-overhaul/before/10_variacao_altura.png) | ![](https://raw.githubusercontent.com/AndersonLems/elden/feature/visual-overhaul-25d/artifacts/visual-overhaul/after/10_variacao_altura.png) |
 
 ## Verificações
 

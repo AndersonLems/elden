@@ -62,9 +62,9 @@ descrito ao fim deste documento. Convenções e formatos estão em `assets/READM
 | Perfil | Resolução interna | AO | Bloom | Luzes | Sombras |
 |---|---:|---:|---:|---:|---:|
 | baixa | 200p | não | não | 6 | não |
-| média | 240p | 65% | 65% | 10 | 6 passos |
-| alta | 240p | 85% | 90% | 16 | 10–12 passos |
-| ultra | 270p | 100% | 105% | 16 | 16–20 passos |
+| média | 240p | 60% | 55% | 10 | 6 passos |
+| alta | 360p | 72% | 62% | 16 | 10–12 passos |
+| ultra | 360p | 85% | 72% | 16 | 16–20 passos |
 
 Medição offscreen em `ato1_floresta`, 1280×720, perfil alto, 68 vistas:
 
@@ -153,3 +153,20 @@ portanto `ELDEN_OFFSCREEN=1` não abre janela no desktop.
   iluminação e efeitos, mas não afirma ter redesenhado todas as animações.
 - O atlas artístico é novo, mas os módulos BAM foram construídos pelo gerador modular do projeto;
   futuros modelos esculpidos em Blender podem substituí-los pelo mesmo manifesto.
+
+## Refinamento artístico 3.0
+
+O passe V3 reduz a granulação que dominava a arena e o santuário. O atlas gótico foi redesenhado
+com massas de pedra maiores, paleta curta e ornamento deliberado; sua frequência lógica foi reduzida
+antes do upscale nearest-neighbor para impedir aliasing quando aplicada aos módulos. Os pisos do Ato I
+agora usam fileiras de lajes legíveis, com poucas rachaduras, em vez de células aleatórias densas.
+
+O perfil alto passou de 240p para 360p internos, exatamente 2× em uma saída 720p. Grão, AO e bloom
+foram contidos. Jogador, esqueleto, guarda morto e licano usam folhas de no mínimo 64 px; Varkhan
+preserva 96 px. O peitoral recebeu uma linha ornamental e o jogador ganhou 18% de escala somente
+visual, sem mudar colisão ou alcance.
+
+Capturas reais e comparações V2/V3 estão em `artifacts/visual-overhaul/v3/`. Na arena, 19 vistas e
+16 instâncias externas, o perfil alto mediu 2,1–2,7 ms de update e 3,8–4,5 ms por quadro nas amostras
+offscreen estáveis. A floresta ainda contém folhagem procedural de alta frequência e permanece como
+limitação conhecida deste passe.

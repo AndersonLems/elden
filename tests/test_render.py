@@ -6,6 +6,7 @@ import unittest
 from panda3d.core import Filename, Loader, TexturePool
 
 from elden.core.settings import Quality
+from elden.art.spritegen import make_rig
 from elden.render.assets import load_manifest, validate_manifest
 from elden.render.projection import project_relative, screen_move_to_world
 from elden.render.shader_lib import source
@@ -81,6 +82,12 @@ class TestPipeline(unittest.TestCase):
         self.assertEqual(Quality("baixa").ao, 0.0)
         self.assertGreater(Quality("alta").ao, 0.0)
         self.assertGreater(Quality("ultra").bloom, Quality("media").bloom)
+        self.assertEqual(Quality("alta").internal_height, 360)
+
+    def test_sprites_prioritarios_usam_quadro_refinado(self):
+        self.assertGreaterEqual(make_rig("pl_guerreiro_2_0_0_0").frame, 64)
+        self.assertGreaterEqual(make_rig("esqueleto").frame, 64)
+        self.assertGreaterEqual(make_rig("varkhan").frame, 96)
 
 
 if __name__ == "__main__":

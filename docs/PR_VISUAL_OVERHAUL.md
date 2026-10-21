@@ -26,6 +26,23 @@ As dez comparações V2 estão em `artifacts/visual-overhaul/v2/{before,after}`.
 ataque não injeta FX: desbloqueia uma habilidade do Mago, envia entrada real e fotografa os eventos
 de fogo, gelo e raio gerados pela simulação.
 
+## Atualização 3.0 — pixel art refinada
+
+- substitui o ruído aleatório dos pisos do Ato I por lajes maiores e deliberadas;
+- redesenha o atlas gótico com paleta curta, formas legíveis e frequência apropriada à tela;
+- eleva o perfil alto a 360p internos, mantendo escala inteira 2× em 720p;
+- reduz grão, bloom e AO para preservar contornos;
+- refina jogador, esqueleto, guarda morto e licano com folhas de 64 px; Varkhan mantém 96 px;
+- aumenta somente a presença visual do jogador e adiciona detalhe de peitoral, sem alterar gameplay.
+
+| Comparação real | V2 à esquerda · V3 à direita |
+|---|---|
+| Arena | ![](https://raw.githubusercontent.com/AndersonLems/elden/feature/visual-overhaul-25d/artifacts/visual-overhaul/v3/comparacao_arena_v2_v3.png) |
+| Santuário | ![](https://raw.githubusercontent.com/AndersonLems/elden/feature/visual-overhaul-25d/artifacts/visual-overhaul/v3/comparacao_santuario_v2_v3.png) |
+
+A captura de combate V3 também está versionada. A floresta ainda apresenta folhagem procedural
+mais ruidosa que o novo padrão; isso permanece documentado, em vez de ser apresentado como concluído.
+
 ## Capturas reais do jogo
 
 Todas as imagens abaixo foram produzidas por Panda3D/OpenGL executando o jogo, na mesma resolução
@@ -47,7 +64,7 @@ e em pontos equivalentes. Não são conceitos gerados.
 ## Verificações
 
 ```text
-python3 -m unittest discover -s tests -v     14 testes, OK
+python3 -m unittest discover -s tests -v     15 testes, OK
 DB.validate()                               []
 python3 tools/dev/validar_assets.py         manifesto válido
 capturas offscreen                          shaders GLSL compilados e executados

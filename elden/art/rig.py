@@ -203,7 +203,9 @@ def build_humanoid(rig, pose, facing_deg):
         for dz in (-1, 1):
             corners.append(add(add(base, mul(side, cx * tw * wmul)), rot_y((0, 0, dz * td * 0.5), twist)))
     torso_col = rig.col("torso", cloth)
-    parts.append(Part("hull", [W(v) for v in corners], 0, torso_col, 0, extra={"belt": rig.col("belt", "#3a2a1a"), "pelvis": W(pelvis), "chest": W(chest)}))
+    parts.append(Part("hull", [W(v) for v in corners], 0, torso_col, 0,
+                      extra={"belt": rig.col("belt", "#3a2a1a"), "accent": rig.col("accent", torso_col),
+                             "pelvis": W(pelvis), "chest": W(chest)}))
     # peitoral/armadura
     if rig.parts.get("chestplate"):
         cp = rig.parts["chestplate"]
@@ -598,9 +600,14 @@ def render_frame(rig, pose, facing_deg, size=None):
                     de.polygon(pts, fill=255)
             if k == "hull" and part.extra and "belt" in part.extra:
                 pv = project(part.extra["pelvis"], ox, oy)
+                cv = project(part.extra["chest"], ox, oy)
                 b = part.extra["belt"]
                 dr.line([(pv[0] - rig.torso_w * 0.42, pv[1] - 1.5 * rig.scale), (pv[0] + rig.torso_w * 0.42, pv[1] - 1.5 * rig.scale)],
                         fill=(b[0], b[1], b[2], 255), width=max(1, int(rig.scale)))
+                # Costura/ornamento vertical cria leitura de peitoral sem ruído aleatório.
+                accent = part.extra["accent"]
+                dr.line([(cv[0], cv[1] + 1.2 * rig.scale), (pv[0], pv[1] - 2.0 * rig.scale)],
+                        fill=(accent[0], accent[1], accent[2], 255), width=max(1, int(rig.scale)))
         elif k == "shield":
             (x0, y0), = pts2
             r = part.w

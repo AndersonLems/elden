@@ -48,7 +48,7 @@ class ActorView:
         base = get_card(ws, ws, ay)
         self.node = base.copy_to(self.scene.pipe.sprite_root)
         self.node.set_texture(sh.tex)
-        self.visual_scale = 1.12 if self.actor.kind == "player" else (1.1 if getattr(self.actor, "is_boss", False) else 1.0)
+        self.visual_scale = 1.18 if self.actor.kind == "player" else (1.12 if getattr(self.actor, "is_boss", False) else 1.0)
         self.node.set_scale(self.visual_scale)
         self.node.set_shader_input("u_sheet", LVecBase4f(1.0 / sh.W, 1.0 / sh.H, 1.0,
                                                           1.0 if self.actor.kind == "player" else 0.0))

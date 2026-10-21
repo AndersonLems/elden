@@ -36,9 +36,9 @@
    0.98,
    0.9
   ],
-  "exposure": 1.2,
-  "saturation": 1.05,
-  "vignette": 0.4,
+  "exposure": 1.08,
+  "saturation": 0.92,
+  "vignette": 0.32,
   "light_bands": 6,
   "ambient": "embers",
   "music": "santuario"

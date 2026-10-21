@@ -6,9 +6,10 @@ from .paths import user_dir
 
 QUALITY = {
     "baixa": dict(internal_height=200, point_shadow_steps=0, dir_shadow_steps=0, max_lights=6, bloom=0.0, grain=0.0, ao=0.0),
-    "media": dict(internal_height=240, point_shadow_steps=6, dir_shadow_steps=6, max_lights=10, bloom=0.65, grain=1.0, ao=0.65),
-    "alta": dict(internal_height=240, point_shadow_steps=12, dir_shadow_steps=10, max_lights=16, bloom=0.9, grain=1.0, ao=0.85),
-    "ultra": dict(internal_height=270, point_shadow_steps=20, dir_shadow_steps=16, max_lights=16, bloom=1.05, grain=1.0, ao=1.0),
+    "media": dict(internal_height=240, point_shadow_steps=6, dir_shadow_steps=6, max_lights=10, bloom=0.55, grain=0.35, ao=0.60),
+    # 360p escala exatamente 2x em 720p: pixels menores sem shimmer subpixel.
+    "alta": dict(internal_height=360, point_shadow_steps=12, dir_shadow_steps=10, max_lights=16, bloom=0.62, grain=0.20, ao=0.72),
+    "ultra": dict(internal_height=360, point_shadow_steps=20, dir_shadow_steps=16, max_lights=16, bloom=0.72, grain=0.15, ao=0.85),
 }
 QUALITY_NAMES = {"baixa": "Baixa", "media": "Média", "alta": "Alta", "ultra": "Ultra"}
 

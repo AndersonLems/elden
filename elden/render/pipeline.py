@@ -76,7 +76,7 @@ class PixelPipeline:
         self.ui_tex = _tex(True, "ui")
         self.ui_tex.setup_2d_texture(1, 1, Texture.T_unsigned_byte, Texture.F_rgba8)
         self.ui_tex.set_ram_image_as(b"\x00\x00\x00\x00", "RGBA")
-        self.fx = dict(vignette=0.35, grain=0.025, aberration=0.0, fade=0.0, desat=0.0, bloom=0.9,
+        self.fx = dict(vignette=0.28, grain=0.012, aberration=0.0, fade=0.0, desat=0.0, bloom=0.72,
                        hurt=0.0, flash=0.0, dim=0.0)
         self.grade = dict(lift=(0.02, 0.015, 0.03), gain=(1.0, 1.0, 1.0), exposure=1.0, saturation=1.0)
         self._built_for = None

@@ -34,6 +34,7 @@ def build_world(session, level_id, spawn_id="inicio", seed=None, player=None):
     w.puzzles = []
     w._groups_spawned = set()
     deferred = {}
+    condicionais = []   # props/NPCs com "if" ainda falso: reavaliados quando um chefe cai
     for spec in level.entities:
         t = spec.get("type")
         if t == "enemy":
@@ -48,16 +49,15 @@ def build_world(session, level_id, spawn_id="inicio", seed=None, player=None):
             b.facing = math.radians(spec.get("angle", -90))
         elif t == "npc":
             if session is not None and not session.check(spec.get("if")):
+                condicionais.append(spec)
                 continue
-            n = NPC(spec["npc"], spec["x"], spec["z"])
-            if "angle" in spec:
-                n.facing = math.radians(spec["angle"])
-            w.spawn(n)
+            _spawn_npc(w, spec)
         elif t == "pickup":
             w.spawn(Pickup(spec["x"], spec["z"], 0.0, spec.get("loot", {}), auto=spec.get("auto", False),
                            pid=spec.get("id"), sprite=spec.get("sprite")))
         elif t in PROP_TYPES:
             if spec.get("if") and session is not None and not session.check(spec["if"]):
+                condicionais.append(spec)
                 continue
             w.spawn(PROP_TYPES[t](spec))
         elif t in (None, "note"):
@@ -71,6 +71,17 @@ def build_world(session, level_id, spawn_id="inicio", seed=None, player=None):
                     _spawn_enemy(w, s, aggro=True)
             return handler
         w.bus.on(ev, make())
+    if condicionais and session is not None:
+        def revelar(**kw):
+            # portal de volta, Graça e altar pós-chefe aparecem na hora, sem precisar recarregar a fase
+            for spec in [c for c in condicionais if session.check(c.get("if"))]:
+                condicionais.remove(spec)
+                if spec["type"] == "npc":
+                    _spawn_npc(w, spec)
+                else:
+                    w.spawn(PROP_TYPES[spec["type"]](spec))
+                w.fx.push("reveal", x=spec["x"], y=w.level.ground_at(spec["x"], spec["z"]) or 0.0, z=spec["z"])
+        w.bus.on("boss_defeated", revelar)
     for ps in level.data.get("puzzles", []):
         w.puzzles.append(Puzzle(w, ps))
     # jogador
@@ -87,6 +98,14 @@ def build_world(session, level_id, spawn_id="inicio", seed=None, player=None):
         if lg and lg["level"] == level_id:
             w.spawn(LostGrace(lg["x"], lg["z"], lg["y"], lg["amount"]))
     return w
+
+
+def _spawn_npc(w, spec):
+    n = NPC(spec["npc"], spec["x"], spec["z"])
+    if "angle" in spec:
+        n.facing = math.radians(spec["angle"])
+    w.spawn(n)
+    return n
 
 
 def _spawn_enemy(w, spec, aggro=False):

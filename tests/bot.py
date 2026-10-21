@@ -7,11 +7,29 @@ import math
 from util import new_session, world_for, step, DT
 from elden.sim.ai.bosses.base import Boss
 from elden.sim.ai.navigation import nav_for
+from elden.sim.progression import grace_tree
+from elden.core.data import DB
+
+
+def preparar(c, ato):
+    """Progresso típico ao chegar no chefe do ato: arma no nível que o ferreiro libera (+1 por chefe principal)
+    e cerca de 5 níveis por ato gastos em nós de CORPO, na ordem da árvore."""
+    c.weapon_levels[c.weapon] = min(5, ato)
+    c.grace = 10 ** 7
+    while c.level < 1 + (ato - 1) * 5 and c.level_up():
+        pass
+    for nid in [n for n in grace_tree.nodes() if n.startswith("c_")]:
+        if c.points_available <= 0:
+            break
+        grace_tree.unlock(c, nid)
+    c.grace = 0
 
 
 class Luta:
-    def __init__(self, level, spawn="entrada", cls="guerreiro", seed=1, perto=None):
+    def __init__(self, level, spawn="entrada", cls="guerreiro", seed=1, perto=None, ato=None):
         self.session = new_session(cls)
+        if ato:
+            preparar(self.session.char, ato)
         self.world = world_for(self.session, level, spawn, seed=seed)
         self.player = self.world.player
         self.boss = next(e for e in self.world.enemies() if isinstance(e, Boss))

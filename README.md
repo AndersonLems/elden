@@ -4,8 +4,8 @@ Action RPG *hack and slash* 2.5D dark fantasy em **pixel art**, feito em **Pytho
 Toda a arte (sprites, texturas, objetos), a música e os efeitos sonoros são **gerados por código**.
 Roda localmente no Linux e no Windows, sem internet.
 
-> **Estado atual: em desenvolvimento.** O Santuário (hub) e o **Ato I** estão jogáveis de ponta a ponta;
-> o **Ato II** tem todos os mapas (sem teste de jogo completo); os Atos III–V ainda não têm mapas. Veja [O que falta](#o-que-falta).
+> **Estado atual:** todas as fases dos 5 atos existem e passam nos testes automáticos (alcance, puzzles, chefes por bot,
+> finais). Ainda falta uma partida completa jogada por uma pessoa e o balanceamento. Veja [O que falta](#o-que-falta).
 
 ---
 
@@ -100,13 +100,10 @@ rompa a postura (barra amarela) e aperte Leve para **executar**.
 | Item | Situação |
 |---|---|
 | Santuário + Ato I (floresta, vila, cemitério, cripta, castelo, Condessa, Varkhan) | ✅ jogável |
-| Ato II — `ato2_cidade`, `ato2_fabrica` | ✅ mapas prontos, sem teste de jogo completo |
-| Ato II — `ato2_arena` (Serafim-09) | ✅ mapa pronto, chefe vencido pelo bot de teste; sem teste de jogo humano |
-| Ato III — `ato3_catedral`, `ato3_laboratorio`, `ato3_arena` | ❌ faltam mapas (dados de inimigos, chefe, NPC e documentos prontos) |
-| Ato IV — `ato4_biblioteca`, `ato4_observatorio`, `ato4_arena` | ❌ faltam mapas (precisa de `arena_center` no JSON) |
-| Ato V — `ato5_ruinas`, `ato5_templo`, `ato5_arena` (Aurelion + altar `trono` + fragmento 5) | ❌ faltam mapas |
-| Testes de chefes com bot | ✅ Varkhan, Condessa, Serafim (`tests/test_chefes.py`) |
-| Teste automatizado de solução de puzzles por mapa | ❌ |
+| Atos II–V (12 fases, 5 chefes, puzzles, NPCs Lise, Agathe, Corvin e Ysolde) | ✅ prontos e testados automaticamente; sem partida humana completa |
+| Testes de chefes com bot | ✅ os 6 chefes (`tests/test_chefes.py`) |
+| Testes de fases e puzzles | ✅ alcance, portas, puzzles resolvidos pela dica (`tests/test_fases.py`); rede e engrenagens sem teste |
+| Finais | ✅ altar do Trono e condições testados (`tests/test_finais.py`) |
 | Balanceamento (vida e dano por ato, custo de níveis, preços) | ⚠️ não ajustado |
 | Polimento visual (telhados e decoração por tema, mais variação de inimigos) | ⚠️ |
 | Mapa/minimapa, rebind de teclas | ➖ opcional |

@@ -54,6 +54,11 @@ Movido para `docs/ESTADO_ATUAL.md` (fonte única de progresso e validação). Es
 - **Resultados do bot dependem da ordem das lutas no processo** (contador global de ids). Para reproduzir uma seed,
   rode as anteriores antes, na mesma ordem.
 
+- **Entidades com `if` só eram avaliadas ao carregar a fase.** O loader agora as reavalia no evento `boss_defeated`
+  (portal/Graça/altar pós-chefe surgem na hora); `scene_view` registra as luzes de props que surgem depois.
+- **Portas de puzzle/chave na mesma largura do corredor:** `test_fases` acusa "porta não bloqueia nada" se der para
+  contornar.
+
 ## Ideias anotadas
 - Telhados por tema (já existe `roof_slate`/`roof_red`), mais variações de decoração por ato.
 - Sprites de sinos e reagentes para os puzzles de sequência do Ato III (hoje caem no genérico `button`).

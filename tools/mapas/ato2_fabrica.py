@@ -17,7 +17,6 @@ g.rect(4, 26, 9, 30, "w")
 g.rect(12, 38, 16, 42, "w")
 # corredor dos operários (perigo do vapor) e câmara do pistão (centro)
 g.rect(20, 24, 40, 34, ";")
-g.rect(24, 22, 36, 23, ".")
 g.rect(29, 35, 31, 35, ".")
 # sala de distribuição de energia (leste) trancada
 g.rect(42, 24, 57, 40, ":")
@@ -51,7 +50,7 @@ E(16, 26, type="valve", id="valvula_alivio", positions=2, state=1)
 E(4, 40, type="decor", sprite="forge", solid=True, half=[0.6, 0.5], top=1.5, light={"color": [1.0, 0.45, 0.15], "intensity": 2.6, "radius": 7, "h": 1.2, "flicker": 0.3})
 for i, (x, r) in enumerate(((10, 36), (14, 30), (24, 26))):
     E(x, r, type="power_node", id=f"cano_{i}", sprite="power_node", interact=False)
-E(30, 24, type="door", id="porta_pistao", sprite="gate_iron", half=[1.5, 0.5], top=3.0, message="O pistão principal sobe e abre a passagem ao norte!")
+E(30, 24, type="door", id="porta_pistao", sprite="gate_iron", half=[2.5, 0.5], top=3.0, message="O pistão principal sobe e abre a passagem ao norte!")
 # corredor com jatos de vapor (só param quando a válvula de alívio fecha)
 for i, x in enumerate(range(23, 38, 3)):
     E(x, 31, type="hazard", id=f"jato_corredor_{i}", hazard="steam", sprite="pipe_vent", period=2.0, on_time=0.8, warn=0.6, offset=i * 0.4,

@@ -13,8 +13,8 @@
 ## Última validação registrada (2026-10-21, `feature/ato2-arena`)
 | Verificação | Resultado |
 |---|---|
-| `python3 -m unittest discover -s tests` | ✅ 24 testes OK em ~14 s (`test_basico`, `test_render`, `test_chefes` com 4 chefes, `test_fases`) |
-| Bot de chefe (`tests/bot.py`), 8 seeds por chefe | ✅ 24/24 vitórias: Varkhan 117–147 s, Condessa 47–66 s, Serafim 125–195 s (tempo simulado, guerreiro nível 1, só ataque leve) |
+| `python3 -m unittest discover -s tests` | ✅ 30 testes OK em ~22 s (`test_basico`, `test_render`, `test_chefes` 6 chefes, `test_fases`, `test_finais`) |
+| Bot de chefe (`tests/bot.py`), 5 seeds, preparo do ato (arma +ato, ~5 níveis/ato em CORPO) | ✅ 25/25: Varkhan 129–149 s, Serafim 92–108 s, Santo 181–210 s, Malachar 154–321 s, Aurelion 354–463 s (tempo simulado; só ataque leve, sem esquiva) |
 | Captura offscreen de `ato2_arena` (`tour.py`) | ✅ renderiza, ~270 FPS offscreen |
 | `DB.validate()` | ✅ `[]` |
 | `python3 tools/dev/validar_assets.py` | ✅ manifesto válido |
@@ -34,11 +34,11 @@ Medições de desempenho (feitas pelo PR #1, offscreen, Intel Iris Xe, 1280x720,
 | Ato II `ato2_arena` (Serafim-09) | ✅ | ✅ `test_chefes` (3 fases, névoa fecha/reabre, jatos sobre o chão, flags `ato2_concluido`) + captura; ⚠️ não jogado por humano |
 | Ato III `ato3_catedral`, `ato3_laboratorio`, `ato3_arena` | ✅ | ✅ `test_fases` (alcance, puzzles sinos/soro/diagrama/Abade), Santo vencido pelo bot, capturas; ⚠️ não jogado por humano |
 | Ato IV `ato4_biblioteca`, `ato4_observatorio`, `ato4_arena` | ✅ | ✅ `test_fases` (portais, plataforma, Corvin, selo, espelhos, relógio), Malachar vencido pelo bot (8/8 seeds), capturas; ⚠️ não jogado por humano |
-| Ato V (3 mapas) | ❌ mapas (dados de inimigos, chefe, NPC, documentos e missões existem) | — |
+| Ato V `ato5_ruinas`, `ato5_templo`, `ato5_arena` | ✅ | ✅ `test_fases` (luzes, anjos, placas+alavanca, guardião, selo), Aurelion vencido pelo bot preparado, altar do Trono e escolha de final (`test_finais`), capturas; ⚠️ não jogado por humano |
 | 9 classes, árvore (126 nós), 37 runas, 29 armas, 23 artes | ✅ | ✅ parcial: `test_basico` (rotas das classes, árvore, save); menus vistos em `ui_tour` |
-| 6 chefes (Condessa com 2 fases, demais com 3) | ✅ código | ✅ Varkhan, Condessa, Serafim, Santo, Malachar vencidos pelo bot (`test_chefes`); ❌ Aurelion sem fase |
+| 6 chefes (Condessa com 2 fases, demais com 3) | ✅ código | ✅ os 6 vencidos pelo bot com preparo do ato (`test_chefes`, 3 seeds cada) |
 | Puzzles (combinação, sequência, feixe, rede, engrenagens, all_on, kill) | ✅ | ✅ combinação, sequência, kill, all_on e feixe resolvidos pela dica em `test_fases`; ⚠️ rede e engrenagens sem teste automático |
-| 3 finais | ✅ lógica (`Session.ending_options`) | ❌ não alcançáveis (faltam Atos III–V) |
+| 3 finais | ✅ | ✅ `test_finais`: 5 fragmentos colocados, altar do Trono surge após Aurelion e abre a escolha, condições dos finais; ⚠️ telas de final não vistas nesta sessão |
 | Projeção semi-isométrica, 4 faces, WASD da tela | ✅ | ✅ `test_render` + capturas do PR #1 |
 | Pipeline de assets externos + pacote gótico (arena/castelo) | ✅ | ✅ `validar_assets.py`, `test_render` |
 | Captura offscreen (`ELDEN_OFFSCREEN=1`) | ✅ | ✅ segundo PR #1 |
@@ -53,12 +53,15 @@ Medições de desempenho (feitas pelo PR #1, offscreen, Intel Iris Xe, 1280x720,
 - As barras dos dois braços do Serafim se projetam quase no mesmo ponto (aparecem como uma barra).
 
 ## Próximos trabalhos (ordem)
-1. Jogar Santuário + Ato I + Ato II em janela real com a nova projeção e registrar o resultado aqui.
-2. Mapas dos Atos III–V (plano em `docs/CONTEXTO.md`); adicionar cada chefe a `tests/test_chefes.py`.
-3. Teste automatizado de solução de puzzles por fase.
-4. Propagar o padrão visual da arena do Ato I (assets góticos) para Ato II e demais fases; balanceamento.
+1. Jogar a campanha inteira em janela real (o usuário testa em 2026-10-22) e registrar o resultado aqui.
+2. Balanceamento: dano dos chefes tardios contra o bot sem esquiva é alto (Aurelion ~50–76 mil por luta).
+3. Testes automáticos de puzzles de rede e engrenagens.
+4. Propagar o padrão visual da arena do Ato I (assets góticos) para as outras fases.
 
 ## Histórico curto
+- 2026-10-21 — `main`: Ato V completo — **todas as 15 fases existem**. Portal/Graça/altar pós-chefe agora surgem na
+  hora (antes só após recarregar). Teste novo: porta de puzzle/chave precisa bloquear algo — achou contornos em
+  `ato2_fabrica` (pistão) e `ato3_catedral` (escada), corrigidos. Bot de chefe usa preparo do ato.
 - 2026-10-21 — `main`: Ato IV completo. Bugs de IA corrigidos: teleporte (`blink_away`) caía em topo de parede e
   atravessava portas fechadas; invocações (`summon`) nasciam sobre paredes. Bot verifica chefe × névoa por região do grid.
 - 2026-10-21 — `main`: Ato III completo; `tests/test_fases.py`; topo da fábrica (Ato II) estava inalcançável — corrigido;

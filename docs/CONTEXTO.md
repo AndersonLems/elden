@@ -14,8 +14,10 @@ Requisitos principais:
 - narrativa com 3 finais;
 - scripts para Linux e Windows, README e testes.
 
-## Plano dos atos (o que falta construir em mapas)
-Todos os dados de inimigos, chefes, NPCs, missões e documentos citados abaixo **já existem** em `data/`.
+## Plano dos atos (✅ todos construídos em 2026-10-21; mantido como referência das soluções)
+Os geradores estão em `tools/mapas/<fase>.py`. Divergências do plano original: o Ato III ganhou almoxarifado
+(Chave do Laboratório); no Ato IV o relógio libera um portal (`require_flag`) em vez de porta; no Ato V as luzes
+abrem o jardim dos anjos e as placas+alavanca abrem o santuário interno do templo.
 
 ### Ato II — Forja das Almas (✅ `ato2_arena` feito em 2026-10-21; registro mantido como referência)
 - **Arena "Núcleo da Forja":**

@@ -1,0 +1,720 @@
+{
+ "id": "ato5_ruinas",
+ "name": "Ruínas Celestes",
+ "act": 5,
+ "theme": "ato5",
+ "env": "trono",
+ "music": "ato5",
+ "rows": [
+  "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
+  "H#############################;############################H",
+  "H#############################;############################H",
+  "H###########################;;;;;##########################H",
+  "H###########################;;;;;##########################H",
+  "H###########################;;;;;##########################H",
+  "H###########################;;;;;###########,,,,,,,,,,,,,##H",
+  "H###########################;;;;;###########,,,,,,,,,,,,,##H",
+  "H###################.....................###,,,,,,~~~~~~,##H",
+  "H###################.....................###,,,,,,~~~~~~,##H",
+  "H###################..P...............P..###,,,,,,~~~~~~,##H",
+  "H###################.....................###,,,,,,~~~~~~,##H",
+  "H###################.....................,,,,,,,,,~~~~~~,##H",
+  "H###################.....................,,,,,,,,,,,,,,,,##H",
+  "H###################..P...............P..,,,,,,,,,,,,,,,,##H",
+  "H###################.....................###,,,,,,,,,,,,,##H",
+  "H###################.....................###,,,,,,,,,,,,,##H",
+  "H###################.....................###,,,,,,,,,,,,,##H",
+  "H###################..P...............P..###,,,,,,,,,,,,,##H",
+  "H###################.....................##################H",
+  "H###################.....................##################H",
+  "H###################.....................##################H",
+  "H###################..P...............P..##################H",
+  "H###################.....................##################H",
+  "H###::::::::::::::::.....................##################H",
+  "H###::::::::::::::::.....................##################H",
+  "H###:::::::::::::::::######..___..#########################H",
+  "H###:::::::::::::::::######..___..#######................##H",
+  "H###:::::::::::::::::######..___..#######.;;;;;;;;;;;;...##H",
+  "H###:::::wwwwwww:::::######..___..#######.;;;;;;;;;;;;...##H",
+  "H###:::::wwwwwww:::::........___..........;;;;;;;;;;;;...##H",
+  "H###:::::wwwwwww:::::........___.........................##H",
+  "H###:::::wwwwwww:::::........___.........................##H",
+  "H###:::::wwwwwww:::::######..___..#######................##H",
+  "H###:::::::::::::::::######..___..#######................##H",
+  "H###:::::::::::::::::######..___..#######................##H",
+  "H###:::::::::::::::::######..___..#######................##H",
+  "H###:::::::::::::::::######..___..#######................##H",
+  "H###:::::::::::::::::######..___..#######................##H",
+  "H##########################..___..#########################H",
+  "H##########################..___..#########################H",
+  "H##########################..___..#########################H",
+  "H#####################,,,,,,,,,,,,,,,,,####################H",
+  "H#####################,,,,,,,,,,,,,,,,,####################H",
+  "H#####################,,,,,,,,,,,,,,,,,####################H",
+  "H#####################,,,,,,,,,,,,,,,,,####################H",
+  "H#####################,,,,,,,,,,,,,,,,,####################H",
+  "H#####################,,,,,,,,,,,,,,,,,####################H",
+  "H#####################,,,,,,,,,,,,,,,,,####################H",
+  "H#####################,,,,,,,,,,,,,,,,,####################H",
+  "H#############################,############################H",
+  "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH"
+ ],
+ "entities": [
+  {
+   "type": "spawn",
+   "id": "inicio",
+   "angle": 90,
+   "x": 30.5,
+   "z": 3.5
+  },
+  {
+   "type": "exit",
+   "id": "volta_santuario",
+   "to": "santuario",
+   "spawn": "retorno_ato5",
+   "label": "Voltar ao Santuário",
+   "auto": false,
+   "sprite": "portal_gate",
+   "color": [
+    1.0,
+    0.9,
+    0.6
+   ],
+   "x": 30.5,
+   "z": 1.5
+  },
+  {
+   "type": "grace",
+   "id": "graca_escadaria_celeste",
+   "name": "Escadaria Celeste",
+   "x": 26.5,
+   "z": 6.5
+  },
+  {
+   "type": "npc",
+   "npc": "ysolde",
+   "angle": 180,
+   "x": 35.5,
+   "z": 6.5
+  },
+  {
+   "type": "document",
+   "doc": "hino_trono",
+   "sprite": "stone_tablet",
+   "x": 23.5,
+   "z": 3.5
+  },
+  {
+   "type": "crystal",
+   "id": "luz_0",
+   "hold": 6.0,
+   "sprite": "crystal_gold",
+   "color": [
+    1.0,
+    0.85,
+    0.5
+   ],
+   "x": 6.5,
+   "z": 25.5
+  },
+  {
+   "type": "crystal",
+   "id": "luz_1",
+   "hold": 6.0,
+   "sprite": "crystal_gold",
+   "color": [
+    1.0,
+    0.85,
+    0.5
+   ],
+   "x": 18.5,
+   "z": 25.5
+  },
+  {
+   "type": "crystal",
+   "id": "luz_2",
+   "hold": 6.0,
+   "sprite": "crystal_gold",
+   "color": [
+    1.0,
+    0.85,
+    0.5
+   ],
+   "x": 6.5,
+   "z": 15.5
+  },
+  {
+   "type": "crystal",
+   "id": "luz_3",
+   "hold": 6.0,
+   "sprite": "crystal_gold",
+   "color": [
+    1.0,
+    0.85,
+    0.5
+   ],
+   "x": 18.5,
+   "z": 15.5
+  },
+  {
+   "type": "document",
+   "doc": "lamento_anjo",
+   "sprite": "note",
+   "x": 12.5,
+   "z": 26.5
+  },
+  {
+   "type": "door",
+   "id": "portao_jardim",
+   "sprite": "gate",
+   "half": [
+    0.5,
+    1.5
+   ],
+   "top": 3.0,
+   "message": "As quatro luzes ardem juntas. O portão do jardim se abre.",
+   "x": 36.5,
+   "z": 20.5
+  },
+  {
+   "type": "document",
+   "doc": "estatuas_anjos",
+   "sprite": "stone_tablet",
+   "x": 42.5,
+   "z": 14.5
+  },
+  {
+   "type": "dial",
+   "id": "anjo_0",
+   "sprite": "angel_statue",
+   "symbols": [
+    "sul",
+    "leste",
+    "norte",
+    "oeste"
+   ],
+   "state": 0,
+   "prompt": "Girar a estátua do anjo",
+   "x": 44.5,
+   "z": 23.5
+  },
+  {
+   "type": "dial",
+   "id": "anjo_1",
+   "sprite": "angel_statue",
+   "symbols": [
+    "sul",
+    "leste",
+    "norte",
+    "oeste"
+   ],
+   "state": 0,
+   "prompt": "Girar a estátua do anjo",
+   "x": 48.5,
+   "z": 23.5
+  },
+  {
+   "type": "dial",
+   "id": "anjo_2",
+   "sprite": "angel_statue",
+   "symbols": [
+    "sul",
+    "leste",
+    "norte",
+    "oeste"
+   ],
+   "state": 0,
+   "prompt": "Girar a estátua do anjo",
+   "x": 52.5,
+   "z": 23.5
+  },
+  {
+   "type": "chest",
+   "id": "bau_jardim",
+   "loot": [
+    {
+     "art": "art_lamina_sagrada"
+    },
+    {
+     "materials": 4
+    }
+   ],
+   "x": 55.5,
+   "z": 14.5
+  },
+  {
+   "type": "grace",
+   "id": "graca_portao_celeste",
+   "name": "Portão Celeste",
+   "x": 24.5,
+   "z": 28.5
+  },
+  {
+   "type": "door",
+   "id": "portao_celeste",
+   "sprite": "gate",
+   "half": [
+    2.5,
+    0.5
+   ],
+   "top": 3.5,
+   "message": "Os anjos se voltam ao Trono. O Portão Celeste se abre.",
+   "x": 30.5,
+   "z": 44.5
+  },
+  {
+   "type": "exit",
+   "id": "sobe_templo",
+   "to": "ato5_templo",
+   "spawn": "inicio",
+   "label": "Subir ao Templo da Graça",
+   "auto": true,
+   "x": 30.5,
+   "z": 50.5
+  },
+  {
+   "type": "document",
+   "doc": "testemunho_ysolde",
+   "sprite": "note",
+   "x": 28.5,
+   "z": 42.5
+  },
+  {
+   "type": "chest",
+   "id": "bau_miradouro",
+   "loot": [
+    {
+     "item": "lagrima_eter"
+    },
+    {
+     "materials": 3
+    }
+   ],
+   "x": 45.5,
+   "z": 34.5
+  },
+  {
+   "type": "altar",
+   "id": "altar_vazio",
+   "altar": "profano",
+   "prompt": "Oferecer sangue ao vazio",
+   "reward": [
+    {
+     "rune": "graca_pura"
+    }
+   ],
+   "x": 55.5,
+   "z": 35.5
+  },
+  {
+   "type": "decor",
+   "sprite": "lamp_post",
+   "light": {
+    "color": [
+     1.0,
+     0.9,
+     0.65
+    ],
+    "intensity": 1.6,
+    "radius": 6.5,
+    "h": 2.0,
+    "flicker": 0.1
+   },
+   "x": 22.5,
+   "z": 9.5
+  },
+  {
+   "type": "decor",
+   "sprite": "lamp_post",
+   "light": {
+    "color": [
+     1.0,
+     0.9,
+     0.65
+    ],
+    "intensity": 1.6,
+    "radius": 6.5,
+    "h": 2.0,
+    "flicker": 0.1
+   },
+   "x": 38.5,
+   "z": 9.5
+  },
+  {
+   "type": "decor",
+   "sprite": "lamp_post",
+   "light": {
+    "color": [
+     1.0,
+     0.9,
+     0.65
+    ],
+    "intensity": 1.6,
+    "radius": 6.5,
+    "h": 2.0,
+    "flicker": 0.1
+   },
+   "x": 27.5,
+   "z": 17.5
+  },
+  {
+   "type": "decor",
+   "sprite": "lamp_post",
+   "light": {
+    "color": [
+     1.0,
+     0.9,
+     0.65
+    ],
+    "intensity": 1.6,
+    "radius": 6.5,
+    "h": 2.0,
+    "flicker": 0.1
+   },
+   "x": 33.5,
+   "z": 17.5
+  },
+  {
+   "type": "decor",
+   "sprite": "lamp_post",
+   "light": {
+    "color": [
+     1.0,
+     0.9,
+     0.65
+    ],
+    "intensity": 1.6,
+    "radius": 6.5,
+    "h": 2.0,
+    "flicker": 0.1
+   },
+   "x": 4.5,
+   "z": 27.5
+  },
+  {
+   "type": "decor",
+   "sprite": "lamp_post",
+   "light": {
+    "color": [
+     1.0,
+     0.9,
+     0.65
+    ],
+    "intensity": 1.6,
+    "radius": 6.5,
+    "h": 2.0,
+    "flicker": 0.1
+   },
+   "x": 20.5,
+   "z": 13.5
+  },
+  {
+   "type": "decor",
+   "sprite": "lamp_post",
+   "light": {
+    "color": [
+     1.0,
+     0.9,
+     0.65
+    ],
+    "intensity": 1.6,
+    "radius": 6.5,
+    "h": 2.0,
+    "flicker": 0.1
+   },
+   "x": 41.5,
+   "z": 24.5
+  },
+  {
+   "type": "decor",
+   "sprite": "lamp_post",
+   "light": {
+    "color": [
+     1.0,
+     0.9,
+     0.65
+    ],
+    "intensity": 1.6,
+    "radius": 6.5,
+    "h": 2.0,
+    "flicker": 0.1
+   },
+   "x": 56.5,
+   "z": 13.5
+  },
+  {
+   "type": "decor",
+   "sprite": "lamp_post",
+   "light": {
+    "color": [
+     1.0,
+     0.9,
+     0.65
+    ],
+    "intensity": 1.6,
+    "radius": 6.5,
+    "h": 2.0,
+    "flicker": 0.1
+   },
+   "x": 20.5,
+   "z": 42.5
+  },
+  {
+   "type": "decor",
+   "sprite": "lamp_post",
+   "light": {
+    "color": [
+     1.0,
+     0.9,
+     0.65
+    ],
+    "intensity": 1.6,
+    "radius": 6.5,
+    "h": 2.0,
+    "flicker": 0.1
+   },
+   "x": 40.5,
+   "z": 42.5
+  },
+  {
+   "type": "decor",
+   "sprite": "lamp_post",
+   "light": {
+    "color": [
+     1.0,
+     0.9,
+     0.65
+    ],
+    "intensity": 1.6,
+    "radius": 6.5,
+    "h": 2.0,
+    "flicker": 0.1
+   },
+   "x": 44.5,
+   "z": 45.5
+  },
+  {
+   "type": "decor",
+   "sprite": "column_broken",
+   "solid": true,
+   "half": [
+    0.4,
+    0.4
+   ],
+   "top": 2.0,
+   "x": 28.5,
+   "z": 21.5
+  },
+  {
+   "type": "decor",
+   "sprite": "column_broken",
+   "solid": true,
+   "half": [
+    0.4,
+    0.4
+   ],
+   "top": 2.0,
+   "x": 32.5,
+   "z": 14.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "espirito_ancestral",
+   "x": 26.5,
+   "z": 7.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "espirito_ancestral",
+   "x": 34.5,
+   "z": 4.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "cavaleiro_divino",
+   "x": 30.5,
+   "z": 15.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "cavaleiro_divino",
+   "x": 30.5,
+   "z": 22.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "anjo_corrompido",
+   "x": 8.5,
+   "z": 20.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "anjo_corrompido",
+   "x": 16.5,
+   "z": 17.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "cavaleiro_divino",
+   "x": 44.5,
+   "z": 18.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "ser_celestial",
+   "x": 51.5,
+   "z": 20.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "cavaleiro_divino",
+   "x": 47.5,
+   "z": 16.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "anjo_corrompido",
+   "x": 25.5,
+   "z": 37.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "anjo_corrompido",
+   "x": 35.5,
+   "z": 33.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "guardiao_graca",
+   "elite": true,
+   "unique": "a5_guardiao_portao",
+   "x": 30.5,
+   "z": 39.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "espirito_ancestral",
+   "x": 48.5,
+   "z": 37.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "espirito_ancestral",
+   "x": 52.5,
+   "z": 36.5
+  }
+ ],
+ "puzzles": [
+  {
+   "id": "quatro_luzes",
+   "type": "all_on",
+   "props": [
+    "luz_0",
+    "luz_1",
+    "luz_2",
+    "luz_3"
+   ],
+   "open": [
+    "portao_jardim"
+   ],
+   "message": "Por um instante, as ruínas brilham como no primeiro dia.",
+   "grace": 800
+  },
+  {
+   "id": "estatuas_anjos",
+   "type": "combination",
+   "props": [
+    "anjo_0",
+    "anjo_1",
+    "anjo_2"
+   ],
+   "solution": [
+    "leste",
+    "norte",
+    "oeste"
+   ],
+   "open": [
+    "portao_celeste"
+   ],
+   "lock": [
+    "anjo_0",
+    "anjo_1",
+    "anjo_2"
+   ],
+   "message": "Os três anjos olham para onde devem.",
+   "grace": 800
+  }
+ ],
+ "regions": [
+  {
+   "id": "escadaria",
+   "name": "Escadaria Celeste",
+   "rect": [
+    21,
+    0,
+    40,
+    10
+   ]
+  },
+  {
+   "id": "avenida",
+   "name": "Avenida das Colunas",
+   "rect": [
+    26,
+    10,
+    35,
+    26
+   ]
+  },
+  {
+   "id": "luzes",
+   "name": "Praça das Quatro Luzes",
+   "rect": [
+    3,
+    12,
+    27,
+    29
+   ]
+  },
+  {
+   "id": "jardim",
+   "name": "Jardim Suspenso",
+   "rect": [
+    34,
+    12,
+    58,
+    26
+   ]
+  },
+  {
+   "id": "portao",
+   "name": "Pátio do Portão Celeste",
+   "rect": [
+    19,
+    26,
+    42,
+    52
+   ]
+  },
+  {
+   "id": "miradouro",
+   "name": "Miradouro do Vazio",
+   "rect": [
+    41,
+    32,
+    58,
+    47
+   ]
+  },
+  {
+   "id": "ruinas",
+   "name": "Ruínas Celestes",
+   "rect": [
+    0,
+    0,
+    60,
+    52
+   ]
+  }
+ ]
+}

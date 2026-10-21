@@ -323,6 +323,8 @@ class SceneView:
                 if v is None and e.id not in self.views:
                     v = self._view_for(e)
                     self.views[e.id] = v
+                    if getattr(e, "is_prop", False):    # props revelados no meio da fase (pós-chefe)
+                        self.static_lights.extend(L for L in e.lights() if L not in self.static_lights)
                 if v is not None:
                     v.update(dt)
         for eid in list(self.views):

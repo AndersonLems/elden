@@ -40,7 +40,7 @@ g.rect(53, 21, 53, 21, "_")
 g.rect(24, 5, 40, 13, ".")
 g.rect(29, 6, 35, 8, "1")
 g.rect(31, 9, 33, 9, "a")
-g.rect(30, 3, 34, 4, ";")
+g.rect(31, 3, 33, 4, ";")   # mesma largura da porta da escada
 g.rect(32, 1, 32, 2, ";")
 
 E = g.ent

@@ -37,7 +37,14 @@ class _Ligacao:
 PULO = 1.4   # pulo do jogador sobe ~1,54 (JUMP_SPEED² / 2·GRAVITY); margem para a borda
 
 
-def alcance(level):
+def celulas_da_porta(e):
+    hx, hz = e.get("half", (0.5, 0.5))
+    return {(x, z) for x in range(int(e["x"] - hx - 1), int(e["x"] + hx) + 2)
+            for z in range(int(e["z"] - hz - 1), int(e["z"] + hz) + 2)
+            if abs(x + 0.5 - e["x"]) < hx + 0.01 and abs(z + 0.5 - e["z"]) < hz + 0.01}
+
+
+def alcance(level, bloqueadas=frozenset()):
     """Células alcançáveis a partir da entrada, ignorando portas (os puzzles as abrem). Plataformas móveis ficam fora."""
     nav = NavGrid(level)
     sx, sz = level.spawn_cell
@@ -76,7 +83,7 @@ def alcance(level):
         x, z = q.popleft()
         for dx, dz in ((1, 0), (-1, 0), (0, 1), (0, -1)):
             nx, nz = x + dx, z + dz
-            if (nx, nz) in seen or not (0 <= nx < nav.w and 0 <= nz < nav.d) or not nav.ok[nz][nx]:
+            if (nx, nz) in seen or (nx, nz) in bloqueadas or not (0 <= nx < nav.w and 0 <= nz < nav.d) or not nav.ok[nz][nx]:
                 continue
             subida = nav.h[nz][nx] - nav.h[z][x]
             rampa = nav.ramp[z][x] or nav.ramp[nz][nx]
@@ -128,6 +135,27 @@ class TestFases(unittest.TestCase):
             if paredes:
                 falhas.append(f"{lid}: topo de parede alcançável em {paredes[:6]}{'...' if len(paredes) > 6 else ''}")
         self.assertEqual(falhas, [], "inalcançáveis a partir da entrada")
+
+
+    def test_portas_de_puzzle_e_chave_bloqueiam_algo(self):
+        """Fechada, a porta precisa separar alguma coisa; senão ela pode ser contornada."""
+        falhas = []
+        for lid in DB.levels:
+            data = DB.levels[lid]
+            abertas_por_puzzle = {pid for pz in data.get("puzzles", []) for pid in pz.get("open", [])}
+            lv = Level(data)
+            e0 = next(e for e in lv.entities if e.get("id") == entrada(lid))
+            lv.spawn_cell = (int(e0["x"]), int(e0["z"]))
+            livre = alcance(lv)
+            for e in lv.entities:
+                if e.get("type") != "door" or e.get("transient") or e.get("open"):
+                    continue
+                if e.get("id") not in abertas_por_puzzle and not e.get("key"):
+                    continue
+                fechado = alcance(lv, frozenset(celulas_da_porta(e)))
+                if len(livre - fechado) <= len(celulas_da_porta(e)):
+                    falhas.append(f"{lid}: porta {e['id']} não bloqueia nada")
+        self.assertEqual(falhas, [])
 
 
 class TestPuzzles(unittest.TestCase):

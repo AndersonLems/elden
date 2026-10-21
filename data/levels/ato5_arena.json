@@ -1,0 +1,298 @@
+{
+ "id": "ato5_arena",
+ "name": "Trono da Graça",
+ "act": 5,
+ "theme": "ato5",
+ "env": "trono_arena",
+ "music": "chefe5",
+ "rows": [
+  "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
+  "H################################H",
+  "H################################H",
+  "H#############1111111############H",
+  "H############,1111111,###########H",
+  "H##########,,...aaa...,,#########H",
+  "H#########,,....___....,,########H",
+  "H########,.....:___:.....,#######H",
+  "H#######,....::.___.::....,######H",
+  "H######,,...:...___...:...,,#####H",
+  "H######,...:....___....:...,#####H",
+  "H#####,...:.....___.....:...,####H",
+  "H#####,...:.....___.....:...,####H",
+  "H#####,..:......___......:..,####H",
+  "H#####,..:.....;___;.....:..,####H",
+  "H####,,..:.....;___;.....:..,,###H",
+  "H#####,..:.....;___;.....:..,####H",
+  "H#####,..:......___......:..,####H",
+  "H#####,...:.....___.....:...,####H",
+  "H#####,...:.....___.....:...,####H",
+  "H######,...:....___....:...,#####H",
+  "H######,,...:...___...:...,,#####H",
+  "H#######,....::.___.::....,######H",
+  "H########,.....:___:.....,#######H",
+  "H#########,,....___....,,########H",
+  "H##########,,...___...,,#########H",
+  "H############,,,___,,,###########H",
+  "H################,###############H",
+  "H###############...##############H",
+  "H###############...##############H",
+  "H###############...##############H",
+  "H###############...##############H",
+  "H###############...##############H",
+  "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH"
+ ],
+ "entities": [
+  {
+   "type": "spawn",
+   "id": "entrada",
+   "angle": 90,
+   "x": 17.5,
+   "z": 2.5
+  },
+  {
+   "type": "exit",
+   "id": "saida_arena",
+   "to": "ato5_templo",
+   "spawn": "graca_escadaria_trono",
+   "label": "Descer ao Templo",
+   "auto": false,
+   "sprite": "stairs_down",
+   "x": 17.5,
+   "z": 1.5
+  },
+  {
+   "type": "door",
+   "id": "nevoa_arena",
+   "sprite": "fog_gate",
+   "half": [
+    1.5,
+    0.5
+   ],
+   "top": 3.0,
+   "open": true,
+   "transient": true,
+   "close_on": "boss_start",
+   "open_on": "boss_defeated",
+   "x": 17.5,
+   "z": 5.5
+  },
+  {
+   "type": "boss",
+   "boss": "aurelion",
+   "angle": -90,
+   "x": 17.5,
+   "z": 25.5
+  },
+  {
+   "type": "altar",
+   "id": "altar_trono",
+   "altar": "trono",
+   "prompt": "Sentar no Trono da Graça",
+   "sprite": "altar",
+   "once": false,
+   "if": {
+    "flag": "aurelion_derrotado"
+   },
+   "x": 17.5,
+   "z": 30.5
+  },
+  {
+   "type": "grace",
+   "id": "graca_trono",
+   "name": "Trono da Graça",
+   "if": {
+    "flag": "boss:aurelion"
+   },
+   "x": 15.5,
+   "z": 18.5
+  },
+  {
+   "type": "document",
+   "doc": "fragmento_ciclo_5",
+   "sprite": "item_glow",
+   "if": {
+    "flag": "boss:aurelion"
+   },
+   "x": 19.5,
+   "z": 18.5
+  },
+  {
+   "type": "exit",
+   "id": "portal_vitoria",
+   "to": "santuario",
+   "spawn": "retorno_ato5",
+   "label": "Retornar ao Santuário",
+   "auto": false,
+   "sprite": "portal_gate",
+   "color": [
+    1.0,
+    0.9,
+    0.6
+   ],
+   "if": {
+    "flag": "boss:aurelion"
+   },
+   "x": 17.5,
+   "z": 16.5
+  },
+  {
+   "type": "decor",
+   "sprite": "angel_statue",
+   "solid": true,
+   "half": [
+    0.4,
+    0.4
+   ],
+   "top": 2.2,
+   "x": 26.5,
+   "z": 14.5
+  },
+  {
+   "type": "decor",
+   "sprite": "angel_statue",
+   "solid": true,
+   "half": [
+    0.4,
+    0.4
+   ],
+   "top": 2.2,
+   "x": 21.5,
+   "z": 9.5
+  },
+  {
+   "type": "decor",
+   "sprite": "angel_statue",
+   "solid": true,
+   "half": [
+    0.4,
+    0.4
+   ],
+   "top": 2.2,
+   "x": 13.5,
+   "z": 9.5
+  },
+  {
+   "type": "decor",
+   "sprite": "angel_statue",
+   "solid": true,
+   "half": [
+    0.4,
+    0.4
+   ],
+   "top": 2.2,
+   "x": 8.5,
+   "z": 14.5
+  },
+  {
+   "type": "decor",
+   "sprite": "angel_statue",
+   "solid": true,
+   "half": [
+    0.4,
+    0.4
+   ],
+   "top": 2.2,
+   "x": 8.5,
+   "z": 22.5
+  },
+  {
+   "type": "decor",
+   "sprite": "angel_statue",
+   "solid": true,
+   "half": [
+    0.4,
+    0.4
+   ],
+   "top": 2.2,
+   "x": 13.5,
+   "z": 27.5
+  },
+  {
+   "type": "decor",
+   "sprite": "angel_statue",
+   "solid": true,
+   "half": [
+    0.4,
+    0.4
+   ],
+   "top": 2.2,
+   "x": 21.5,
+   "z": 27.5
+  },
+  {
+   "type": "decor",
+   "sprite": "angel_statue",
+   "solid": true,
+   "half": [
+    0.4,
+    0.4
+   ],
+   "top": 2.2,
+   "x": 26.5,
+   "z": 22.5
+  },
+  {
+   "type": "decor",
+   "sprite": "brazier_gold",
+   "solid": true,
+   "half": [
+    0.3,
+    0.3
+   ],
+   "top": 1.0,
+   "light": {
+    "color": [
+     1.0,
+     0.88,
+     0.55
+    ],
+    "intensity": 2.4,
+    "radius": 8,
+    "h": 1.4,
+    "flicker": 0.1
+   },
+   "x": 14.5,
+   "z": 30.5
+  },
+  {
+   "type": "decor",
+   "sprite": "brazier_gold",
+   "solid": true,
+   "half": [
+    0.3,
+    0.3
+   ],
+   "top": 1.0,
+   "light": {
+    "color": [
+     1.0,
+     0.88,
+     0.55
+    ],
+    "intensity": 2.4,
+    "radius": 8,
+    "h": 1.4,
+    "flicker": 0.1
+   },
+   "x": 20.5,
+   "z": 30.5
+  }
+ ],
+ "arena_center": [
+  17.5,
+  18.5
+ ],
+ "boss_arena": true,
+ "regions": [
+  {
+   "id": "arena",
+   "name": "Trono da Graça",
+   "rect": [
+    0,
+    0,
+    34,
+    34
+   ]
+  }
+ ]
+}

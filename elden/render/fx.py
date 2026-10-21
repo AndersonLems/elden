@@ -526,6 +526,12 @@ class FxManager:
         self.ring((ev["x"], ev["y"] + 0.1, ev["z"]), 2.0, (3.0, 2.4, 1.2), 50, 0.3, (0.6, 1.2))
         self.light(p, (1.0, 0.8, 0.4), 4.0, 8.0, 1.2)
 
+    def ev_reveal(self, ev, world):
+        """Algo surge no mundo (portal e Graça depois do chefe)."""
+        p = (ev["x"], ev["y"] + 0.8, ev["z"])
+        self.add.emit(p, 40, 2.5, (0.6, 1.2), (2, 1), (2.6, 2.2, 1.4, 1.0), (1.0, 0.6, 0.2, 0.0), -2, 1.0)
+        self.ring((ev["x"], ev["y"] + 0.1, ev["z"]), 1.6, (2.6, 2.2, 1.4), 36, 0.3, (0.5, 1.0))
+
     def ev_puzzle_solved(self, ev, world):
         pl = world.player
         if pl is not None:

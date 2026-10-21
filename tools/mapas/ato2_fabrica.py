@@ -22,15 +22,13 @@ g.rect(29, 35, 31, 35, ".")
 # sala de distribuição de energia (leste) trancada
 g.rect(42, 24, 57, 40, ":")
 g.rect(41, 30, 41, 32, ":")
-# área superior do elevador (altura 3) ao norte
-g.rect(10, 3, 50, 20, ".")
-g.rect(14, 5, 46, 14, "3")
-g.rect(28, 15, 32, 20, ".")
-g.rect(22, 15, 23, 15, "c")
-g.rect(22, 16, 23, 16, "b")
-g.rect(22, 17, 23, 17, "a")
+# área superior (altura 3) ao norte, cercada por canos sólidos; só o elevador sobe até ela
+g.rect(9, 2, 51, 21, "P")
+g.rect(10, 3, 50, 20, "3")
+g.rect(28, 17, 32, 23, ".")       # poço do elevador (a plataforma no alto encosta no planalto)
 g.rect(36, 16, 38, 20, "~")
 g.rect(26, 2, 34, 4, "3")
+g.rect(25, 1, 35, 1, "P")
 # grades e canos
 for x in (21, 39):
     g.rect(x, 24, x, 34, "p")

@@ -105,7 +105,7 @@ E(2, 26, type="chest", id="bau_saliência", loot=[{"materials": 3}, {"item": "la
 E(4, 4, type="chest", id="bau_licano", loot=[{"weapon": "espadao_ferro"}, {"materials": 2}])
 E(6, 16, type="chest", id="bau_ilha", loot=[{"rune": "sede"}])
 E(60, 42, type="chest", id="bau_bosque", loot=[{"item": "frasco_brasa"}])
-E(55, 10, type="document", doc="cronica_licanos", sprite="note")
+E(55, 13, type="document", doc="cronica_licanos", sprite="note")   # pregado na porta da casa
 for (x, r) in ((38, 14), (39, 14), (53, 16), (54, 17), (41, 24), (58, 20), (60, 9)):
     E(x, r, type="breakable", sprite="barrel")
 # altar profano (corrupção) escondido no bosque

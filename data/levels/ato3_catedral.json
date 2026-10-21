@@ -1,0 +1,861 @@
+{
+ "id": "ato3_catedral",
+ "name": "Catedral da Carne",
+ "act": 3,
+ "theme": "ato3_catedral",
+ "env": "catedral",
+ "music": "ato3",
+ "rows": [
+  "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
+  "H###############################;##############################H",
+  "H###############################;##############################H",
+  "H#############################;;;;;############################H",
+  "H#############################;;;;;############################H",
+  "H#######################.................######################H",
+  "H#######################.....1111111.....######################H",
+  "H#######################.....1111111.....######################H",
+  "H#######################.....1111111.....######################H",
+  "H#######################.......aaa.......######################H",
+  "H#######################.................######################H",
+  "H#######################.................######################H",
+  "H#######################.................######################H",
+  "H#######################.................######################H",
+  "H#####################.........___.........####################H",
+  "H#####################.........___.........####################H",
+  "H#####################.P.......___.......P.#######_______######H",
+  "H#####################.........___.........#######_______######H",
+  "H#####################..hhhhhh.___.hhhhhh..#######_______######H",
+  "H#####################.........___.........#######_______######H",
+  "H####################G.P.......___.......P.G######_______######H",
+  "H####################G..hhhhhh.___.hhhhhh..G#########_#########H",
+  "H###,,,,,,,,,,,,,,,,##.........___.........##;;;;;;;;;;;;;;;;##H",
+  "H###,,,,,,,,,,,,,,,,##.........___.........##;;;;;;;;;;;;;;;;##H",
+  "H###,,BBBBBB,,BBBB,,##.Phhhhhh.___.hhhhhhP.##;;;;;;;;;;;;;;;;##H",
+  "H###,,,,,,,,,,,,,,,,##.........___.........##;;;www;;;;;;;;;;##H",
+  "H###,,,,,,,,,,,,,,,,##.........___.........##;;;www;;;;;;;;;;##H",
+  "H###,,BBBBBB,,BBBB,,##..hhhhhh.___.hhhhhh..##;;;www;;;;;;;;;;##H",
+  "H###,,,,,,,,,,,,,,,,#G.P.......___.......P.G#;;;;;;;;;;;;;;;;##H",
+  "H###,,,,,,,,,,,,,,,,#G.........___.........G#;;;;;;;;;;;;;;;;##H",
+  "H;;;,,BBBBBB,,BBBB,,....hhhhhh.___.hhhhhh....;;;;;;;;;;;;;;;;##H",
+  "H;;;,,,,,,,,,,,,,,,,...........___...........;;;;;;;;;;;;;;;;##H",
+  "H;;;,,,,,,,,,,,,,,,,...P.......___.......P...;;;;;;;;;;;;;;;;##H",
+  "H;;;,,BBBBBB,,BBBB,,##..hhhhhh.___.hhhhhh..##;;;;;;;;;;;;;;;;##H",
+  "H###,,,,,,,,,,,,,,,,##.........___.........##;;;;;;;;;;www;;;##H",
+  "H###,,,,,,,,,,,,,,,,##.........___.........##;;;;;;;;;;www;;;##H",
+  "H###,,BBBBBB,,BBBB,,#G.Phhhhhh.___.hhhhhhP.G#;;;;;;;;;;www;;;##H",
+  "H###,,,,,,,,,,,,,,,,#G.........___.........G#;;;;;;;;;;;;;;;;##H",
+  "H###,,,,,,,,,,,,,,,,##.........___.........##;;;;;;;;;;;;;;;;##H",
+  "H###,,,,,,,,,,,,,,,,##..hhhhhh.___.hhhhhh..##;;;;;;;;;;;;;;;;##H",
+  "H###,,,,,,,,,,,,,,,,##.P.......___.......P.##;;;;;;;;;;;;;;;;##H",
+  "H#####################.........___.........####################H",
+  "H#####################..hhhhhh.___.hhhhhh..####################H",
+  "H#####################.........___.........####################H",
+  "H#####################.........___.........####################H",
+  "H#####################.........___.........####################H",
+  "H#######################.................######################H",
+  "H#######################.................######################H",
+  "H#######################.................######################H",
+  "H#######################.................######################H",
+  "H#######################.................######################H",
+  "H#######################.................######################H",
+  "H#######################.................######################H",
+  "H#######################.................######################H",
+  "H##############################...#############################H",
+  "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH"
+ ],
+ "entities": [
+  {
+   "type": "spawn",
+   "id": "inicio",
+   "angle": 90,
+   "x": 32.5,
+   "z": 3.5
+  },
+  {
+   "type": "exit",
+   "id": "volta_santuario",
+   "to": "santuario",
+   "spawn": "retorno_ato3",
+   "label": "Voltar ao Santuário",
+   "auto": false,
+   "sprite": "portal_gate",
+   "color": [
+    0.9,
+    0.3,
+    0.35
+   ],
+   "x": 32.5,
+   "z": 1.5
+  },
+  {
+   "type": "grace",
+   "id": "graca_atrio",
+   "name": "Átrio da Catedral",
+   "x": 27.5,
+   "z": 6.5
+  },
+  {
+   "type": "npc",
+   "npc": "agathe",
+   "angle": 180,
+   "x": 37.5,
+   "z": 7.5
+  },
+  {
+   "type": "document",
+   "doc": "sermao_carne",
+   "sprite": "lectern",
+   "x": 25.5,
+   "z": 4.5
+  },
+  {
+   "type": "document",
+   "doc": "vitral_ordem",
+   "sprite": "stone_tablet",
+   "x": 22.5,
+   "z": 10.5
+  },
+  {
+   "type": "decor",
+   "sprite": "candelabra",
+   "light": {
+    "color": [
+     1.0,
+     0.7,
+     0.4
+    ],
+    "intensity": 1.7,
+    "radius": 6,
+    "h": 1.6,
+    "flicker": 0.25
+   },
+   "x": 30.5,
+   "z": 11.5
+  },
+  {
+   "type": "decor",
+   "sprite": "candelabra",
+   "light": {
+    "color": [
+     1.0,
+     0.7,
+     0.4
+    ],
+    "intensity": 1.7,
+    "radius": 6,
+    "h": 1.6,
+    "flicker": 0.25
+   },
+   "x": 34.5,
+   "z": 11.5
+  },
+  {
+   "type": "decor",
+   "sprite": "candelabra",
+   "light": {
+    "color": [
+     1.0,
+     0.7,
+     0.4
+    ],
+    "intensity": 1.7,
+    "radius": 6,
+    "h": 1.6,
+    "flicker": 0.25
+   },
+   "x": 30.5,
+   "z": 40.5
+  },
+  {
+   "type": "decor",
+   "sprite": "candelabra",
+   "light": {
+    "color": [
+     1.0,
+     0.7,
+     0.4
+    ],
+    "intensity": 1.7,
+    "radius": 6,
+    "h": 1.6,
+    "flicker": 0.25
+   },
+   "x": 34.5,
+   "z": 40.5
+  },
+  {
+   "type": "decor",
+   "sprite": "wall_torch",
+   "light": {
+    "color": [
+     1.0,
+     0.55,
+     0.35
+    ],
+    "intensity": 1.6,
+    "radius": 6,
+    "h": 1.8,
+    "flicker": 0.3
+   },
+   "x": 22.5,
+   "z": 30.5
+  },
+  {
+   "type": "decor",
+   "sprite": "wall_torch",
+   "light": {
+    "color": [
+     1.0,
+     0.55,
+     0.35
+    ],
+    "intensity": 1.6,
+    "radius": 6,
+    "h": 1.8,
+    "flicker": 0.3
+   },
+   "x": 42.5,
+   "z": 30.5
+  },
+  {
+   "type": "decor",
+   "sprite": "wall_torch",
+   "light": {
+    "color": [
+     1.0,
+     0.55,
+     0.35
+    ],
+    "intensity": 1.6,
+    "radius": 6,
+    "h": 1.8,
+    "flicker": 0.3
+   },
+   "x": 22.5,
+   "z": 22.5
+  },
+  {
+   "type": "decor",
+   "sprite": "wall_torch",
+   "light": {
+    "color": [
+     1.0,
+     0.55,
+     0.35
+    ],
+    "intensity": 1.6,
+    "radius": 6,
+    "h": 1.8,
+    "flicker": 0.3
+   },
+   "x": 42.5,
+   "z": 22.5
+  },
+  {
+   "type": "decor",
+   "sprite": "wall_torch",
+   "light": {
+    "color": [
+     1.0,
+     0.55,
+     0.35
+    ],
+    "intensity": 1.6,
+    "radius": 6,
+    "h": 1.8,
+    "flicker": 0.3
+   },
+   "x": 22.5,
+   "z": 14.5
+  },
+  {
+   "type": "decor",
+   "sprite": "wall_torch",
+   "light": {
+    "color": [
+     1.0,
+     0.55,
+     0.35
+    ],
+    "intensity": 1.6,
+    "radius": 6,
+    "h": 1.8,
+    "flicker": 0.3
+   },
+   "x": 42.5,
+   "z": 14.5
+  },
+  {
+   "type": "document",
+   "doc": "pagina_absolvicao_1",
+   "sprite": "note",
+   "x": 5.5,
+   "z": 32.5
+  },
+  {
+   "type": "document",
+   "doc": "prontuario_aldric",
+   "sprite": "lectern",
+   "x": 18.5,
+   "z": 16.5
+  },
+  {
+   "type": "document",
+   "doc": "diario_cirurgiao",
+   "sprite": "bookpile",
+   "x": 12.5,
+   "z": 33.5
+  },
+  {
+   "type": "breakable_wall",
+   "id": "parede_relicario",
+   "sprite": "cracked_wall",
+   "x": 3.5,
+   "z": 24.5
+  },
+  {
+   "type": "document",
+   "doc": "fragmento_ciclo_3",
+   "sprite": "item_glow",
+   "x": 1.5,
+   "z": 23.5
+  },
+  {
+   "type": "chest",
+   "id": "bau_relicario_secreto",
+   "loot": [
+    {
+     "rune_slot": 1
+    },
+    {
+     "materials": 3
+    }
+   ],
+   "x": 2.5,
+   "z": 25.5
+  },
+  {
+   "type": "decor",
+   "sprite": "candelabra",
+   "light": {
+    "color": [
+     1.0,
+     0.75,
+     0.45
+    ],
+    "intensity": 1.5,
+    "radius": 5.5,
+    "h": 1.6,
+    "flicker": 0.2
+   },
+   "x": 5.5,
+   "z": 27.5
+  },
+  {
+   "type": "decor",
+   "sprite": "candelabra",
+   "light": {
+    "color": [
+     1.0,
+     0.75,
+     0.45
+    ],
+    "intensity": 1.5,
+    "radius": 5.5,
+    "h": 1.6,
+    "flicker": 0.2
+   },
+   "x": 18.5,
+   "z": 27.5
+  },
+  {
+   "type": "decor",
+   "sprite": "candelabra",
+   "light": {
+    "color": [
+     1.0,
+     0.75,
+     0.45
+    ],
+    "intensity": 1.5,
+    "radius": 5.5,
+    "h": 1.6,
+    "flicker": 0.2
+   },
+   "x": 5.5,
+   "z": 19.5
+  },
+  {
+   "type": "decor",
+   "sprite": "candelabra",
+   "light": {
+    "color": [
+     1.0,
+     0.75,
+     0.45
+    ],
+    "intensity": 1.5,
+    "radius": 5.5,
+    "h": 1.6,
+    "flicker": 0.2
+   },
+   "x": 18.5,
+   "z": 21.5
+  },
+  {
+   "type": "grace",
+   "id": "graca_martires",
+   "name": "Capela dos Mártires",
+   "x": 46.5,
+   "z": 24.5
+  },
+  {
+   "type": "document",
+   "doc": "pagina_absolvicao_2",
+   "sprite": "note",
+   "x": 59.5,
+   "z": 32.5
+  },
+  {
+   "type": "decor",
+   "sprite": "coffin",
+   "solid": true,
+   "half": [
+    0.4,
+    0.6
+   ],
+   "top": 0.8,
+   "x": 47.5,
+   "z": 32.5
+  },
+  {
+   "type": "decor",
+   "sprite": "coffin",
+   "solid": true,
+   "half": [
+    0.4,
+    0.6
+   ],
+   "top": 0.8,
+   "x": 58.5,
+   "z": 16.5
+  },
+  {
+   "type": "decor",
+   "sprite": "coffin",
+   "solid": true,
+   "half": [
+    0.4,
+    0.6
+   ],
+   "top": 0.8,
+   "x": 52.5,
+   "z": 24.5
+  },
+  {
+   "type": "decor",
+   "sprite": "blood_candle",
+   "light": {
+    "color": [
+     1.0,
+     0.25,
+     0.2
+    ],
+    "intensity": 1.6,
+    "radius": 5.5,
+    "h": 1.0,
+    "flicker": 0.35
+   },
+   "x": 46.5,
+   "z": 17.5
+  },
+  {
+   "type": "decor",
+   "sprite": "blood_candle",
+   "light": {
+    "color": [
+     1.0,
+     0.25,
+     0.2
+    ],
+    "intensity": 1.6,
+    "radius": 5.5,
+    "h": 1.0,
+    "flicker": 0.35
+   },
+   "x": 59.5,
+   "z": 25.5
+  },
+  {
+   "type": "decor",
+   "sprite": "blood_candle",
+   "light": {
+    "color": [
+     1.0,
+     0.25,
+     0.2
+    ],
+    "intensity": 1.6,
+    "radius": 5.5,
+    "h": 1.0,
+    "flicker": 0.35
+   },
+   "x": 52.5,
+   "z": 32.5
+  },
+  {
+   "type": "door",
+   "id": "porta_relicario",
+   "sprite": "gate_iron_small",
+   "half": [
+    0.5,
+    0.5
+   ],
+   "top": 3.0,
+   "message": "Com o Abade caído, o relicário se abre.",
+   "x": 53.5,
+   "z": 34.5
+  },
+  {
+   "type": "chest",
+   "id": "bau_relicario",
+   "loot": [
+    {
+     "item": "chave_laboratorio"
+    },
+    {
+     "materials": 4
+    }
+   ],
+   "x": 53.5,
+   "z": 38.5
+  },
+  {
+   "type": "decor",
+   "sprite": "angel_statue",
+   "solid": true,
+   "half": [
+    0.4,
+    0.4
+   ],
+   "top": 2.2,
+   "x": 51.5,
+   "z": 37.5
+  },
+  {
+   "type": "decor",
+   "sprite": "angel_statue",
+   "solid": true,
+   "half": [
+    0.4,
+    0.4
+   ],
+   "top": 2.2,
+   "x": 55.5,
+   "z": 37.5
+  },
+  {
+   "type": "seq_button",
+   "id": "sino_coroa",
+   "symbol": "COROA",
+   "sprite": "button",
+   "prompt": "Tocar o sino do Coroa",
+   "x": 25.5,
+   "z": 49.5
+  },
+  {
+   "type": "seq_button",
+   "id": "sino_cordeiro",
+   "symbol": "CORDEIRO",
+   "sprite": "button",
+   "prompt": "Tocar o sino do Cordeiro",
+   "x": 39.5,
+   "z": 49.5
+  },
+  {
+   "type": "seq_button",
+   "id": "sino_espada",
+   "symbol": "ESPADA",
+   "sprite": "button",
+   "prompt": "Tocar o sino do Espada",
+   "x": 25.5,
+   "z": 43.5
+  },
+  {
+   "type": "seq_button",
+   "id": "sino_calice",
+   "symbol": "CÁLICE",
+   "sprite": "button",
+   "prompt": "Tocar o sino do Cálice",
+   "x": 39.5,
+   "z": 43.5
+  },
+  {
+   "type": "altar",
+   "id": "altar_carne",
+   "altar": "oracao",
+   "prompt": "Rezar diante da Carne Santa",
+   "sprite": "altar",
+   "x": 32.5,
+   "z": 49.5
+  },
+  {
+   "type": "door",
+   "id": "escada_cripta",
+   "sprite": "gate",
+   "half": [
+    1.5,
+    0.5
+   ],
+   "top": 3.0,
+   "message": "Os sinos ecoam em ordem. A escada para o laboratório se abre.",
+   "x": 32.5,
+   "z": 51.5
+  },
+  {
+   "type": "exit",
+   "id": "desce_laboratorio",
+   "to": "ato3_laboratorio",
+   "spawn": "inicio",
+   "label": "Descer ao Laboratório",
+   "auto": true,
+   "x": 32.5,
+   "z": 54.5
+  },
+  {
+   "type": "decor",
+   "sprite": "brazier_gold",
+   "solid": true,
+   "half": [
+    0.3,
+    0.3
+   ],
+   "top": 1.0,
+   "light": {
+    "color": [
+     1.0,
+     0.8,
+     0.45
+    ],
+    "intensity": 2.0,
+    "radius": 7,
+    "h": 1.3,
+    "flicker": 0.2
+   },
+   "x": 26.5,
+   "z": 46.5
+  },
+  {
+   "type": "decor",
+   "sprite": "brazier_gold",
+   "solid": true,
+   "half": [
+    0.3,
+    0.3
+   ],
+   "top": 1.0,
+   "light": {
+    "color": [
+     1.0,
+     0.8,
+     0.45
+    ],
+    "intensity": 2.0,
+    "radius": 7,
+    "h": 1.3,
+    "flicker": 0.2
+   },
+   "x": 38.5,
+   "z": 46.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "servo_fanatico",
+   "x": 27.5,
+   "z": 8.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "servo_fanatico",
+   "x": 37.5,
+   "z": 4.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "servo_fanatico",
+   "x": 26.5,
+   "z": 17.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "monge_deformado",
+   "x": 38.5,
+   "z": 20.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "servo_fanatico",
+   "x": 32.5,
+   "z": 25.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "monge_deformado",
+   "x": 26.5,
+   "z": 32.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "servo_fanatico",
+   "x": 38.5,
+   "z": 35.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "experimento",
+   "x": 9.5,
+   "z": 29.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "experimento",
+   "x": 15.5,
+   "z": 22.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "experimento",
+   "x": 8.5,
+   "z": 18.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "servo_fanatico",
+   "group": "guarda_abade",
+   "x": 50.5,
+   "z": 21.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "servo_fanatico",
+   "group": "guarda_abade",
+   "x": 57.5,
+   "z": 28.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "monge_deformado",
+   "elite": true,
+   "unique": "a3_abade",
+   "group": "guarda_abade",
+   "x": 53.5,
+   "z": 26.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "monge_deformado",
+   "x": 28.5,
+   "z": 44.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "monge_deformado",
+   "x": 36.5,
+   "z": 44.5
+  }
+ ],
+ "puzzles": [
+  {
+   "id": "sinos_ordem",
+   "type": "sequence",
+   "props": [
+    "sino_cordeiro",
+    "sino_calice",
+    "sino_espada",
+    "sino_coroa"
+   ],
+   "solution": [
+    "CORDEIRO",
+    "CÁLICE",
+    "ESPADA",
+    "COROA"
+   ],
+   "open": [
+    "escada_cripta"
+   ],
+   "fail_text": "Os sinos dissonam. A missa precisa recomeçar.",
+   "message": "A escada da cripta range e se abre.",
+   "grace": 400
+  },
+  {
+   "id": "abade_caido",
+   "type": "kill",
+   "group": "guarda_abade",
+   "open": [
+    "porta_relicario"
+   ]
+  }
+ ],
+ "regions": [
+  {
+   "id": "atrio",
+   "name": "Átrio da Catedral",
+   "rect": [
+    23,
+    0,
+    42,
+    10
+   ]
+  },
+  {
+   "id": "nave",
+   "name": "Nave da Carne Santa",
+   "rect": [
+    21,
+    10,
+    44,
+    42
+   ]
+  },
+  {
+   "id": "biblioteca",
+   "name": "Biblioteca Médica",
+   "rect": [
+    0,
+    14,
+    21,
+    35
+   ]
+  },
+  {
+   "id": "capela",
+   "name": "Capela dos Mártires",
+   "rect": [
+    44,
+    14,
+    62,
+    41
+   ]
+  },
+  {
+   "id": "presbiterio",
+   "name": "Presbitério dos Sinos",
+   "rect": [
+    23,
+    42,
+    42,
+    56
+   ]
+  },
+  {
+   "id": "catedral",
+   "name": "Catedral da Carne",
+   "rect": [
+    0,
+    0,
+    64,
+    56
+   ]
+  }
+ ]
+}

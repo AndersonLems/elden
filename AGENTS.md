@@ -8,7 +8,8 @@
 5. **Ao terminar trabalho relevante, atualize `docs/ESTADO_ATUAL.md`**: data, branch, commit, testes realmente executados e resultado.
 6. **Registre resultados reais.** Separe *implementado* de *validado*; nunca marque validado sem teste ou execução registrada.
 7. **Documentos curtos e sem redundância:** cada fato mora em um só lugar; os demais apontam para ele.
-8. **Git:** preserve a `main` (só via PR). Trabalhe apenas na branch ativa autorizada em `ESTADO_ATUAL.md`; crie outra só com autorização.
+8. **Git:** trabalhe apenas na branch ativa autorizada em `ESTADO_ATUAL.md` (hoje a `main`, com push direto autorizado
+   pelo usuário). Sem essa autorização registrada, a `main` só recebe mudanças via PR.
 9. **Não apague documentação existente nem reescreva o projeto.** Mudanças incrementais.
 
 ## Onde procurar

@@ -5,8 +5,8 @@
 
 ## Referência
 - **Data:** 2026-10-21
-- **Branch ativa autorizada:** `feature/ato2-arena` (criada a partir de `docs/contexto-persistente` @ `7cbeadb`, que sai de `main`).
-  `main` só recebe merge via PR. Nenhuma das duas branches foi enviada ao GitHub ainda.
+- **Branch ativa autorizada:** `main`. Em 2026-10-21 o usuário autorizou commits e push **direto na `main`**
+  enquanto o jogo é terminado (Atos III–V). `feature/ato2-arena` e `docs/contexto-persistente` já foram integradas.
 - **Base:** `main` @ `d3fd48d` (merge do PR #1 `feature/visual-overhaul-25d`).
 - **Branches remotas:** `main`, `feature/visual-overhaul-25d` (já mergeada).
 

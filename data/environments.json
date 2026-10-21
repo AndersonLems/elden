@@ -36,9 +36,9 @@
    0.98,
    0.9
   ],
-  "exposure": 1.2,
-  "saturation": 1.05,
-  "vignette": 0.4,
+  "exposure": 1.08,
+  "saturation": 0.92,
+  "vignette": 0.32,
   "light_bands": 6,
   "ambient": "embers",
   "music": "santuario"
@@ -135,14 +135,14 @@
  },
  "lua_arena": {
   "amb_sky": [
-   0.17,
-   0.09,
-   0.12
+   0.12,
+   0.15,
+   0.24
   ],
   "amb_ground": [
-   0.06,
-   0.03,
-   0.04
+   0.035,
+   0.025,
+   0.055
   ],
   "dir_dir": [
    0.2,
@@ -150,31 +150,31 @@
    0.5
   ],
   "dir_col": [
-   0.65,
-   0.26,
-   0.24
+   0.38,
+   0.42,
+   0.65
   ],
   "fog_col": [
-   0.16,
-   0.05,
-   0.06
+   0.035,
+   0.06,
+   0.09
   ],
   "fog_amount": 0.3,
   "lift": [
-   0.03,
    0.0,
-   0.01
+   0.005,
+   0.02
   ],
   "gain": [
-   1.08,
-   0.94,
-   0.94
+   1.0,
+   0.98,
+   1.08
   ],
-  "exposure": 1.25,
-  "saturation": 1.05,
+  "exposure": 1.15,
+  "saturation": 0.92,
   "vignette": 0.55,
   "light_bands": 5,
-  "ambient": "ash_red",
+  "ambient": "moon_mist",
   "night": true,
   "music": "chefe1"
  },

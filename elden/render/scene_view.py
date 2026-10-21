@@ -57,7 +57,7 @@ class CameraRig:
         p = world.player
         if p is None:
             return self.x, self.z
-        tx, tz = p.x, p.z + p.y
+        tx, tz = p.x, p.z
         # antecipação de movimento
         lx = clamp(p.move_x * 0.22, -1.6, 1.6)
         lz = clamp(p.move_z * 0.22, -1.2, 1.2)
@@ -74,7 +74,7 @@ class CameraRig:
             zoom = clamp(1.0 + (d - 5.0) * 0.03, 1.0, 1.25)
         if focus is not None and not focus.dead:
             tx = tx * 0.68 + focus.x * 0.32
-            tz = tz * 0.68 + (focus.z + focus.y) * 0.32
+            tz = tz * 0.68 + focus.z * 0.32
         pipe.zoom_target = zoom
         self.x = smooth_damp(self.x, tx, 7.0, dt)
         self.z = smooth_damp(self.z, tz, 7.0, dt)
@@ -102,15 +102,17 @@ class CameraRig:
 
 
 class SceneView:
-    def __init__(self, pipe, bank, props_atlas, fx):
+    def __init__(self, pipe, bank, props_atlas, fx, assets=None):
         self.pipe = pipe
         self.bank = bank
         self.props = props_atlas
         self.fx = fx
+        self.assets = assets
         self.world = None
         self.views = {}
         self.level_node = None
         self.static_node = None
+        self.external_nodes = []
         self.camera = CameraRig()
         self.fx.shake = self.camera.shake
         self.static_lights = []
@@ -195,6 +197,13 @@ class SceneView:
         self.level_node = build_level_mesh(lvl, self.level_atlas)
         self.level_node.reparent_to(self.pipe.world_root)
         self.level_node.set_texture(self.level_tex)
+        if self.assets is not None:
+            for spec in lvl.data.get("visual_assets", []):
+                node = self.assets.instantiate_model(spec.get("asset"), self.pipe.world_root,
+                                                     (spec.get("x", 0), spec.get("y", 0), spec.get("z", 0)),
+                                                     spec.get("angle", 0), spec.get("scale", 1.0))
+                if node is not None:
+                    self.external_nodes.append(node)
         self.pipe.set_occupancy(occupancy_texture(lvl), 0, 0, lvl.width, lvl.depth)
         env = DB.environments.get(lvl.env) or DB.environments["santuario"]
         self.env = Environment(env)
@@ -205,7 +214,7 @@ class SceneView:
         for p in world.props:
             for L in p.lights():
                 self.static_lights.append(L)
-        self.camera.snap_to(world.player.x, world.player.z + world.player.y) if world.player else None
+        self.camera.snap_to(world.player.x, world.player.z) if world.player else None
 
     def _build_static_decor(self):
         """Árvores, lápides e decoração sem animação viram um único mesh (poucas draw calls)."""
@@ -237,7 +246,7 @@ class SceneView:
         uv, w, h = self.props.info(name, variant, 0)
         x, y, z = snap(x, y, z)
         x0, x1 = x - w / 2, x + w / 2
-        n = (0.0, y, z)
+        n = (x, y, z)
         mb.quad((x0, y, z), (x1, y, z), (x1, y + h, z), (x0, y + h, z), n, (uv[0], uv[1]), (uv[2], uv[3]))
 
     def shadow_card(self, r):
@@ -253,10 +262,11 @@ class SceneView:
             if v is not None:
                 v.remove()
         self.views.clear()
-        for nd in (self.level_node, self.static_node):
+        for nd in (self.level_node, self.static_node, *self.external_nodes):
             if nd is not None:
                 nd.remove_node()
         self.level_node = self.static_node = None
+        self.external_nodes = []
         self.fx.clear()
         self.world = None
 
@@ -279,6 +289,11 @@ class SceneView:
                 return None
             if t == "platform":
                 return PlatformView(self, e)
+            if e.spec.get("asset") and self.assets is not None:
+                node = self.assets.instantiate_model(e.spec["asset"], self.pipe.world_root,
+                                                     scale=e.spec.get("asset_scale", 1.0))
+                if node is not None:
+                    return ExternalModelView(node, e)
             if t == "emitter":
                 return _Multi(PropView(self, e), BeamView(self, e))
             if getattr(e, "static_drawn", False):
@@ -390,6 +405,23 @@ class _Multi:
     def remove(self):
         for v in self.views:
             v.remove()
+
+
+class ExternalModelView:
+    """Sincroniza um modelo artístico; o chamador usa PropView se o asset faltar."""
+
+    def __init__(self, node, entity):
+        self.node = node
+        self.entity = entity
+
+    def update(self, dt):
+        e = self.entity
+        self.node.set_pos(e.x, e.y, e.z)
+        self.node.set_r(e.spec.get("angle", 0))
+        self.node.show() if getattr(e, "visible", True) and e.alive else self.node.hide()
+
+    def remove(self):
+        self.node.remove_node()
 
 
 class PickupView:

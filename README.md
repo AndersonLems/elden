@@ -57,13 +57,17 @@ rompa a postura (barra amarela) e aperte Leve para **executar**.
 ## O que já existe
 
 - **Motor gráfico próprio** sobre o Panda3D:
-  - projeção oblíqua 3/4 *pixel-perfect* (1 unidade = 16 px), renderizada em baixa resolução e ampliada por escala inteira;
+  - projeção ortográfica semi-isométrica (45°/38°), renderizada em baixa resolução e ampliada por escala inteira;
+  - quatro faces expostas da grade, profundidade real e billboards verticais com oclusão;
   - até 16 luzes com sombras de tochas por raymarching, faixas de luz pontilhadas, bloom, vinheta, granulação e tonemapping;
   - líquidos animados, partículas em pixel, rastros de lâmina e avisos de ataque no chão.
 - **Arte procedural:**
   - personagens com esqueleto 3D rasterizado em 8 direções e cerca de 90 animações;
   - texturas em atlas por fase;
   - mais de 100 sprites de objetos.
+- **Pipeline híbrido de arte:** manifesto e carregador para modelos, texturas, sprites e animações
+  externos, mantendo os geradores procedurais como fallback; a arena de Varkhan usa oito assets
+  góticos reais (piso, arco, portão, colunas, estátuas, escadaria e contrafortes).
 - **Combate:**
   - grafo de golpes orientado a dados: 15 famílias de armas e cerca de 400 golpes;
   - combos com janelas de cancelamento e buffer de entrada;

@@ -1,8 +1,8 @@
 """Gera a malha do cenário a partir da grade de células do mapa.
 
-Na projeção oblíqua 3/4 só são visíveis os topos (planos horizontais e rampas) e as faces voltadas
-para o sul (para a câmera); as demais nem são geradas. A oclusão ambiente é feita por vértice e
-líquidos são marcados na cor do vértice (alfa >= 2) para o shader animar.
+Na projeção semi-isométrica duas fachadas aparecem ao mesmo tempo. Todas as bordas expostas são
+geradas para que mudanças de altura, pontes e abismos tenham volume independente do enquadramento.
+A oclusão ambiente é feita por vértice e líquidos usam alfa >= 2 para animação no shader.
 """
 import numpy as np
 from panda3d.core import Texture, SamplerState
@@ -37,6 +37,38 @@ def _floor_height(c):
     return c.height
 
 
+def _edge_height(c, side):
+    if c is None or c.void:
+        return None
+    if c.kind == "ramp":
+        return c.h0 if side == "south" else c.h1
+    return _floor_height(c)
+
+
+def _wall(mb, atlas, c, var, high, low, corners, normal, outside):
+    """Cria uma fachada em faixas de uma unidade, preservando texels e trims."""
+    y = high
+    k = 0
+    while y > low + 0.001:
+        y0 = max(low, y - 1.0)
+        frac = y - y0
+        tex = c.wall_tex if (k > 0 or not c.trim_tex) else c.trim_tex
+        if c.liquid:
+            tex = c.top_tex
+        u0, v0, u1, v1 = atlas.uv(tex, (var + k) % 4)
+        vb = v1 - (v1 - v0) * frac
+        shade_top = 0.92 if normal[2] > 0 or normal[0] > 0 else 1.0
+        shade_bot = 0.84 if y0 > low + 0.001 else (0.14 if outside else 0.56)
+        em = c.wall_emissive if not c.trim_tex or k > 0 else 0.0
+        colors = [(shade_bot,) * 3 + (em,), (shade_bot,) * 3 + (em,),
+                  (shade_top,) * 3 + (em,), (shade_top,) * 3 + (em,)]
+        a, b = corners
+        mb.quad((a[0], y0, a[1]), (b[0], y0, b[1]), (b[0], y, b[1]), (a[0], y, a[1]),
+                normal, (u0, vb), (u1, v1), colors=colors)
+        y = y0
+        k += 1
+
+
 def build_level_mesh(level, atlas):
     mb = MeshBuilder()
     W, D = level.width, level.depth
@@ -60,34 +92,20 @@ def build_level_mesh(level, atlas):
                 ao = [_ao(level, x, z, h), _ao(level, x + 1, z, h), _ao(level, x + 1, z + 1, h), _ao(level, x, z + 1, h)]
                 cols = [(a, a, a, em) for a in ao]
                 mb.quad((x, h, z), (x + 1, h, z), (x + 1, h, z + 1), (x, h, z + 1), (0, 1, 0), (u0, v0), (u1, v1), colors=cols)
-            # face sul: do topo desta célula até o topo da vizinha ao sul
-            s = level.cell(x, z - 1)
-            if s is None or s.void:
-                low = level.min_height - 3.0
-            elif s.kind == "ramp":
-                low = s.h1
-            else:
-                low = _floor_height(s)
-            if low < h - 0.001:
-                y = h
-                k = 0
-                while y > low + 0.001:
-                    y0 = max(low, y - 1.0)
-                    frac = y - y0
-                    tex = c.wall_tex if (k > 0 or not c.trim_tex) else c.trim_tex
-                    if c.liquid:
-                        tex = c.top_tex
-                    tu0, tv0, tu1, tv1 = atlas.uv(tex, (var + k) % 4)
-                    vb = tv1 - (tv1 - tv0) * frac
-                    shade_top = 1.0 if k == 0 else 0.92
-                    shade_bot = 0.92 if y0 > low + 0.001 else 0.62
-                    if y0 <= low + 0.001 and (s is None or s.void):
-                        shade_bot = 0.15
-                    we = c.wall_emissive if not c.trim_tex or k > 0 else 0.0
-                    cs = [(shade_bot,) * 3 + (we,), (shade_bot,) * 3 + (we,), (shade_top,) * 3 + (we,), (shade_top,) * 3 + (we,)]
-                    mb.quad((x, y0, z), (x + 1, y0, z), (x + 1, y, z), (x, y, z), (0, 0, -1), (tu0, vb), (tu1, tv1), colors=cs)
-                    y = y0
-                    k += 1
+            sides = (
+                ("south", level.cell(x, z - 1), ((x, z), (x + 1, z)), (0, 0, -1), "north"),
+                ("north", level.cell(x, z + 1), ((x + 1, z + 1), (x, z + 1)), (0, 0, 1), "south"),
+                ("west", level.cell(x - 1, z), ((x, z + 1), (x, z)), (-1, 0, 0), "east"),
+                ("east", level.cell(x + 1, z), ((x + 1, z), (x + 1, z + 1)), (1, 0, 0), "west"),
+            )
+            for side, neighbor, corners, normal, neighbor_side in sides:
+                high = _edge_height(c, side)
+                low = _edge_height(neighbor, neighbor_side)
+                outside = low is None
+                if outside:
+                    low = level.min_height - 3.0
+                if low < high - 0.001:
+                    _wall(mb, atlas, c, var, high, low, corners, normal, outside)
     return mb.build("level")
 
 

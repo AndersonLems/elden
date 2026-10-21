@@ -15,7 +15,5 @@ void main() {
     v_uv = mix(u_frame.xy, u_frame.zw, t);
     // profundidade: o sprite inteiro usa a profundidade dos pés (como um painel em pé)
     vec3 feet = (p3d_ModelMatrix * vec4(0.0, 0.0, 0.0, 1.0)).xyz;
-    vec4 pos = oblique(w.xyz, 0.0);
-    vec4 dpos = oblique(vec3(w.x, feet.y, feet.z), u_sprite.x);
-    gl_Position = vec4(pos.xy, dpos.z, 1.0);
+    gl_Position = billboard(w.xyz, feet, u_sprite.x);
 }

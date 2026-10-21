@@ -1,4 +1,5 @@
 """Aplicação: janela Ursina/Panda3D, pipeline de renderização, interface, áudio, entrada e pilha de cenas."""
+import os
 import sys
 import time as _time
 
@@ -27,17 +28,28 @@ class App:
             self.settings["quality"] = args["quality"]
         if args.get("novsync"):
             self.settings["vsync"] = False
+        if args.get("offscreen") or os.environ.get("ELDEN_OFFSCREEN") == "1":
+            loadPrcFileData("", "window-type offscreen")
         configure_panda(self.settings)
         from ursina import Ursina, Entity, application, window, held_keys, time as utime
+        if args.get("offscreen") or os.environ.get("ELDEN_OFFSCREEN") == "1":
+            # Ursina sobrescreve o PRC com "onscreen" por padrão. Definir a
+            # propriedade dela evita mapear uma janela no desktop do usuário.
+            application.window_type = "offscreen"
         self.ursina_time = utime
         self.held_keys = held_keys
         size = tuple(args.get("size") or self.settings.get("window", [1280, 720]))
+        window_type = "offscreen" if args.get("offscreen") or os.environ.get("ELDEN_OFFSCREEN") == "1" else "onscreen"
         self.ursina = Ursina(title="ELDEN — Graça Profana", size=size, fullscreen=bool(self.settings.get("fullscreen")),
                              borderless=False, development_mode=False, vsync=self.settings.get("vsync", True),
-                             show_ursina_splash=False)
+                             show_ursina_splash=False, window_type=window_type)
         loadPrcFileData("", "textures-auto-power-2 #f")
         loadPrcFileData("", "textures-power-2 none")
         self.base = application.base
+        if args.get("offscreen") or os.environ.get("ELDEN_OFFSCREEN") == "1":
+            from panda3d.core import GraphicsWindow
+            if self.base.win.is_of_type(GraphicsWindow.get_class_type()):
+                raise RuntimeError("modo offscreen criou uma janela onscreen")
         self.base.camNode.set_active(False)
         try:
             from ursina import camera
@@ -57,6 +69,7 @@ class App:
         from .render.pipeline import PixelPipeline
         from .render.sprite_bank import SpriteBank, PropAtlas
         from .render.fx import FxManager
+        from .render.assets import ExternalAssets
         from .render.scene_view import SceneView
         from .ui.canvas import Canvas
         from .input_map import InputManager
@@ -66,6 +79,7 @@ class App:
         self.input = InputManager()
         self.audio = AudioManager(self.base, self.settings)
         self.bank = SpriteBank()
+        self.assets = None if os.environ.get("ELDEN_DISABLE_EXTERNAL_ASSETS") == "1" else ExternalAssets(self.base.loader)
         self._props = None
         self.fx = FxManager(self.pipe)
         self.scene_view = None
@@ -102,7 +116,7 @@ class App:
 
     def get_scene_view(self):
         if self.scene_view is None:
-            self.scene_view = self.SceneView(self.pipe, self.bank, self.props, self.fx)
+            self.scene_view = self.SceneView(self.pipe, self.bank, self.props, self.fx, self.assets)
         return self.scene_view
 
     # ------------------------------------------------------------------ pilha de cenas

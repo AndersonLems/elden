@@ -19,7 +19,7 @@ from . import characters
 from .anims import FRAMES, DEFAULT_FRAMES, pose_for
 from .rig import render_frame
 
-GEN_VERSION = 7
+GEN_VERSION = 8
 DIR_ANGLES = [-90, -45, 0, 45, 90]       # S, SE, E, NE, N
 
 BASE_ANIMS = ["idle", "walk", "run", "hurt", "launched", "down", "getup", "stagger", "death", "dodge", "block", "block_hit",
@@ -86,8 +86,13 @@ def make_rig(sprite_id):
         cls = parts[1]
         app = {"skin": int(parts[2]), "hair": int(parts[3]), "hair_color": int(parts[4]), "variant": int(parts[5])}
         rig = characters.player_rig(cls, app, transformed=base.endswith("_besta"))
+        # Mais área transparente ao redor permite contorno e armas finas sem
+        # recortar golpes; a escala física continua derivada em unidades.
+        rig.frame = max(rig.frame, 64)
     else:
         rig = characters.rig_for(base)
+        if base in {"esqueleto", "guarda_morto", "licano"}:
+            rig.frame = max(rig.frame, 64)
     if sc:
         k = float(sc)
         spec_scale = rig.scale * k

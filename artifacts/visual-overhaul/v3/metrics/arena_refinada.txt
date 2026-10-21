@@ -1,0 +1,39 @@
+info: Using primary monitor: Monitor(x=0, y=0, width=1366, height=768, width_mm=344, height_mm=193, name='eDP-1', is_primary=True)
+set window position: Vec2(43, 24)
+package_folder: /home/anderson/.local/lib/python3.12/site-packages/ursina
+asset_folder: tools/dev
+pygame-ce 2.5.8 (SDL 2.32.10, Python 3.12.3)
+os: Linux
+python version: 3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]
+ursina version: 8.3.0
+development mode: False
+application successfully started
+200 update ms 2.1  frame ms 3.8  parts 0/13 lights 0 views 19 assets 16
+300 update ms 2.3  frame ms 4.1  parts 0/16 lights 0 views 19 assets 16
+400 update ms 2.3  frame ms 4.1  parts 0/20 lights 0 views 19 assets 16
+500 update ms 2.3  frame ms 4.1  parts 0/29 lights 0 views 19 assets 16
+600 update ms 2.7  frame ms 4.5  parts 0/36 lights 0 views 19 assets 16
+         179220 function calls in 0.349 seconds
+
+   Ordered by: internal time
+   List reduced from 279 to 15 due to restriction <15>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+      118    0.072    0.001    0.072    0.001 {built-in method pygame.image.tobytes}
+      118    0.055    0.000    0.055    0.000 {method 'set_ram_image' of 'panda3d.core.Texture' objects}
+       20    0.028    0.001    0.028    0.001 {method 'renderFrame' of 'panda3d.core.GraphicsEngine' objects}
+     2832    0.015    0.000    0.015    0.000 {method 'render' of 'pygame.font.Font' objects}
+     4426    0.012    0.000    0.012    0.000 {method 'set_shader_input' of 'panda3d.core.NodePath' objects}
+     4248    0.010    0.000    0.010    0.000 {method 'blit' of 'pygame.surface.Surface' objects}
+      236    0.009    0.000    0.014    0.000 /home/anderson/elden/tools/dev/../../elden/render/fx.py:190(rebuild)
+      236    0.007    0.000    0.009    0.000 /home/anderson/elden/tools/dev/../../elden/render/fx.py:170(update)
+      590    0.006    0.000    0.006    0.000 {method 'fill' of 'pygame.surface.Surface' objects}
+      118    0.005    0.000    0.029    0.000 /home/anderson/elden/tools/dev/../../elden/ui/hud.py:208(_bottom)
+     4130    0.005    0.000    0.005    0.000 {method 'set_pos' of 'panda3d.core.NodePath' objects}
+     1888    0.005    0.000    0.014    0.000 /home/anderson/elden/tools/dev/../../elden/render/views.py:238(update)
+      118    0.004    0.000    0.071    0.001 /home/anderson/elden/tools/dev/../../elden/render/scene_view.py:310(update)
+      236    0.004    0.000    0.013    0.000 /home/anderson/elden/tools/dev/../../elden/render/views.py:79(update)
+      118    0.004    0.000    0.009    0.000 /home/anderson/elden/tools/dev/../../elden/ui/widgets.py:59(panel)
+
+
+

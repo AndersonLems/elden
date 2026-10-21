@@ -7,7 +7,8 @@ SPOTS = json.loads(sys.argv[3])          # [[x, z, nome], ...]
 EXTRA = sys.argv[4] if len(sys.argv) > 4 else ""
 from elden.app import App
 from panda3d.core import Filename
-app = App({"size": (1280, 720), "fullscreen": False, "novsync": True})
+app = App({"size": (1280, 720), "fullscreen": False, "novsync": True,
+           "offscreen": os.environ.get("ELDEN_OFFSCREEN") == "1"})
 st = {"f": 0, "i": 0, "t": 0.0, "phase": "load"}
 
 def shot(name):

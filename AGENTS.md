@@ -23,10 +23,15 @@ python3 tools/dev/tour.py /tmp/out ato1_floresta '[[9,6,"inicio"],[46,30,"vila"]
 SPAWN=entrada python3 tools/dev/tour.py /tmp/out ato2_fabrica '[[30,40,"a"]]'
 python3 tools/dev/ui_tour.py /tmp/out             # capturas das telas de interface
 python3 tools/dev/perfil.py                       # tempo por quadro e cProfile
+python3 tools/dev/validar_assets.py               # manifesto e arquivos de arte externa
 ```
 As ferramentas de captura desligam o vsync (`App({"novsync": True})`). **Com vsync, janelas escondidas
 são limitadas a cerca de 1 FPS pelo compositor do sistema.** Nunca rode duas instâncias ao mesmo tempo
 e não use `pkill -f <padrão>` num comando cujo próprio texto contém o padrão.
+Use `ELDEN_OFFSCREEN=1` para captura e profiling sem mostrar uma janela no desktop.
+
+Assets artísticos externos são registrados em `assets/manifest.json`; veja `assets/README.md`.
+Mantenha a arte procedural como fallback para entradas ainda não produzidas.
 
 ## Arquitetura rápida
 - `elden/app.py`: janela, pipeline, pilha de cenas (`push`/`pop`/`replace`/`transition`), interface (pygame → textura) e áudio.

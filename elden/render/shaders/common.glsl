@@ -1,14 +1,24 @@
 // Uniformes e funções compartilhadas por cenário, sprites e partículas.
-// Projeção oblíqua 3/4: 1 unidade de mundo = PPU pixels tanto no chão (eixo Z) quanto na altura (eixo Y).
+// Projeção ortográfica semi-isométrica: azimute 45 graus, elevação 38 graus.
 
 uniform vec4 u_view;        // centro x, centro z, meia-largura (unid.), meia-altura (unid.)
 uniform vec4 u_depth;       // z mínimo, 1/alcance, viés, 0
 
 vec4 oblique(vec3 w, float bias) {
-    float sx = (w.x - u_view.x) / u_view.z;
-    float sy = ((w.z - u_view.y) + w.y) / u_view.w;
-    float d = ((w.z - u_depth.x) - w.y * 0.02 - bias) * u_depth.y;
+    vec3 p = w - vec3(u_view.x, 0.0, u_view.y);
+    float sx = (p.x * 0.70710678 - p.z * 0.70710678) / u_view.z;
+    float sy = (p.x * 0.435337 - p.z * -0.435337 + p.y * 0.788011) / u_view.w;
+    float camera_depth = p.x * 0.557208 + p.z * 0.557208 - p.y * 0.615661;
+    float d = ((camera_depth - u_depth.x) - bias) * u_depth.y;
     return vec4(sx, sy, d * 2.0 - 1.0, 1.0);
+}
+
+// Painéis de personagens permanecem verticais e voltados à câmera.
+vec4 billboard(vec3 w, vec3 feet, float bias) {
+    vec4 base = oblique(feet, bias);
+    base.x += (w.x - feet.x) / u_view.z;
+    base.y += (w.y - feet.y) * 0.788011 / u_view.w;
+    return base;
 }
 
 #ifdef FRAGMENT
@@ -26,6 +36,7 @@ uniform vec4 u_occ_info;    // origem x, origem z, 1/largura, 1/altura (em célu
 uniform vec4 u_fog;         // cor rgb, intensidade da névoa baixa
 uniform vec4 u_misc;        // tempo, bandas de luz, força do pontilhado, altura do chão base
 uniform vec4 u_shadow_q;    // passos de sombra pontual, passos direcional, 0, 0
+uniform vec4 u_render_q;    // intensidade de AO geométrico, bloom do perfil, reservado
 
 float bayer4(vec2 p) {
     ivec2 q = ivec2(mod(p, 4.0));

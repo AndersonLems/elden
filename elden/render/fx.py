@@ -651,6 +651,8 @@ class FxManager:
     def trail(self, actor, move, spec, frac, color):
         """Rastro da lâmina: pontos ao longo do arco do golpe (só durante a janela ativa)."""
         sc = actor.scale
+        if actor.kind == "player" and color[0] > color[1] * 1.6:
+            self.light((actor.x, actor.y + 1.0, actor.z), (1.0, 0.34, 0.08), 1.35, 3.8, 0.07)
         if spec.get("shape", "arc") == "arc":
             rng_ = spec.get("range", 1.6) * sc * 0.85
             ang = math.radians(spec.get("angle", 120))
@@ -682,8 +684,8 @@ class FxManager:
         if not kind:
             return
         rng = self.rng
-        rate = {"embers": 14, "fireflies_red": 6, "dust": 10, "ash_red": 18, "sparks": 16, "incense": 8, "spores": 10,
-                "stars": 10, "light_motes": 12}.get(kind, 0)
+        rate = {"embers": 14, "fireflies_red": 6, "dust": 10, "ash_red": 18, "moon_mist": 3,
+                "sparks": 16, "incense": 8, "spores": 10, "stars": 10, "light_motes": 12}.get(kind, 0)
         n = int(rate * dt * 4) + (1 if rng.random() < (rate * dt * 4) % 1 else 0)
         for _ in range(n):
             x = cx + rng.uniform(-hw, hw)
@@ -697,6 +699,10 @@ class FxManager:
                 self.dust.emit((x, y, z), 1, 0.1, (2.0, 4.0), (1, 1), (0.6, 0.58, 0.55, 0.6), (0.6, 0.58, 0.55, 0.0), -0.05, 0.1)
             elif kind == "ash_red":
                 self.add.emit((x, y + 2, z), 1, 0.3, (2.0, 3.5), (1, 1), (2.0, 0.4, 0.3, 1.0), (0.4, 0.1, 0.1, 0.0), 0.3, 0.5)
+            elif kind == "moon_mist":
+                self.dust.emit((x, ground_y + 0.35, z), 1, 0.12, (3.0, 5.0), (10, 18),
+                               (0.16, 0.2, 0.3, 0.13), (0.1, 0.12, 0.2, 0.0), 0.0, 0.06,
+                               direction=(1.0, 0.25), cone=0.2)
             elif kind == "sparks":
                 self.add.emit((x, y, z), 1, 1.0, (0.6, 1.4), (1, 1), (3.0, 1.6, 0.4, 1.0), (1.0, 0.3, 0.0, 0.0), -1.5, 0.5)
             elif kind == "incense":

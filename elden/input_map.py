@@ -180,7 +180,8 @@ class InputManager:
         d = math.hypot(mx, mz)
         if d > 1.0:
             mx, mz = mx / d, mz / d
-        st.move = (mx, mz)
+        from .render.projection import screen_move_to_world
+        st.move = screen_move_to_world(mx, mz)
         lt_held = "gamepad left trigger" in self.down
         for action, keys in GAME_BINDINGS.items():
             ks = list(keys)

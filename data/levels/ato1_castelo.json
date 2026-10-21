@@ -1054,5 +1054,100 @@
     48
    ]
   }
+ ],
+ "visual_assets": [
+  {
+   "asset": "ato1_arco_gotico",
+   "x": 30.5,
+   "y": 0,
+   "z": 17.5,
+   "scale": 0.9
+  },
+  {
+   "asset": "ato1_arco_gotico",
+   "x": 30.5,
+   "y": 0,
+   "z": 29.5,
+   "angle": 180,
+   "scale": 1.05
+  },
+  {
+   "asset": "ato1_escadaria_gotica",
+   "x": 30.5,
+   "y": 0,
+   "z": 18.5,
+   "scale": 0.75
+  },
+  {
+   "asset": "ato1_estatua_alada",
+   "x": 10.5,
+   "y": 0,
+   "z": 27.5,
+   "scale": 0.9
+  },
+  {
+   "asset": "ato1_estatua_alada",
+   "x": 40.5,
+   "y": 0,
+   "z": 27.5,
+   "angle": 180,
+   "scale": 0.9
+  },
+  {
+   "asset": "ato1_coluna_gotica",
+   "x": 13.5,
+   "y": 0,
+   "z": 27.5,
+   "scale": 0.78
+  },
+  {
+   "asset": "ato1_coluna_gotica",
+   "x": 20.5,
+   "y": 0,
+   "z": 21.5,
+   "scale": 0.78
+  },
+  {
+   "asset": "ato1_coluna_gotica",
+   "x": 40.5,
+   "y": 0,
+   "z": 21.5,
+   "scale": 0.78
+  },
+  {
+   "asset": "ato1_coluna_gotica",
+   "x": 47.5,
+   "y": 0,
+   "z": 27.5,
+   "scale": 0.78
+  },
+  {
+   "asset": "ato1_coluna_gotica",
+   "x": 24.5,
+   "y": 0,
+   "z": 39.5,
+   "scale": 0.78
+  },
+  {
+   "asset": "ato1_coluna_gotica",
+   "x": 36.5,
+   "y": 0,
+   "z": 39.5,
+   "scale": 0.78
+  },
+  {
+   "asset": "ato1_coluna_gotica",
+   "x": 24.5,
+   "y": 0,
+   "z": 32.5,
+   "scale": 0.78
+  },
+  {
+   "asset": "ato1_coluna_gotica",
+   "x": 36.5,
+   "y": 0,
+   "z": 32.5,
+   "scale": 0.78
+  }
  ]
 }

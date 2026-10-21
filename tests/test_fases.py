@@ -158,6 +158,27 @@ class TestFases(unittest.TestCase):
         self.assertEqual(falhas, [])
 
 
+class TestCampanha(unittest.TestCase):
+    def test_todas_as_fases_ligadas_ao_santuario(self):
+        """Seguindo saídas (ida e volta) a partir do Santuário, todas as fases existentes são visitáveis."""
+        vistos, fila = {"santuario"}, deque(["santuario"])
+        while fila:
+            lid = fila.popleft()
+            for e in DB.levels[lid]["entities"]:
+                if e.get("type") == "exit" and e["to"] in DB.levels and e["to"] not in vistos:
+                    vistos.add(e["to"])
+                    fila.append(e["to"])
+        self.assertEqual(sorted(set(DB.levels) - vistos), [])
+
+    def test_cada_ato_tem_chefe_e_volta_ao_santuario(self):
+        for aid, ato in DB.acts.items():
+            arenas = [lid for lid, lv in DB.levels.items()
+                      if any(e.get("type") == "boss" and e.get("boss") == ato["boss"] for e in lv["entities"])]
+            self.assertEqual(len(arenas), 1, aid)
+            volta = [e for e in DB.levels[arenas[0]]["entities"] if e.get("type") == "exit" and e["to"] == "santuario"]
+            self.assertTrue(volta, f"{aid}: arena sem portal de volta")
+
+
 class TestPuzzles(unittest.TestCase):
     """Resolve cada puzzle do jeito que a dica descreve e confere o efeito (portas abertas, flags)."""
 
@@ -202,7 +223,35 @@ class TestPuzzles(unittest.TestCase):
                 else:
                     if not p.state:
                         p.interact(w.player)
-        elif t == "beam":
+        elif t == "gears":
+            # pega todas as engrenagens soltas, encaixa e gira até a solução
+            for g in [p for p in w.props if p.spec.get("type") == "gear" and not p.state]:
+                g.interact(w.player)
+            for i, pid in enumerate(pz["props"]):
+                sock = w.find_prop(pid)
+                if not sock.has_gear:
+                    sock.interact(w.player)
+                self.assertTrue(sock.has_gear, f"faltou engrenagem para {pid}")
+                if pz.get("solution") is not None:
+                    self.interagir_ate(w, sock, lambda p, want=pz["solution"][i]: p.rotation == want)
+        elif t == "network":
+            # procura uma combinação de chaves que leve aos destinos sem tocar nos proibidos e aplica pelo jogador
+            chaves = sorted({e[2] for e in pz["edges"] if len(e) > 2})
+            props = [w.find_prop(c) for c in chaves]
+            posicoes = [getattr(p, "positions", 2) for p in props]
+            puz = next(x for x in w.puzzles if x.id == pz["id"])
+            for estados in itertools.product(*[range(n) for n in posicoes]):
+                for p, e in zip(props, estados):
+                    p.state = e
+                if puz.network_ok():
+                    break
+            else:
+                self.fail(f"{pz['id']}: nenhuma combinação de chaves resolve a rede")
+            alvo = [p.state for p in props]
+            for p in props:
+                p.state = 0
+            for p, e in zip(props, alvo):
+                self.interagir_ate(w, p, lambda p, e=e: p.state == e)
             # gira os espelhos da fase por todas as orientações ('/' e '\\'); os cristais com latch acumulam
             espelhos = [p for p in w.props if p.spec.get("type") == "mirror"]
             for estados in itertools.product(range(2), repeat=len(espelhos)):
@@ -217,8 +266,6 @@ class TestPuzzles(unittest.TestCase):
     def test_puzzles_resolviveis(self):
         for lid, lv in DB.levels.items():
             for pz in lv.get("puzzles", []):
-                if pz["type"] in ("network", "gears"):
-                    continue   # cobertos por testes específicos quando existirem
                 s, w = self.mundo(lid)
                 if not self.resolver(w, pz):
                     continue

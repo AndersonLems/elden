@@ -139,7 +139,7 @@ class HUD:
             title, sub, col, t, dur = self.banner
             t += dt
             self.banner = (title, sub, col, t, dur) if t < dur else None
-            a = int(255 * min(1.0, t * 3, (dur - t) * 2))
+            a = max(0, int(255 * min(1.0, t * 3, (dur - t) * 2)))   # quadro longo no fim do aviso deixava negativo
             band = pygame.Surface((W, 44), pygame.SRCALPHA)
             band.fill((0, 0, 0, int(140 * a / 255)))
             surf.blit(band, (0, H // 2 - 70))

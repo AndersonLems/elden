@@ -46,6 +46,8 @@ python3 tools/dev/tour.py /tmp/out ato1_floresta '[[9,6,"inicio"],[46,30,"vila"]
 SPAWN=entrada python3 tools/dev/tour.py /tmp/out ato2_fabrica '[[30,40,"a"]]'
 python3 tools/dev/ui_tour.py /tmp/out             # telas de interface
 python3 tools/dev/perfil.py                       # tempo por quadro e cProfile
+SPAWN=entrada ELDEN_OFFSCREEN=1 python3 tools/dev/tour.py /tmp/out ato5_arena '[]' tools/dev/scenarios/luta_chefe.py
+ELDEN_OFFSCREEN=1 python3 tools/dev/tour.py /tmp/out santuario '[]' tools/dev/scenarios/finais.py
 ```
 - `ELDEN_OFFSCREEN=1` captura/perfila sem abrir janela; `ELDEN_DISABLE_EXTERNAL_ASSETS=1` força o fallback procedural.
 - As ferramentas de captura desligam o vsync (`App({"novsync": True})`). **Com vsync, janelas escondidas ficam em ~1 FPS.**

@@ -15,7 +15,9 @@
 |---|---|
 | `python3 -m unittest discover -s tests` | ✅ 30 testes OK em ~22 s (`test_basico`, `test_render`, `test_chefes` 6 chefes, `test_fases`, `test_finais`) |
 | Bot de chefe (`tests/bot.py`), 5 seeds, preparo do ato (arma +ato, ~5 níveis/ato em CORPO) | ✅ 25/25: Varkhan 129–149 s, Serafim 92–108 s, Santo 181–210 s, Malachar 154–321 s, Aurelion 354–463 s (tempo simulado; só ataque leve, sem esquiva) |
-| Captura offscreen de `ato2_arena` (`tour.py`) | ✅ renderiza, ~270 FPS offscreen |
+| Captura offscreen de todas as fases novas (`tour.py`) | ✅ Atos II–V renderizam (125–330 FPS offscreen) |
+| Lutas no app real (`scenarios/luta_chefe.py`): Santo, Malachar, Aurelion | ✅ 3 fases, efeitos, morte, portal/Graça revelados; achou e corrigiu travamento do HUD (alfa negativo) |
+| Telas dos 3 finais (`scenarios/finais.py`) | ✅ texto e créditos renderizam |
 | `DB.validate()` | ✅ `[]` |
 | `python3 tools/dev/validar_assets.py` | ✅ manifesto válido |
 | Jogo em janela real após o PR #1 | ⚠️ não executado nesta sessão |
@@ -38,7 +40,7 @@ Medições de desempenho (feitas pelo PR #1, offscreen, Intel Iris Xe, 1280x720,
 | 9 classes, árvore (126 nós), 37 runas, 29 armas, 23 artes | ✅ | ✅ parcial: `test_basico` (rotas das classes, árvore, save); menus vistos em `ui_tour` |
 | 6 chefes (Condessa com 2 fases, demais com 3) | ✅ código | ✅ os 6 vencidos pelo bot com preparo do ato (`test_chefes`, 3 seeds cada) |
 | Puzzles (combinação, sequência, feixe, rede, engrenagens, all_on, kill) | ✅ | ✅ combinação, sequência, kill, all_on e feixe resolvidos pela dica em `test_fases`; ⚠️ rede e engrenagens sem teste automático |
-| 3 finais | ✅ | ✅ `test_finais`: 5 fragmentos colocados, altar do Trono surge após Aurelion e abre a escolha, condições dos finais; ⚠️ telas de final não vistas nesta sessão |
+| 3 finais | ✅ | ✅ `test_finais` (fragmentos, altar, condições) + telas capturadas no app real |
 | Projeção semi-isométrica, 4 faces, WASD da tela | ✅ | ✅ `test_render` + capturas do PR #1 |
 | Pipeline de assets externos + pacote gótico (arena/castelo) | ✅ | ✅ `validar_assets.py`, `test_render` |
 | Captura offscreen (`ELDEN_OFFSCREEN=1`) | ✅ | ✅ segundo PR #1 |

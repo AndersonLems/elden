@@ -8,10 +8,14 @@
 - A branch de reforma visual usa projeção semi-isométrica 45°/38°, gera quatro faces da grade e
   converte WASD da tela para X/Z sem alterar a simulação.
 - `assets/manifest.json` permite arte externa; geradores continuam como fallback.
+- O vertical slice V2 da arena de Varkhan usa oito entradas reais do manifesto, 16 instâncias e uma
+  textura compartilhada; `tools/assets/build_gothic_modules.py` regenera os sete modelos BAM.
 
 ## Decisões de projeto
 - **Projeção semi-isométrica ortográfica:** azimute 45° e elevação 38°. As quatro faces
   expostas são geradas; sprites continuam usando a profundidade dos pés (`sprite.vert`).
+- **Offscreen real:** configure `application.window_type = "offscreen"` antes de instanciar Ursina;
+  apenas o PRC é sobrescrito pela engine e ainda abre uma janela.
 - **Escala inteira:** a resolução interna é cerca de 240 px de altura. O deslocamento sub-pixel da câmera é feito no shader de composição.
 - **Sombras de tochas:** raymarching numa textura de ocupação (altura por célula); árvores contribuem com `occ`.
 - **Interface** desenhada em pygame (cerca de 640x360) e enviada como textura em **BGRA** (`set_ram_image`, sem conversão). Com RGBA, o envio custava 4,5 ms.

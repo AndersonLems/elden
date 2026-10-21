@@ -1,6 +1,9 @@
 """Regressões matemáticas do render sem abrir janela."""
 import math
+import os
 import unittest
+
+from panda3d.core import Filename, Loader, TexturePool
 
 from elden.core.settings import Quality
 from elden.render.assets import load_manifest, validate_manifest
@@ -39,8 +42,24 @@ class TestProjecao(unittest.TestCase):
 
 
 class TestPipeline(unittest.TestCase):
-    def test_manifesto_externo_vazio_e_valido(self):
+    def test_manifesto_externo_e_valido(self):
         self.assertEqual(validate_manifest(load_manifest()), [])
+
+    def test_assets_goticos_carregam_com_geometria_e_textura(self):
+        data = load_manifest()
+        self.assertGreaterEqual(len(data["assets"]), 8)
+        loader = Loader.get_global_ptr()
+        root = os.path.join(os.path.dirname(__file__), "..")
+        for item in data["assets"]:
+            path = os.path.join(root, "assets", item["path"])
+            if item["kind"] == "model":
+                node = loader.load_sync(Filename.from_os_specific(path))
+                self.assertIsNotNone(node, item["id"])
+                self.assertGreater(node.get_num_geoms(), 0, item["id"])
+        tex_item = next(a for a in data["assets"] if a["id"] == "ato1_pedra_gotica")
+        tex = TexturePool.load_texture(Filename.from_os_specific(os.path.join(root, "assets", tex_item["path"])))
+        self.assertIsNotNone(tex)
+        self.assertEqual((tex.get_x_size(), tex.get_y_size()), (1024, 1024))
 
     def test_manifesto_rejeita_escape_e_duplicata(self):
         data = {"version": 1, "assets": [

@@ -10,6 +10,22 @@
 - adiciona pipeline de assets externos com manifesto, validação, cache e fallback procedural;
 - adiciona execução offscreen para capturas e profiling sem abrir janela no desktop.
 
+## Atualização 2.0 — vertical slice artístico
+
+- integra oito assets reais pelo manifesto: atlas gótico e sete modelos BAM reutilizáveis;
+- transforma a arena de Varkhan com piso cerimonial, arco, portão, colunas, estátuas, escadaria e contrafortes;
+- propaga arco, escadaria, estátuas e colunas para o Castelo de Varkhan;
+- troca o vermelho uniforme da arena por luar frio, tochas quentes e bruma baixa;
+- melhora escala e contorno por texel de jogador e chefes;
+- conecta luz breve aos rastros flamejantes e captura `mag_tempestade` passando pelo combate real;
+- corrige definitivamente o modo offscreen da Ursina, com uma asserção contra janelas onscreen.
+
+![Main original, PR #1 e Visual Overhaul 2.0](../artifacts/visual-overhaul/v2/comparacao_3_colunas.png)
+
+As dez comparações V2 estão em `artifacts/visual-overhaul/v2/{before,after}`. A evidência do
+ataque não injeta FX: desbloqueia uma habilidade do Mago, envia entrada real e fotografa os eventos
+de fogo, gelo e raio gerados pela simulação.
+
 ## Capturas reais do jogo
 
 Todas as imagens abaixo foram produzidas por Panda3D/OpenGL executando o jogo, na mesma resolução
@@ -31,7 +47,7 @@ e em pontos equivalentes. Não são conceitos gerados.
 ## Verificações
 
 ```text
-python3 -m unittest discover -s tests -v     13 testes, OK
+python3 -m unittest discover -s tests -v     14 testes, OK
 DB.validate()                               []
 python3 tools/dev/validar_assets.py         manifesto válido
 capturas offscreen                          shaders GLSL compilados e executados
@@ -41,6 +57,10 @@ Perfil alto, `ato1_floresta`, 1280×720, 68 vistas: base 5,2–5,9 ms de update 
 estáveis; reforma 4,1–4,5 ms; ambos limitados a 16,7 ms/60 FPS pelo ambiente. Logs completos em
 `artifacts/visual-overhaul/metrics/`.
 
+Na arena V2, 19 vistas: fallback 3,4–3,7 ms de update/6,2–6,9 ms por quadro; 16 instâncias artísticas
+3,2–4,1 ms/5,8–7,5 ms nas amostras estáveis. O buffer offscreen ficou sem VSync; os tours mediram
+97–264 FPS conforme o mapa. Os logs V2 preservam os dados brutos.
+
 ## Compatibilidade e teste local
 
 Não há migração de save ou mudança de dados obrigatória. Mapas sem `visual_assets` usam apenas o
@@ -49,7 +69,7 @@ em `docs/VISUAL_OVERHAUL.md`.
 
 ## Problemas conhecidos
 
-- O repositório ainda não inclui arte autoral externa; o pipeline está pronto, mas o manifesto inicia vazio.
+- A arte externa V2 se concentra na arena e no castelo; os demais mapas ainda usam majoritariamente o fallback.
 - A arena do Ato II e os mapas dos Atos III–V não existem e não puderam ser validados visualmente.
 - O objetivo de 60 FPS precisa ser repetido em GPUs alvo; o perfil atual é uma medição local offscreen.
 - Arcos, telhados e estruturas autorais adicionais dependem de assets ou dados de mapa futuros.

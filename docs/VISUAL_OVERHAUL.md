@@ -54,9 +54,8 @@ Validação:
 python3 tools/dev/validar_assets.py
 ```
 
-O manifesto inicial está vazio deliberadamente: a infraestrutura não finge substituir modelagem,
-animação ou pintura artística que ainda não foram fornecidas. Convenções e formatos estão em
-`assets/README.md`.
+O manifesto do primeiro PR nasceu vazio; a iteração 2.0 passou a registrar o pacote gótico real
+descrito ao fim deste documento. Convenções e formatos estão em `assets/README.md`.
 
 ## Qualidade e desempenho
 
@@ -92,9 +91,65 @@ ELDEN_OFFSCREEN=1 python3 tools/dev/perfil.py
 
 ## Limitações conhecidas
 
-- O pacote ainda não inclui modelos ou animações artísticas externos; o manifesto está pronto para
-  recebê-los e os geradores existentes são o fallback.
+- O pacote V2 inclui modelos e textura da arquitetura gótica, mas ainda não inclui novas animações
+  externas de personagens; as folhas procedurais continuam sendo o fallback.
 - Atos III–V e a arena do Ato II não existem no repositório e, portanto, não foram validados.
 - A geometria da grade agora é volumosa, mas arcos, telhados e fachadas autorais dependem dos novos
   assets ou de dados adicionais nos mapas.
 - O profiling offscreen mede o ambiente atual; recomenda-se repetir em GPU alvo e janela real.
+
+## Vertical slice artístico 2.0
+
+A arena de Varkhan, `ato1_arena`, é o padrão visual desta segunda iteração. Ela integra arte
+externa real pelo manifesto em vez de depender apenas dos geradores originais:
+
+- atlas de pedra gótica 1024×1024 com lajes, parede trabalhada, pedra com musgo e ornamentos;
+- coluna octogonal com base, fuste, capitel e pináculos;
+- arco ogival modular e portão monumental com grade;
+- estátua alada, escadaria, contraforte e piso cerimonial de lajes;
+- oito entradas válidas em `assets/manifest.json`, com dependência de textura verificada;
+- 7.316 vértices e 3.658 triângulos no pacote completo; modelos repetidos usam instâncias;
+- 16 instâncias na arena em uma textura compartilhada; parte dos módulos também foi aplicada ao castelo.
+
+O gerador determinístico em `tools/assets/build_gothic_modules.py` permite ajustar a geometria
+modular; os `.bam` prontos permanecem versionados e são os arquivos carregados em runtime. O atlas
+foi criado com a ferramenta integrada de geração de imagens, reduzido por nearest-neighbor e
+integrado como material real. A cena final continua sendo renderizada pelo jogo.
+
+A identidade da arena foi alterada de vermelho uniforme para luar azul-violeta com pontos quentes
+de braseiros. `moon_mist` adiciona bruma baixa de alfa discreto. O piso cerimonial quebra a repetição
+do tile base e organiza um centro de combate legível. Jogador e chefes receberam escala visual
+moderada e contorno por texel; colisões, alcance e escala da simulação não mudaram.
+
+Os rastros flamejantes agora mantêm uma luz curta sobre o atacante. A evidência de combate V2 usa
+`mag_tempestade` de verdade: a ferramenta envia entrada ao jogador e a simulação cria zonas de fogo,
+gelo e raio. Não há injeção de partículas preparada apenas para screenshot.
+
+### Desempenho do vertical slice
+
+Perfil alto, 1280×720, arena, 19 vistas, Intel Iris Xe do ambiente atual:
+
+- fallback sem arte externa: 3,4–3,7 ms de update e 6,2–6,9 ms por quadro nas amostras estáveis;
+- 16 instâncias externas: 3,2–4,1 ms de update e 5,8–7,5 ms por quadro;
+- os tours mediram 97–264 FPS conforme a complexidade do mapa; a arena ficou normalmente entre
+  180 e 240 FPS antes da captura, sem VSync.
+
+Logs: `artifacts/visual-overhaul/v2/metrics/`. O equipamento identificado pelo renderer é Intel
+Iris Xe, perfil alto, 1280×720. Os números variam com UI, partículas e carregamento e não constituem
+garantia para outros hardwares.
+
+### Captura realmente invisível
+
+O PR inicial configurava apenas `window-type offscreen` no PRC. A Ursina o sobrescrevia com o valor
+padrão do construtor e ainda mapeava uma janela. A V2 passa `window_type="offscreen"` diretamente ao
+construtor e aborta se o resultado for um `GraphicsWindow`. As capturas usam um `GraphicsBuffer`,
+portanto `ELDEN_OFFSCREEN=1` não abre janela no desktop.
+
+### Limitações V2
+
+- O acabamento autoral completo está concentrado na arena e parcialmente propagado ao castelo;
+  floresta, vila e fábrica preservam majoritariamente o visual do PR #1.
+- As nove classes continuam usando as folhas procedurais existentes. A V2 melhora escala, contorno,
+  iluminação e efeitos, mas não afirma ter redesenhado todas as animações.
+- O atlas artístico é novo, mas os módulos BAM foram construídos pelo gerador modular do projeto;
+  futuros modelos esculpidos em Blender podem substituí-los pelo mesmo manifesto.

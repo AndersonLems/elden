@@ -66,7 +66,8 @@ rompa a postura (barra amarela) e aperte Leve para **executar**.
   - texturas em atlas por fase;
   - mais de 100 sprites de objetos.
 - **Pipeline híbrido de arte:** manifesto e carregador para modelos, texturas, sprites e animações
-  externos, mantendo os geradores procedurais como fallback.
+  externos, mantendo os geradores procedurais como fallback; a arena de Varkhan usa oito assets
+  góticos reais (piso, arco, portão, colunas, estátuas, escadaria e contrafortes).
 - **Combate:**
   - grafo de golpes orientado a dados: 15 famílias de armas e cerca de 400 golpes;
   - combos com janelas de cancelamento e buffer de entrada;

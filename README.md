@@ -99,17 +99,14 @@ rompa a postura (barra amarela) e aperte Leve para **executar**.
 
 | Item | Situação |
 |---|---|
-| Santuário + Ato I (floresta, vila, cemitério, cripta, castelo, Condessa, Varkhan) | ✅ jogável |
-| Atos II–V (12 fases, 5 chefes, puzzles, NPCs Lise, Agathe, Corvin e Ysolde) | ✅ prontos e testados automaticamente; sem partida humana completa |
-| Testes de chefes com bot | ✅ os 6 chefes (`tests/test_chefes.py`) |
-| Testes de fases e puzzles | ✅ alcance, portas, puzzles resolvidos pela dica (`tests/test_fases.py`); rede e engrenagens sem teste |
-| Finais | ✅ altar do Trono e condições testados (`tests/test_finais.py`) |
-| Balanceamento (vida e dano por ato, custo de níveis, preços) | ⚠️ não ajustado |
-| Polimento visual (telhados e decoração por tema, mais variação de inimigos) | ⚠️ |
+| Santuário + 5 atos (15 fases, 6 chefes, puzzles, NPCs, 3 finais) | ✅ completos e testados automaticamente; ⚠️ ainda sem partida humana completa |
+| Testes automáticos | ✅ fases (alcance, portas, chaves, puzzles), campanha lógica por ato, chefes por bot, finais |
+| Balanceamento | ⚠️ ajuste inicial pelo bot (golpe mediano 10–25% da vida); falta calibrar jogando |
+| Polimento visual (padrão gótico da arena do Ato I nas demais fases, mais variação de inimigos) | ⚠️ |
 | Mapa/minimapa, rebind de teclas | ➖ opcional |
 
-Portais e saídas para fases inexistentes mostram "Esta região ainda está em construção".
-Os planos detalhados de cada ato estão em [`docs/CONTEXTO.md`](docs/CONTEXTO.md).
+O estado detalhado (o que foi validado e como) está em [`docs/ESTADO_ATUAL.md`](docs/ESTADO_ATUAL.md).
+As soluções dos puzzles de cada ato estão em [`docs/CONTEXTO.md`](docs/CONTEXTO.md).
 
 ## Estrutura
 

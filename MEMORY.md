@@ -1,22 +1,16 @@
-# MEMORY.md — decisões, armadilhas e estado (para continuidade)
+# MEMORY.md — decisões e armadilhas (para continuidade)
 
-## Estado (2026-10-21)
-- Cerca de 19 mil linhas de Python, 420 de GLSL e 40 arquivos JSON de dados.
-- Fases prontas: `santuario`, `ato1_floresta`, `ato1_castelo`, `ato1_arena`, `ato2_cidade` e `ato2_fabrica` (as de Ato II ainda sem teste de jogo completo).
-- Os testes de `tests/test_basico.py` passam e `DB.validate()` não acusa problemas.
-- Em janela real: cerca de 60 FPS na Intel Iris Xe (1280x720, qualidade alta).
-- A branch de reforma visual usa projeção semi-isométrica 45°/38°, gera quatro faces da grade e
-  converte WASD da tela para X/Z sem alterar a simulação.
-- `assets/manifest.json` permite arte externa; geradores continuam como fallback.
-- O vertical slice V2 da arena de Varkhan usa oito entradas reais do manifesto, 16 instâncias e uma
-  textura compartilhada; `tools/assets/build_gothic_modules.py` regenera os sete modelos BAM.
+## Estado
+Movido para `docs/ESTADO_ATUAL.md` (fonte única de progresso e validação). Este arquivo guarda só decisões e armadilhas.
 
 ## Decisões de projeto
+- **Vertical slice visual:** arena de Varkhan usa 8 entradas do manifesto (atlas gótico + 7 BAM, 16 instâncias); `tools/assets/build_gothic_modules.py` regenera os BAM. Arte procedural continua como fallback.
+- **WASD orientado à tela:** convertido para X/Z em `input_map` via `projection.screen_move_to_world`; simulação intocada.
 - **Projeção semi-isométrica ortográfica:** azimute 45° e elevação 38°. As quatro faces
   expostas são geradas; sprites continuam usando a profundidade dos pés (`sprite.vert`).
 - **Offscreen real:** configure `application.window_type = "offscreen"` antes de instanciar Ursina;
   apenas o PRC é sobrescrito pela engine e ainda abre uma janela.
-- **Escala inteira:** a resolução interna é cerca de 240 px de altura. O deslocamento sub-pixel da câmera é feito no shader de composição.
+- **Escala inteira:** resolução interna por perfil (200p/240p/360p; alta = 360p, 2× em 720p). O deslocamento sub-pixel da câmera é feito no shader de composição.
 - **Sombras de tochas:** raymarching numa textura de ocupação (altura por célula); árvores contribuem com `occ`.
 - **Interface** desenhada em pygame (cerca de 640x360) e enviada como textura em **BGRA** (`set_ram_image`, sem conversão). Com RGBA, o envio custava 4,5 ms.
 - **Sprites:** esqueleto 3D (`rig.py`) com poses procedurais (`anims.py`).

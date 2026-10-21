@@ -131,4 +131,4 @@ tools/gerar_assets.py   pré-geração de caches
 tests/           testes sem janela (python3 -m unittest discover -s tests)
 ```
 
-Desenvolvimento: veja [`AGENTS.md`](AGENTS.md) e [`MEMORY.md`](MEMORY.md).
+Desenvolvimento: comece por [`AGENTS.md`](AGENTS.md) (índice) e [`docs/ESTADO_ATUAL.md`](docs/ESTADO_ATUAL.md).

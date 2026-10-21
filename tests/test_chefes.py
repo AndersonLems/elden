@@ -12,7 +12,8 @@ from elden.core.data import DB
 # fase, ponto de entrada, distância inicial (None = começa no ponto de entrada)
 CHEFES = {"varkhan": ("ato1_arena", "entrada", None),
           "condessa_rubra": ("ato1_castelo", "salao", 5),
-          "serafim_09": ("ato2_arena", "entrada", None)}
+          "serafim_09": ("ato2_arena", "entrada", None),
+          "santo_imperfeito": ("ato3_arena", "entrada", None)}
 
 
 class TestChefes(unittest.TestCase):
@@ -25,7 +26,7 @@ class TestChefes(unittest.TestCase):
         return luta
 
     def _uma(self, boss_id, level, spawn, perto, seed):
-        luta = Luta(level, spawn, seed=seed, perto=perto).lutar(limite=360)
+        luta = Luta(level, spawn, seed=seed, perto=perto).lutar(limite=900)   # bot nível 1: chefes tardios demoram
         self.assertTrue(luta.boss.dead, f"{boss_id} (seed {seed}) não foi vencido em {luta.time:.0f}s")
         self.assertEqual(luta.boss_na_parede, 0, f"{boss_id} (seed {seed}) saiu da arena")
         self.assertEqual(len(luta.phases), len(DB.bosses[boss_id]["phases"]), f"{boss_id}: fases vistas {luta.phases}")
@@ -39,6 +40,9 @@ class TestChefes(unittest.TestCase):
 
     def test_condessa(self):
         self.lutar("condessa_rubra")
+
+    def test_santo(self):
+        self.lutar("santo_imperfeito")
 
     def test_serafim(self):
         luta = self.lutar("serafim_09")

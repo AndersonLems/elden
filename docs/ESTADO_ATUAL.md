@@ -13,7 +13,7 @@
 ## Última validação registrada (2026-10-21, `feature/ato2-arena`)
 | Verificação | Resultado |
 |---|---|
-| `python3 -m unittest discover -s tests` | ✅ 18 testes OK em ~13 s (5 `test_basico`, 10 `test_render`, 3 `test_chefes`) |
+| `python3 -m unittest discover -s tests` | ✅ 24 testes OK em ~14 s (`test_basico`, `test_render`, `test_chefes` com 4 chefes, `test_fases`) |
 | Bot de chefe (`tests/bot.py`), 8 seeds por chefe | ✅ 24/24 vitórias: Varkhan 117–147 s, Condessa 47–66 s, Serafim 125–195 s (tempo simulado, guerreiro nível 1, só ataque leve) |
 | Captura offscreen de `ato2_arena` (`tour.py`) | ✅ renderiza, ~270 FPS offscreen |
 | `DB.validate()` | ✅ `[]` |
@@ -32,10 +32,11 @@ Medições de desempenho (feitas pelo PR #1, offscreen, Intel Iris Xe, 1280x720,
 | Santuário (hub) + Ato I (`ato1_floresta`, `ato1_castelo`, `ato1_arena`) | ✅ | ✅ carregamento e tours com captura; ⚠️ sem *playthrough* completo registrado após a nova projeção |
 | Ato II `ato2_cidade`, `ato2_fabrica` | ✅ | ⚠️ só carregamento/capturas, sem *playthrough* |
 | Ato II `ato2_arena` (Serafim-09) | ✅ | ✅ `test_chefes` (3 fases, névoa fecha/reabre, jatos sobre o chão, flags `ato2_concluido`) + captura; ⚠️ não jogado por humano |
-| Atos III–V (9 mapas) | ❌ mapas (dados de inimigos, chefes, NPCs, documentos e missões existem) | — |
+| Ato III `ato3_catedral`, `ato3_laboratorio`, `ato3_arena` | ✅ | ✅ `test_fases` (alcance, puzzles sinos/soro/diagrama/Abade), Santo vencido pelo bot, capturas; ⚠️ não jogado por humano |
+| Atos IV–V (6 mapas) | ❌ mapas (dados de inimigos, chefes, NPCs, documentos e missões existem) | — |
 | 9 classes, árvore (126 nós), 37 runas, 29 armas, 23 artes | ✅ | ✅ parcial: `test_basico` (rotas das classes, árvore, save); menus vistos em `ui_tour` |
-| 6 chefes (Condessa com 2 fases, demais com 3) | ✅ código | ✅ Varkhan, Condessa, Serafim vencidos pelo bot (`test_chefes`); ❌ Santo, Malachar, Aurelion sem fase para testar |
-| Puzzles (combinação, sequência, feixe, rede, engrenagens, all_on, kill) | ✅ | ⚠️ sem teste automatizado de solução nem registro de resolução |
+| 6 chefes (Condessa com 2 fases, demais com 3) | ✅ código | ✅ Varkhan, Condessa, Serafim, Santo vencidos pelo bot (`test_chefes`); ❌ Malachar, Aurelion sem fase |
+| Puzzles (combinação, sequência, feixe, rede, engrenagens, all_on, kill) | ✅ | ✅ combinação, sequência, kill, all_on resolvidos pela dica em `test_fases`; ⚠️ rede, feixe e engrenagens sem teste automático |
 | 3 finais | ✅ lógica (`Session.ending_options`) | ❌ não alcançáveis (faltam Atos III–V) |
 | Projeção semi-isométrica, 4 faces, WASD da tela | ✅ | ✅ `test_render` + capturas do PR #1 |
 | Pipeline de assets externos + pacote gótico (arena/castelo) | ✅ | ✅ `validar_assets.py`, `test_render` |
@@ -57,6 +58,8 @@ Medições de desempenho (feitas pelo PR #1, offscreen, Intel Iris Xe, 1280x720,
 4. Propagar o padrão visual da arena do Ato I (assets góticos) para Ato II e demais fases; balanceamento.
 
 ## Histórico curto
+- 2026-10-21 — `main`: Ato III completo; `tests/test_fases.py`; topo da fábrica (Ato II) estava inalcançável — corrigido;
+  documento da floresta dentro de casa fechada — corrigido. Bot de nível 1 leva ~5 min simulados contra o Santo (balanceamento).
 - 2026-10-21 — branch `feature/ato2-arena`: mapa `ato2_arena`; bot e `tests/test_chefes.py`; correções: braços do Serafim
   empurravam o chefe através das paredes (`physics.separate` ignora `noclip`), crash do Serafim com props sem `id`,
   névoa da arena do Ato I contornável (movida para o corredor), cache do A* por `id()`, rótulos sobrepostos das partes de chefe.

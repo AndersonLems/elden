@@ -613,6 +613,13 @@
    "z": 51.5
   },
   {
+   "type": "spawn",
+   "id": "escada",
+   "angle": -90,
+   "x": 32.5,
+   "z": 45.5
+  },
+  {
    "type": "exit",
    "id": "desce_laboratorio",
    "to": "ato3_laboratorio",

@@ -1,0 +1,272 @@
+{
+ "id": "ato3_arena",
+ "name": "Santuário da Carne",
+ "act": 3,
+ "theme": "ato3_catedral",
+ "env": "catedral_arena",
+ "music": "chefe3",
+ "rows": [
+  "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
+  "H############################H",
+  "H############################H",
+  "H###########;;;;;;;##########H",
+  "H#########;;;;;;;;;;;########H",
+  "H########;;;.......;;;#######H",
+  "H#######;;;.........;;;######H",
+  "H######;;.............;;#####H",
+  "H#####;;;ww..........ww;;####H",
+  "H#####;;...............;;####H",
+  "H####;;........:........;;###H",
+  "H####;;......:::::......;;###H",
+  "H####;;......:::::......;;###H",
+  "H####;;.....:::::::.....;;###H",
+  "H####;;......:::::......;;###H",
+  "H####;;......:::::......;;###H",
+  "H####;;......._:_.......;;###H",
+  "H#####;;......___......;;####H",
+  "H#####;;ww....___.....ww;####H",
+  "H######;;.....___.....;;#####H",
+  "H#######;;;...___...;;;######H",
+  "H########;;;..___..;;;#######H",
+  "H#########;;;;___;;;;########H",
+  "H###########;;___;;##########H",
+  "H#############...############H",
+  "H#############...############H",
+  "H#############...############H",
+  "H#############...############H",
+  "H#############...############H",
+  "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHH"
+ ],
+ "entities": [
+  {
+   "type": "spawn",
+   "id": "entrada",
+   "angle": 90,
+   "x": 15.5,
+   "z": 2.5
+  },
+  {
+   "type": "exit",
+   "id": "saida_arena",
+   "to": "ato3_laboratorio",
+   "spawn": "graca_antecamara",
+   "label": "Voltar à antecâmara",
+   "auto": false,
+   "sprite": "stairs_down",
+   "x": 15.5,
+   "z": 1.5
+  },
+  {
+   "type": "door",
+   "id": "nevoa_arena",
+   "sprite": "fog_gate",
+   "half": [
+    1.5,
+    0.5
+   ],
+   "top": 3.0,
+   "open": true,
+   "transient": true,
+   "close_on": "boss_start",
+   "open_on": "boss_defeated",
+   "x": 15.5,
+   "z": 5.5
+  },
+  {
+   "type": "boss",
+   "boss": "santo_imperfeito",
+   "angle": -90,
+   "x": 15.5,
+   "z": 24.5
+  },
+  {
+   "type": "exit",
+   "id": "portal_vitoria",
+   "to": "santuario",
+   "spawn": "retorno_ato3",
+   "label": "Retornar ao Santuário",
+   "auto": false,
+   "sprite": "portal_gate",
+   "color": [
+    0.95,
+    0.35,
+    0.4
+   ],
+   "if": {
+    "flag": "boss:santo_imperfeito"
+   },
+   "x": 15.5,
+   "z": 16.5
+  },
+  {
+   "type": "grace",
+   "id": "graca_carne",
+   "name": "Santuário da Carne",
+   "if": {
+    "flag": "boss:santo_imperfeito"
+   },
+   "x": 13.5,
+   "z": 16.5
+  },
+  {
+   "type": "decor",
+   "sprite": "candelabra",
+   "light": {
+    "color": [
+     1.0,
+     0.6,
+     0.45
+    ],
+    "intensity": 1.7,
+    "radius": 6,
+    "h": 1.6,
+    "flicker": 0.25
+   },
+   "x": 21.5,
+   "z": 13.5
+  },
+  {
+   "type": "decor",
+   "sprite": "candelabra",
+   "light": {
+    "color": [
+     1.0,
+     0.6,
+     0.45
+    ],
+    "intensity": 1.7,
+    "radius": 6,
+    "h": 1.6,
+    "flicker": 0.25
+   },
+   "x": 15.5,
+   "z": 9.5
+  },
+  {
+   "type": "decor",
+   "sprite": "candelabra",
+   "light": {
+    "color": [
+     1.0,
+     0.6,
+     0.45
+    ],
+    "intensity": 1.7,
+    "radius": 6,
+    "h": 1.6,
+    "flicker": 0.25
+   },
+   "x": 9.5,
+   "z": 12.5
+  },
+  {
+   "type": "decor",
+   "sprite": "candelabra",
+   "light": {
+    "color": [
+     1.0,
+     0.6,
+     0.45
+    ],
+    "intensity": 1.7,
+    "radius": 6,
+    "h": 1.6,
+    "flicker": 0.25
+   },
+   "x": 9.5,
+   "z": 19.5
+  },
+  {
+   "type": "decor",
+   "sprite": "candelabra",
+   "light": {
+    "color": [
+     1.0,
+     0.6,
+     0.45
+    ],
+    "intensity": 1.7,
+    "radius": 6,
+    "h": 1.6,
+    "flicker": 0.25
+   },
+   "x": 15.5,
+   "z": 23.5
+  },
+  {
+   "type": "decor",
+   "sprite": "candelabra",
+   "light": {
+    "color": [
+     1.0,
+     0.6,
+     0.45
+    ],
+    "intensity": 1.7,
+    "radius": 6,
+    "h": 1.6,
+    "flicker": 0.25
+   },
+   "x": 21.5,
+   "z": 19.5
+  },
+  {
+   "type": "decor",
+   "sprite": "angel_statue",
+   "solid": true,
+   "half": [
+    0.4,
+    0.4
+   ],
+   "top": 2.2,
+   "x": 11.5,
+   "z": 26.5
+  },
+  {
+   "type": "decor",
+   "sprite": "angel_statue",
+   "solid": true,
+   "half": [
+    0.4,
+    0.4
+   ],
+   "top": 2.2,
+   "x": 19.5,
+   "z": 26.5
+  },
+  {
+   "type": "decor",
+   "sprite": "halo_broken",
+   "light": {
+    "color": [
+     1.0,
+     0.85,
+     0.5
+    ],
+    "intensity": 2.2,
+    "radius": 8,
+    "h": 2.5,
+    "flicker": 0.1
+   },
+   "x": 15.5,
+   "z": 26.5
+  }
+ ],
+ "arena_center": [
+  15.5,
+  16.5
+ ],
+ "boss_arena": true,
+ "regions": [
+  {
+   "id": "arena",
+   "name": "Santuário da Carne",
+   "rect": [
+    0,
+    0,
+    30,
+    30
+   ]
+  }
+ ]
+}

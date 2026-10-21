@@ -88,6 +88,7 @@ for sym, (x, r) in zip(("COROA", "CORDEIRO", "ESPADA", "CÁLICE"), ((25, 6), (39
 E(32, 6, type="altar", id="altar_carne", altar="oracao", prompt="Rezar diante da Carne Santa", sprite="altar")
 E(32, 4, type="door", id="escada_cripta", sprite="gate", half=[1.5, 0.5], top=3.0,
   message="Os sinos ecoam em ordem. A escada para o laboratório se abre.")
+E(32, 10, type="spawn", id="escada", angle=-90)
 E(32, 1, type="exit", id="desce_laboratorio", to="ato3_laboratorio", spawn="inicio", label="Descer ao Laboratório", auto=True)
 for (x, r) in ((26, 9), (38, 9)):
     E(x, r, type="decor", sprite="brazier_gold", solid=True, half=[0.3, 0.3], top=1.0,

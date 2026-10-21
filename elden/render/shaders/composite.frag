@@ -26,7 +26,8 @@ void main() {
     } else {
         col = texture(u_scene, uv).rgb;
     }
-    vec3 bloom = texture(u_bloom1, uv).rgb * 0.6 + texture(u_bloom2, uv).rgb * 0.8;
+    // Duas escalas, com energia contida para não apagar os pixels do núcleo emissivo.
+    vec3 bloom = texture(u_bloom1, uv).rgb * 0.38 + texture(u_bloom2, uv).rgb * 0.48;
     col += bloom * u_fx2.z;
     col *= u_grade_lift.w;
     col = aces(col);

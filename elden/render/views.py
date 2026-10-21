@@ -21,9 +21,9 @@ def get_card(w, h, ay):
 
 
 def snap(x, y, z):
-    sx = round(x * PX) / PX
-    s = round((z + y) * PX) / PX
-    return sx, y, s - y
+    # O centro da câmera já é estabilizado em pixels; preservar coordenadas do
+    # mundo evita deformar relações espaciais na projeção rotacionada.
+    return x, y, z
 
 
 STATUS_TINT = {"congelamento": (0.6, 0.85, 1.3), "queimadura": (1.25, 0.85, 0.7), "maldicao": (0.85, 0.7, 1.15),

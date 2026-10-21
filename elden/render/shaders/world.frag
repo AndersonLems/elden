@@ -15,7 +15,8 @@ void main() {
     vec3 n = normalize(v_normal);
     vec3 light = gather_light(v_world, n, 0.15, dither);
     light = band_light(light, dither);
-    vec3 col = albedo.rgb * v_color.rgb * light;
+    vec3 vertex_ao = mix(vec3(1.0), v_color.rgb, u_render_q.x);
+    vec3 col = albedo.rgb * vertex_ao * light;
     // emissivo: v_color.a ou texels do atlas com alfa < 0.95 (vitrais, runas, brasas)
     float vem = liquid > 0.5 ? v_color.a - 2.0 : v_color.a;
     float emis = max(vem, albedo.a < 0.95 ? 1.0 : 0.0);

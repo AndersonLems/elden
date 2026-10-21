@@ -100,6 +100,7 @@ class PixelPipeline:
         r.set_shader_input("u_fog", LVecBase4f(0.1, 0.1, 0.12, 0.3))
         r.set_shader_input("u_misc", LVecBase4f(0, 6, 1, 0))
         r.set_shader_input("u_shadow_q", LVecBase4f(self.quality.point_shadow_steps, self.quality.dir_shadow_steps, 0, 0))
+        r.set_shader_input("u_render_q", LVecBase4f(self.quality.ao, self.quality.bloom, 0, 0))
         occ = Texture("occ_dummy")
         occ.setup_2d_texture(1, 1, Texture.T_unsigned_byte, Texture.F_red)
         occ.set_ram_image(b"\x00")
@@ -255,6 +256,7 @@ class PixelPipeline:
     def apply_quality(self):
         self.scene_root.set_shader_input("u_shadow_q", LVecBase4f(self.quality.point_shadow_steps,
                                                                   self.quality.dir_shadow_steps, 0, 0))
+        self.scene_root.set_shader_input("u_render_q", LVecBase4f(self.quality.ao, self.quality.bloom, 0, 0))
         self.rebuild_if_needed()
 
     # ------------------------------------------------------------------ por quadro
@@ -311,8 +313,9 @@ class PixelPipeline:
         unit = 1.0 / PPU * z
         sx = round(cam_x / unit)
         sz = round(cam_z / unit)
-        fx = cam_x / unit - sx
-        fz = cam_z / unit - sz
+        from .projection import project_relative
+        dx, dz = cam_x - sx * unit, cam_z - sz * unit
+        fx, fz, _ = project_relative(dx / unit, 0.0, dz / unit)
         self.cam_x, self.cam_z = cam_x, cam_z
         cx, cz = sx * unit, sz * unit
         hw, hh = self.bw * 0.5 * unit, self.bh * 0.5 * unit
@@ -351,8 +354,9 @@ class PixelPipeline:
         """Posição em pixels da janela (origem no canto superior esquerdo) de um ponto do mundo."""
         W, H = self.window_size()
         unit = 1.0 / PPU * self.zoom
-        px = (x - self.cam_x) / unit
-        py = ((z - self.cam_z) + y) / unit
+        from .projection import project_relative
+        px, py, _ = project_relative(x - self.cam_x, y, z - self.cam_z)
+        px, py = px / unit, py / unit
         ox = (W - self.iw * self.scale) * 0.5
         oy = (H - self.ih * self.scale) * 0.5
         return ox + (self.iw * 0.5 + px) * self.scale, oy + (self.ih * 0.5 - py) * self.scale

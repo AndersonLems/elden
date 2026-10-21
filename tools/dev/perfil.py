@@ -22,12 +22,13 @@ def hook(a, dt):
         from elden.scenes.gameplay import GameplayScene
         from util import new_session
         s = new_session(); s.slot = 2
-        app.replace(GameplayScene(app, s, "ato1_floresta", "inicio"))
+        app.replace(GameplayScene(app, s, os.environ.get("LEVEL", "ato1_floresta"), os.environ.get("SPAWN", "inicio")))
     if f % 100 == 0 and f > 100:
         ts = st["times"][-100:]; ws = st["wall"][-100:]
         sv = app.scene_view
-        print(f, "update ms %.1f  frame ms %.1f  parts %d/%d lights %d views %d" % (1000*sum(ts)/len(ts), 1000*sum(ws)/len(ws),
-              app.fx.add.n, app.fx.dust.n, len(app.fx.lights), len(sv.views) if sv else -1), flush=True)
+        print(f, "update ms %.1f  frame ms %.1f  parts %d/%d lights %d views %d assets %d" % (1000*sum(ts)/len(ts), 1000*sum(ws)/len(ws),
+              app.fx.add.n, app.fx.dust.n, len(app.fx.lights), len(sv.views) if sv else -1,
+              len(sv.external_nodes) if sv else -1), flush=True)
     if f == 620:
         s = io.StringIO(); pstats.Stats(prof, stream=s).sort_stats("tottime").print_stats(15); print(s.getvalue()[:4000])
         app.quit()

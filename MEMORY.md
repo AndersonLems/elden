@@ -5,11 +5,13 @@
 - Fases prontas: `santuario`, `ato1_floresta`, `ato1_castelo`, `ato1_arena`, `ato2_cidade` e `ato2_fabrica` (as de Ato II ainda sem teste de jogo completo).
 - Os testes de `tests/test_basico.py` passam e `DB.validate()` não acusa problemas.
 - Em janela real: cerca de 60 FPS na Intel Iris Xe (1280x720, qualidade alta).
+- A branch de reforma visual usa projeção semi-isométrica 45°/38°, gera quatro faces da grade e
+  converte WASD da tela para X/Z sem alterar a simulação.
+- `assets/manifest.json` permite arte externa; geradores continuam como fallback.
 
 ## Decisões de projeto
-- **Projeção oblíqua 3/4** em vez de isométrica: `tela_x = x`, `tela_y = z + y`, profundidade por `z`. Os texels batem 1:1 no chão e nas paredes, com 16 px por unidade.
-  - Só os topos e as faces voltadas para o sul são gerados.
-  - Os sprites usam a profundidade dos pés (`sprite.vert`).
+- **Projeção semi-isométrica ortográfica:** azimute 45° e elevação 38°. As quatro faces
+  expostas são geradas; sprites continuam usando a profundidade dos pés (`sprite.vert`).
 - **Escala inteira:** a resolução interna é cerca de 240 px de altura. O deslocamento sub-pixel da câmera é feito no shader de composição.
 - **Sombras de tochas:** raymarching numa textura de ocupação (altura por célula); árvores contribuem com `occ`.
 - **Interface** desenhada em pygame (cerca de 640x360) e enviada como textura em **BGRA** (`set_ram_image`, sem conversão). Com RGBA, o envio custava 4,5 ms.

@@ -1,0 +1,48 @@
+AL lib: (EE) GetLoadedHrtf: Invalid header in /usr/share/openal/hrtf/Default HRTF.mhr: "MinPHR03"
+AL lib: (EE) GetLoadedHrtf: Failed to load /usr/share/openal/hrtf/Default HRTF.mhr
+Known pipe types:
+  glxGraphicsPipe
+(4 aux display modules not yet loaded.)
+:display(error): Invalid panda config file: if you set the config-variable
+textures_auto_power_2 to true, you must set the config-variabletextures_power_2 to 'up' or 'down'.
+:pnmimage:png(warning): iCCP: known incorrect sRGB profile
+info: Using primary monitor: Monitor(x=0, y=0, width=1366, height=768, width_mm=344, height_mm=193, name='eDP-1', is_primary=True)
+set window position: Vec2(43, 24)
+package_folder: /home/anderson/.local/lib/python3.12/site-packages/ursina
+asset_folder: tools/dev
+pygame-ce 2.5.8 (SDL 2.32.10, Python 3.12.3)
+os: Linux
+python version: 3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]
+ursina version: 8.3.0
+development mode: False
+application successfully started
+info: changed aspect ratio: 1.808 -> 1.808
+200 update ms 5.7  frame ms 16.7  parts 68/0 lights 0 views 68
+300 update ms 5.9  frame ms 16.7  parts 78/0 lights 0 views 68
+400 update ms 5.7  frame ms 17.0  parts 83/0 lights 0 views 68
+500 update ms 5.2  frame ms 16.7  parts 73/0 lights 0 views 68
+600 update ms 8.2  frame ms 16.7  parts 63/0 lights 0 views 68
+         1126304 function calls in 1.124 seconds
+
+   Ordered by: internal time
+   List reduced from 352 to 15 due to restriction <15>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+       20    0.168    0.008    0.168    0.008 {method 'renderFrame' of 'panda3d.core.GraphicsEngine' objects}
+    21418    0.084    0.000    0.084    0.000 {method 'set_shader_input' of 'panda3d.core.NodePath' objects}
+      118    0.078    0.001    0.078    0.001 {built-in method pygame.image.tobytes}
+      118    0.067    0.001    0.067    0.001 {method 'set_ram_image' of 'panda3d.core.Texture' objects}
+     2950    0.041    0.000    0.159    0.000 /home/anderson/elden/tools/dev/../../elden/render/views.py:74(update)
+    14868    0.038    0.000    0.038    0.000 {method 'set_pos' of 'panda3d.core.NodePath' objects}
+     2950    0.037    0.000    0.122    0.000 /home/anderson/elden/tools/dev/../../elden/sim/world/physics.py:23(step)
+     5900    0.032    0.000    0.056    0.000 /home/anderson/elden/tools/dev/../../elden/sim/world/level.py:134(collide_circle)
+    42915    0.029    0.000    0.046    0.000 /home/anderson/elden/tools/dev/../../elden/sim/world/level.py:105(cell_at)
+      118    0.022    0.000    0.034    0.000 /home/anderson/elden/tools/dev/../../elden/sim/world/physics.py:109(separate)
+       22    0.021    0.001    0.036    0.002 /home/anderson/elden/tools/dev/../../elden/sim/ai/navigation.py:56(find)
+   113181    0.021    0.000    0.021    0.000 {built-in method builtins.getattr}
+   101238    0.019    0.000    0.019    0.000 {method 'get' of 'dict' objects}
+     4838    0.017    0.000    0.061    0.000 /home/anderson/elden/tools/dev/../../elden/render/views.py:233(update)
+     2480    0.017    0.000    0.017    0.000 {method 'render' of 'pygame.font.Font' objects}
+
+
+

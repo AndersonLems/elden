@@ -34,7 +34,7 @@
 ## Comandos
 ```bash
 python3 main.py                                   # jogar (janela 1280x720)
-python3 -m unittest discover -s tests -v          # testes sem janela
+python3 -m unittest discover -s tests -v          # testes sem janela (inclui bot de chefes, ~13 s)
 python3 -c "import sys; sys.path.insert(0,'.'); from elden.core.data import DB; print(DB.validate())"  # validar JSON
 python3 tools/dev/validar_assets.py               # manifesto e arquivos de arte externa
 python3 tools/mapas/<fase>.py                     # regenerar data/levels/<fase>.json
@@ -58,5 +58,6 @@ python3 tools/dev/perfil.py                       # tempo por quadro e cProfile
    (`enemy`, com `elite`/`unique`). Arenas: `boss`, porta `close_on: boss_start` / `open_on: boss_defeated` e `arena_center`.
    Arte externa opcional por `visual_assets`.
 5. Rode o script, `DB.validate()`, os testes e um `tour.py` da fase; registre o resultado em `docs/ESTADO_ATUAL.md`.
+6. Arena nova: adicione o chefe a `CHEFES` em `tests/test_chefes.py` (vitória, fases, névoa, chefe dentro da arena).
 
 As pendências prioritárias ficam em `docs/ESTADO_ATUAL.md` → "Próximos trabalhos".

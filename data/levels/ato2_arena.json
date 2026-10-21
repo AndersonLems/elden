@@ -1,0 +1,387 @@
+{
+ "id": "ato2_arena",
+ "name": "Núcleo da Forja",
+ "act": 2,
+ "theme": "ato2",
+ "env": "forja_arena",
+ "music": "chefe2",
+ "rows": [
+  "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
+  "P##############################P",
+  "P###############,##############P",
+  "P###www#####,,,,,,,,,####www###P",
+  "P###www###,,,.......,,,##www###P",
+  "P###www##,,...........,,#www###P",
+  "P#######,,....:::::....,,######P",
+  "P######,,...::.....::...,,#####P",
+  "P######,...:.........:...,#####P",
+  "P#####,,..:...........:..,,####P",
+  "P#####,...:....___....:...,####P",
+  "P#####,..:...._____....:..,####P",
+  "P#####,..:..._______...:..,####P",
+  "P####,,..:..._______...:..,,###P",
+  "P#####,..:..._______...:..,####P",
+  "P#####,..:...._____....:..,####P",
+  "P#####,...:....___....:...,####P",
+  "P#####,,..:...........:..,,####P",
+  "P######,...:.........:...,#####P",
+  "P######,,...::.....::...,,#####P",
+  "P#######,,....:::::....,,######P",
+  "P###www##,,...........,,#www###P",
+  "P###www###,,,.......,,,##www###P",
+  "P###www#####,,,,,,,,,####www###P",
+  "P##############...#############P",
+  "P##############...#############P",
+  "P##############...#############P",
+  "P##############...#############P",
+  "P##############...#############P",
+  "PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP"
+ ],
+ "entities": [
+  {
+   "type": "spawn",
+   "id": "entrada",
+   "angle": 90,
+   "x": 16.5,
+   "z": 2.5
+  },
+  {
+   "type": "exit",
+   "id": "saida_arena",
+   "to": "ato2_fabrica",
+   "spawn": "graca_elevador",
+   "label": "Subir à Casa de Máquinas",
+   "auto": false,
+   "sprite": "stairs_down",
+   "x": 16.5,
+   "z": 1.5
+  },
+  {
+   "type": "door",
+   "id": "nevoa_arena",
+   "sprite": "fog_gate",
+   "half": [
+    1.5,
+    0.5
+   ],
+   "top": 3.0,
+   "open": true,
+   "transient": true,
+   "close_on": "boss_start",
+   "open_on": "boss_defeated",
+   "x": 16.5,
+   "z": 5.5
+  },
+  {
+   "type": "boss",
+   "boss": "serafim_09",
+   "angle": -90,
+   "x": 16.5,
+   "z": 24.5
+  },
+  {
+   "type": "exit",
+   "id": "portal_vitoria",
+   "to": "santuario",
+   "spawn": "retorno_ato2",
+   "label": "Retornar ao Santuário",
+   "auto": false,
+   "sprite": "portal_gate",
+   "color": [
+    1.0,
+    0.55,
+    0.15
+   ],
+   "if": {
+    "flag": "boss:serafim_09"
+   },
+   "x": 16.5,
+   "z": 16.5
+  },
+  {
+   "type": "grace",
+   "id": "graca_nucleo",
+   "name": "Núcleo da Forja",
+   "if": {
+    "flag": "boss:serafim_09"
+   },
+   "x": 14.5,
+   "z": 16.5
+  },
+  {
+   "type": "hazard",
+   "id": "forja_jato_0",
+   "hazard": "flame",
+   "active": false,
+   "sprite": "flame_vent",
+   "length": 6,
+   "angle": 180.0,
+   "element": "fogo",
+   "x": 26.5,
+   "z": 16.5
+  },
+  {
+   "type": "hazard",
+   "id": "forja_jato_1",
+   "hazard": "flame",
+   "active": false,
+   "sprite": "flame_vent",
+   "length": 7,
+   "angle": 119.1,
+   "element": "fogo",
+   "x": 21.5,
+   "z": 7.5
+  },
+  {
+   "type": "hazard",
+   "id": "forja_jato_2",
+   "hazard": "flame",
+   "active": false,
+   "sprite": "flame_vent",
+   "length": 8,
+   "angle": 60.9,
+   "element": "fogo",
+   "x": 11.5,
+   "z": 7.5
+  },
+  {
+   "type": "hazard",
+   "id": "forja_jato_3",
+   "hazard": "flame",
+   "active": false,
+   "sprite": "flame_vent",
+   "length": 6,
+   "angle": 0.0,
+   "element": "fogo",
+   "x": 6.5,
+   "z": 16.5
+  },
+  {
+   "type": "hazard",
+   "id": "forja_jato_4",
+   "hazard": "flame",
+   "active": false,
+   "sprite": "flame_vent",
+   "length": 7,
+   "angle": -60.9,
+   "element": "fogo",
+   "x": 11.5,
+   "z": 25.5
+  },
+  {
+   "type": "hazard",
+   "id": "forja_jato_5",
+   "hazard": "flame",
+   "active": false,
+   "sprite": "flame_vent",
+   "length": 8,
+   "angle": -119.1,
+   "element": "fogo",
+   "x": 21.5,
+   "z": 25.5
+  },
+  {
+   "type": "decor",
+   "sprite": "gear",
+   "solid": true,
+   "half": [
+    0.5,
+    0.5
+   ],
+   "top": 1.0,
+   "x": 22.5,
+   "z": 10.5
+  },
+  {
+   "type": "decor",
+   "sprite": "gear",
+   "solid": true,
+   "half": [
+    0.5,
+    0.5
+   ],
+   "top": 1.0,
+   "x": 10.5,
+   "z": 10.5
+  },
+  {
+   "type": "decor",
+   "sprite": "gear",
+   "solid": true,
+   "half": [
+    0.5,
+    0.5
+   ],
+   "top": 1.0,
+   "x": 10.5,
+   "z": 22.5
+  },
+  {
+   "type": "decor",
+   "sprite": "gear",
+   "solid": true,
+   "half": [
+    0.5,
+    0.5
+   ],
+   "top": 1.0,
+   "x": 22.5,
+   "z": 22.5
+  },
+  {
+   "type": "decor",
+   "sprite": "forge",
+   "solid": true,
+   "half": [
+    0.6,
+    0.5
+   ],
+   "top": 1.5,
+   "light": {
+    "color": [
+     1.0,
+     0.45,
+     0.15
+    ],
+    "intensity": 2.4,
+    "radius": 7,
+    "h": 1.2,
+    "flicker": 0.3
+   },
+   "x": 6.5,
+   "z": 20.5
+  },
+  {
+   "type": "decor",
+   "sprite": "forge",
+   "solid": true,
+   "half": [
+    0.6,
+    0.5
+   ],
+   "top": 1.5,
+   "light": {
+    "color": [
+     1.0,
+     0.45,
+     0.15
+    ],
+    "intensity": 2.4,
+    "radius": 7,
+    "h": 1.2,
+    "flicker": 0.3
+   },
+   "x": 26.5,
+   "z": 20.5
+  },
+  {
+   "type": "decor",
+   "sprite": "forge",
+   "solid": true,
+   "half": [
+    0.6,
+    0.5
+   ],
+   "top": 1.5,
+   "light": {
+    "color": [
+     1.0,
+     0.45,
+     0.15
+    ],
+    "intensity": 2.4,
+    "radius": 7,
+    "h": 1.2,
+    "flicker": 0.3
+   },
+   "x": 6.5,
+   "z": 12.5
+  },
+  {
+   "type": "decor",
+   "sprite": "forge",
+   "solid": true,
+   "half": [
+    0.6,
+    0.5
+   ],
+   "top": 1.5,
+   "light": {
+    "color": [
+     1.0,
+     0.45,
+     0.15
+    ],
+    "intensity": 2.4,
+    "radius": 7,
+    "h": 1.2,
+    "flicker": 0.3
+   },
+   "x": 26.5,
+   "z": 12.5
+  },
+  {
+   "type": "decor",
+   "sprite": "brazier",
+   "solid": true,
+   "half": [
+    0.3,
+    0.3
+   ],
+   "top": 1.0,
+   "light": {
+    "color": [
+     1.0,
+     0.5,
+     0.2
+    ],
+    "intensity": 2.0,
+    "radius": 6,
+    "h": 1.3,
+    "flicker": 0.3
+   },
+   "x": 13.5,
+   "z": 7.5
+  },
+  {
+   "type": "decor",
+   "sprite": "brazier",
+   "solid": true,
+   "half": [
+    0.3,
+    0.3
+   ],
+   "top": 1.0,
+   "light": {
+    "color": [
+     1.0,
+     0.5,
+     0.2
+    ],
+    "intensity": 2.0,
+    "radius": 6,
+    "h": 1.3,
+    "flicker": 0.3
+   },
+   "x": 19.5,
+   "z": 7.5
+  }
+ ],
+ "arena_center": [
+  16.5,
+  16.5
+ ],
+ "boss_arena": true,
+ "regions": [
+  {
+   "id": "arena",
+   "name": "Núcleo da Forja",
+   "rect": [
+    0,
+    0,
+    32,
+    30
+   ]
+  }
+ ]
+}

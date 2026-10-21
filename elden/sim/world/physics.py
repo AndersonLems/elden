@@ -107,16 +107,19 @@ class Physics:
         return None
 
     def separate(self, actors):
-        """Afasta atores sobrepostos (exceto quem atravessa: esquiva, fantasmas)."""
+        """Afasta atores sobrepostos (exceto quem atravessa: esquiva, fantasmas).
+
+        Atores `noclip` (partes de chefe presas ao corpo) não participam: um braço sobreposto ao próprio
+        chefe empurrava o corpo para trás a cada quadro, atravessando paredes."""
         n = len(actors)
         for i in range(n):
             a = actors[i]
-            if a.dead or getattr(a, "flying", False):
+            if a.dead or getattr(a, "flying", False) or getattr(a, "noclip", False):
                 continue
             ga = a.action is not None and a.action.ghost
             for j in range(i + 1, n):
                 b = actors[j]
-                if b.dead or getattr(b, "flying", False):
+                if b.dead or getattr(b, "flying", False) or getattr(b, "noclip", False):
                     continue
                 if ga or (b.action is not None and b.action.ghost):
                     continue

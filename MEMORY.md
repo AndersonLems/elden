@@ -39,6 +39,14 @@ Movido para `docs/ESTADO_ATUAL.md` (fonte única de progresso e validação). Es
 - **Vsync com a janela escondida** limita o jogo a cerca de 1 FPS (compositor), o que confunde medições.
 - **A* lento:** os vizinhos agora são pré-calculados em `NavGrid`.
 
+- **Separação física ignora atores `noclip`** (partes de chefe presas ao corpo). Sem isso o braço do Serafim (peso 99)
+  empurrava o corpo ~10 u/s para trás, atravessando paredes.
+- **Névoa de arena precisa ficar numa linha onde o chão tem exatamente a largura da porta** (corredor de 3 células);
+  se o círculo da arena alcança a linha da porta, ela é contornável. `test_chefes` detecta (chefe sai / não reabre).
+- **Props sem `id` têm `pid = None`:** use `(p.pid or "")` antes de `startswith`.
+- **Bot de chefe (`tests/bot.py`):** mede distância até a borda do alvo (`radius`), mira antes de atacar, foca chefe + partes
+  e intercepta `player.die` (restaurar vida depois do quadro não basta: golpes > vida máxima matam e travam a luta).
+
 ## Ideias anotadas
 - Telhados por tema (já existe `roof_slate`/`roof_red`), mais variações de decoração por ato.
 - Sprites de sinos e reagentes para os puzzles de sequência do Ato III (hoje caem no genérico `button`).

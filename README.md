@@ -5,7 +5,7 @@ Toda a arte (sprites, texturas, objetos), a música e os efeitos sonoros são **
 Roda localmente no Linux e no Windows, sem internet.
 
 > **Estado atual: em desenvolvimento.** O Santuário (hub) e o **Ato I** estão jogáveis de ponta a ponta;
-> o **Ato II** está parcialmente construído; os Atos III–V ainda não têm mapas. Veja [O que falta](#o-que-falta).
+> o **Ato II** tem todos os mapas (sem teste de jogo completo); os Atos III–V ainda não têm mapas. Veja [O que falta](#o-que-falta).
 
 ---
 
@@ -101,11 +101,12 @@ rompa a postura (barra amarela) e aperte Leve para **executar**.
 |---|---|
 | Santuário + Ato I (floresta, vila, cemitério, cripta, castelo, Condessa, Varkhan) | ✅ jogável |
 | Ato II — `ato2_cidade`, `ato2_fabrica` | ✅ mapas prontos, sem teste de jogo completo |
-| Ato II — `ato2_arena` (Serafim-09) | ❌ falta o mapa (use props `hazard` com `id` `forja_jato_N`, `length` e `angle`) |
+| Ato II — `ato2_arena` (Serafim-09) | ✅ mapa pronto, chefe vencido pelo bot de teste; sem teste de jogo humano |
 | Ato III — `ato3_catedral`, `ato3_laboratorio`, `ato3_arena` | ❌ faltam mapas (dados de inimigos, chefe, NPC e documentos prontos) |
 | Ato IV — `ato4_biblioteca`, `ato4_observatorio`, `ato4_arena` | ❌ faltam mapas (precisa de `arena_center` no JSON) |
 | Ato V — `ato5_ruinas`, `ato5_templo`, `ato5_arena` (Aurelion + altar `trono` + fragmento 5) | ❌ faltam mapas |
-| Testes de chefes com bot, verificação de alcance e solução de puzzles por mapa | ❌ |
+| Testes de chefes com bot | ✅ Varkhan, Condessa, Serafim (`tests/test_chefes.py`) |
+| Teste automatizado de solução de puzzles por mapa | ❌ |
 | Balanceamento (vida e dano por ato, custo de níveis, preços) | ⚠️ não ajustado |
 | Polimento visual (telhados e decoração por tema, mais variação de inimigos) | ⚠️ |
 | Mapa/minimapa, rebind de teclas | ➖ opcional |

@@ -316,11 +316,12 @@ class HUD:
             shown = self.time - self.hurt_time.get(e.id, -99) < 4.0 or (player is not None and player.locked is e) or e.elite or e.broken > 0
             sx, sy = to_screen(e.x, e.y + e.height * e.scale + 0.35, e.z)
             if shown:
-                w = 30 if not e.elite else 44
+                part = getattr(e, "is_part", False)   # braços do Serafim etc.: próximos demais para nomes
+                w = 30 if not e.elite else (22 if part else 44)
                 bar(surf, (sx - w // 2, sy - 2, w, 4), e.hp / e.max_hp, (190, 40, 40), border=False)
                 if e.max_posture > 1 and e.posture > 0.5:
                     pygame.draw.line(surf, (230, 196, 70), (sx - w // 2, sy + 3), (sx - w // 2 + int(w * min(1, e.posture / e.max_posture)), sy + 3))
-                if e.elite:
+                if e.elite and not part:
                     text(surf, e.name, (sx, sy - 12), 8, (240, 160, 120), "midtop")
             if e.broken > 0:
                 pulse = int(160 + 90 * math.sin(self.time * 10))

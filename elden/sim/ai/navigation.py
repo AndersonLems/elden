@@ -116,12 +116,11 @@ class NavGrid:
         return True
 
 
-_cache = {}
+_cache = []
 
 
 def nav_for(level):
-    key = id(level)
-    if key not in _cache:
-        _cache.clear()
-        _cache[key] = NavGrid(level)
-    return _cache[key]
+    # compara o próprio objeto: id() pode ser reaproveitado por uma fase nova depois que a antiga é coletada
+    if not _cache or _cache[0] is not level:
+        _cache[:] = [level, NavGrid(level)]
+    return _cache[1]

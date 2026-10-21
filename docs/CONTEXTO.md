@@ -17,7 +17,7 @@ Requisitos principais:
 ## Plano dos atos (o que falta construir em mapas)
 Todos os dados de inimigos, chefes, NPCs, missões e documentos citados abaixo **já existem** em `data/`.
 
-### Ato II — Forja das Almas (falta `ato2_arena`)
+### Ato II — Forja das Almas (✅ `ato2_arena` feito em 2026-10-21; registro mantido como referência)
 - **Arena "Núcleo da Forja":**
   - SERAFIM-09 (`boss: serafim_09`), com os braços criados automaticamente;
   - 4 a 6 props `hazard` com `id` `forja_jato_N`, `hazard: "flame"`, `active: false`, `sprite: flame_vent`, `length` (4–8) e `angle` (direção do jato);

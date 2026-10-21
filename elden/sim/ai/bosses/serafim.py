@@ -59,7 +59,7 @@ class Serafim(Boss):
             self.hazard_t -= dt
             if self.hazard_t <= 0:
                 self.hazard_t = 3.4 if self.phase == 1 else 2.4
-                vents = [p for p in w.props if getattr(p, "pid", "").startswith("forja_jato")]
+                vents = [p for p in w.props if (getattr(p, "pid", None) or "").startswith("forja_jato")]
                 rng = w.rng
                 for v in rng.sample(vents, min(len(vents), 2 + self.phase)) if vents else []:
                     w.spawn_zone(self, {"zone": "beam", "length": v.length, "width": 1.2, "delay": 1.0, "dur": 0.9,

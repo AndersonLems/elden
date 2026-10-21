@@ -13,7 +13,7 @@ from elden.sim.progression import grace_tree
 from elden.sim.session import Session
 
 LEVELS = {"santuario": "inicio", "ato1_floresta": "inicio", "ato1_castelo": "cripta", "ato1_arena": "entrada",
-          "ato2_cidade": "inicio", "ato2_fabrica": "entrada"}
+          "ato2_cidade": "inicio", "ato2_fabrica": "entrada", "ato2_arena": "entrada"}
 
 
 class TestDados(unittest.TestCase):

@@ -16,10 +16,14 @@ for r in range(1, D - 1):
 for (x, r) in ((8, 8), (21, 9), (10, 19), (20, 18)):
     g.rect(x - 1, r - 1, x + 1, r, "w")
 g.rect(14, 24, 16, 26, ".")
+# a névoa fica no corredor de 3 células: a linha 23 ainda faz parte do círculo e permitiria contorná-la
+for x in range(1, W - 1):
+    if not 14 <= x <= 16:
+        g.put(x, 24, "#")
 E = g.ent
 E(15, 25, type="spawn", id="entrada", angle=90)
 E(15, 26, type="exit", id="saida_arena", to="ato1_castelo", spawn="salao", label="Voltar ao castelo", auto=False, sprite="stairs_down")
-E(15, 23, type="door", id="nevoa_arena", sprite="fog_gate", half=[1.5, 0.5], top=3.0, open=True, transient=True,
+E(15, 24, type="door", id="nevoa_arena", sprite="fog_gate", half=[1.5, 0.5], top=3.0, open=True, transient=True,
   close_on="boss_start", open_on="boss_defeated")
 E(15, 7, type="boss", boss="varkhan", angle=-90)
 E(15, 13, type="exit", id="portal_vitoria", to="santuario", spawn="retorno_ato1", label="Retornar ao Santuário", auto=False,

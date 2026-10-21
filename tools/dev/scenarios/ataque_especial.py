@@ -1,12 +1,26 @@
-"""Cenário reproduzível para fotografar luz e partículas de uma habilidade suprema."""
-w.fx.push("ultimate", actor=p.id, ability="captura", x=p.x, y=p.y, z=p.z)
-w.fx.push("lightning", x0=p.x - 2.0, y0=p.y + 0.3, z0=p.z - 1.0,
-          x=p.x + 2.0, y=p.y + 1.8, z=p.z + 1.0)
+"""Captura uma habilidade real passando pelo InputState e sistema de combate."""
+if "mag_hab2" not in p.char.nodes:
+    p.char.nodes.append("mag_hab2")
+p.apply_loadout()
+p.fp = p.max_fp
+targets = [a for a in w.actors if a.team != p.team and not a.dead]
+if targets:
+    target = min(targets, key=lambda a: p.dist_to(a))
+    p.locked = target
+    p.target = target
+app.input.on_key("2")
+st["t"] = -1.0
 
 
-def capturar(task):
-    shot("08_ataque_especial")
+def soltar(task):
+    app.input.on_key("2 up")
     return task.done
 
 
-app.base.taskMgr.doMethodLater(0.22, capturar, "captura_ataque_especial")
+def capturar(task):
+    shot("07_personagem_atacando")
+    return task.done
+
+
+app.base.taskMgr.doMethodLater(0.05, soltar, "soltar_ataque_especial")
+app.base.taskMgr.doMethodLater(0.86, capturar, "captura_ataque_especial")

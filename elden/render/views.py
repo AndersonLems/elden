@@ -48,12 +48,17 @@ class ActorView:
         base = get_card(ws, ws, ay)
         self.node = base.copy_to(self.scene.pipe.sprite_root)
         self.node.set_texture(sh.tex)
+        self.visual_scale = 1.12 if self.actor.kind == "player" else (1.1 if getattr(self.actor, "is_boss", False) else 1.0)
+        self.node.set_scale(self.visual_scale)
+        self.node.set_shader_input("u_sheet", LVecBase4f(1.0 / sh.W, 1.0 / sh.H, 1.0,
+                                                          1.0 if self.actor.kind == "player" else 0.0))
         self.node.set_shader_input("u_sprite", LVecBase4f(0.02, 0, 0, 0))
         r = max(0.25, self.actor.radius * 1.25)
         self.shadow = self.scene.shadow_card(r)
         if self.actor.kind == "player":
             self.sil = base.copy_to(self.scene.pipe.sprite_root)
             self.sil.set_texture(sh.tex)
+            self.sil.set_scale(self.visual_scale)
             self.sil.set_shader(shader_lib.load("sprite.vert", "silhouette.frag"))
             self.sil.set_attrib(DepthTestAttrib.make(RenderAttrib.M_greater))
             self.sil.set_depth_write(False)

@@ -112,6 +112,7 @@ class PixelPipeline:
         r.set_shader_input("u_flash", LVecBase4f(1, 1, 1, 0))
         r.set_shader_input("u_tint", LVecBase4f(1, 1, 1, 1))
         r.set_shader_input("u_glow", LVecBase4f(0, 0, 0, 0))
+        r.set_shader_input("u_sheet", LVecBase4f(1, 1, 0, 0))
         self.world_root.set_shader(shader_lib.load("world.vert", "world.frag"))
         self.sprite_root.set_shader(shader_lib.load("sprite.vert", "sprite.frag"))
         self.shade_root.set_shader(shader_lib.load("fx.vert", "shade.frag"))

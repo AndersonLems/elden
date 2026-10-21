@@ -1,0 +1,7 @@
+{
+ "ato1": {"name": "Ato I — O Domínio da Lua Sangrenta", "short": "Lua Sangrenta", "level": "ato1_floresta", "spawn": "inicio", "requires": "intro_velaria", "boss": "varkhan", "portal": "portal_ato1"},
+ "ato2": {"name": "Ato II — A Forja das Almas", "short": "Forja das Almas", "level": "ato2_cidade", "spawn": "inicio", "requires": "ato1_concluido", "boss": "serafim_09", "portal": "portal_ato2"},
+ "ato3": {"name": "Ato III — A Catedral da Carne", "short": "Catedral da Carne", "level": "ato3_catedral", "spawn": "inicio", "requires": "ato2_concluido", "boss": "santo_imperfeito", "portal": "portal_ato3"},
+ "ato4": {"name": "Ato IV — O Observatório do Abismo", "short": "Observatório do Abismo", "level": "ato4_biblioteca", "spawn": "inicio", "requires": "ato3_concluido", "boss": "malachar", "portal": "portal_ato4"},
+ "ato5": {"name": "Ato V — O Trono da Graça", "short": "Trono da Graça", "level": "ato5_ruinas", "spawn": "inicio", "requires": "ato4_concluido", "boss": "aurelion", "portal": "portal_ato5"}
+}

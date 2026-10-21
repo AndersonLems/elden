@@ -1,0 +1,3177 @@
+{
+ "paths": {
+  "corpo": {
+   "name": "CORPO",
+   "color": [
+    0.9,
+    0.55,
+    0.3
+   ],
+   "desc": "Força, vigor, resistência, postura e técnicas físicas."
+  },
+  "espirito": {
+   "name": "ESPÍRITO",
+   "color": [
+    0.45,
+    0.75,
+    1.0
+   ],
+   "desc": "Poder mágico, Foco, afinidades elementais, bênçãos e suporte."
+  },
+  "ruina": {
+   "name": "RUÍNA",
+   "color": [
+    0.85,
+    0.15,
+    0.25
+   ],
+   "desc": "Sangue, maldição, trevas, roubo de vida e formas proibidas. Aumenta a corrupção."
+  },
+  "classe": {
+   "name": "TÉCNICAS",
+   "color": [
+    1.0,
+    0.85,
+    0.4
+   ],
+   "desc": "Habilidades, combos e especializações da sua classe."
+  }
+ },
+ "nodes": {
+  "c_forca1": {
+   "name": "Braço Firme",
+   "path": "corpo",
+   "pos": [
+    0,
+    0
+   ],
+   "cost": 1,
+   "effects": [
+    {
+     "type": "attr",
+     "attr": "forca",
+     "amount": 3
+    }
+   ],
+   "desc": "+3 Força."
+  },
+  "c_vigor1": {
+   "name": "Sangue Quente",
+   "path": "corpo",
+   "pos": [
+    1,
+    0
+   ],
+   "cost": 1,
+   "effects": [
+    {
+     "type": "attr",
+     "attr": "vigor",
+     "amount": 3
+    }
+   ],
+   "desc": "+3 Vigor."
+  },
+  "c_destreza1": {
+   "name": "Mãos Rápidas",
+   "path": "corpo",
+   "pos": [
+    2,
+    0
+   ],
+   "cost": 1,
+   "effects": [
+    {
+     "type": "attr",
+     "attr": "destreza",
+     "amount": 3
+    }
+   ],
+   "desc": "+3 Destreza."
+  },
+  "c_forca2": {
+   "name": "Músculo Forjado",
+   "path": "corpo",
+   "pos": [
+    0,
+    1
+   ],
+   "cost": 1,
+   "requires": [
+    "c_forca1"
+   ],
+   "effects": [
+    {
+     "type": "attr",
+     "attr": "forca",
+     "amount": 4
+    }
+   ],
+   "desc": "+4 Força."
+  },
+  "c_resistencia": {
+   "name": "Pele Curtida",
+   "path": "corpo",
+   "pos": [
+    1,
+    1
+   ],
+   "cost": 1,
+   "requires": [
+    "c_vigor1"
+   ],
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "def_flat": 3,
+      "posture_max": 15
+     }
+    }
+   ],
+   "desc": "+3 defesa e +15 de postura."
+  },
+  "c_destreza2": {
+   "name": "Reflexo Treinado",
+   "path": "corpo",
+   "pos": [
+    2,
+    1
+   ],
+   "cost": 1,
+   "requires": [
+    "c_destreza1"
+   ],
+   "effects": [
+    {
+     "type": "attr",
+     "attr": "destreza",
+     "amount": 4
+    }
+   ],
+   "desc": "+4 Destreza."
+  },
+  "c_ascendente": {
+   "name": "Golpe Ascendente",
+   "path": "corpo",
+   "pos": [
+    0,
+    2
+   ],
+   "cost": 2,
+   "requires": [
+    "c_forca2"
+   ],
+   "effects": [
+    {
+     "type": "move_effect",
+     "tag": "heavy",
+     "launch": 8.0
+    }
+   ],
+   "desc": "TÉCNICA: seus golpes pesados passam a lançar os inimigos ao ar."
+  },
+  "c_extensao": {
+   "name": "Extensão do Combo",
+   "path": "corpo",
+   "pos": [
+    1,
+    2
+   ],
+   "cost": 2,
+   "requires": [
+    "c_resistencia"
+   ],
+   "effects": [
+    {
+     "type": "add_transition",
+     "move": "sw_l3",
+     "input": "L",
+     "to": "sw_l4"
+    },
+    {
+     "type": "add_transition",
+     "move": "ax_l3",
+     "input": "L",
+     "to": "ax_h2"
+    },
+    {
+     "type": "add_transition",
+     "move": "hm_l3",
+     "input": "L",
+     "to": "hm_h2"
+    },
+    {
+     "type": "add_transition",
+     "move": "hl_l3",
+     "input": "L",
+     "to": "hl_h2"
+    },
+    {
+     "type": "add_transition",
+     "move": "gs_l3",
+     "input": "L",
+     "to": "gs_h2"
+    },
+    {
+     "type": "add_transition",
+     "move": "sc_l3",
+     "input": "L",
+     "to": "sc_h2"
+    },
+    {
+     "type": "add_transition",
+     "move": "kt_l4",
+     "input": "L",
+     "to": "kt_l2h"
+    },
+    {
+     "type": "add_transition",
+     "move": "dg_l4",
+     "input": "L",
+     "to": "dg_l2h"
+    },
+    {
+     "type": "add_transition",
+     "move": "rp_l4",
+     "input": "L",
+     "to": "rp_l2h"
+    },
+    {
+     "type": "add_transition",
+     "move": "cl_l4",
+     "input": "L",
+     "to": "cl_l2h"
+    },
+    {
+     "type": "add_transition",
+     "move": "ch_l3",
+     "input": "L",
+     "to": "ch_h2"
+    },
+    {
+     "type": "add_transition",
+     "move": "gn_l4",
+     "input": "L",
+     "to": "gn_l2h"
+    },
+    {
+     "type": "add_transition",
+     "move": "st_l3",
+     "input": "L",
+     "to": "st_h2"
+    },
+    {
+     "type": "add_transition",
+     "move": "gr_l3",
+     "input": "L",
+     "to": "gr_lance"
+    },
+    {
+     "type": "add_transition",
+     "move": "bt_l4",
+     "input": "L",
+     "to": "bt_bite"
+    }
+   ],
+   "desc": "TÉCNICA: o finalizador leve ganha mais um golpe de extensão."
+  },
+  "c_ascensao": {
+   "name": "Ascensão",
+   "path": "corpo",
+   "pos": [
+    2,
+    2
+   ],
+   "cost": 2,
+   "requires": [
+    "c_destreza2"
+   ],
+   "effects": [
+    {
+     "type": "flag",
+     "flag": "launcher_jump"
+    },
+    {
+     "type": "mods",
+     "mods": {
+      "air_mult": 0.15
+     }
+    }
+   ],
+   "desc": "TÉCNICA: ao acertar um lançador você salta junto do inimigo para continuar o combo no ar. Golpes aéreos +15%."
+  },
+  "c_vigor2": {
+   "name": "Coração de Touro",
+   "path": "corpo",
+   "pos": [
+    1,
+    3
+   ],
+   "cost": 1,
+   "requires": [
+    "c_resistencia"
+   ],
+   "effects": [
+    {
+     "type": "attr",
+     "attr": "vigor",
+     "amount": 4
+    }
+   ],
+   "desc": "+4 Vigor."
+  },
+  "c_postura": {
+   "name": "Quebra-Guarda",
+   "path": "corpo",
+   "pos": [
+    0,
+    3
+   ],
+   "cost": 2,
+   "requires": [
+    "c_ascendente"
+   ],
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "posture_dmg_mult": 0.2,
+      "heavy_mult": 0.1
+     }
+    }
+   ],
+   "desc": "+20% de dano de postura e +10% em golpes pesados."
+  },
+  "c_aereo": {
+   "name": "Dança Aérea",
+   "path": "corpo",
+   "pos": [
+    2,
+    3
+   ],
+   "cost": 2,
+   "requires": [
+    "c_ascensao"
+   ],
+   "effects": [
+    {
+     "type": "move_effect",
+     "tag": "air",
+     "status": {},
+     "posture_mult": 1.3
+    },
+    {
+     "type": "mods",
+     "mods": {
+      "air_mult": 0.15,
+      "jump_mult": 0.1
+     }
+    }
+   ],
+   "desc": "Golpes aéreos mais fortes e saltos mais altos."
+  },
+  "c_executor": {
+   "name": "Executor",
+   "path": "corpo",
+   "pos": [
+    0,
+    4
+   ],
+   "cost": 2,
+   "requires": [
+    "c_postura"
+   ],
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "execution_mult": 0.3,
+      "vs_broken_mult": 0.2
+     }
+    }
+   ],
+   "desc": "Execuções +30%; +20% de dano contra postura rompida."
+  },
+  "c_titan": {
+   "name": "Titã",
+   "path": "corpo",
+   "pos": [
+    1,
+    4
+   ],
+   "cost": 2,
+   "requires": [
+    "c_vigor2"
+   ],
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "hp_max": 60,
+      "posture_max": 30
+     }
+    }
+   ],
+   "desc": "+60 de vida e +30 de postura."
+  },
+  "c_contra": {
+   "name": "Esquiva Ofensiva",
+   "path": "corpo",
+   "pos": [
+    2,
+    4
+   ],
+   "cost": 2,
+   "requires": [
+    "c_aereo"
+   ],
+   "effects": [
+    {
+     "type": "flag",
+     "flag": "dodge_counter"
+    },
+    {
+     "type": "mods",
+     "mods": {
+      "counter_mult": 0.2
+     }
+    }
+   ],
+   "desc": "TÉCNICA: após uma esquiva perfeita, o próximo ataque vira um contra-ataque."
+  },
+  "c_runa": {
+   "name": "Encaixe de Músculo",
+   "path": "corpo",
+   "pos": [
+    0,
+    5
+   ],
+   "cost": 3,
+   "requires": [
+    "c_executor"
+   ],
+   "effects": [
+    {
+     "type": "rune_slot"
+    }
+   ],
+   "desc": "+1 espaço de runa."
+  },
+  "c_folego": {
+   "name": "Último Fôlego",
+   "path": "corpo",
+   "pos": [
+    1,
+    5
+   ],
+   "cost": 3,
+   "requires": [
+    "c_titan"
+   ],
+   "effects": [
+    {
+     "type": "flag",
+     "flag": "last_stand"
+    }
+   ],
+   "desc": "Uma vez por descanso, sobrevive a um golpe fatal."
+  },
+  "c_mestre": {
+   "name": "Mestre de Armas",
+   "path": "corpo",
+   "pos": [
+    2,
+    5
+   ],
+   "cost": 3,
+   "requires": [
+    "c_contra"
+   ],
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "atk_mult": 0.1,
+      "attack_speed": 0.08
+     }
+    }
+   ],
+   "desc": "+10% de dano e ataques 8% mais rápidos."
+  },
+  "e_mente1": {
+   "name": "Mente Clara",
+   "path": "espirito",
+   "pos": [
+    0,
+    0
+   ],
+   "cost": 1,
+   "effects": [
+    {
+     "type": "attr",
+     "attr": "mente",
+     "amount": 3
+    }
+   ],
+   "desc": "+3 Mente."
+  },
+  "e_intelecto1": {
+   "name": "Estudo Noturno",
+   "path": "espirito",
+   "pos": [
+    1,
+    0
+   ],
+   "cost": 1,
+   "effects": [
+    {
+     "type": "attr",
+     "attr": "intelecto",
+     "amount": 3
+    }
+   ],
+   "desc": "+3 Intelecto."
+  },
+  "e_fe1": {
+   "name": "Oração Matinal",
+   "path": "espirito",
+   "pos": [
+    2,
+    0
+   ],
+   "cost": 1,
+   "effects": [
+    {
+     "type": "attr",
+     "attr": "fe",
+     "amount": 3
+    }
+   ],
+   "desc": "+3 Fé."
+  },
+  "e_fluxo": {
+   "name": "Fluxo Sereno",
+   "path": "espirito",
+   "pos": [
+    0,
+    1
+   ],
+   "cost": 1,
+   "requires": [
+    "e_mente1"
+   ],
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "fp_regen": 1.0,
+      "fp_max": 15
+     }
+    }
+   ],
+   "desc": "+15 Foco e regeneração de Foco."
+  },
+  "e_intelecto2": {
+   "name": "Erudição",
+   "path": "espirito",
+   "pos": [
+    1,
+    1
+   ],
+   "cost": 1,
+   "requires": [
+    "e_intelecto1"
+   ],
+   "effects": [
+    {
+     "type": "attr",
+     "attr": "intelecto",
+     "amount": 4
+    }
+   ],
+   "desc": "+4 Intelecto."
+  },
+  "e_fe2": {
+   "name": "Fervor Devoto",
+   "path": "espirito",
+   "pos": [
+    2,
+    1
+   ],
+   "cost": 1,
+   "requires": [
+    "e_fe1"
+   ],
+   "effects": [
+    {
+     "type": "attr",
+     "attr": "fe",
+     "amount": 4
+    }
+   ],
+   "desc": "+4 Fé."
+  },
+  "e_fogo": {
+   "name": "Afinidade: Fogo",
+   "path": "espirito",
+   "pos": [
+    0,
+    2
+   ],
+   "cost": 2,
+   "requires": [
+    "e_fluxo"
+   ],
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "elem_fogo": 0.15,
+      "burn_add": 5
+     }
+    }
+   ],
+   "desc": "Fogo +15% e seus golpes acumulam queimadura."
+  },
+  "e_gelo": {
+   "name": "Afinidade: Gelo",
+   "path": "espirito",
+   "pos": [
+    1,
+    2
+   ],
+   "cost": 2,
+   "requires": [
+    "e_intelecto2"
+   ],
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "elem_gelo": 0.15,
+      "frost_add": 5
+     }
+    }
+   ],
+   "desc": "Gelo +15% e seus golpes acumulam congelamento."
+  },
+  "e_raio": {
+   "name": "Afinidade: Raio",
+   "path": "espirito",
+   "pos": [
+    2,
+    2
+   ],
+   "cost": 2,
+   "requires": [
+    "e_fe2"
+   ],
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "elem_raio": 0.15,
+      "shock_add": 5
+     }
+    }
+   ],
+   "desc": "Raio +15% e seus golpes acumulam choque."
+  },
+  "e_bencao": {
+   "name": "Bênção da Brasa",
+   "path": "espirito",
+   "pos": [
+    0,
+    3
+   ],
+   "cost": 2,
+   "requires": [
+    "e_fogo"
+   ],
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "heal_mult": 0.15,
+      "flask_heal": 0.08
+     }
+    }
+   ],
+   "desc": "Curas e frascos mais eficientes."
+  },
+  "e_tecnica": {
+   "name": "Técnica Espiritual",
+   "path": "espirito",
+   "pos": [
+    1,
+    3
+   ],
+   "cost": 2,
+   "requires": [
+    "e_gelo"
+   ],
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "skill_mult": 0.15,
+      "art_mult": 0.15
+     }
+    }
+   ],
+   "desc": "Habilidades e artes de combate +15%."
+  },
+  "e_sagrado": {
+   "name": "Luz Interior",
+   "path": "espirito",
+   "pos": [
+    2,
+    3
+   ],
+   "cost": 2,
+   "requires": [
+    "e_raio"
+   ],
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "holy_mult": 0.2,
+      "elem_sagrado": 0.1
+     }
+    }
+   ],
+   "desc": "Dano sagrado +20%."
+  },
+  "e_contraluz": {
+   "name": "Contraluz",
+   "path": "espirito",
+   "pos": [
+    1,
+    4
+   ],
+   "cost": 2,
+   "requires": [
+    "e_tecnica"
+   ],
+   "effects": [
+    {
+     "type": "trigger",
+     "on": "parry",
+     "do": "zone",
+     "at": "attacker",
+     "zone": {
+      "zone": "burst",
+      "radius": 1.6,
+      "dur": 0.15,
+      "dmg": 1.0,
+      "pure": {
+       "sagrado": 1.0
+      },
+      "kb": 2,
+      "posture": 15,
+      "visual": "holy_burst"
+     },
+     "cd": 0.5,
+     "source": "contraluz"
+    }
+   ],
+   "desc": "TÉCNICA: aparar perfeitamente explode em luz sobre o atacante."
+  },
+  "e_regeneracao": {
+   "name": "Graça Viva",
+   "path": "espirito",
+   "pos": [
+    0,
+    4
+   ],
+   "cost": 2,
+   "requires": [
+    "e_bencao"
+   ],
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "hp_regen": 0.5
+     }
+    }
+   ],
+   "desc": "Regenera vida lentamente."
+  },
+  "e_recarga": {
+   "name": "Ritmo Arcano",
+   "path": "espirito",
+   "pos": [
+    2,
+    4
+   ],
+   "cost": 2,
+   "requires": [
+    "e_sagrado"
+   ],
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "cooldown_mult": -0.15,
+      "fp_cost_mult": -0.1
+     }
+    }
+   ],
+   "desc": "Recargas 15% menores e custo de Foco 10% menor."
+  },
+  "e_runa": {
+   "name": "Encaixe Etéreo",
+   "path": "espirito",
+   "pos": [
+    1,
+    5
+   ],
+   "cost": 3,
+   "requires": [
+    "e_contraluz"
+   ],
+   "effects": [
+    {
+     "type": "rune_slot"
+    }
+   ],
+   "desc": "+1 espaço de runa."
+  },
+  "e_sinergia": {
+   "name": "Convergência",
+   "path": "espirito",
+   "pos": [
+    0,
+    5
+   ],
+   "cost": 3,
+   "requires": [
+    "e_regeneracao"
+   ],
+   "effects": [
+    {
+     "type": "flag",
+     "flag": "elemental_synergy"
+    },
+    {
+     "type": "mods",
+     "mods": {
+      "status_mult": 0.2
+     }
+    }
+   ],
+   "desc": "Combinações elementais causam dano extra; status acumulam 20% mais rápido."
+  },
+  "e_fervor": {
+   "name": "Chama Ardente",
+   "path": "espirito",
+   "pos": [
+    2,
+    5
+   ],
+   "cost": 3,
+   "requires": [
+    "e_recarga"
+   ],
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "fervor_gain": 0.35
+     }
+    }
+   ],
+   "desc": "Fervor cresce 35% mais rápido: supremas mais frequentes."
+  },
+  "r_sangue": {
+   "name": "Sangria",
+   "path": "ruina",
+   "pos": [
+    0,
+    0
+   ],
+   "cost": 1,
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "bleed_add": 7
+     }
+    },
+    {
+     "type": "corruption",
+     "amount": 4
+    }
+   ],
+   "desc": "Todos os seus golpes acumulam sangramento. (+4 corrupção)"
+  },
+  "r_trevas": {
+   "name": "Toque das Trevas",
+   "path": "ruina",
+   "pos": [
+    1,
+    0
+   ],
+   "cost": 1,
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "elem_trevas": 0.15,
+      "curse_add": 5
+     }
+    },
+    {
+     "type": "corruption",
+     "amount": 4
+    }
+   ],
+   "desc": "Trevas +15% e golpes acumulam maldição. (+4 corrupção)"
+  },
+  "r_vampirismo": {
+   "name": "Vampirismo",
+   "path": "ruina",
+   "pos": [
+    2,
+    0
+   ],
+   "cost": 1,
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "lifesteal": 0.025
+     }
+    },
+    {
+     "type": "corruption",
+     "amount": 4
+    }
+   ],
+   "desc": "Rouba 2,5% do dano como vida. (+4 corrupção)"
+  },
+  "r_banquete": {
+   "name": "Banquete",
+   "path": "ruina",
+   "pos": [
+    0,
+    1
+   ],
+   "cost": 1,
+   "requires": [
+    "r_sangue"
+   ],
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "vs_bleeding_mult": 0.2
+     }
+    },
+    {
+     "type": "corruption",
+     "amount": 4
+    }
+   ],
+   "desc": "+20% de dano contra alvos sangrando. (+4 corrupção)"
+  },
+  "r_maldicao": {
+   "name": "Praga",
+   "path": "ruina",
+   "pos": [
+    1,
+    1
+   ],
+   "cost": 1,
+   "requires": [
+    "r_trevas"
+   ],
+   "effects": [
+    {
+     "type": "trigger",
+     "on": "status_proc",
+     "do": "zone",
+     "at": "target",
+     "zone": {
+      "zone": "burst",
+      "radius": 2.2,
+      "dur": 0.15,
+      "dmg": 0.5,
+      "pure": {
+       "trevas": 1.0
+      },
+      "kb": 1,
+      "visual": "curse_burst",
+      "status": {
+       "maldicao": 40
+      }
+     },
+     "cd": 1.0,
+     "source": "praga"
+    },
+    {
+     "type": "corruption",
+     "amount": 4
+    }
+   ],
+   "desc": "Estourar um status espalha maldição ao redor. (+4 corrupção)"
+  },
+  "r_sede": {
+   "name": "Sede",
+   "path": "ruina",
+   "pos": [
+    2,
+    1
+   ],
+   "cost": 1,
+   "requires": [
+    "r_vampirismo"
+   ],
+   "effects": [
+    {
+     "type": "trigger",
+     "on": "kill",
+     "do": "heal",
+     "amount": 0.03,
+     "source": "sede_r"
+    },
+    {
+     "type": "corruption",
+     "amount": 4
+    }
+   ],
+   "desc": "Abates restauram 3% da vida. (+4 corrupção)"
+  },
+  "r_frenesi": {
+   "name": "Frenesi",
+   "path": "ruina",
+   "pos": [
+    0,
+    2
+   ],
+   "cost": 2,
+   "requires": [
+    "r_banquete"
+   ],
+   "effects": [
+    {
+     "type": "flag",
+     "flag": "berserk"
+    },
+    {
+     "type": "corruption",
+     "amount": 6
+    }
+   ],
+   "desc": "+20% de dano com menos de 40% de vida. (+6 corrupção)"
+  },
+  "r_sacrificio": {
+   "name": "Sacrifício",
+   "path": "ruina",
+   "pos": [
+    1,
+    2
+   ],
+   "cost": 2,
+   "requires": [
+    "r_maldicao"
+   ],
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "atk_mult": 0.14,
+      "hp_max": -30
+     }
+    },
+    {
+     "type": "corruption",
+     "amount": 6
+    }
+   ],
+   "desc": "+14% de dano, -30 de vida máxima. (+6 corrupção)"
+  },
+  "r_marca": {
+   "name": "Marca de Sangue",
+   "path": "ruina",
+   "pos": [
+    2,
+    2
+   ],
+   "cost": 2,
+   "requires": [
+    "r_sede"
+   ],
+   "effects": [
+    {
+     "type": "trigger",
+     "on": "crit",
+     "do": "mark",
+     "time": 6,
+     "kind": "sangue",
+     "cd": 0.4,
+     "source": "marca_sangue"
+    },
+    {
+     "type": "corruption",
+     "amount": 6
+    }
+   ],
+   "desc": "Críticos marcam o alvo com sangue (+25% de dano no próximo golpe). (+6 corrupção)"
+  },
+  "r_corrupcao": {
+   "name": "Corrupção Viva",
+   "path": "ruina",
+   "pos": [
+    1,
+    3
+   ],
+   "cost": 2,
+   "requires": [
+    "r_sacrificio"
+   ],
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "ruin_mult": 0.2,
+      "elem_sangue": 0.15
+     }
+    },
+    {
+     "type": "corruption",
+     "amount": 6
+    }
+   ],
+   "desc": "Golpes de Ruína +20% e sangue +15%. (+6 corrupção)"
+  },
+  "r_carne": {
+   "name": "Carne Insaciável",
+   "path": "ruina",
+   "pos": [
+    0,
+    3
+   ],
+   "cost": 2,
+   "requires": [
+    "r_frenesi"
+   ],
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "lifesteal": 0.03,
+      "hp_max": 30
+     }
+    },
+    {
+     "type": "corruption",
+     "amount": 6
+    }
+   ],
+   "desc": "Mais roubo de vida e +30 de vida. (+6 corrupção)"
+  },
+  "r_sombra": {
+   "name": "Passo Profano",
+   "path": "ruina",
+   "pos": [
+    2,
+    3
+   ],
+   "cost": 2,
+   "requires": [
+    "r_marca"
+   ],
+   "effects": [
+    {
+     "type": "trigger",
+     "on": "dodge",
+     "do": "clone",
+     "time": 1.2,
+     "mode": "strike",
+     "power": 0.45,
+     "cd": 2.0,
+     "source": "passo_profano"
+    },
+    {
+     "type": "corruption",
+     "amount": 6
+    }
+   ],
+   "desc": "Esquivas deixam uma sombra que ataca. (+6 corrupção)"
+  },
+  "r_forma": {
+   "name": "Forma Proibida",
+   "path": "ruina",
+   "pos": [
+    1,
+    4
+   ],
+   "cost": 3,
+   "requires": [
+    "r_corrupcao"
+   ],
+   "effects": [
+    {
+     "type": "trigger",
+     "on": "low_hp",
+     "do": "buff",
+     "buff": {
+      "id": "forma_proibida",
+      "mods": {
+       "atk_mult": 0.35,
+       "lifesteal": 0.06,
+       "speed_mult": 0.15,
+       "attack_speed": 0.15
+      },
+      "time": 10,
+      "color": [
+       0.7,
+       0.0,
+       0.2
+      ]
+     },
+     "cd": 45,
+     "source": "forma_proibida"
+    },
+    {
+     "type": "corruption",
+     "amount": 8
+    }
+   ],
+   "desc": "TRANSFORMAÇÃO PROIBIDA: perto da morte, vira um avatar da Ruína por 10s (dano, roubo de vida e velocidade). (+8 corrupção)"
+  },
+  "r_pacto": {
+   "name": "Pacto de Sangue",
+   "path": "ruina",
+   "pos": [
+    0,
+    4
+   ],
+   "cost": 2,
+   "requires": [
+    "r_carne"
+   ],
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "fp_cost_mult": -0.25,
+      "hp_regen": -0.3
+     }
+    },
+    {
+     "type": "corruption",
+     "amount": 6
+    }
+   ],
+   "desc": "Habilidades custam 25% menos Foco, mas sua vida apodrece devagar. (+6 corrupção)"
+  },
+  "r_eclipse": {
+   "name": "Eclipse Interior",
+   "path": "ruina",
+   "pos": [
+    2,
+    4
+   ],
+   "cost": 2,
+   "requires": [
+    "r_sombra"
+   ],
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "elem_trevas": 0.2,
+      "crit_mult": 0.25
+     }
+    },
+    {
+     "type": "corruption",
+     "amount": 6
+    }
+   ],
+   "desc": "Críticos e trevas mais devastadores. (+6 corrupção)"
+  },
+  "r_abismo": {
+   "name": "Coração do Abismo",
+   "path": "ruina",
+   "pos": [
+    1,
+    5
+   ],
+   "cost": 3,
+   "requires": [
+    "r_forma"
+   ],
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "ruin_mult": 0.25,
+      "atk_mult": 0.1
+     }
+    },
+    {
+     "type": "trigger",
+     "on": "kill",
+     "do": "zone",
+     "at": "target",
+     "zone": {
+      "zone": "burst",
+      "radius": 2.6,
+      "dur": 0.2,
+      "dmg": 0.9,
+      "pure": {
+       "trevas": 1.0
+      },
+      "kb": 3,
+      "posture": 12,
+      "visual": "abyss_burst"
+     },
+     "cd": 0.3,
+     "source": "coracao_abismo"
+    },
+    {
+     "type": "corruption",
+     "amount": 10
+    }
+   ],
+   "desc": "Inimigos derrotados explodem em trevas; +10% de dano. (+10 corrupção)"
+  },
+  "r_runa": {
+   "name": "Encaixe Profano",
+   "path": "ruina",
+   "pos": [
+    0,
+    5
+   ],
+   "cost": 3,
+   "requires": [
+    "r_pacto"
+   ],
+   "effects": [
+    {
+     "type": "rune_slot"
+    },
+    {
+     "type": "corruption",
+     "amount": 5
+    }
+   ],
+   "desc": "+1 espaço de runa. (+5 corrupção)"
+  },
+  "r_trevas2": {
+   "name": "Abraço da Noite",
+   "path": "ruina",
+   "pos": [
+    2,
+    5
+   ],
+   "cost": 3,
+   "requires": [
+    "r_eclipse"
+   ],
+   "effects": [
+    {
+     "type": "attr",
+     "attr": "intelecto",
+     "amount": 5
+    },
+    {
+     "type": "attr",
+     "attr": "destreza",
+     "amount": 5
+    },
+    {
+     "type": "corruption",
+     "amount": 8
+    }
+   ],
+   "desc": "+5 Intelecto e +5 Destreza. (+8 corrupção)"
+  },
+  "gue_hab2": {
+   "name": "Técnica: Investida de Aço",
+   "pos": [
+    1,
+    0
+   ],
+   "cost": 1,
+   "effects": [
+    {
+     "type": "unlock",
+     "what": "gue_hab2"
+    }
+   ],
+   "desc": "Desbloqueia a habilidade Investida de Aço.",
+   "path": "classe",
+   "class": "guerreiro"
+  },
+  "gue_combo_a": {
+   "name": "Ascensão do Cavaleiro",
+   "effects": [
+    {
+     "type": "replace_move",
+     "from": "sw_l1h",
+     "to": "sw_l1h_jump"
+    },
+    {
+     "type": "add_transition",
+     "move": "sw_launcher",
+     "input": "L",
+     "to": "sw_air1"
+    }
+   ],
+   "desc": "TÉCNICA: o Corte Ascendente (Leve → Pesado) leva você ao ar junto do inimigo, abrindo combos aéreos.",
+   "pos": [
+    0,
+    1
+   ],
+   "cost": 2,
+   "requires": [
+    "gue_hab2"
+   ],
+   "path": "classe",
+   "class": "guerreiro"
+  },
+  "gue_hab3": {
+   "name": "Técnica: Postura de Guerra",
+   "pos": [
+    1,
+    1
+   ],
+   "cost": 2,
+   "requires": [
+    "gue_hab2"
+   ],
+   "effects": [
+    {
+     "type": "unlock",
+     "what": "gue_hab3"
+    }
+   ],
+   "desc": "Desbloqueia a habilidade Postura de Guerra.",
+   "path": "classe",
+   "class": "guerreiro"
+  },
+  "gue_combo_b": {
+   "name": "Réplica de Aço",
+   "effects": [
+    {
+     "type": "add_transition",
+     "move": "sw_counter",
+     "input": "H",
+     "to": "sw_h2"
+    },
+    {
+     "type": "move_effect",
+     "tag": "counter",
+     "launch": 7.0
+    }
+   ],
+   "desc": "TÉCNICA: contra-ataques lançam o inimigo e podem emendar o Talho Amplo (Pesado).",
+   "pos": [
+    2,
+    1
+   ],
+   "cost": 2,
+   "requires": [
+    "gue_hab2"
+   ],
+   "path": "classe",
+   "class": "guerreiro"
+  },
+  "gue_suprema": {
+   "name": "Suprema: Execução Devastadora",
+   "pos": [
+    1,
+    2
+   ],
+   "cost": 2,
+   "requires": [
+    "gue_hab3"
+   ],
+   "effects": [
+    {
+     "type": "unlock",
+     "what": "gue_suprema"
+    }
+   ],
+   "desc": "Desbloqueia a habilidade suprema Execução Devastadora (custa Fervor cheio).",
+   "path": "classe",
+   "class": "guerreiro"
+  },
+  "gue_spec1": {
+   "name": "Especialização: Cavaleiro da Graça",
+   "pos": [
+    0,
+    3
+   ],
+   "cost": 3,
+   "requires": [
+    "gue_suprema"
+   ],
+   "exclusive": "spec_guerreiro",
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "elem_sagrado": 0.25,
+      "holy_mult": 0.2
+     }
+    },
+    {
+     "type": "trigger",
+     "on": "parry",
+     "do": "heal",
+     "amount": 0.06,
+     "cd": 0.5,
+     "source": "cav_graca"
+    }
+   ],
+   "desc": "Golpes recebem luz sagrada; aparar cura 6% da vida. (Apenas uma especialização.)",
+   "path": "classe",
+   "class": "guerreiro"
+  },
+  "gue_spec2": {
+   "name": "Especialização: Berserker Profano",
+   "pos": [
+    1,
+    3
+   ],
+   "cost": 3,
+   "requires": [
+    "gue_suprema"
+   ],
+   "exclusive": "spec_guerreiro",
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "atk_mult": 0.2,
+      "lifesteal": 0.04
+     }
+    },
+    {
+     "type": "flag",
+     "flag": "berserk"
+    },
+    {
+     "type": "corruption",
+     "amount": 10
+    }
+   ],
+   "desc": "+20% de dano, roubo de vida e fúria abaixo de 40% de vida. (Apenas uma especialização.)",
+   "path": "classe",
+   "class": "guerreiro"
+  },
+  "gue_spec3": {
+   "name": "Especialização: Guardião de Ferro",
+   "pos": [
+    2,
+    3
+   ],
+   "cost": 3,
+   "requires": [
+    "gue_suprema"
+   ],
+   "exclusive": "spec_guerreiro",
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "block_reduction": 0.1,
+      "def_flat": 8,
+      "posture_max": 45
+     }
+    },
+    {
+     "type": "trigger",
+     "on": "block",
+     "do": "zone",
+     "at": "attacker",
+     "zone": {
+      "zone": "burst",
+      "radius": 1.4,
+      "dur": 0.15,
+      "dmg": 0.6,
+      "kb": 4,
+      "posture": 25,
+      "stun": 0.5,
+      "visual": "war_ring"
+     },
+     "cd": 1.0,
+     "source": "guardiao"
+    }
+   ],
+   "desc": "Bloqueio quase perfeito e postura colossal. (Apenas uma especialização.)",
+   "path": "classe",
+   "class": "guerreiro"
+  },
+  "nin_hab2": {
+   "name": "Técnica: Dança das Sombras",
+   "pos": [
+    1,
+    0
+   ],
+   "cost": 1,
+   "effects": [
+    {
+     "type": "unlock",
+     "what": "nin_hab2"
+    }
+   ],
+   "desc": "Desbloqueia a habilidade Dança das Sombras.",
+   "path": "classe",
+   "class": "ninja"
+  },
+  "nin_combo_a": {
+   "name": "Céu Infinito",
+   "effects": [
+    {
+     "type": "add_transition",
+     "move": "kt_air4",
+     "input": "L",
+     "to": "kt_air3"
+    },
+    {
+     "type": "mods",
+     "mods": {
+      "air_mult": 0.15
+     }
+    }
+   ],
+   "desc": "TÉCNICA: o Queda do Falcão pode emendar novamente a Tempestade de Folhas, estendendo combos aéreos.",
+   "pos": [
+    0,
+    1
+   ],
+   "cost": 2,
+   "requires": [
+    "nin_hab2"
+   ],
+   "path": "classe",
+   "class": "ninja"
+  },
+  "nin_hab3": {
+   "name": "Técnica: Chuva de Lâminas",
+   "pos": [
+    1,
+    1
+   ],
+   "cost": 2,
+   "requires": [
+    "nin_hab2"
+   ],
+   "effects": [
+    {
+     "type": "unlock",
+     "what": "nin_hab3"
+    }
+   ],
+   "desc": "Desbloqueia a habilidade Chuva de Lâminas.",
+   "path": "classe",
+   "class": "ninja"
+  },
+  "nin_combo_b": {
+   "name": "Passo do Vazio",
+   "effects": [
+    {
+     "type": "flag",
+     "flag": "launch_teleport"
+    }
+   ],
+   "desc": "TÉCNICA: após lançar um inimigo, Esquiva teletransporta você até ele.",
+   "pos": [
+    2,
+    1
+   ],
+   "cost": 2,
+   "requires": [
+    "nin_hab2"
+   ],
+   "path": "classe",
+   "class": "ninja"
+  },
+  "nin_suprema": {
+   "name": "Suprema: Execução Silenciosa",
+   "pos": [
+    1,
+    2
+   ],
+   "cost": 2,
+   "requires": [
+    "nin_hab3"
+   ],
+   "effects": [
+    {
+     "type": "unlock",
+     "what": "nin_suprema"
+    }
+   ],
+   "desc": "Desbloqueia a habilidade suprema Execução Silenciosa (custa Fervor cheio).",
+   "path": "classe",
+   "class": "ninja"
+  },
+  "nin_spec1": {
+   "name": "Especialização: Assassino Sombrio",
+   "pos": [
+    0,
+    3
+   ],
+   "cost": 3,
+   "requires": [
+    "nin_suprema"
+   ],
+   "exclusive": "spec_ninja",
+   "effects": [
+    {
+     "type": "flag",
+     "flag": "backstab_execute"
+    },
+    {
+     "type": "mods",
+     "mods": {
+      "backstab_mult": 0.3
+     }
+    }
+   ],
+   "desc": "Execute inimigos desatentos pelas costas; golpes pelas costas +30%. (Apenas uma especialização.)",
+   "path": "classe",
+   "class": "ninja"
+  },
+  "nin_spec2": {
+   "name": "Especialização: Dançarino de Lâminas",
+   "pos": [
+    1,
+    3
+   ],
+   "cost": 3,
+   "requires": [
+    "nin_suprema"
+   ],
+   "exclusive": "spec_ninja",
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "attack_speed": 0.15,
+      "dodge_charges": 1
+     }
+    }
+   ],
+   "desc": "Ataques 15% mais rápidos e uma esquiva extra. (Apenas uma especialização.)",
+   "path": "classe",
+   "class": "ninja"
+  },
+  "nin_spec3": {
+   "name": "Especialização: Executor Fantasma",
+   "pos": [
+    2,
+    3
+   ],
+   "cost": 3,
+   "requires": [
+    "nin_suprema"
+   ],
+   "exclusive": "spec_ninja",
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "execution_mult": 0.5
+     }
+    },
+    {
+     "type": "trigger",
+     "on": "execution",
+     "do": "mark",
+     "time": 8,
+     "kind": "sombra",
+     "source": "exec_fant"
+    }
+   ],
+   "desc": "Execuções +50% e marcam todos os inimigos próximos. (Apenas uma especialização.)",
+   "path": "classe",
+   "class": "ninja"
+  },
+  "sol_hab2": {
+   "name": "Técnica: Bala Incendiária",
+   "pos": [
+    1,
+    0
+   ],
+   "cost": 1,
+   "effects": [
+    {
+     "type": "unlock",
+     "what": "sol_hab2"
+    }
+   ],
+   "desc": "Desbloqueia a habilidade Bala Incendiária.",
+   "path": "classe",
+   "class": "soldado"
+  },
+  "sol_combo_a": {
+   "name": "Coronhada Explosiva",
+   "effects": [
+    {
+     "type": "move_effect",
+     "tag": "launcher",
+     "elem": {
+      "fogo": 0.4
+     },
+     "status": {
+      "queimadura": 40
+     }
+    }
+   ],
+   "desc": "TÉCNICA: lançadores explodem em fogo alquímico e incendeiam.",
+   "pos": [
+    0,
+    1
+   ],
+   "cost": 2,
+   "requires": [
+    "sol_hab2"
+   ],
+   "path": "classe",
+   "class": "soldado"
+  },
+  "sol_hab3": {
+   "name": "Técnica: Investida de Baioneta",
+   "pos": [
+    1,
+    1
+   ],
+   "cost": 2,
+   "requires": [
+    "sol_hab2"
+   ],
+   "effects": [
+    {
+     "type": "unlock",
+     "what": "sol_hab3"
+    }
+   ],
+   "desc": "Desbloqueia a habilidade Investida de Baioneta.",
+   "path": "classe",
+   "class": "soldado"
+  },
+  "sol_combo_b": {
+   "name": "Fogo Contínuo",
+   "effects": [
+    {
+     "type": "add_transition",
+     "move": "gn_l3",
+     "input": "H",
+     "to": "gn_l2h"
+    },
+    {
+     "type": "add_transition",
+     "move": "gn_bayonet",
+     "input": "H",
+     "to": "gn_l2h"
+    }
+   ],
+   "desc": "TÉCNICA: Disparo à Queima-Roupa e Investida de Baioneta emendam a Rajada Dupla (Pesado).",
+   "pos": [
+    2,
+    1
+   ],
+   "cost": 2,
+   "requires": [
+    "sol_hab2"
+   ],
+   "path": "classe",
+   "class": "soldado"
+  },
+  "sol_suprema": {
+   "name": "Suprema: Sobrecarga Balística",
+   "pos": [
+    1,
+    2
+   ],
+   "cost": 2,
+   "requires": [
+    "sol_hab3"
+   ],
+   "effects": [
+    {
+     "type": "unlock",
+     "what": "sol_suprema"
+    }
+   ],
+   "desc": "Desbloqueia a habilidade suprema Sobrecarga Balística (custa Fervor cheio).",
+   "path": "classe",
+   "class": "soldado"
+  },
+  "sol_spec1": {
+   "name": "Especialização: Atirador de Elite",
+   "pos": [
+    0,
+    3
+   ],
+   "cost": 3,
+   "requires": [
+    "sol_suprema"
+   ],
+   "exclusive": "spec_soldado",
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "ranged_mult": 0.3,
+      "crit_mult": 0.25
+     }
+    }
+   ],
+   "desc": "Disparos +30% e críticos mais fortes. (Apenas uma especialização.)",
+   "path": "classe",
+   "class": "soldado"
+  },
+  "sol_spec2": {
+   "name": "Especialização: Granadeiro",
+   "pos": [
+    1,
+    3
+   ],
+   "cost": 3,
+   "requires": [
+    "sol_suprema"
+   ],
+   "exclusive": "spec_soldado",
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "art_mult": 0.3
+     }
+    },
+    {
+     "type": "trigger",
+     "on": "heavy_hit",
+     "do": "zone",
+     "at": "target",
+     "chance": 0.35,
+     "zone": {
+      "zone": "burst",
+      "radius": 2.0,
+      "dur": 0.15,
+      "dmg": 0.8,
+      "pure": {
+       "fogo": 1.0
+      },
+      "kb": 3,
+      "posture": 10,
+      "visual": "explosion"
+     },
+     "cd": 1.0,
+     "source": "granadeiro"
+    }
+   ],
+   "desc": "Artes +30%; golpes pesados podem soltar uma granada. (Apenas uma especialização.)",
+   "path": "classe",
+   "class": "soldado"
+  },
+  "sol_spec3": {
+   "name": "Especialização: Lanceiro de Baioneta",
+   "pos": [
+    2,
+    3
+   ],
+   "cost": 3,
+   "requires": [
+    "sol_suprema"
+   ],
+   "exclusive": "spec_soldado",
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "light_mult": 0.2,
+      "posture_dmg_mult": 0.25
+     }
+    }
+   ],
+   "desc": "Golpes leves e de corrida +20%, mais dano de postura. (Apenas uma especialização.)",
+   "path": "classe",
+   "class": "soldado"
+  },
+  "ban_hab2": {
+   "name": "Técnica: Golpe Traiçoeiro",
+   "pos": [
+    1,
+    0
+   ],
+   "cost": 1,
+   "effects": [
+    {
+     "type": "unlock",
+     "what": "ban_hab2"
+    }
+   ],
+   "desc": "Desbloqueia a habilidade Golpe Traiçoeiro.",
+   "path": "classe",
+   "class": "bandido"
+  },
+  "ban_combo_a": {
+   "name": "Carnificina Contínua",
+   "effects": [
+    {
+     "type": "add_transition",
+     "move": "ax_l3",
+     "input": "H",
+     "to": "ax_l2h"
+    },
+    {
+     "type": "add_transition",
+     "move": "ax_dash",
+     "input": "L",
+     "to": "ax_l3"
+    }
+   ],
+   "desc": "TÉCNICA: Carnificina emenda o Golpe Arriscado; Golpe Sujo emenda direto no finalizador.",
+   "pos": [
+    0,
+    1
+   ],
+   "cost": 2,
+   "requires": [
+    "ban_hab2"
+   ],
+   "path": "classe",
+   "class": "bandido"
+  },
+  "ban_hab3": {
+   "name": "Técnica: Fúria Sanguinária",
+   "pos": [
+    1,
+    1
+   ],
+   "cost": 2,
+   "requires": [
+    "ban_hab2"
+   ],
+   "effects": [
+    {
+     "type": "unlock",
+     "what": "ban_hab3"
+    }
+   ],
+   "desc": "Desbloqueia a habilidade Fúria Sanguinária.",
+   "path": "classe",
+   "class": "bandido"
+  },
+  "ban_combo_b": {
+   "name": "Talho Sangrento",
+   "effects": [
+    {
+     "type": "move_effect",
+     "tag": "finisher",
+     "status": {
+      "sangramento": 40
+     }
+    }
+   ],
+   "desc": "TÉCNICA: finalizadores acumulam muito sangramento.",
+   "pos": [
+    2,
+    1
+   ],
+   "cost": 2,
+   "requires": [
+    "ban_hab2"
+   ],
+   "path": "classe",
+   "class": "bandido"
+  },
+  "ban_suprema": {
+   "name": "Suprema: Retaliação Brutal",
+   "pos": [
+    1,
+    2
+   ],
+   "cost": 2,
+   "requires": [
+    "ban_hab3"
+   ],
+   "effects": [
+    {
+     "type": "unlock",
+     "what": "ban_suprema"
+    }
+   ],
+   "desc": "Desbloqueia a habilidade suprema Retaliação Brutal (custa Fervor cheio).",
+   "path": "classe",
+   "class": "bandido"
+  },
+  "ban_spec1": {
+   "name": "Especialização: Saqueador",
+   "pos": [
+    0,
+    3
+   ],
+   "cost": 3,
+   "requires": [
+    "ban_suprema"
+   ],
+   "exclusive": "spec_bandido",
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "grace_gain": 0.2
+     }
+    },
+    {
+     "type": "trigger",
+     "on": "hit",
+     "do": "steal",
+     "chance": 0.12,
+     "cd": 1.0,
+     "source": "saqueador"
+    }
+   ],
+   "desc": "Rouba com mais frequência e ganha +20% de Graça. (Apenas uma especialização.)",
+   "path": "classe",
+   "class": "bandido"
+  },
+  "ban_spec2": {
+   "name": "Especialização: Açougueiro",
+   "pos": [
+    1,
+    3
+   ],
+   "cost": 3,
+   "requires": [
+    "ban_suprema"
+   ],
+   "exclusive": "spec_bandido",
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "bleed_add": 8,
+      "vs_bleeding_mult": 0.25
+     }
+    }
+   ],
+   "desc": "Sangramento acumula muito mais e causa mais dano. (Apenas uma especialização.)",
+   "path": "classe",
+   "class": "bandido"
+  },
+  "ban_spec3": {
+   "name": "Especialização: Rei dos Becos",
+   "pos": [
+    2,
+    3
+   ],
+   "cost": 3,
+   "requires": [
+    "ban_suprema"
+   ],
+   "exclusive": "spec_bandido",
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "crit_chance": 0.1,
+      "backstab_mult": 0.3,
+      "vs_low_hp_mult": 0.2
+     }
+    }
+   ],
+   "desc": "Críticos e golpes pelas costas mais fortes. (Apenas uma especialização.)",
+   "path": "classe",
+   "class": "bandido"
+  },
+  "lad_hab2": {
+   "name": "Técnica: Estocada Mortal",
+   "pos": [
+    1,
+    0
+   ],
+   "cost": 1,
+   "effects": [
+    {
+     "type": "unlock",
+     "what": "lad_hab2"
+    }
+   ],
+   "desc": "Desbloqueia a habilidade Estocada Mortal.",
+   "path": "classe",
+   "class": "ladrao"
+  },
+  "lad_combo_a": {
+   "name": "Agulhas Finais",
+   "effects": [
+    {
+     "type": "add_transition",
+     "move": "dg_l4",
+     "input": "H",
+     "to": "dg_charged"
+    }
+   ],
+   "desc": "TÉCNICA: Mil Agulhas emenda a Sentença (Pesado).",
+   "pos": [
+    0,
+    1
+   ],
+   "cost": 2,
+   "requires": [
+    "lad_hab2"
+   ],
+   "path": "classe",
+   "class": "ladrao"
+  },
+  "lad_hab3": {
+   "name": "Técnica: Armadilha Espectral",
+   "pos": [
+    1,
+    1
+   ],
+   "cost": 2,
+   "requires": [
+    "lad_hab2"
+   ],
+   "effects": [
+    {
+     "type": "unlock",
+     "what": "lad_hab3"
+    }
+   ],
+   "desc": "Desbloqueia a habilidade Armadilha Espectral.",
+   "path": "classe",
+   "class": "ladrao"
+  },
+  "lad_combo_b": {
+   "name": "Cambalhota Traiçoeira",
+   "effects": [
+    {
+     "type": "add_start",
+     "input": "DH",
+     "to": "dg_l2h"
+    },
+    {
+     "type": "add_transition",
+     "move": "dg_dash",
+     "input": "L",
+     "to": "dg_l4"
+    }
+   ],
+   "desc": "TÉCNICA: Esquiva + Pesado vira uma Estocada Perfurante; Passo Venenoso emenda Mil Agulhas.",
+   "pos": [
+    2,
+    1
+   ],
+   "cost": 2,
+   "requires": [
+    "lad_hab2"
+   ],
+   "path": "classe",
+   "class": "ladrao"
+  },
+  "lad_suprema": {
+   "name": "Suprema: Mil Cortes",
+   "pos": [
+    1,
+    2
+   ],
+   "cost": 2,
+   "requires": [
+    "lad_hab3"
+   ],
+   "effects": [
+    {
+     "type": "unlock",
+     "what": "lad_suprema"
+    }
+   ],
+   "desc": "Desbloqueia a habilidade suprema Mil Cortes (custa Fervor cheio).",
+   "path": "classe",
+   "class": "ladrao"
+  },
+  "lad_spec1": {
+   "name": "Especialização: Sombra da Guilda",
+   "pos": [
+    0,
+    3
+   ],
+   "cost": 3,
+   "requires": [
+    "lad_suprema"
+   ],
+   "exclusive": "spec_ladrao",
+   "effects": [
+    {
+     "type": "trigger",
+     "on": "perfect_dodge",
+     "do": "buff",
+     "buff": {
+      "id": "sombra_guilda",
+      "mods": {
+       "crit_chance": 0.3
+      },
+      "time": 2.0
+     },
+     "source": "sombra_guilda"
+    },
+    {
+     "type": "flag",
+     "flag": "perfect_vanish"
+    }
+   ],
+   "desc": "Esquiva perfeita deixa você invisível por 2s. (Apenas uma especialização.)",
+   "path": "classe",
+   "class": "ladrao"
+  },
+  "lad_spec2": {
+   "name": "Especialização: Armadilheiro",
+   "pos": [
+    1,
+    3
+   ],
+   "cost": 3,
+   "requires": [
+    "lad_suprema"
+   ],
+   "exclusive": "spec_ladrao",
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "skill_mult": 0.3,
+      "cooldown_mult": -0.2
+     }
+    }
+   ],
+   "desc": "Habilidades +30% e recarga 20% menor. (Apenas uma especialização.)",
+   "path": "classe",
+   "class": "ladrao"
+  },
+  "lad_spec3": {
+   "name": "Especialização: Duelista Fantasma",
+   "pos": [
+    2,
+    3
+   ],
+   "cost": 3,
+   "requires": [
+    "lad_suprema"
+   ],
+   "exclusive": "spec_ladrao",
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "counter_mult": 0.4,
+      "parry_window": 0.05
+     }
+    }
+   ],
+   "desc": "Contra-ataques +40% e janela de aparar maior. (Apenas uma especialização.)",
+   "path": "classe",
+   "class": "ladrao"
+  },
+  "mag_hab2": {
+   "name": "Técnica: Tempestade Elemental",
+   "pos": [
+    1,
+    0
+   ],
+   "cost": 1,
+   "effects": [
+    {
+     "type": "unlock",
+     "what": "mag_hab2"
+    }
+   ],
+   "desc": "Desbloqueia a habilidade Tempestade Elemental.",
+   "path": "classe",
+   "class": "mago"
+  },
+  "mag_combo_a": {
+   "name": "Prisma Perfeito",
+   "effects": [
+    {
+     "type": "add_transition",
+     "move": "st_l3",
+     "input": "H",
+     "to": "st_l2h"
+    },
+    {
+     "type": "add_transition",
+     "move": "st_l2h",
+     "input": "L",
+     "to": "st_l3"
+    }
+   ],
+   "desc": "TÉCNICA: Leque de Gelo e Prisma Elemental se encadeiam (congele e depois estilhace com raio).",
+   "pos": [
+    0,
+    1
+   ],
+   "cost": 2,
+   "requires": [
+    "mag_hab2"
+   ],
+   "path": "classe",
+   "class": "mago"
+  },
+  "mag_hab3": {
+   "name": "Técnica: Prisão Rúnica",
+   "pos": [
+    1,
+    1
+   ],
+   "cost": 2,
+   "requires": [
+    "mag_hab2"
+   ],
+   "effects": [
+    {
+     "type": "unlock",
+     "what": "mag_hab3"
+    }
+   ],
+   "desc": "Desbloqueia a habilidade Prisão Rúnica.",
+   "path": "classe",
+   "class": "mago"
+  },
+  "mag_combo_b": {
+   "name": "Translocação Dupla",
+   "effects": [
+    {
+     "type": "add_transition",
+     "move": "st_dash",
+     "input": "L",
+     "to": "st_dash"
+    },
+    {
+     "type": "mods",
+     "mods": {
+      "dodge_distance": 0.15
+     }
+    }
+   ],
+   "desc": "TÉCNICA: Translocação pode ser repetida em sequência.",
+   "pos": [
+    2,
+    1
+   ],
+   "cost": 2,
+   "requires": [
+    "mag_hab2"
+   ],
+   "path": "classe",
+   "class": "mago"
+  },
+  "mag_suprema": {
+   "name": "Suprema: Colapso Astral",
+   "pos": [
+    1,
+    2
+   ],
+   "cost": 2,
+   "requires": [
+    "mag_hab3"
+   ],
+   "effects": [
+    {
+     "type": "unlock",
+     "what": "mag_suprema"
+    }
+   ],
+   "desc": "Desbloqueia a habilidade suprema Colapso Astral (custa Fervor cheio).",
+   "path": "classe",
+   "class": "mago"
+  },
+  "mag_spec1": {
+   "name": "Especialização: Piromante",
+   "pos": [
+    0,
+    3
+   ],
+   "cost": 3,
+   "requires": [
+    "mag_suprema"
+   ],
+   "exclusive": "spec_mago",
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "elem_fogo": 0.3,
+      "burn_add": 10
+     }
+    }
+   ],
+   "desc": "Fogo +30% e queimaduras constantes. (Apenas uma especialização.)",
+   "path": "classe",
+   "class": "mago"
+  },
+  "mag_spec2": {
+   "name": "Especialização: Arcanista Astral",
+   "pos": [
+    1,
+    3
+   ],
+   "cost": 3,
+   "requires": [
+    "mag_suprema"
+   ],
+   "exclusive": "spec_mago",
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "elem_arcano": 0.3,
+      "skill_mult": 0.15
+     }
+    }
+   ],
+   "desc": "Arcano +30% e habilidades +15%. (Apenas uma especialização.)",
+   "path": "classe",
+   "class": "mago"
+  },
+  "mag_spec3": {
+   "name": "Especialização: Necromante das Runas",
+   "pos": [
+    2,
+    3
+   ],
+   "cost": 3,
+   "requires": [
+    "mag_suprema"
+   ],
+   "exclusive": "spec_mago",
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "elem_trevas": 0.3
+     }
+    },
+    {
+     "type": "trigger",
+     "on": "kill",
+     "do": "zone",
+     "at": "target",
+     "zone": {
+      "zone": "burst",
+      "radius": 2.4,
+      "dur": 0.15,
+      "dmg": 0.7,
+      "pure": {
+       "trevas": 1.0
+      },
+      "kb": 2,
+      "visual": "curse_burst",
+      "status": {
+       "maldicao": 50
+      }
+     },
+     "cd": 0.3,
+     "source": "necro"
+    },
+    {
+     "type": "corruption",
+     "amount": 8
+    }
+   ],
+   "desc": "Trevas +30%; inimigos derrotados explodem em maldição. (Apenas uma especialização.)",
+   "path": "classe",
+   "class": "mago"
+  },
+  "cle_hab2": {
+   "name": "Técnica: Onda Sagrada",
+   "pos": [
+    1,
+    0
+   ],
+   "cost": 1,
+   "effects": [
+    {
+     "type": "unlock",
+     "what": "cle_hab2"
+    }
+   ],
+   "desc": "Desbloqueia a habilidade Onda Sagrada.",
+   "path": "classe",
+   "class": "clerigo"
+  },
+  "cle_combo_a": {
+   "name": "Selo Duplo",
+   "effects": [
+    {
+     "type": "add_transition",
+     "move": "hl_l3",
+     "input": "H",
+     "to": "hl_h2"
+    },
+    {
+     "type": "move_effect",
+     "tag": "holy",
+     "status": {
+      "queimadura": 8
+     }
+    }
+   ],
+   "desc": "TÉCNICA: Selo da Luz emenda a Onda de Consagração; golpes sagrados queimam.",
+   "pos": [
+    0,
+    1
+   ],
+   "cost": 2,
+   "requires": [
+    "cle_hab2"
+   ],
+   "path": "classe",
+   "class": "clerigo"
+  },
+  "cle_hab3": {
+   "name": "Técnica: Escudo da Fé",
+   "pos": [
+    1,
+    1
+   ],
+   "cost": 2,
+   "requires": [
+    "cle_hab2"
+   ],
+   "effects": [
+    {
+     "type": "unlock",
+     "what": "cle_hab3"
+    }
+   ],
+   "desc": "Desbloqueia a habilidade Escudo da Fé.",
+   "path": "classe",
+   "class": "clerigo"
+  },
+  "cle_combo_b": {
+   "name": "Escudo Devoto",
+   "effects": [
+    {
+     "type": "trigger",
+     "on": "parry",
+     "do": "heal",
+     "amount": 0.05,
+     "cd": 0.5,
+     "source": "escudo_devoto"
+    },
+    {
+     "type": "trigger",
+     "on": "block",
+     "do": "fp",
+     "amount": 4,
+     "cd": 0.4,
+     "source": "escudo_devoto2"
+    }
+   ],
+   "desc": "TÉCNICA: aparar cura 5%; bloquear devolve Foco.",
+   "pos": [
+    2,
+    1
+   ],
+   "cost": 2,
+   "requires": [
+    "cle_hab2"
+   ],
+   "path": "classe",
+   "class": "clerigo"
+  },
+  "cle_suprema": {
+   "name": "Suprema: Ira Celestial",
+   "pos": [
+    1,
+    2
+   ],
+   "cost": 2,
+   "requires": [
+    "cle_hab3"
+   ],
+   "effects": [
+    {
+     "type": "unlock",
+     "what": "cle_suprema"
+    }
+   ],
+   "desc": "Desbloqueia a habilidade suprema Ira Celestial (custa Fervor cheio).",
+   "path": "classe",
+   "class": "clerigo"
+  },
+  "cle_spec1": {
+   "name": "Especialização: Inquisidor",
+   "pos": [
+    0,
+    3
+   ],
+   "cost": 3,
+   "requires": [
+    "cle_suprema"
+   ],
+   "exclusive": "spec_clerigo",
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "holy_mult": 0.3,
+      "vs_undead_mult": 0.3
+     }
+    }
+   ],
+   "desc": "Sagrado +30% e +30% contra mortos-vivos. (Apenas uma especialização.)",
+   "path": "classe",
+   "class": "clerigo"
+  },
+  "cle_spec2": {
+   "name": "Especialização: Santo Guardião",
+   "pos": [
+    1,
+    3
+   ],
+   "cost": 3,
+   "requires": [
+    "cle_suprema"
+   ],
+   "exclusive": "spec_clerigo",
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "def_flat": 6
+     }
+    },
+    {
+     "type": "trigger",
+     "on": "low_hp",
+     "do": "barrier",
+     "amount": 0.3,
+     "time": 6,
+     "cd": 25,
+     "source": "santo_guardiao"
+    }
+   ],
+   "desc": "Barreira automática com pouca vida e defesa alta. (Apenas uma especialização.)",
+   "path": "classe",
+   "class": "clerigo"
+  },
+  "cle_spec3": {
+   "name": "Especialização: Oráculo da Aurora",
+   "pos": [
+    2,
+    3
+   ],
+   "cost": 3,
+   "requires": [
+    "cle_suprema"
+   ],
+   "exclusive": "spec_clerigo",
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "skill_mult": 0.25,
+      "fp_regen": 1.5
+     }
+    }
+   ],
+   "desc": "Habilidades +25% e Foco regenera muito mais. (Apenas uma especialização.)",
+   "path": "classe",
+   "class": "clerigo"
+  },
+  "vam_hab2": {
+   "name": "Técnica: Névoa Espectral",
+   "pos": [
+    1,
+    0
+   ],
+   "cost": 1,
+   "effects": [
+    {
+     "type": "unlock",
+     "what": "vam_hab2"
+    }
+   ],
+   "desc": "Desbloqueia a habilidade Névoa Espectral.",
+   "path": "classe",
+   "class": "vampiro"
+  },
+  "vam_combo_a": {
+   "name": "Valsa Rubra",
+   "effects": [
+    {
+     "type": "add_transition",
+     "move": "rp_l4",
+     "input": "H",
+     "to": "vam_estocada"
+    },
+    {
+     "type": "add_transition",
+     "move": "rp_l2h",
+     "input": "L",
+     "to": "rp_l4"
+    }
+   ],
+   "desc": "TÉCNICA: Perfuração Final emenda a Estocada Sanguínea sem custo de Foco.",
+   "pos": [
+    0,
+    1
+   ],
+   "cost": 2,
+   "requires": [
+    "vam_hab2"
+   ],
+   "path": "classe",
+   "class": "vampiro"
+  },
+  "vam_hab3": {
+   "name": "Técnica: Estocada Sanguínea",
+   "pos": [
+    1,
+    1
+   ],
+   "cost": 2,
+   "requires": [
+    "vam_hab2"
+   ],
+   "effects": [
+    {
+     "type": "unlock",
+     "what": "vam_hab3"
+    }
+   ],
+   "desc": "Desbloqueia a habilidade Estocada Sanguínea.",
+   "path": "classe",
+   "class": "vampiro"
+  },
+  "vam_combo_b": {
+   "name": "Beijo da Lua",
+   "effects": [
+    {
+     "type": "move_effect",
+     "tag": "counter",
+     "lifesteal": 0.4
+    },
+    {
+     "type": "move_effect",
+     "tag": "air",
+     "lifesteal": 0.08
+    }
+   ],
+   "desc": "TÉCNICA: contra-ataques e golpes aéreos roubam muita vida.",
+   "pos": [
+    2,
+    1
+   ],
+   "cost": 2,
+   "requires": [
+    "vam_hab2"
+   ],
+   "path": "classe",
+   "class": "vampiro"
+  },
+  "vam_suprema": {
+   "name": "Suprema: Eclipse Carmesim",
+   "pos": [
+    1,
+    2
+   ],
+   "cost": 2,
+   "requires": [
+    "vam_hab3"
+   ],
+   "effects": [
+    {
+     "type": "unlock",
+     "what": "vam_suprema"
+    }
+   ],
+   "desc": "Desbloqueia a habilidade suprema Eclipse Carmesim (custa Fervor cheio).",
+   "path": "classe",
+   "class": "vampiro"
+  },
+  "vam_spec1": {
+   "name": "Especialização: Conde Carmesim",
+   "pos": [
+    0,
+    3
+   ],
+   "cost": 3,
+   "requires": [
+    "vam_suprema"
+   ],
+   "exclusive": "spec_vampiro",
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "lifesteal": 0.04,
+      "elem_sangue": 0.2
+     }
+    }
+   ],
+   "desc": "Roubo de vida e dano de sangue aumentados. (Apenas uma especialização.)",
+   "path": "classe",
+   "class": "vampiro"
+  },
+  "vam_spec2": {
+   "name": "Especialização: Senhor da Névoa",
+   "pos": [
+    1,
+    3
+   ],
+   "cost": 3,
+   "requires": [
+    "vam_suprema"
+   ],
+   "exclusive": "spec_vampiro",
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "dodge_iframes": 0.05
+     }
+    },
+    {
+     "type": "trigger",
+     "on": "dodge",
+     "do": "clone",
+     "time": 1.3,
+     "mode": "strike",
+     "power": 0.5,
+     "cd": 1.5,
+     "source": "senhor_nevoa"
+    }
+   ],
+   "desc": "Esquivas deixam sombras e são mais longas. (Apenas uma especialização.)",
+   "path": "classe",
+   "class": "vampiro"
+  },
+  "vam_spec3": {
+   "name": "Especialização: Lâmina Sangrenta",
+   "pos": [
+    2,
+    3
+   ],
+   "cost": 3,
+   "requires": [
+    "vam_suprema"
+   ],
+   "exclusive": "spec_vampiro",
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "bleed_add": 10,
+      "vs_bleeding_mult": 0.2
+     }
+    }
+   ],
+   "desc": "Sangramento muito mais forte. (Apenas uma especialização.)",
+   "path": "classe",
+   "class": "vampiro"
+  },
+  "lob_hab2": {
+   "name": "Técnica: Salto Predador",
+   "pos": [
+    1,
+    0
+   ],
+   "cost": 1,
+   "effects": [
+    {
+     "type": "unlock",
+     "what": "lob_hab2"
+    }
+   ],
+   "desc": "Desbloqueia a habilidade Salto Predador.",
+   "path": "classe",
+   "class": "lobisomem"
+  },
+  "lob_combo_a": {
+   "name": "Mordida Dupla",
+   "effects": [
+    {
+     "type": "add_transition",
+     "move": "bt_l3",
+     "input": "H",
+     "to": "bt_bite"
+    },
+    {
+     "type": "add_transition",
+     "move": "cl_l3",
+     "input": "H",
+     "to": "cl_l2h"
+    }
+   ],
+   "desc": "TÉCNICA: Mordida Selvagem emenda a Jugular (forma bestial).",
+   "pos": [
+    0,
+    1
+   ],
+   "cost": 2,
+   "requires": [
+    "lob_hab2"
+   ],
+   "path": "classe",
+   "class": "lobisomem"
+  },
+  "lob_hab3": {
+   "name": "Técnica: Uivo Ancestral",
+   "pos": [
+    1,
+    1
+   ],
+   "cost": 2,
+   "requires": [
+    "lob_hab2"
+   ],
+   "effects": [
+    {
+     "type": "unlock",
+     "what": "lob_hab3"
+    }
+   ],
+   "desc": "Desbloqueia a habilidade Uivo Ancestral.",
+   "path": "classe",
+   "class": "lobisomem"
+  },
+  "lob_combo_b": {
+   "name": "Garras de Sangue",
+   "effects": [
+    {
+     "type": "move_effect",
+     "tag": "beast",
+     "status": {
+      "sangramento": 15
+     }
+    },
+    {
+     "type": "mods",
+     "mods": {
+      "beast_mult": 0.1
+     }
+    }
+   ],
+   "desc": "TÉCNICA: golpes bestiais acumulam sangramento extra.",
+   "pos": [
+    2,
+    1
+   ],
+   "cost": 2,
+   "requires": [
+    "lob_hab2"
+   ],
+   "path": "classe",
+   "class": "lobisomem"
+  },
+  "lob_suprema": {
+   "name": "Suprema: Frenesi Lunar",
+   "pos": [
+    1,
+    2
+   ],
+   "cost": 2,
+   "requires": [
+    "lob_hab3"
+   ],
+   "effects": [
+    {
+     "type": "unlock",
+     "what": "lob_suprema"
+    }
+   ],
+   "desc": "Desbloqueia a habilidade suprema Frenesi Lunar (custa Fervor cheio).",
+   "path": "classe",
+   "class": "lobisomem"
+  },
+  "lob_spec1": {
+   "name": "Especialização: Alfa da Matilha",
+   "pos": [
+    0,
+    3
+   ],
+   "cost": 3,
+   "requires": [
+    "lob_suprema"
+   ],
+   "exclusive": "spec_lobisomem",
+   "effects": [
+    {
+     "type": "trigger",
+     "on": "kill",
+     "do": "buff",
+     "buff": {
+      "id": "alfa",
+      "mods": {
+       "atk_mult": 0.1
+      },
+      "time": 10,
+      "max_stacks": 4
+     },
+     "source": "alfa"
+    }
+   ],
+   "desc": "Cada abate aumenta seu dano (acumula 4x). (Apenas uma especialização.)",
+   "path": "classe",
+   "class": "lobisomem"
+  },
+  "lob_spec2": {
+   "name": "Especialização: Fera Lunar",
+   "pos": [
+    1,
+    3
+   ],
+   "cost": 3,
+   "requires": [
+    "lob_suprema"
+   ],
+   "exclusive": "spec_lobisomem",
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "beast_mult": 0.2
+     }
+    },
+    {
+     "type": "flag",
+     "flag": "long_transform"
+    }
+   ],
+   "desc": "Golpes bestiais +20% e a Fúria se esgota mais devagar. (Apenas uma especialização.)",
+   "path": "classe",
+   "class": "lobisomem"
+  },
+  "lob_spec3": {
+   "name": "Especialização: Caçador Primordial",
+   "pos": [
+    2,
+    3
+   ],
+   "cost": 3,
+   "requires": [
+    "lob_suprema"
+   ],
+   "exclusive": "spec_lobisomem",
+   "effects": [
+    {
+     "type": "mods",
+     "mods": {
+      "vs_low_hp_mult": 0.3,
+      "speed_mult": 0.1
+     }
+    }
+   ],
+   "desc": "+30% contra presas feridas e +10% de velocidade. (Apenas uma especialização.)",
+   "path": "classe",
+   "class": "lobisomem"
+  }
+ }
+}

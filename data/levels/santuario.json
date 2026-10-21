@@ -1,0 +1,566 @@
+{
+ "id": "santuario",
+ "name": "Santuário da Última Chama",
+ "act": 0,
+ "theme": "santuario",
+ "env": "santuario",
+ "music": "santuario",
+ "rows": [
+  "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
+  "#11111111111111111111111111111111111111#",
+  "#11111111111111111111111111111111111111#",
+  "#11111111111111111111111111111111111111#",
+  "#1111111111111aaaaaaaaaaaa1111111111111#",
+  "#......................................#",
+  "##########....................BBBBBBBBB#",
+  "#,,,,,,,,#....................B________#",
+  "#,,,,,,,,#..P..............P..B________#",
+  "#,,,,,,,,......................________#",
+  "#,,,,,,,,.........:::::........________#",
+  "#,,,,,,,,#.......::...::......B________#",
+  "#,,,,,,,,#......::.....::.....B________#",
+  "#...............:.......:..............#",
+  "#...............:.......:..............#",
+  "#.wwww..........:.......:..............#",
+  "#.wwww..........::.....::..............#",
+  "#.wwww...........::...::.....hhhhhhhhhh#",
+  "#.wwww............:::::......h,,,,,,,,h#",
+  "#............................h,,,,,,,,h#",
+  "#...........P..............P.h,,,,,,,,h#",
+  "#..................___........,,,,,,,,h#",
+  "#..................___........,,,,,,,,h#",
+  "#.T................___.......h,,,,,,,,h#",
+  "#..................___.......h,,,,,,,,h#",
+  "#...T..............___.......h,,,,,,,,h#",
+  "#..................___.......hhhhhhhhhh#",
+  "#.T...T.....T......___....T............#",
+  "#..................___......T..........#",
+  "########################################"
+ ],
+ "entities": [
+  {
+   "type": "grace",
+   "id": "graca_santuario",
+   "name": "Santuário da Última Chama",
+   "x": 20.5,
+   "z": 15.5
+  },
+  {
+   "type": "spawn",
+   "id": "inicio",
+   "angle": 90,
+   "x": 20.5,
+   "z": 5.5
+  },
+  {
+   "type": "npc",
+   "npc": "velaria",
+   "angle": -90,
+   "x": 20.5,
+   "z": 19.5
+  },
+  {
+   "type": "npc",
+   "npc": "ferrus",
+   "angle": 0,
+   "x": 5.5,
+   "z": 20.5
+  },
+  {
+   "type": "npc",
+   "npc": "oriana",
+   "angle": 0,
+   "x": 7.5,
+   "z": 7.5
+  },
+  {
+   "type": "npc",
+   "npc": "kaelen",
+   "angle": 180,
+   "x": 32.5,
+   "z": 9.5
+  },
+  {
+   "type": "npc",
+   "npc": "theodric",
+   "angle": -90,
+   "x": 35.5,
+   "z": 20.5
+  },
+  {
+   "type": "document",
+   "doc": "livro_portadores",
+   "sprite": "lectern",
+   "x": 32.5,
+   "z": 21.5
+  },
+  {
+   "type": "document",
+   "doc": "carta_velaria",
+   "sprite": "note",
+   "x": 37.5,
+   "z": 27.5
+  },
+  {
+   "type": "decor",
+   "sprite": "anvil",
+   "solid": true,
+   "half": [
+    0.4,
+    0.3
+   ],
+   "top": 1.0,
+   "x": 6.5,
+   "z": 21.5
+  },
+  {
+   "type": "decor",
+   "sprite": "forge",
+   "solid": true,
+   "half": [
+    0.6,
+    0.5
+   ],
+   "top": 1.5,
+   "light": {
+    "color": [
+     1.0,
+     0.5,
+     0.2
+    ],
+    "intensity": 2.6,
+    "radius": 7,
+    "h": 1.2,
+    "flicker": 0.25
+   },
+   "x": 3.5,
+   "z": 21.5
+  },
+  {
+   "type": "decor",
+   "sprite": "cart",
+   "solid": true,
+   "half": [
+    0.8,
+    0.5
+   ],
+   "top": 1.5,
+   "x": 5.5,
+   "z": 7.5
+  },
+  {
+   "type": "decor",
+   "sprite": "lantern",
+   "light": {
+    "color": [
+     1.0,
+     0.75,
+     0.4
+    ],
+    "intensity": 1.5,
+    "radius": 5,
+    "h": 1.6,
+    "flicker": 0.1
+   },
+   "x": 4.5,
+   "z": 8.5
+  },
+  {
+   "type": "decor",
+   "sprite": "brazier",
+   "solid": true,
+   "half": [
+    0.3,
+    0.3
+   ],
+   "top": 1.0,
+   "light": {
+    "color": [
+     1.0,
+     0.62,
+     0.3
+    ],
+    "intensity": 2.0,
+    "radius": 6.5,
+    "h": 1.3,
+    "flicker": 0.2
+   },
+   "x": 16.5,
+   "z": 18.5
+  },
+  {
+   "type": "decor",
+   "sprite": "brazier",
+   "solid": true,
+   "half": [
+    0.3,
+    0.3
+   ],
+   "top": 1.0,
+   "light": {
+    "color": [
+     1.0,
+     0.62,
+     0.3
+    ],
+    "intensity": 2.0,
+    "radius": 6.5,
+    "h": 1.3,
+    "flicker": 0.2
+   },
+   "x": 24.5,
+   "z": 18.5
+  },
+  {
+   "type": "decor",
+   "sprite": "brazier",
+   "solid": true,
+   "half": [
+    0.3,
+    0.3
+   ],
+   "top": 1.0,
+   "light": {
+    "color": [
+     1.0,
+     0.62,
+     0.3
+    ],
+    "intensity": 2.0,
+    "radius": 6.5,
+    "h": 1.3,
+    "flicker": 0.2
+   },
+   "x": 16.5,
+   "z": 12.5
+  },
+  {
+   "type": "decor",
+   "sprite": "brazier",
+   "solid": true,
+   "half": [
+    0.3,
+    0.3
+   ],
+   "top": 1.0,
+   "light": {
+    "color": [
+     1.0,
+     0.62,
+     0.3
+    ],
+    "intensity": 2.0,
+    "radius": 6.5,
+    "h": 1.3,
+    "flicker": 0.2
+   },
+   "x": 24.5,
+   "z": 12.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "boneco_treino",
+   "angle": 180,
+   "x": 33.5,
+   "z": 6.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "boneco_treino",
+   "angle": 180,
+   "x": 36.5,
+   "z": 6.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "boneco_treino",
+   "angle": 180,
+   "x": 36.5,
+   "z": 10.5
+  },
+  {
+   "type": "decor",
+   "sprite": "candelabra",
+   "light": {
+    "color": [
+     1.0,
+     0.8,
+     0.45
+    ],
+    "intensity": 1.4,
+    "radius": 5,
+    "h": 1.5,
+    "flicker": 0.15
+   },
+   "x": 2.5,
+   "z": 16.5
+  },
+  {
+   "type": "decor",
+   "sprite": "candelabra",
+   "light": {
+    "color": [
+     1.0,
+     0.8,
+     0.45
+    ],
+    "intensity": 1.4,
+    "radius": 5,
+    "h": 1.5,
+    "flicker": 0.15
+   },
+   "x": 37.5,
+   "z": 16.5
+  },
+  {
+   "type": "exit",
+   "id": "portal_ato1",
+   "to": "ato1_floresta",
+   "spawn": "inicio",
+   "label": "Portal: Ato I — Lua Sangrenta",
+   "auto": false,
+   "require_flag": "intro_velaria",
+   "locked_text": "O portal está selado. Ainda não é hora.",
+   "sprite": "portal_gate",
+   "color": [
+    0.9,
+    0.2,
+    0.2
+   ],
+   "x": 5.5,
+   "z": 27.5
+  },
+  {
+   "type": "spawn",
+   "id": "retorno_ato1",
+   "angle": -90,
+   "x": 5.5,
+   "z": 24.5
+  },
+  {
+   "type": "decor",
+   "sprite": "trofeu_ato1",
+   "if": {
+    "flag": "ato1_concluido"
+   },
+   "light": {
+    "color": [
+     0.9,
+     0.2,
+     0.2
+    ],
+    "intensity": 1.2,
+    "radius": 3.5,
+    "h": 1.2,
+    "flicker": 0.0
+   },
+   "x": 3.5,
+   "z": 28.5
+  },
+  {
+   "type": "exit",
+   "id": "portal_ato2",
+   "to": "ato2_cidade",
+   "spawn": "inicio",
+   "label": "Portal: Ato II — Forja das Almas",
+   "auto": false,
+   "require_flag": "ato1_concluido",
+   "locked_text": "O portal está selado. Ainda não é hora.",
+   "sprite": "portal_gate",
+   "color": [
+    1.0,
+    0.55,
+    0.15
+   ],
+   "x": 12.5,
+   "z": 27.5
+  },
+  {
+   "type": "spawn",
+   "id": "retorno_ato2",
+   "angle": -90,
+   "x": 12.5,
+   "z": 24.5
+  },
+  {
+   "type": "decor",
+   "sprite": "trofeu_ato2",
+   "if": {
+    "flag": "ato2_concluido"
+   },
+   "light": {
+    "color": [
+     1.0,
+     0.55,
+     0.15
+    ],
+    "intensity": 1.2,
+    "radius": 3.5,
+    "h": 1.2,
+    "flicker": 0.0
+   },
+   "x": 10.5,
+   "z": 28.5
+  },
+  {
+   "type": "exit",
+   "id": "portal_ato3",
+   "to": "ato3_catedral",
+   "spawn": "inicio",
+   "label": "Portal: Ato III — Catedral da Carne",
+   "auto": false,
+   "require_flag": "ato2_concluido",
+   "locked_text": "O portal está selado. Ainda não é hora.",
+   "sprite": "portal_gate",
+   "color": [
+    0.9,
+    0.75,
+    0.5
+   ],
+   "x": 19.5,
+   "z": 27.5
+  },
+  {
+   "type": "spawn",
+   "id": "retorno_ato3",
+   "angle": -90,
+   "x": 19.5,
+   "z": 24.5
+  },
+  {
+   "type": "decor",
+   "sprite": "trofeu_ato3",
+   "if": {
+    "flag": "ato3_concluido"
+   },
+   "light": {
+    "color": [
+     0.9,
+     0.75,
+     0.5
+    ],
+    "intensity": 1.2,
+    "radius": 3.5,
+    "h": 1.2,
+    "flicker": 0.0
+   },
+   "x": 17.5,
+   "z": 28.5
+  },
+  {
+   "type": "exit",
+   "id": "portal_ato4",
+   "to": "ato4_biblioteca",
+   "spawn": "inicio",
+   "label": "Portal: Ato IV — Observatório do Abismo",
+   "auto": false,
+   "require_flag": "ato3_concluido",
+   "locked_text": "O portal está selado. Ainda não é hora.",
+   "sprite": "portal_gate",
+   "color": [
+    0.5,
+    0.4,
+    1.0
+   ],
+   "x": 26.5,
+   "z": 27.5
+  },
+  {
+   "type": "spawn",
+   "id": "retorno_ato4",
+   "angle": -90,
+   "x": 26.5,
+   "z": 24.5
+  },
+  {
+   "type": "decor",
+   "sprite": "trofeu_ato4",
+   "if": {
+    "flag": "ato4_concluido"
+   },
+   "light": {
+    "color": [
+     0.5,
+     0.4,
+     1.0
+    ],
+    "intensity": 1.2,
+    "radius": 3.5,
+    "h": 1.2,
+    "flicker": 0.0
+   },
+   "x": 24.5,
+   "z": 28.5
+  },
+  {
+   "type": "exit",
+   "id": "portal_ato5",
+   "to": "ato5_ruinas",
+   "spawn": "inicio",
+   "label": "Portal: Ato V — Trono da Graça",
+   "auto": false,
+   "require_flag": "ato4_concluido",
+   "locked_text": "O portal está selado. Ainda não é hora.",
+   "sprite": "portal_gate",
+   "color": [
+    1.0,
+    0.9,
+    0.6
+   ],
+   "x": 33.5,
+   "z": 27.5
+  },
+  {
+   "type": "spawn",
+   "id": "retorno_ato5",
+   "angle": -90,
+   "x": 33.5,
+   "z": 24.5
+  },
+  {
+   "type": "decor",
+   "sprite": "trofeu_ato5",
+   "if": {
+    "flag": "aurelion_derrotado"
+   },
+   "light": {
+    "color": [
+     1.0,
+     0.9,
+     0.6
+    ],
+    "intensity": 1.2,
+    "radius": 3.5,
+    "h": 1.2,
+    "flicker": 0.0
+   },
+   "x": 31.5,
+   "z": 28.5
+  },
+  {
+   "type": "decor",
+   "sprite": "banner",
+   "x": 2.5,
+   "z": 26.5
+  },
+  {
+   "type": "decor",
+   "sprite": "banner",
+   "x": 37.5,
+   "z": 26.5
+  }
+ ],
+ "safe": true,
+ "regions": [
+  {
+   "id": "santuario",
+   "name": "Santuário da Última Chama",
+   "rect": [
+    0,
+    0,
+    40,
+    30
+   ]
+  }
+ ]
+}

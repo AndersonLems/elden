@@ -1,0 +1,285 @@
+{
+ "id": "ato1_arena",
+ "name": "Salão da Lua Partida",
+ "act": 1,
+ "theme": "ato1_castelo",
+ "env": "lua_arena",
+ "music": "chefe1",
+ "rows": [
+  "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
+  "H############################H",
+  "H###########.......##########H",
+  "H#########...........########H",
+  "H#######...............######H",
+  "H######.................#####H",
+  "H#####...................####H",
+  "H#####.www...............####H",
+  "H####..www..........www...###H",
+  "H####...............www...###H",
+  "H###...........,...........##H",
+  "H###.........,,,,,.........##H",
+  "H###.........,,,,,.........##H",
+  "H###........,,,,,,,........##H",
+  "H###.........,,,,,.........##H",
+  "H###.........,,,,,.........##H",
+  "H###...........,...........##H",
+  "H####..............www....###H",
+  "H####....www.......www....###H",
+  "H#####...www.............####H",
+  "H#####...................####H",
+  "H######.................#####H",
+  "H#######...............######H",
+  "H#########...........########H",
+  "H###########.......##########H",
+  "H#############...############H",
+  "H#############...############H",
+  "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHH"
+ ],
+ "entities": [
+  {
+   "type": "spawn",
+   "id": "entrada",
+   "angle": 90,
+   "x": 15.5,
+   "z": 2.5
+  },
+  {
+   "type": "exit",
+   "id": "saida_arena",
+   "to": "ato1_castelo",
+   "spawn": "salao",
+   "label": "Voltar ao castelo",
+   "auto": false,
+   "sprite": "stairs_down",
+   "x": 15.5,
+   "z": 1.5
+  },
+  {
+   "type": "door",
+   "id": "nevoa_arena",
+   "sprite": "fog_gate",
+   "half": [
+    1.5,
+    0.5
+   ],
+   "top": 3.0,
+   "open": true,
+   "transient": true,
+   "close_on": "boss_start",
+   "open_on": "boss_defeated",
+   "x": 15.5,
+   "z": 4.5
+  },
+  {
+   "type": "boss",
+   "boss": "varkhan",
+   "angle": -90,
+   "x": 15.5,
+   "z": 20.5
+  },
+  {
+   "type": "exit",
+   "id": "portal_vitoria",
+   "to": "santuario",
+   "spawn": "retorno_ato1",
+   "label": "Retornar ao Santuário",
+   "auto": false,
+   "sprite": "portal_gate",
+   "color": [
+    0.9,
+    0.2,
+    0.2
+   ],
+   "if": {
+    "flag": "boss:varkhan"
+   },
+   "x": 15.5,
+   "z": 14.5
+  },
+  {
+   "type": "grace",
+   "id": "graca_lua",
+   "name": "Salão da Lua Partida",
+   "if": {
+    "flag": "boss:varkhan"
+   },
+   "x": 13.5,
+   "z": 14.5
+  },
+  {
+   "type": "arena_pillar",
+   "id": "arena_pilar_0",
+   "sprite": "pillar",
+   "x": 22.5,
+   "z": 14.5
+  },
+  {
+   "type": "arena_pillar",
+   "id": "arena_pilar_1",
+   "sprite": "pillar_broken",
+   "x": 20.5,
+   "z": 9.5
+  },
+  {
+   "type": "arena_pillar",
+   "id": "arena_pilar_2",
+   "sprite": "pillar",
+   "x": 15.5,
+   "z": 7.5
+  },
+  {
+   "type": "arena_pillar",
+   "id": "arena_pilar_3",
+   "sprite": "pillar_broken",
+   "x": 10.5,
+   "z": 9.5
+  },
+  {
+   "type": "arena_pillar",
+   "id": "arena_pilar_4",
+   "sprite": "pillar",
+   "x": 8.5,
+   "z": 14.5
+  },
+  {
+   "type": "arena_pillar",
+   "id": "arena_pilar_5",
+   "sprite": "pillar_broken",
+   "x": 10.5,
+   "z": 19.5
+  },
+  {
+   "type": "arena_pillar",
+   "id": "arena_pilar_6",
+   "sprite": "pillar",
+   "x": 15.5,
+   "z": 21.5
+  },
+  {
+   "type": "arena_pillar",
+   "id": "arena_pilar_7",
+   "sprite": "pillar_broken",
+   "x": 20.5,
+   "z": 19.5
+  },
+  {
+   "type": "decor",
+   "sprite": "brazier_red",
+   "light": {
+    "color": [
+     1.0,
+     0.25,
+     0.15
+    ],
+    "intensity": 2.4,
+    "radius": 8,
+    "h": 1.4,
+    "flicker": 0.3
+   },
+   "x": 25.5,
+   "z": 11.5
+  },
+  {
+   "type": "decor",
+   "sprite": "brazier_red",
+   "light": {
+    "color": [
+     1.0,
+     0.25,
+     0.15
+    ],
+    "intensity": 2.4,
+    "radius": 8,
+    "h": 1.4,
+    "flicker": 0.3
+   },
+   "x": 17.5,
+   "z": 4.5
+  },
+  {
+   "type": "decor",
+   "sprite": "brazier_red",
+   "light": {
+    "color": [
+     1.0,
+     0.25,
+     0.15
+    ],
+    "intensity": 2.4,
+    "radius": 8,
+    "h": 1.4,
+    "flicker": 0.3
+   },
+   "x": 7.5,
+   "z": 7.5
+  },
+  {
+   "type": "decor",
+   "sprite": "brazier_red",
+   "light": {
+    "color": [
+     1.0,
+     0.25,
+     0.15
+    ],
+    "intensity": 2.4,
+    "radius": 8,
+    "h": 1.4,
+    "flicker": 0.3
+   },
+   "x": 5.5,
+   "z": 17.5
+  },
+  {
+   "type": "decor",
+   "sprite": "brazier_red",
+   "light": {
+    "color": [
+     1.0,
+     0.25,
+     0.15
+    ],
+    "intensity": 2.4,
+    "radius": 8,
+    "h": 1.4,
+    "flicker": 0.3
+   },
+   "x": 13.5,
+   "z": 24.5
+  },
+  {
+   "type": "decor",
+   "sprite": "brazier_red",
+   "light": {
+    "color": [
+     1.0,
+     0.25,
+     0.15
+    ],
+    "intensity": 2.4,
+    "radius": 8,
+    "h": 1.4,
+    "flicker": 0.3
+   },
+   "x": 23.5,
+   "z": 21.5
+  }
+ ],
+ "arena_center": [
+  15.5,
+  14.5
+ ],
+ "boss_arena": true,
+ "regions": [
+  {
+   "id": "arena",
+   "name": "Salão da Lua Partida",
+   "rect": [
+    0,
+    0,
+    30,
+    28
+   ]
+  }
+ ]
+}

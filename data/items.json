@@ -1,0 +1,101 @@
+{
+ "frasco_brasa": {
+  "name": "Brasa do Frasco",
+  "kind": "upgrade",
+  "desc": "Aumenta em 1 o número de Frascos de Brasa (cura)."
+ },
+ "lagrima_eter": {
+  "name": "Lágrima de Éter",
+  "kind": "upgrade",
+  "desc": "Aumenta em 1 o número de Frascos de Éter (Foco)."
+ },
+ "semente_dourada": {
+  "name": "Semente Dourada",
+  "kind": "upgrade",
+  "desc": "Os frascos passam a curar mais."
+ },
+ "lagrima_esquecimento": {
+  "name": "Lágrima do Esquecimento",
+  "kind": "consumivel",
+  "desc": "Permite redistribuir todos os pontos de Graça na Biblioteca do Santuário.",
+  "price": 900
+ },
+ "pedra_de_afiar": {
+  "name": "Pedra de Afiar",
+  "kind": "material",
+  "desc": "Vale como um Fragmento de Forja.",
+  "on_get": {
+   "materials": 1
+  }
+ },
+ "medalhao_lina": {
+  "name": "Medalhão de Lina",
+  "kind": "missao",
+  "desc": "Um medalhão de prata com o retrato de uma menina. Bram procura por ele."
+ },
+ "chave_cripta": {
+  "name": "Chave da Cripta de Velmora",
+  "kind": "chave",
+  "desc": "Abre o portão da cripta sob o cemitério."
+ },
+ "chave_castelo": {
+  "name": "Chave do Salão Carmesim",
+  "kind": "chave",
+  "desc": "Abre o salão onde a Condessa recebe seus convidados."
+ },
+ "chave_forja": {
+  "name": "Cartão de Acesso da Forja",
+  "kind": "chave",
+  "desc": "Placa de cobre perfurada que libera os elevadores da fundição."
+ },
+ "valvula_lise": {
+  "name": "Manivela de Válvula",
+  "kind": "missao",
+  "desc": "Manivela que Lise perdeu. Abre a válvula mestra da casa de máquinas."
+ },
+ "chave_laboratorio": {
+  "name": "Chave do Laboratório",
+  "kind": "chave",
+  "desc": "Abre o laboratório sob a nave da catedral."
+ },
+ "pagina_absolvicao": {
+  "name": "Página da Absolvição",
+  "kind": "missao",
+  "desc": "Uma das três páginas do Livro da Absolvição que a Irmã Agathe procura."
+ },
+ "chave_torre": {
+  "name": "Chave do Planetário",
+  "kind": "chave",
+  "desc": "Abre o planetário no alto da torre."
+ },
+ "selo_trono": {
+  "name": "Selo do Trono",
+  "kind": "chave",
+  "desc": "Selo de ouro envelhecido que abre a escadaria do Trono da Graça."
+ },
+ "nucleo_serafim": {
+  "name": "Núcleo Serafim",
+  "kind": "reliquia",
+  "desc": "O coração mecânico que tentou guardar a Graça. Desbloqueia artes mecânicas no Treinador."
+ },
+ "graca_profana": {
+  "name": "Graça Profana",
+  "kind": "reliquia",
+  "desc": "A Graça que se misturou à carne do Santo. Permite mutações controladas (nós de Ruína ficam mais baratos de manter)."
+ },
+ "grimorio_abismo": {
+  "name": "Páginas do Abismo",
+  "kind": "reliquia",
+  "desc": "As anotações de Malachar sobre a natureza da Graça. A verdade está nas margens."
+ },
+ "coracao_lua": {
+  "name": "Coração da Lua Partida",
+  "kind": "reliquia",
+  "desc": "O poder bestial de Varkhan, cristalizado."
+ },
+ "engrenagem": {
+  "name": "Engrenagem de Bronze",
+  "kind": "missao",
+  "desc": "Uma engrenagem pesada. Encaixa nos mecanismos da fundição."
+ }
+}

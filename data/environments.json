@@ -1,0 +1,579 @@
+{
+ "santuario": {
+  "amb_sky": [
+   0.16,
+   0.12,
+   0.11
+  ],
+  "amb_ground": [
+   0.05,
+   0.035,
+   0.035
+  ],
+  "dir_dir": [
+   -0.3,
+   0.8,
+   -0.4
+  ],
+  "dir_col": [
+   0.18,
+   0.13,
+   0.1
+  ],
+  "fog_col": [
+   0.12,
+   0.08,
+   0.06
+  ],
+  "fog_amount": 0.25,
+  "lift": [
+   0.03,
+   0.015,
+   0.01
+  ],
+  "gain": [
+   1.05,
+   0.98,
+   0.9
+  ],
+  "exposure": 1.2,
+  "saturation": 1.05,
+  "vignette": 0.4,
+  "light_bands": 6,
+  "ambient": "embers",
+  "music": "santuario"
+ },
+ "lua_floresta": {
+  "amb_sky": [
+   0.17,
+   0.15,
+   0.26
+  ],
+  "amb_ground": [
+   0.06,
+   0.045,
+   0.07
+  ],
+  "dir_dir": [
+   0.35,
+   0.75,
+   0.55
+  ],
+  "dir_col": [
+   0.42,
+   0.4,
+   0.62
+  ],
+  "fog_col": [
+   0.12,
+   0.08,
+   0.15
+  ],
+  "fog_amount": 0.32,
+  "lift": [
+   0.02,
+   0.0,
+   0.025
+  ],
+  "gain": [
+   1.03,
+   0.97,
+   1.02
+  ],
+  "exposure": 1.3,
+  "saturation": 0.95,
+  "vignette": 0.5,
+  "light_bands": 5,
+  "ambient": "fireflies_red",
+  "night": true,
+  "music": "ato1"
+ },
+ "lua_castelo": {
+  "amb_sky": [
+   0.14,
+   0.12,
+   0.2
+  ],
+  "amb_ground": [
+   0.05,
+   0.035,
+   0.05
+  ],
+  "dir_dir": [
+   0.3,
+   0.8,
+   0.5
+  ],
+  "dir_col": [
+   0.3,
+   0.28,
+   0.45
+  ],
+  "fog_col": [
+   0.09,
+   0.06,
+   0.11
+  ],
+  "fog_amount": 0.28,
+  "lift": [
+   0.02,
+   0.0,
+   0.02
+  ],
+  "gain": [
+   1.03,
+   0.97,
+   1.0
+  ],
+  "exposure": 1.3,
+  "saturation": 1.0,
+  "vignette": 0.5,
+  "light_bands": 5,
+  "ambient": "dust",
+  "night": true,
+  "music": "ato1"
+ },
+ "lua_arena": {
+  "amb_sky": [
+   0.17,
+   0.09,
+   0.12
+  ],
+  "amb_ground": [
+   0.06,
+   0.03,
+   0.04
+  ],
+  "dir_dir": [
+   0.2,
+   0.85,
+   0.5
+  ],
+  "dir_col": [
+   0.65,
+   0.26,
+   0.24
+  ],
+  "fog_col": [
+   0.16,
+   0.05,
+   0.06
+  ],
+  "fog_amount": 0.3,
+  "lift": [
+   0.03,
+   0.0,
+   0.01
+  ],
+  "gain": [
+   1.08,
+   0.94,
+   0.94
+  ],
+  "exposure": 1.25,
+  "saturation": 1.05,
+  "vignette": 0.55,
+  "light_bands": 5,
+  "ambient": "ash_red",
+  "night": true,
+  "music": "chefe1"
+ },
+ "forja": {
+  "amb_sky": [
+   0.2,
+   0.125,
+   0.075
+  ],
+  "amb_ground": [
+   0.07,
+   0.03,
+   0.02
+  ],
+  "dir_dir": [
+   -0.2,
+   0.9,
+   0.3
+  ],
+  "dir_col": [
+   0.18,
+   0.12,
+   0.08
+  ],
+  "fog_col": [
+   0.18,
+   0.1,
+   0.05
+  ],
+  "fog_amount": 0.35,
+  "lift": [
+   0.03,
+   0.015,
+   0.0
+  ],
+  "gain": [
+   1.1,
+   0.98,
+   0.85
+  ],
+  "exposure": 1.2189999999999999,
+  "saturation": 1.1,
+  "vignette": 0.45,
+  "light_bands": 6,
+  "ambient": "sparks",
+  "music": "ato2"
+ },
+ "forja_arena": {
+  "amb_sky": [
+   0.22499999999999998,
+   0.11249999999999999,
+   0.0625
+  ],
+  "amb_ground": [
+   0.08,
+   0.03,
+   0.01
+  ],
+  "dir_dir": [
+   0.0,
+   1.0,
+   0.2
+  ],
+  "dir_col": [
+   0.2,
+   0.1,
+   0.05
+  ],
+  "fog_col": [
+   0.2,
+   0.08,
+   0.03
+  ],
+  "fog_amount": 0.4,
+  "lift": [
+   0.04,
+   0.01,
+   0.0
+  ],
+  "gain": [
+   1.12,
+   0.96,
+   0.82
+  ],
+  "exposure": 1.2189999999999999,
+  "saturation": 1.12,
+  "vignette": 0.5,
+  "light_bands": 6,
+  "ambient": "sparks",
+  "music": "chefe2"
+ },
+ "catedral": {
+  "amb_sky": [
+   0.17500000000000002,
+   0.1375,
+   0.125
+  ],
+  "amb_ground": [
+   0.06,
+   0.03,
+   0.03
+  ],
+  "dir_dir": [
+   0.4,
+   0.7,
+   0.55
+  ],
+  "dir_col": [
+   0.32,
+   0.26,
+   0.16
+  ],
+  "fog_col": [
+   0.12,
+   0.08,
+   0.07
+  ],
+  "fog_amount": 0.3,
+  "lift": [
+   0.02,
+   0.01,
+   0.01
+  ],
+  "gain": [
+   1.0,
+   0.95,
+   0.92
+  ],
+  "exposure": 1.272,
+  "saturation": 0.9,
+  "vignette": 0.5,
+  "light_bands": 6,
+  "ambient": "incense",
+  "music": "ato3"
+ },
+ "laboratorio": {
+  "amb_sky": [
+   0.125,
+   0.1625,
+   0.125
+  ],
+  "amb_ground": [
+   0.04,
+   0.05,
+   0.03
+  ],
+  "dir_dir": [
+   0.0,
+   1.0,
+   0.0
+  ],
+  "dir_col": [
+   0.05,
+   0.08,
+   0.05
+  ],
+  "fog_col": [
+   0.08,
+   0.12,
+   0.07
+  ],
+  "fog_amount": 0.35,
+  "lift": [
+   0.0,
+   0.02,
+   0.0
+  ],
+  "gain": [
+   0.95,
+   1.02,
+   0.92
+  ],
+  "exposure": 1.3250000000000002,
+  "saturation": 0.85,
+  "vignette": 0.55,
+  "light_bands": 6,
+  "ambient": "spores",
+  "music": "ato3"
+ },
+ "catedral_arena": {
+  "amb_sky": [
+   0.22499999999999998,
+   0.15,
+   0.125
+  ],
+  "amb_ground": [
+   0.07,
+   0.03,
+   0.03
+  ],
+  "dir_dir": [
+   0.3,
+   0.85,
+   0.4
+  ],
+  "dir_col": [
+   0.5,
+   0.38,
+   0.2
+  ],
+  "fog_col": [
+   0.15,
+   0.08,
+   0.07
+  ],
+  "fog_amount": 0.3,
+  "lift": [
+   0.03,
+   0.01,
+   0.01
+  ],
+  "gain": [
+   1.05,
+   0.95,
+   0.9
+  ],
+  "exposure": 1.272,
+  "saturation": 0.95,
+  "vignette": 0.5,
+  "light_bands": 6,
+  "ambient": "incense",
+  "music": "chefe3"
+ },
+ "observatorio": {
+  "amb_sky": [
+   0.125,
+   0.125,
+   0.275
+  ],
+  "amb_ground": [
+   0.04,
+   0.03,
+   0.08
+  ],
+  "dir_dir": [
+   -0.3,
+   0.8,
+   0.5
+  ],
+  "dir_col": [
+   0.18,
+   0.2,
+   0.42
+  ],
+  "fog_col": [
+   0.08,
+   0.06,
+   0.16
+  ],
+  "fog_amount": 0.35,
+  "lift": [
+   0.01,
+   0.01,
+   0.04
+  ],
+  "gain": [
+   0.95,
+   0.98,
+   1.1
+  ],
+  "exposure": 1.272,
+  "saturation": 1.1,
+  "vignette": 0.5,
+  "light_bands": 6,
+  "ambient": "stars",
+  "night": true,
+  "music": "ato4"
+ },
+ "observatorio_arena": {
+  "amb_sky": [
+   0.15,
+   0.1,
+   0.3125
+  ],
+  "amb_ground": [
+   0.05,
+   0.02,
+   0.1
+  ],
+  "dir_dir": [
+   0.0,
+   1.0,
+   0.2
+  ],
+  "dir_col": [
+   0.25,
+   0.2,
+   0.5
+  ],
+  "fog_col": [
+   0.1,
+   0.05,
+   0.2
+  ],
+  "fog_amount": 0.4,
+  "lift": [
+   0.02,
+   0.0,
+   0.05
+  ],
+  "gain": [
+   0.98,
+   0.95,
+   1.12
+  ],
+  "exposure": 1.272,
+  "saturation": 1.15,
+  "vignette": 0.55,
+  "light_bands": 6,
+  "ambient": "stars",
+  "night": true,
+  "music": "chefe4"
+ },
+ "trono": {
+  "amb_sky": [
+   0.375,
+   0.3375,
+   0.275
+  ],
+  "amb_ground": [
+   0.1,
+   0.07,
+   0.06
+  ],
+  "dir_dir": [
+   0.35,
+   0.8,
+   0.45
+  ],
+  "dir_col": [
+   0.65,
+   0.55,
+   0.35
+  ],
+  "fog_col": [
+   0.22,
+   0.18,
+   0.14
+  ],
+  "fog_amount": 0.3,
+  "lift": [
+   0.03,
+   0.02,
+   0.01
+  ],
+  "gain": [
+   1.06,
+   1.0,
+   0.9
+  ],
+  "exposure": 1.1130000000000002,
+  "saturation": 0.95,
+  "vignette": 0.4,
+  "light_bands": 6,
+  "ambient": "light_motes",
+  "music": "ato5"
+ },
+ "trono_arena": {
+  "amb_sky": [
+   0.4,
+   0.3,
+   0.25
+  ],
+  "amb_ground": [
+   0.1,
+   0.05,
+   0.05
+  ],
+  "dir_dir": [
+   0.2,
+   0.9,
+   0.4
+  ],
+  "dir_col": [
+   0.8,
+   0.6,
+   0.35
+  ],
+  "fog_col": [
+   0.25,
+   0.15,
+   0.12
+  ],
+  "fog_amount": 0.35,
+  "lift": [
+   0.04,
+   0.02,
+   0.01
+  ],
+  "gain": [
+   1.08,
+   0.98,
+   0.88
+  ],
+  "exposure": 1.1130000000000002,
+  "saturation": 1.0,
+  "vignette": 0.45,
+  "light_bands": 6,
+  "ambient": "light_motes",
+  "music": "chefe5"
+ }
+}

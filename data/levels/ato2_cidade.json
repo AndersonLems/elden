@@ -1,0 +1,894 @@
+{
+ "id": "ato2_cidade",
+ "name": "Cidade de Brasaferro",
+ "act": 2,
+ "theme": "ato2",
+ "env": "forja",
+ "music": "ato2",
+ "rows": [
+  "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
+  "H,,,,,........,,,,,....______...,,,,,,,,,................____..H",
+  "H,CCCCCCCCCCC,,,CCCCCCCCCCC__...,,,,,,,,CCCCCCCCCCC...CCCCCCCCCH",
+  "H.CCCCCCCCCCC,,,CCCCCCCCCCC___...,,,,,,,CCCCCCCCCCC...C;;;;;;;CH",
+  "H.CCCCCCCCCCC,,,CCCCCCCCCCC___....,,,,,,CCCCCCCCCCC...C;;;;;;;CH",
+  "H.CCCCCCCCCCC,,,CCCCCCCCCCC___......,,,,CCCCCCCCCCC...C;;;;;;;CH",
+  "H.CCCCCCCCCCC,,,CCCCCCCCCCC___.........,CCCCCCCCCCC...C;;;;;;;CH",
+  "H.CCCCCCCCCCC,,,CCCCCCCCCCC.............CCCCCCCCCCC...C;;;;;;;CH",
+  "H_CCCCCCCCCCC,,,,,..............__......CCCCCCCCCCC...C;;;;;;;CH",
+  "H_CCCCCCCCCCC,,,...............______....,,,,,,,,.....C;;;;;;;CH",
+  "H____....,,,,,P.......,,,,,....___P___...,,,,,,,,.....C;;;;;;;CH",
+  "H____.....,,,,........,,,,,,....______...,,,,,,,,.....C;;;;;;;CH",
+  "H____......,........CCCCCCCCCCC.______....,,CCCCCCCCC.CCC;;;CCCH",
+  "H____...............CCCCCCCCCCC._______...,,CCCCCCCCC.pppp;ppppH",
+  "H_CCCCCCC...........CCCCCCCCCCC..______....,CCCCCCCCC...,,,,,..H",
+  "H.CCCCCCC...........CCCCCCCCCCC..______.....CCCCCCCCC..,,,,,,..H",
+  "H.CCCCCCC...........CCCCCCCCCCC....____.....CCCCCCCCC,,,,,,,,..H",
+  "H.CCCCCCC...........CCCCCCCCCCC.............CCCCCCCCC,,,,,,,,..H",
+  "H.CCCCCCC...........CCCCCCCCCCC...P.........CCCCCCCCC,,,,,,,...H",
+  "H,CCCCCCC____.........,,,,,,,,,,,.......____CCCCCCCCC,,,,,,....H",
+  "H,CCCCCCC_____...............,,,,,,,....______.....,,,P,,,,....H",
+  "H,CCCCCCC_____...............,,,,,,~~~~~.______....,,,,,,,.....H",
+  "H,CCCCCCC_____................,,,,,~~~~~.______....,,,,,CCCCCCCH",
+  "Hwwwww===wwwwwwwww===wwwwwwwww===ww~~~~~wwwwwwwwwwwwwwwwwwwwwwwH",
+  "Hwwwww===wwwwwwwww===wwwwwwwww===ww~~~~~wwwwwwwwwwwwwwwwwwwwwwwH",
+  "Hwwwww===wwwwwwwww===wwwwwwwww===ww~~~~~wwwwwwwwwwwwwwwwwwwwwwwH",
+  "H,,,,,,.....P.................,,,,,~~~~~....___.........CCCCCCCH",
+  "H,,,,,,,.......................,,,,~~~~~................CCCCCCCH",
+  "H,,,,,,,,,.....................,,,,,CCCCCCCCC...........CCCCCCCH",
+  "H..,,,,,,,,,.....................,,,CCCCCCCCC......__...CCCCCCCH",
+  "H.CCCCCCCCC,,.CCCCCC,CCCCCC.........CCCCCCCCC....._____.CCCCCCCH",
+  "H.CCCCCCCCC,,,C,,,,,,,,,,,C.........CCCCCCCCC,....______.....,,H",
+  "H.C,,,CCCCC,,,C,,,,,,,,,,,C.........CCCCCCCCC,,...______.....,,H",
+  "H_C,,,CCCCC,,,C,,,,,,,,,,,C.........CCCCCCCCC,,...______......,H",
+  "H_C,,,_____,,,C,,,,,,,,,,,C.........CCCCCCCCC,,,..._____.......H",
+  "H_C,,,CCCCC,,,C,,,,,,,,,,,C.....___.~~~~~,,,,,,,..._____.......H",
+  "H_CCCCCCCCC,,,C,,,,,,,,,,,C.....~~~~22222,,,,,,,.....__........H",
+  "H_CCCCCCCCC,,,C,,,,,,,,,,,C.....~~~~22222,,,,,,,,..............H",
+  "H_CCCCCCCCC,,,C,,,,,,,,,,,C.....~~~~22222,,,,,,,P..............H",
+  "H...........,,C,,,,,,,,,,,C.....~~~~22222.,,,,,,,,,............H",
+  "H.............CCCCCCCCCCCCC.....~~~~22222...,,,,,,,,,,......P__H",
+  "H.............,,,,,,,,,............~~~~~~~....,,,,,,,,,.....___H",
+  "H...:::::::::::::::::::::::::::....~~~~~~~.....,,,,,,,,,....___H",
+  "H.....______...,,,,,,,,............~~~~~~~.....,,,,,,,,,....___H",
+  "H,....______...,,,,,,,,,...........~~~~~~~__....,,,,,,,,,...___H",
+  "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH"
+ ],
+ "entities": [
+  {
+   "type": "spawn",
+   "id": "inicio",
+   "angle": 0,
+   "x": 4.5,
+   "z": 2.5
+  },
+  {
+   "type": "exit",
+   "id": "volta_santuario",
+   "to": "santuario",
+   "spawn": "retorno_ato2",
+   "label": "Voltar ao Santuário",
+   "auto": false,
+   "sprite": "portal_gate",
+   "color": [
+    1.0,
+    0.55,
+    0.15
+   ],
+   "x": 2.5,
+   "z": 1.5
+  },
+  {
+   "type": "grace",
+   "id": "graca_portoes",
+   "name": "Portões de Brasaferro",
+   "x": 7.5,
+   "z": 5.5
+  },
+  {
+   "type": "grace",
+   "id": "graca_refeitorio",
+   "name": "Refeitório dos Operários",
+   "x": 20.5,
+   "z": 11.5
+  },
+  {
+   "type": "npc",
+   "npc": "lise",
+   "angle": -90,
+   "x": 22.5,
+   "z": 8.5
+  },
+  {
+   "type": "document",
+   "doc": "carta_lise",
+   "sprite": "note",
+   "x": 17.5,
+   "z": 7.5
+  },
+  {
+   "type": "document",
+   "doc": "manual_operario",
+   "sprite": "note",
+   "x": 24.5,
+   "z": 13.5
+  },
+  {
+   "type": "gear_socket",
+   "id": "engrenagem_1",
+   "has_gear": false,
+   "positions": 4,
+   "x": 56.5,
+   "z": 30.5
+  },
+  {
+   "type": "gear_socket",
+   "id": "engrenagem_2",
+   "has_gear": true,
+   "positions": 4,
+   "x": 58.5,
+   "z": 30.5
+  },
+  {
+   "type": "gear_socket",
+   "id": "engrenagem_3",
+   "has_gear": false,
+   "positions": 4,
+   "x": 60.5,
+   "z": 30.5
+  },
+  {
+   "type": "document",
+   "doc": "placa_engrenagens",
+   "sprite": "stone_tablet",
+   "x": 54.5,
+   "z": 29.5
+  },
+  {
+   "type": "door",
+   "id": "portao_fundicao",
+   "sprite": "gate_iron_small",
+   "half": [
+    0.5,
+    0.5
+   ],
+   "top": 3.0,
+   "message": "As engrenagens se encaixam com um estrondo: o portão da fundição se abre.",
+   "x": 58.5,
+   "z": 32.5
+  },
+  {
+   "type": "spawn",
+   "id": "saida_fabrica",
+   "angle": -90,
+   "x": 58.5,
+   "z": 37.5
+  },
+  {
+   "type": "exit",
+   "id": "entrada_fabrica",
+   "to": "ato2_fabrica",
+   "spawn": "entrada",
+   "label": "Entrar na fundição",
+   "auto": true,
+   "x": 58.5,
+   "z": 40.5
+  },
+  {
+   "type": "gear",
+   "id": "engrenagem_solta_1",
+   "x": 30.5,
+   "z": 41.5
+  },
+  {
+   "type": "gear",
+   "id": "engrenagem_solta_2",
+   "x": 12.5,
+   "z": 8.5
+  },
+  {
+   "type": "platform",
+   "id": "plat_fosso",
+   "points": [
+    [
+     34.5,
+     0.0,
+     21.5
+    ],
+    [
+     40.5,
+     0.0,
+     21.5
+    ]
+   ],
+   "half": [
+    1.0,
+    1.0
+   ],
+   "speed": 2.2,
+   "wait": 1.0,
+   "x": 34.5,
+   "z": 21.5
+  },
+  {
+   "type": "platform",
+   "id": "plat_saliencia",
+   "points": [
+    [
+     31.0,
+     0.0,
+     7.5
+    ],
+    [
+     33.6,
+     1.0,
+     7.5
+    ],
+    [
+     35.6,
+     2.0,
+     7.5
+    ]
+   ],
+   "half": [
+    1.0,
+    1.0
+   ],
+   "speed": 1.6,
+   "wait": 1.2,
+   "x": 31.5,
+   "z": 7.5
+  },
+  {
+   "type": "chest",
+   "id": "bau_saliencia_forja",
+   "loot": [
+    {
+     "rune": "engrenagem"
+    },
+    {
+     "materials": 4
+    }
+   ],
+   "x": 38.5,
+   "z": 7.5
+  },
+  {
+   "type": "hazard",
+   "id": "serra_trilho",
+   "hazard": "saw",
+   "sprite": "saw_hazard",
+   "period": 0,
+   "radius": 0.7,
+   "dmg": 0.12,
+   "points": [
+    [
+     5.5,
+     3.5
+    ],
+    [
+     29.5,
+     3.5
+    ]
+   ],
+   "speed": 4.0,
+   "x": 5.5,
+   "z": 3.5
+  },
+  {
+   "type": "hazard",
+   "id": "vapor_0",
+   "hazard": "steam",
+   "sprite": "pipe_vent",
+   "period": 3.0,
+   "on_time": 1.0,
+   "warn": 0.8,
+   "offset": 0.0,
+   "radius": 0.9,
+   "dmg": 0.08,
+   "element": "fogo",
+   "x": 12.5,
+   "z": 25.5
+  },
+  {
+   "type": "hazard",
+   "id": "vapor_1",
+   "hazard": "steam",
+   "sprite": "pipe_vent",
+   "period": 3.0,
+   "on_time": 1.0,
+   "warn": 0.8,
+   "offset": 0.7,
+   "radius": 0.9,
+   "dmg": 0.08,
+   "element": "fogo",
+   "x": 32.5,
+   "z": 31.5
+  },
+  {
+   "type": "hazard",
+   "id": "vapor_2",
+   "hazard": "steam",
+   "sprite": "pipe_vent",
+   "period": 3.0,
+   "on_time": 1.0,
+   "warn": 0.8,
+   "offset": 1.4,
+   "radius": 0.9,
+   "dmg": 0.08,
+   "element": "fogo",
+   "x": 46.5,
+   "z": 19.5
+  },
+  {
+   "type": "hazard",
+   "id": "vapor_3",
+   "hazard": "steam",
+   "sprite": "pipe_vent",
+   "period": 3.0,
+   "on_time": 1.0,
+   "warn": 0.8,
+   "offset": 2.0999999999999996,
+   "radius": 0.9,
+   "dmg": 0.08,
+   "element": "fogo",
+   "x": 50.5,
+   "z": 9.5
+  },
+  {
+   "type": "decor",
+   "sprite": "lamp_post",
+   "solid": true,
+   "half": [
+    0.2,
+    0.2
+   ],
+   "top": 2.5,
+   "light": {
+    "color": [
+     1.0,
+     0.6,
+     0.25
+    ],
+    "intensity": 1.8,
+    "radius": 6.5,
+    "h": 2.2,
+    "flicker": 0.2
+   },
+   "x": 10.5,
+   "z": 17.5
+  },
+  {
+   "type": "decor",
+   "sprite": "lamp_post",
+   "solid": true,
+   "half": [
+    0.2,
+    0.2
+   ],
+   "top": 2.5,
+   "light": {
+    "color": [
+     1.0,
+     0.6,
+     0.25
+    ],
+    "intensity": 1.8,
+    "radius": 6.5,
+    "h": 2.2,
+    "flicker": 0.2
+   },
+   "x": 24.5,
+   "z": 17.5
+  },
+  {
+   "type": "decor",
+   "sprite": "lamp_post",
+   "solid": true,
+   "half": [
+    0.2,
+    0.2
+   ],
+   "top": 2.5,
+   "light": {
+    "color": [
+     1.0,
+     0.6,
+     0.25
+    ],
+    "intensity": 1.8,
+    "radius": 6.5,
+    "h": 2.2,
+    "flicker": 0.2
+   },
+   "x": 44.5,
+   "z": 24.5
+  },
+  {
+   "type": "decor",
+   "sprite": "lamp_post",
+   "solid": true,
+   "half": [
+    0.2,
+    0.2
+   ],
+   "top": 2.5,
+   "light": {
+    "color": [
+     1.0,
+     0.6,
+     0.25
+    ],
+    "intensity": 1.8,
+    "radius": 6.5,
+    "h": 2.2,
+    "flicker": 0.2
+   },
+   "x": 52.5,
+   "z": 12.5
+  },
+  {
+   "type": "decor",
+   "sprite": "lamp_post",
+   "solid": true,
+   "half": [
+    0.2,
+    0.2
+   ],
+   "top": 2.5,
+   "light": {
+    "color": [
+     1.0,
+     0.6,
+     0.25
+    ],
+    "intensity": 1.8,
+    "radius": 6.5,
+    "h": 2.2,
+    "flicker": 0.2
+   },
+   "x": 30.5,
+   "z": 25.5
+  },
+  {
+   "type": "decor",
+   "sprite": "lamp_post",
+   "solid": true,
+   "half": [
+    0.2,
+    0.2
+   ],
+   "top": 2.5,
+   "light": {
+    "color": [
+     1.0,
+     0.6,
+     0.25
+    ],
+    "intensity": 1.8,
+    "radius": 6.5,
+    "h": 2.2,
+    "flicker": 0.2
+   },
+   "x": 14.5,
+   "z": 41.5
+  },
+  {
+   "type": "decor",
+   "sprite": "lamp_post",
+   "solid": true,
+   "half": [
+    0.2,
+    0.2
+   ],
+   "top": 2.5,
+   "light": {
+    "color": [
+     1.0,
+     0.6,
+     0.25
+    ],
+    "intensity": 1.8,
+    "radius": 6.5,
+    "h": 2.2,
+    "flicker": 0.2
+   },
+   "x": 46.5,
+   "z": 35.5
+  },
+  {
+   "type": "decor",
+   "sprite": "lamp_post",
+   "solid": true,
+   "half": [
+    0.2,
+    0.2
+   ],
+   "top": 2.5,
+   "light": {
+    "color": [
+     1.0,
+     0.6,
+     0.25
+    ],
+    "intensity": 1.8,
+    "radius": 6.5,
+    "h": 2.2,
+    "flicker": 0.2
+   },
+   "x": 60.5,
+   "z": 27.5
+  },
+  {
+   "type": "decor",
+   "sprite": "lamp_post",
+   "solid": true,
+   "half": [
+    0.2,
+    0.2
+   ],
+   "top": 2.5,
+   "light": {
+    "color": [
+     1.0,
+     0.6,
+     0.25
+    ],
+    "intensity": 1.8,
+    "radius": 6.5,
+    "h": 2.2,
+    "flicker": 0.2
+   },
+   "x": 4.5,
+   "z": 19.5
+  },
+  {
+   "type": "decor",
+   "sprite": "lamp_post",
+   "solid": true,
+   "half": [
+    0.2,
+    0.2
+   ],
+   "top": 2.5,
+   "light": {
+    "color": [
+     1.0,
+     0.6,
+     0.25
+    ],
+    "intensity": 1.8,
+    "radius": 6.5,
+    "h": 2.2,
+    "flicker": 0.2
+   },
+   "x": 26.5,
+   "z": 1.5
+  },
+  {
+   "type": "decor",
+   "sprite": "brazier",
+   "solid": true,
+   "half": [
+    0.3,
+    0.3
+   ],
+   "top": 1.0,
+   "light": {
+    "color": [
+     1.0,
+     0.5,
+     0.2
+    ],
+    "intensity": 2.2,
+    "radius": 6,
+    "h": 1.3,
+    "flicker": 0.3
+   },
+   "x": 16.5,
+   "z": 23.5
+  },
+  {
+   "type": "decor",
+   "sprite": "brazier",
+   "solid": true,
+   "half": [
+    0.3,
+    0.3
+   ],
+   "top": 1.0,
+   "light": {
+    "color": [
+     1.0,
+     0.5,
+     0.2
+    ],
+    "intensity": 2.2,
+    "radius": 6,
+    "h": 1.3,
+    "flicker": 0.3
+   },
+   "x": 40.5,
+   "z": 19.5
+  },
+  {
+   "type": "decor",
+   "sprite": "brazier",
+   "solid": true,
+   "half": [
+    0.3,
+    0.3
+   ],
+   "top": 1.0,
+   "light": {
+    "color": [
+     1.0,
+     0.5,
+     0.2
+    ],
+    "intensity": 2.2,
+    "radius": 6,
+    "h": 1.3,
+    "flicker": 0.3
+   },
+   "x": 24.5,
+   "z": 23.5
+  },
+  {
+   "type": "decor",
+   "sprite": "gear",
+   "solid": true,
+   "half": [
+    0.5,
+    0.5
+   ],
+   "top": 1.0,
+   "x": 34.5,
+   "z": 39.5
+  },
+  {
+   "type": "decor",
+   "sprite": "gear",
+   "solid": true,
+   "half": [
+    0.5,
+    0.5
+   ],
+   "top": 1.0,
+   "x": 12.5,
+   "z": 33.5
+  },
+  {
+   "type": "decor",
+   "sprite": "gear",
+   "solid": true,
+   "half": [
+    0.5,
+    0.5
+   ],
+   "top": 1.0,
+   "x": 50.5,
+   "z": 3.5
+  },
+  {
+   "type": "decor",
+   "sprite": "gear",
+   "solid": true,
+   "half": [
+    0.5,
+    0.5
+   ],
+   "top": 1.0,
+   "x": 28.5,
+   "z": 19.5
+  },
+  {
+   "type": "breakable",
+   "sprite": "crate",
+   "x": 31.5,
+   "z": 37.5
+  },
+  {
+   "type": "breakable",
+   "sprite": "barrel",
+   "x": 32.5,
+   "z": 37.5
+  },
+  {
+   "type": "breakable",
+   "sprite": "crate",
+   "x": 9.5,
+   "z": 18.5
+  },
+  {
+   "type": "breakable",
+   "sprite": "crate",
+   "x": 45.5,
+   "z": 2.5
+  },
+  {
+   "type": "breakable",
+   "sprite": "barrel",
+   "x": 46.5,
+   "z": 2.5
+  },
+  {
+   "type": "breakable",
+   "sprite": "crate",
+   "x": 53.5,
+   "z": 17.5
+  },
+  {
+   "type": "breakable_wall",
+   "id": "parede_brasaferro",
+   "sprite": "cracked_wall_brick",
+   "hp": 3,
+   "x": 10.5,
+   "z": 11.5
+  },
+  {
+   "type": "document",
+   "doc": "fragmento_ciclo_2",
+   "sprite": "bone_shard",
+   "x": 4.5,
+   "z": 12.5
+  },
+  {
+   "type": "chest",
+   "id": "bau_brasaferro_secreto",
+   "loot": [
+    {
+     "materials": 3
+    },
+    {
+     "item": "lagrima_eter"
+    }
+   ],
+   "x": 4.5,
+   "z": 10.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "operario_corrompido",
+   "x": 12.5,
+   "z": 11.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "operario_corrompido",
+   "x": 28.5,
+   "z": 9.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "operario_corrompido",
+   "x": 40.5,
+   "z": 5.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "operario_corrompido",
+   "x": 44.5,
+   "z": 15.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "cao_mecanico",
+   "x": 20.5,
+   "z": 25.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "cao_mecanico",
+   "x": 24.5,
+   "z": 25.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "cao_mecanico",
+   "x": 48.5,
+   "z": 23.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "sentinela",
+   "x": 32.5,
+   "z": 41.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "sentinela",
+   "x": 52.5,
+   "z": 35.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "automato",
+   "x": 40.5,
+   "z": 31.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "automato",
+   "x": 14.5,
+   "z": 29.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "maquina_serra",
+   "x": 46.5,
+   "z": 41.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "operario_corrompido",
+   "elite": true,
+   "unique": "a2_capataz",
+   "x": 32.5,
+   "z": 15.5
+  }
+ ],
+ "puzzles": [
+  {
+   "id": "engrenagens_fundicao",
+   "type": "gears",
+   "props": [
+    "engrenagem_1",
+    "engrenagem_2",
+    "engrenagem_3"
+   ],
+   "solution": [
+    1,
+    3,
+    2
+   ],
+   "open": [
+    "portao_fundicao"
+   ],
+   "lock": [],
+   "message": "As engrenagens giram em sincronia!",
+   "grace": 250
+  }
+ ],
+ "regions": [
+  {
+   "id": "portoes",
+   "name": "Portões de Brasaferro",
+   "rect": [
+    1,
+    0,
+    15,
+    10
+   ]
+  },
+  {
+   "id": "refeitorio",
+   "name": "Refeitório dos Operários",
+   "rect": [
+    14,
+    5,
+    27,
+    16
+   ]
+  },
+  {
+   "id": "fundicao",
+   "name": "Pátio da Fundição",
+   "rect": [
+    52,
+    27,
+    64,
+    44
+   ]
+  },
+  {
+   "id": "cidade",
+   "name": "Cidade de Brasaferro",
+   "rect": [
+    0,
+    0,
+    64,
+    46
+   ]
+  }
+ ]
+}

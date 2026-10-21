@@ -1,0 +1,1177 @@
+{
+ "condessa_rubra": {
+  "name": "A Condessa Rubra",
+  "title": "Senhora do Salão Carmesim",
+  "class": "condessa",
+  "base": "vampiro_menor",
+  "act": 1,
+  "optional": true,
+  "hp": 1500,
+  "posture": 220,
+  "atk": {
+   "fisico": 34,
+   "sangue": 12
+  },
+  "speed": 5.2,
+  "scale": 1.15,
+  "radius": 0.45,
+  "height": 2.0,
+  "weight": 2.5,
+  "break_time": 3.0,
+  "resist": {
+   "sagrado": -0.3,
+   "sangue": 0.5
+  },
+  "grace": 900,
+  "pref": 2.6,
+  "wake_radius": 8,
+  "rewards": [
+   {
+    "rune": "sangue_eterno"
+   },
+   {
+    "weapon": "rapieira_carmesim"
+   },
+   {
+    "item": "semente_dourada"
+   }
+  ],
+  "flags": [
+   "miniboss:condessa"
+  ],
+  "choice": false,
+  "phases": [
+   {
+    "hp": 1.0,
+    "name": "Dança da Rapieira",
+    "attacks": [
+     {
+      "move": "condessa_estocadas",
+      "range": [
+       0,
+       3.0
+      ],
+      "weight": 3,
+      "cd": 2.0
+     },
+     {
+      "move": "condessa_danca",
+      "range": [
+       0,
+       2.4
+      ],
+      "weight": 1.5,
+      "cd": 4
+     },
+     {
+      "move": "condessa_lancas",
+      "range": [
+       3,
+       12
+      ],
+      "weight": 2,
+      "cd": 4.5
+     }
+    ]
+   },
+   {
+    "hp": 0.5,
+    "name": "Banquete de Sangue",
+    "anim": "roar",
+    "speed": 5.8,
+    "attacks": [
+     {
+      "move": "condessa_estocadas",
+      "range": [
+       0,
+       3.0
+      ],
+      "weight": 3,
+      "cd": 1.6
+     },
+     {
+      "move": "condessa_danca",
+      "range": [
+       0,
+       2.4
+      ],
+      "weight": 1.5,
+      "cd": 3.5
+     },
+     {
+      "move": "condessa_lancas",
+      "range": [
+       3,
+       12
+      ],
+      "weight": 2,
+      "cd": 3.5
+     },
+     {
+      "move": "condessa_chuva",
+      "range": [
+       0,
+       12
+      ],
+      "weight": 2,
+      "cd": 6
+     },
+     {
+      "move": "condessa_dreno",
+      "range": [
+       0,
+       7
+      ],
+      "weight": 1,
+      "cd": 9
+     }
+    ]
+   }
+  ],
+  "sprite": "condessa"
+ },
+ "varkhan": {
+  "name": "VARKHAN",
+  "title": "O Primeiro Licano",
+  "class": "varkhan",
+  "base": "licano",
+  "act": 1,
+  "hp": 2600,
+  "posture": 300,
+  "atk": {
+   "fisico": 44
+  },
+  "speed": 5.0,
+  "scale": 2.0,
+  "radius": 0.85,
+  "height": 2.4,
+  "weight": 6,
+  "break_time": 3.4,
+  "resist": {
+   "fogo": -0.15,
+   "sagrado": -0.1
+  },
+  "grace": 1600,
+  "pref": 2.4,
+  "wake_radius": 10,
+  "intro_anim": "howl",
+  "intro_time": 2.0,
+  "rewards": [
+   {
+    "rune": "lua_partida"
+   },
+   {
+    "rune": "predador"
+   },
+   {
+    "points": 1
+   }
+  ],
+  "purify_reward": [
+   {
+    "item": "frasco_brasa"
+   },
+   {
+    "rune": "peregrino"
+   }
+  ],
+  "absorb_reward": [
+   {
+    "art": "art_mordida_lua"
+   },
+   {
+    "rune": "carrasco"
+   }
+  ],
+  "flags": [
+   "ato1_concluido"
+  ],
+  "choice": true,
+  "phases": [
+   {
+    "hp": 1.0,
+    "name": "Forma Bestial",
+    "attacks": [
+     {
+      "move": "vk_garras",
+      "range": [
+       0,
+       3.2
+      ],
+      "weight": 3,
+      "cd": 1.6
+     },
+     {
+      "move": "vk_bote",
+      "range": [
+       3.0,
+       10
+      ],
+      "weight": 2,
+      "cd": 4
+     },
+     {
+      "move": "vk_investida",
+      "range": [
+       4,
+       14
+      ],
+      "weight": 1,
+      "cd": 6
+     }
+    ]
+   },
+   {
+    "hp": 0.66,
+    "name": "Transformação Completa",
+    "anim": "transform",
+    "transition": 2.6,
+    "scale": 2.5,
+    "radius": 1.0,
+    "height": 3.0,
+    "speed": 5.6,
+    "attacks": [
+     {
+      "move": "vk_garras",
+      "range": [
+       0,
+       3.8
+      ],
+      "weight": 3,
+      "cd": 1.4
+     },
+     {
+      "move": "vk_bote",
+      "range": [
+       3.0,
+       11
+      ],
+      "weight": 2,
+      "cd": 3.5
+     },
+     {
+      "move": "vk_investida",
+      "range": [
+       4,
+       14
+      ],
+      "weight": 1.5,
+      "cd": 5
+     },
+     {
+      "move": "vk_varrida",
+      "range": [
+       0,
+       4
+      ],
+      "weight": 2,
+      "cd": 4
+     }
+    ],
+    "sprite": "varkhan_besta"
+   },
+   {
+    "hp": 0.33,
+    "name": "Frenesi Lunar",
+    "anim": "howl",
+    "transition": 2.4,
+    "speed": 6.2,
+    "wait": [
+     0.3,
+     0.7
+    ],
+    "attacks": [
+     {
+      "move": "vk_combo_furia",
+      "range": [
+       0,
+       4
+      ],
+      "weight": 3,
+      "cd": 3.5
+     },
+     {
+      "move": "vk_garras",
+      "range": [
+       0,
+       3.8
+      ],
+      "weight": 2,
+      "cd": 1.2
+     },
+     {
+      "move": "vk_salto_lunar",
+      "range": [
+       0,
+       30
+      ],
+      "weight": 1.5,
+      "cd": 8
+     },
+     {
+      "move": "vk_investida",
+      "range": [
+       4,
+       14
+      ],
+      "weight": 1,
+      "cd": 5
+     },
+     {
+      "move": "vk_varrida",
+      "range": [
+       0,
+       4
+      ],
+      "weight": 1.5,
+      "cd": 3.5
+     }
+    ]
+   }
+  ],
+  "sprite": "varkhan"
+ },
+ "serafim_09": {
+  "name": "SERAFIM-09",
+  "title": "O Coração da Forja",
+  "class": "serafim",
+  "base": "guardiao_industrial",
+  "act": 2,
+  "hp": 3800,
+  "posture": 400,
+  "atk": {
+   "fisico": 50,
+   "fogo": 12
+  },
+  "speed": 1.4,
+  "scale": 2.6,
+  "radius": 1.3,
+  "height": 4.0,
+  "weight": 20,
+  "break_time": 3.5,
+  "resist": {
+   "fisico": 0.1,
+   "raio": -0.3,
+   "fogo": 0.5,
+   "sangue": 0.8
+  },
+  "grace": 2600,
+  "pref": 3.5,
+  "wake_radius": 11,
+  "intro_anim": "core_pulse",
+  "intro_time": 2.0,
+  "rewards": [
+   {
+    "item": "nucleo_serafim"
+   },
+   {
+    "rune": "forja"
+   },
+   {
+    "rune": "engrenagem"
+   },
+   {
+    "art": "art_granada"
+   },
+   {
+    "points": 1
+   }
+  ],
+  "purify_reward": [
+   {
+    "item": "frasco_brasa"
+   },
+   {
+    "rune": "bastiao"
+   }
+  ],
+  "absorb_reward": [
+   {
+    "rune": "sobrecarga"
+   },
+   {
+    "art": "art_tiro_mortal"
+   }
+  ],
+  "flags": [
+   "ato2_concluido"
+  ],
+  "choice": true,
+  "phases": [
+   {
+    "hp": 1.0,
+    "name": "Braços da Forja",
+    "attacks": [
+     {
+      "move": "sf_esmagar",
+      "range": [
+       0,
+       12
+      ],
+      "weight": 2,
+      "cd": 3.5,
+      "arm": "braco_esq"
+     },
+     {
+      "move": "sf_esmagar2",
+      "range": [
+       0,
+       12
+      ],
+      "weight": 2,
+      "cd": 3.5,
+      "arm": "braco_dir"
+     },
+     {
+      "move": "sf_varrida",
+      "range": [
+       0,
+       5.5
+      ],
+      "weight": 2,
+      "cd": 4
+     },
+     {
+      "move": "sf_pisao",
+      "range": [
+       0,
+       3.5
+      ],
+      "weight": 2,
+      "cd": 3
+     },
+     {
+      "move": "sf_vapor",
+      "range": [
+       0,
+       14
+      ],
+      "weight": 1,
+      "cd": 9
+     }
+    ]
+   },
+   {
+    "hp": 0.66,
+    "name": "Fornalha Desperta",
+    "anim": "core_pulse",
+    "attacks": [
+     {
+      "move": "sf_esmagar",
+      "range": [
+       0,
+       12
+      ],
+      "weight": 2,
+      "cd": 3,
+      "arm": "braco_esq"
+     },
+     {
+      "move": "sf_esmagar2",
+      "range": [
+       0,
+       12
+      ],
+      "weight": 2,
+      "cd": 3,
+      "arm": "braco_dir"
+     },
+     {
+      "move": "sf_varrida",
+      "range": [
+       0,
+       5.5
+      ],
+      "weight": 2,
+      "cd": 3.5
+     },
+     {
+      "move": "sf_misseis",
+      "range": [
+       3,
+       18
+      ],
+      "weight": 2,
+      "cd": 6
+     },
+     {
+      "move": "sf_pisao",
+      "range": [
+       0,
+       3.5
+      ],
+      "weight": 2,
+      "cd": 3
+     },
+     {
+      "move": "sf_vapor",
+      "range": [
+       0,
+       14
+      ],
+      "weight": 1,
+      "cd": 8
+     }
+    ]
+   },
+   {
+    "hp": 0.33,
+    "name": "Sobrecarga do Núcleo",
+    "anim": "core_pulse",
+    "transition": 2.6,
+    "wait": [
+     0.4,
+     0.9
+    ],
+    "attacks": [
+     {
+      "move": "sf_laser",
+      "range": [
+       0,
+       14
+      ],
+      "weight": 2,
+      "cd": 10
+     },
+     {
+      "move": "sf_ondas",
+      "range": [
+       0,
+       12
+      ],
+      "weight": 2,
+      "cd": 7
+     },
+     {
+      "move": "sf_misseis",
+      "range": [
+       3,
+       18
+      ],
+      "weight": 2,
+      "cd": 5
+     },
+     {
+      "move": "sf_pisao",
+      "range": [
+       0,
+       3.5
+      ],
+      "weight": 2,
+      "cd": 2.5
+     },
+     {
+      "move": "sf_esmagar",
+      "range": [
+       0,
+       12
+      ],
+      "weight": 2,
+      "cd": 3,
+      "arm": "braco_esq"
+     },
+     {
+      "move": "sf_esmagar2",
+      "range": [
+       0,
+       12
+      ],
+      "weight": 2,
+      "cd": 3,
+      "arm": "braco_dir"
+     }
+    ]
+   }
+  ],
+  "sprite": "serafim"
+ },
+ "santo_imperfeito": {
+  "name": "O SANTO IMPERFEITO",
+  "title": "Aquele que Buscou a Perfeição",
+  "class": "santo",
+  "base": "armadura_encantada",
+  "act": 3,
+  "hp": 4800,
+  "posture": 420,
+  "atk": {
+   "fisico": 56,
+   "sagrado": 10
+  },
+  "speed": 4.8,
+  "scale": 1.3,
+  "radius": 0.5,
+  "height": 2.2,
+  "weight": 5,
+  "break_time": 3.2,
+  "resist": {
+   "sagrado": 0.3,
+   "fogo": -0.1
+  },
+  "grace": 3800,
+  "pref": 2.2,
+  "wake_radius": 9,
+  "intro_anim": "pray",
+  "intro_time": 2.0,
+  "rewards": [
+   {
+    "item": "graca_profana"
+   },
+   {
+    "rune": "carne_viva"
+   },
+   {
+    "weapon": "foice_profana"
+   },
+   {
+    "points": 1
+   }
+  ],
+  "purify_reward": [
+   {
+    "item": "frasco_brasa"
+   },
+   {
+    "rune": "julgamento"
+   }
+  ],
+  "absorb_reward": [
+   {
+    "rune": "mutacao"
+   },
+   {
+    "art": "art_chuva_sangue"
+   }
+  ],
+  "flags": [
+   "ato3_concluido"
+  ],
+  "choice": true,
+  "phases": [
+   {
+    "hp": 1.0,
+    "name": "O Espadachim",
+    "attacks": [
+     {
+      "move": "santo_combo",
+      "range": [
+       0,
+       2.6
+      ],
+      "weight": 3,
+      "cd": 1.8
+     },
+     {
+      "move": "santo_estocada",
+      "range": [
+       2.0,
+       7
+      ],
+      "weight": 2,
+      "cd": 3.5
+     },
+     {
+      "move": "santo_corte_baixo",
+      "range": [
+       0,
+       2.4
+      ],
+      "weight": 1.5,
+      "cd": 4
+     }
+    ]
+   },
+   {
+    "hp": 0.6,
+    "name": "Mutação",
+    "anim": "transform",
+    "transition": 2.6,
+    "scale": 1.6,
+    "radius": 0.6,
+    "height": 2.6,
+    "attacks": [
+     {
+      "move": "santo_bracos",
+      "range": [
+       0,
+       3.2
+      ],
+      "weight": 3,
+      "cd": 3
+     },
+     {
+      "move": "santo_giro",
+      "range": [
+       0,
+       3.2
+      ],
+      "weight": 2,
+      "cd": 3.5
+     },
+     {
+      "move": "santo_estocada",
+      "range": [
+       2.0,
+       7
+      ],
+      "weight": 2,
+      "cd": 3
+     },
+     {
+      "move": "santo_combo",
+      "range": [
+       0,
+       2.8
+      ],
+      "weight": 2,
+      "cd": 1.6
+     }
+    ],
+    "sprite": "santo_mut"
+   },
+   {
+    "hp": 0.3,
+    "name": "Carne e Graça",
+    "anim": "transform",
+    "transition": 2.8,
+    "scale": 2.2,
+    "radius": 0.9,
+    "height": 3.4,
+    "speed": 4.2,
+    "attacks": [
+     {
+      "move": "santo_feixe",
+      "range": [
+       2,
+       11
+      ],
+      "weight": 2,
+      "cd": 7
+     },
+     {
+      "move": "santo_salto",
+      "range": [
+       0,
+       12
+      ],
+      "weight": 2,
+      "cd": 5
+     },
+     {
+      "move": "santo_vortice",
+      "range": [
+       0,
+       6
+      ],
+      "weight": 1.5,
+      "cd": 9
+     },
+     {
+      "move": "santo_bracos",
+      "range": [
+       0,
+       3.6
+      ],
+      "weight": 2,
+      "cd": 3
+     }
+    ],
+    "sprite": "santo_hibrido"
+   }
+  ],
+  "sprite": "santo"
+ },
+ "malachar": {
+  "name": "MALACHAR",
+  "title": "O Arquiteto das Runas",
+  "class": "malachar",
+  "base": "bruxo",
+  "act": 4,
+  "hp": 5400,
+  "posture": 380,
+  "atk": {
+   "arcano": 62
+  },
+  "speed": 4.0,
+  "scale": 1.2,
+  "radius": 0.45,
+  "height": 2.1,
+  "weight": 3,
+  "break_time": 3.6,
+  "resist": {
+   "arcano": 0.4,
+   "fisico": -0.1
+  },
+  "grace": 5000,
+  "pref": 6.5,
+  "wake_radius": 10,
+  "intro_anim": "cast_up",
+  "intro_time": 1.8,
+  "rewards": [
+   {
+    "item": "grimorio_abismo"
+   },
+   {
+    "weapon": "grimorio_abismo"
+   },
+   {
+    "rune": "astrolabio"
+   },
+   {
+    "points": 1
+   }
+  ],
+  "purify_reward": [
+   {
+    "item": "frasco_brasa"
+   },
+   {
+    "rune": "estrela_guia"
+   }
+  ],
+  "absorb_reward": [
+   {
+    "rune": "abismo"
+   },
+   {
+    "art": "art_meteoros"
+   }
+  ],
+  "flags": [
+   "ato4_concluido"
+  ],
+  "choice": true,
+  "phases": [
+   {
+    "hp": 1.0,
+    "name": "Mestre das Runas",
+    "attacks": [
+     {
+      "move": "ml_salva",
+      "range": [
+       0,
+       16
+      ],
+      "weight": 3,
+      "cd": 2.6
+     },
+     {
+      "move": "ml_circulos",
+      "range": [
+       0,
+       14
+      ],
+      "weight": 2,
+      "cd": 4.5
+     },
+     {
+      "move": "ml_lanca",
+      "range": [
+       3,
+       18
+      ],
+      "weight": 1.5,
+      "cd": 5
+     },
+     {
+      "move": "ml_nova",
+      "range": [
+       0,
+       3
+      ],
+      "weight": 2,
+      "cd": 4
+     }
+    ]
+   },
+   {
+    "hp": 0.66,
+    "name": "Espelhos do Arquiteto",
+    "anim": "cast_up",
+    "attacks": [
+     {
+      "move": "ml_salva",
+      "range": [
+       0,
+       16
+      ],
+      "weight": 3,
+      "cd": 2.4
+     },
+     {
+      "move": "ml_circulos",
+      "range": [
+       0,
+       14
+      ],
+      "weight": 2,
+      "cd": 4
+     },
+     {
+      "move": "ml_lanca",
+      "range": [
+       3,
+       18
+      ],
+      "weight": 1.5,
+      "cd": 4.5
+     },
+     {
+      "move": "ml_nova",
+      "range": [
+       0,
+       3
+      ],
+      "weight": 2,
+      "cd": 3.5
+     }
+    ]
+   },
+   {
+    "hp": 0.33,
+    "name": "O Observatório se Desfaz",
+    "anim": "cast_up",
+    "transition": 2.6,
+    "attacks": [
+     {
+      "move": "ml_meteoros",
+      "range": [
+       0,
+       18
+      ],
+      "weight": 2,
+      "cd": 6
+     },
+     {
+      "move": "ml_feixe_giro",
+      "range": [
+       0,
+       13
+      ],
+      "weight": 1.5,
+      "cd": 10
+     },
+     {
+      "move": "ml_salva",
+      "range": [
+       0,
+       16
+      ],
+      "weight": 2,
+      "cd": 2.2
+     },
+     {
+      "move": "ml_nova",
+      "range": [
+       0,
+       3
+      ],
+      "weight": 2,
+      "cd": 3
+     },
+     {
+      "move": "ml_circulos",
+      "range": [
+       0,
+       14
+      ],
+      "weight": 2,
+      "cd": 4
+     }
+    ]
+   }
+  ],
+  "sprite": "malachar"
+ },
+ "aurelion": {
+  "name": "AURELION",
+  "title": "O Deus Despedaçado",
+  "class": "aurelion",
+  "base": "cavaleiro_divino",
+  "act": 5,
+  "hp": 7200,
+  "posture": 480,
+  "atk": {
+   "fisico": 50,
+   "sagrado": 30
+  },
+  "speed": 5.0,
+  "scale": 1.8,
+  "radius": 0.7,
+  "height": 3.0,
+  "weight": 8,
+  "break_time": 3.4,
+  "resist": {
+   "sagrado": 0.4,
+   "trevas": -0.15
+  },
+  "grace": 8000,
+  "pref": 2.6,
+  "wake_radius": 10,
+  "intro_anim": "roar",
+  "intro_time": 2.4,
+  "rewards": [],
+  "flags": [
+   "aurelion_derrotado"
+  ],
+  "choice": false,
+  "phases": [
+   {
+    "hp": 1.0,
+    "name": "Forma Divina",
+    "attacks": [
+     {
+      "move": "au_corte3",
+      "range": [
+       0,
+       3.0
+      ],
+      "weight": 3,
+      "cd": 1.8
+     },
+     {
+      "move": "au_estocada",
+      "range": [
+       3,
+       15
+      ],
+      "weight": 2,
+      "cd": 4
+     },
+     {
+      "move": "au_lancas",
+      "range": [
+       3,
+       18
+      ],
+      "weight": 1.5,
+      "cd": 5
+     }
+    ]
+   },
+   {
+    "hp": 0.66,
+    "name": "Ascensão Celestial",
+    "anim": "transform",
+    "transition": 2.8,
+    "scale": 2.4,
+    "radius": 0.9,
+    "height": 3.8,
+    "attacks": [
+     {
+      "move": "au_corte3",
+      "range": [
+       0,
+       3.6
+      ],
+      "weight": 2,
+      "cd": 1.8
+     },
+     {
+      "move": "au_pilares",
+      "range": [
+       0,
+       16
+      ],
+      "weight": 2,
+      "cd": 5
+     },
+     {
+      "move": "au_halo",
+      "range": [
+       0,
+       10
+      ],
+      "weight": 1.5,
+      "cd": 7
+     },
+     {
+      "move": "au_asas",
+      "range": [
+       0,
+       4.2
+      ],
+      "weight": 2,
+      "cd": 4
+     },
+     {
+      "move": "au_lancas",
+      "range": [
+       3,
+       18
+      ],
+      "weight": 1.5,
+      "cd": 5
+     }
+    ],
+    "sprite": "aurelion_celestial"
+   },
+   {
+    "hp": 0.33,
+    "name": "Deus Fragmentado",
+    "anim": "transform",
+    "transition": 3.0,
+    "wait": [
+     0.4,
+     0.9
+    ],
+    "attacks": [
+     {
+      "move": "au_julgamento",
+      "range": [
+       0,
+       16
+      ],
+      "weight": 1.5,
+      "cd": 11
+     },
+     {
+      "move": "au_queda",
+      "range": [
+       0,
+       30
+      ],
+      "weight": 2,
+      "cd": 7
+     },
+     {
+      "move": "au_pilares",
+      "range": [
+       0,
+       16
+      ],
+      "weight": 2,
+      "cd": 5
+     },
+     {
+      "move": "au_corte3",
+      "range": [
+       0,
+       3.6
+      ],
+      "weight": 2,
+      "cd": 1.8
+     },
+     {
+      "move": "au_invocar",
+      "range": [
+       0,
+       20
+      ],
+      "weight": 1,
+      "cd": 18
+     },
+     {
+      "move": "au_halo",
+      "range": [
+       0,
+       10
+      ],
+      "weight": 1,
+      "cd": 7
+     }
+    ]
+   }
+  ],
+  "sprite": "aurelion"
+ }
+}

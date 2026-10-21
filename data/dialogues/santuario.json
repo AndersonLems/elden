@@ -1,0 +1,85 @@
+{
+ "velaria_intro": {"speaker": "Irmã Velária", "nodes": {
+   "start": {"text": "Então a chama escolheu outra vez. Levante-se devagar, {nome}. Você dormiu mais do que imagina.", "next": "n2"},
+   "n2": {"text": "Este é o Santuário da Última Chama. Enquanto ela arder, você sempre voltará para cá — ou para qualquer Graça que tocar.", "next": "n3"},
+   "n3": {"text": "Lá fora, a Graça apodreceu. Cinco senhores guardam pedaços dela: uma fera, uma máquina, um santo, um sábio... e um deus.", "choices": [
+     {"text": "O que são as Graças?", "next": "graca"},
+     {"text": "E a corrupção?", "next": "corr"},
+     {"text": "Para onde devo ir?", "next": "ir"}]},
+   "graca": {"text": "Brasas douradas espalhadas pelo mundo. Descanse nelas para curar-se, evoluir, trocar runas e viajar. Mas atenção: ao descansar, os mortos se levantam de novo.", "next": "n3b"},
+   "corr": {"text": "A Graça pode ser purificada ou devorada. Quem a devora fica mais forte... e menos humano. Os caminhos da Ruína cobram esse preço. Não vou impedi-lo. Só peço que escolha sabendo.", "next": "n3b"},
+   "ir": {"text": "O primeiro portal leva ao Domínio da Lua Sangrenta. Varkhan, o Primeiro Licano, guarda ali um fragmento. Os outros portais despertarão quando cada senhor cair.", "next": "n3b"},
+   "n3b": {"text": "Mais alguma pergunta?", "choices": [
+     {"text": "O que são as Graças?", "next": "graca"}, {"text": "E a corrupção?", "next": "corr"},
+     {"text": "Estou pronto.", "next": "fim"}]},
+   "fim": {"text": "Leve isto: brasas para seu frasco. Ferrus forja, Oriana vende, Kaelen ensina e Theodric lembra. Que a chama o guie, Portador.",
+           "do": [{"set_flag": "intro_velaria"}, {"give": {"materials": 2}}, {"quest": ["q_principal", 1]}]}}},
+ "velaria_padrao": {"speaker": "Irmã Velária", "nodes": {
+   "start": {"text": "A chama ainda arde. Precisa de algo, {nome}?", "choices": [
+     {"text": "Fale-me de novo sobre a Graça.", "next": "graca"},
+     {"text": "Quero rezar pela purificação.", "next": "rezar", "if": {"corruption_min": 1}},
+     {"text": "Nada. Vou partir.", "next": null}]},
+   "graca": {"text": "É o corpo de um deus que se partiu. Quanto mais você toma, mais o deus vive em você. Lembre-se disso quando subir ao Trono.", "next": null},
+   "rezar": {"text": "Ajoelhe-se. A chama aceita um pouco da sua sombra... mas só uma vez por senhor caído.", "do": [{"pray": 6}], "next": null}}},
+ "velaria_meio": {"speaker": "Irmã Velária", "nodes": {
+   "start": {"text": "Dois fragmentos já voltaram a se mover. Sinto o Trono acordar, {nome}. Ele está com fome.", "choices": [
+     {"text": "Fome?", "next": "fome"}, {"text": "Vou continuar.", "next": null}]},
+   "fome": {"text": "...Esqueça o que eu disse. Siga em frente. Theodric guarda livros que eu nunca tive coragem de ler.", "next": null}}},
+ "velaria_ato5": {"speaker": "Irmã Velária", "nodes": {
+   "start": {"text": "O último portal está aberto. Antes de subir, saiba: já vi muitos Portadores partirem. Nenhum voltou o mesmo.", "choices": [
+     {"text": "Quantos vieram antes de mim?", "next": "quantos"}, {"text": "Estou pronto.", "next": null}]},
+   "quantos": {"text": "Perdi a conta quando a chama ainda era jovem. Todos tinham os seus olhos.", "next": null}}},
+ "velaria_corrompido": {"speaker": "Irmã Velária", "nodes": {
+   "start": {"text": "Sua sombra apaga a chama quando você se aproxima. O que você se tornou, {nome}?", "choices": [
+     {"text": "Algo mais forte.", "next": "forte"}, {"text": "Ainda há volta?", "next": "volta"}]},
+   "forte": {"text": "Os deuses também diziam isso.", "next": null},
+   "volta": {"text": "Sempre há. Purifique o que tomar e reze nos altares. Mas não espere que eu perdoe o que ainda não fez.", "next": null}}},
+ "velaria_fim": {"speaker": "Irmã Velária", "nodes": {
+   "start": {"text": "O deus caiu. O Trono espera por você no alto do Ato V. Vá. A escolha não é minha.", "next": null}}},
+
+ "ferrus_intro": {"speaker": "Ferrus, o Ferreiro", "nodes": {
+   "start": {"text": "Hm. Mais um Portador. Não toque na bigorna. A não ser que traga Fragmentos de Forja — aí a bigorna é toda sua.", "do": [{"set_flag": "conheceu_ferrus"}], "next": "n2"},
+   "n2": {"text": "Eu reforjo armas com fragmentos e Graça. Mas só até onde as brasas aguentam: cada senhor derrotado aquece mais a forja.", "choices": [
+     {"text": "Melhorar armas.", "do": [{"service": "ferreiro"}], "next": null}, {"text": "Até mais.", "next": null}]}}},
+ "ferrus_padrao": {"speaker": "Ferrus, o Ferreiro", "nodes": {
+   "start": {"text": "Bigorna quente. Fala logo.", "choices": [
+     {"text": "Melhorar armas.", "do": [{"service": "ferreiro"}], "next": null},
+     {"text": "Onde encontro fragmentos?", "next": "frag"}, {"text": "Nada.", "next": null}]},
+   "frag": {"text": "Autômatos, guardas, máquinas... tudo que tem metal dentro. E baús. Sempre abra os baús.", "next": null}}},
+ "ferrus_corrompido": {"speaker": "Ferrus, o Ferreiro", "nodes": {
+   "start": {"text": "Você fede a Ruína. Vou forjar, porque é meu ofício. Mas não me peça para olhar nos seus olhos.", "choices": [
+     {"text": "Melhorar armas.", "do": [{"service": "ferreiro"}], "next": null}, {"text": "Até mais.", "next": null}]}}},
+
+ "oriana_intro": {"speaker": "Oriana, a Mercadora", "nodes": {
+   "start": {"text": "Ora, ora, um cliente vivo! Runas, lágrimas, quinquilharias divinas. Aceito Graça, que é a única moeda que ainda vale algo.", "do": [{"set_flag": "conheceu_oriana"}], "choices": [
+     {"text": "Mostre o que tem.", "do": [{"service": "mercador"}], "next": null}, {"text": "Depois.", "next": null}]}}},
+ "oriana_padrao": {"speaker": "Oriana, a Mercadora", "nodes": {
+   "start": {"text": "Voltou! A cada senhor que você derruba, minhas prateleiras ficam mais interessantes.", "choices": [
+     {"text": "Comprar.", "do": [{"service": "mercador"}], "next": null}, {"text": "Até logo.", "next": null}]}}},
+ "oriana_corrompido": {"speaker": "Oriana, a Mercadora", "nodes": {
+   "start": {"text": "Hm... você mudou. Negócios são negócios, mas vou contar as moedas duas vezes. Sem ofensa.", "choices": [
+     {"text": "Comprar.", "do": [{"service": "mercador"}], "next": null}, {"text": "Até logo.", "next": null}]}}},
+
+ "kaelen_intro": {"speaker": "Sir Kaelen", "nodes": {
+   "start": {"text": "Postura, Portador! Um golpe sem postura é só um tropeço com faca. Os bonecos ali aguentam qualquer coisa — teste seus combos neles.", "do": [{"set_flag": "conheceu_kaelen"}], "next": "n2"},
+   "n2": {"text": "Lembre: leve, leve, pesado lança o inimigo ao ar. Apare no instante exato e o contra-ataque vem sozinho. Rompa a postura e execute.", "next": "n3"},
+   "n3": {"text": "E se tiver Graça sobrando, ensino artes de combate: técnicas que mudam o jeito de se mover.", "choices": [
+     {"text": "Ver artes de combate.", "do": [{"service": "treinador"}], "next": null}, {"text": "Mais tarde.", "next": null}]}}},
+ "kaelen_padrao": {"speaker": "Sir Kaelen", "nodes": {
+   "start": {"text": "De volta ao treino?", "choices": [
+     {"text": "Ver artes de combate.", "do": [{"service": "treinador"}], "next": null},
+     {"text": "Dicas de combate.", "next": "dica"}, {"text": "Até mais.", "next": null}]},
+   "dica": {"text": "Brilho vermelho antes de um golpe significa que não dá para bloquear: esquive. Esquiva perfeita, no último instante, deixa o tempo mais lento e abre contra-ataques.", "next": null}}},
+
+ "theodric_intro": {"speaker": "Theodric, o Arquivista", "nodes": {
+   "start": {"text": "Shh. Aqui guardamos o que o mundo quis esquecer. Traga-me documentos e eu os guardarei. E se quiser esquecer o que aprendeu... tenho lágrimas para isso.", "do": [{"set_flag": "conheceu_theodric"}], "choices": [
+     {"text": "Biblioteca.", "do": [{"service": "biblioteca"}], "next": null}, {"text": "Até logo.", "next": null}]}}},
+ "theodric_padrao": {"speaker": "Theodric, o Arquivista", "nodes": {
+   "start": {"text": "Encontrou algo para ler?", "choices": [
+     {"text": "Biblioteca e redistribuição.", "do": [{"service": "biblioteca"}], "next": null},
+     {"text": "Fale sobre o ciclo.", "next": "ciclo"}, {"text": "Até logo.", "next": null}]},
+   "ciclo": {"text": "Há lendas de cinco Fragmentos do Ciclo, escondidos onde só os curiosos procuram. Dizem que revelam uma terceira escolha diante do Trono.", "do": [{"quest": ["q_ciclo", 1]}], "next": null}}},
+ "theodric_ciclo": {"speaker": "Theodric, o Arquivista", "nodes": {
+   "start": {"text": "Os cinco fragmentos... você os reuniu. Então é verdade: o Trono pode ser partido. Que coisa terrível e maravilhosa.", "choices": [
+     {"text": "Biblioteca.", "do": [{"service": "biblioteca"}], "next": null}, {"text": "Até logo.", "next": null}]}}}
+}

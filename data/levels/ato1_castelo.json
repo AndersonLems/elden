@@ -1,0 +1,1058 @@
+{
+ "id": "ato1_castelo",
+ "name": "Castelo de Varkhan",
+ "act": 1,
+ "theme": "ato1_castelo",
+ "env": "lua_castelo",
+ "music": "ato1",
+ "rows": [
+  "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
+  "###########################H.....H##########################",
+  "###########################H.....H##########################",
+  "###########################H.....H##########################",
+  "#GGGGGGGGGGGGGGGGGGGGGGGGGGH.....HGGGGGGGGGGGGGGGGGGGGGGGGG#",
+  "##.1111111111.......#.....111111111....#..........1111111.##",
+  "##.1111111111.......#.....111111111....#..........1111111.##",
+  "##.1111111111.......#...P.._aaaaa_..P..#..........1111111.##",
+  "##........aaa.......#......_______.....#..........1111111.##",
+  "##..................#......_______.....#............aaa...##",
+  "##..................#...P.._______..P..#..................##",
+  "##........................._______........................##",
+  "##........................._______........................##",
+  "##..................#...P.._______..P..#..................##",
+  "##..................#......_______.....#;;;;;.............##",
+  "##..................#......_______.....#;;;;;.............##",
+  "##..................#...P.._______..P..#;;;;;.............##",
+  "##..................#......_______.....#;;;;;.............##",
+  "############..###############...###############..###########",
+  "#########.,..............,,,,..,........,..#################",
+  "###:::::#.....,.,,,...,,.,,,,,.,..,.,,,,..,#_____________###",
+  "###:::::#,....,,,.,,,,..,,....,.....,.,,,,.#__P_______P__###",
+  "###:::::....,......,...,,.,.....,...,.,,.,.#_____________###",
+  "###:::::#....,...,,....,,..,..,......,.....______________###",
+  "#########..,.....,...,,.,,....,.,,....,.,..#_____________###",
+  "##,......,....,,.,.,,.,...,..,,,...,.......#__P_______P__###",
+  "##,,....,,,,..,....,.,,,,.....,.,..,,......#_____________###",
+  "##...,.,,....,...,......,,,.,..,,,...,.,,..#################",
+  "##~~~~~~~~~~~~~~~~~~~~~~~~~~~===~~~~~~~~~~~~~~~~~~~~~~~~~~##",
+  "##~~~~~~~~~~~~~~~~~~~~~~~~~~~===~~~~~~~~~~~~~~~~~~~~~~~~~~##",
+  "##############################:#############################",
+  "##############################:#############################",
+  "####::::::;;;;;;;;;C::::::::::::::::C:::::::::::::::::::####",
+  "####::::::;;;;;;;;;C::::::::::::::::C:::::::::::::::::::####",
+  "####::::::;;;;;;;;;C::::::::::::::::::::::::::::::::::::####",
+  "####::::::;;;;;;;;;C::::::::::::::::C:::::::::::::::::::####",
+  "##########:::::::::C::::::::::::::::C:::::::::::::::::::####",
+  "##########:t:t:::::C::::::::::::::::C:::::::::::::::::::####",
+  "##########:::t:t:::C::::::::::::::::CCCCCCCCCC:CCCCCCCCC####",
+  "##########::::t::::C::::::::::::::::C::::t:t:::::::t::::####",
+  "##########::::::::::::::::::::::::::C::t:::::::::t:t::::####",
+  "##########tt:::::::C::::::::::::::::C::t::t:::::::t:t:::####",
+  "##########:::t:::::C::::::::::::::::::::::::::::::::::::####",
+  "##########::::::::::::::::::::::::::Ct:::t:::t::::::t:::####",
+  "##########tt:::::::C::::::::::::::::C:tt:::ttt::::::::::####",
+  "##########::::::t:tC::::::::::::::::C::::::t:::::t::::::####",
+  "############################################################",
+  "############################################################"
+ ],
+ "entities": [
+  {
+   "type": "spawn",
+   "id": "cripta",
+   "angle": 90,
+   "x": 30.5,
+   "z": 3.5
+  },
+  {
+   "type": "spawn",
+   "id": "salao",
+   "angle": -90,
+   "x": 30.5,
+   "z": 45.5
+  },
+  {
+   "type": "grace",
+   "id": "graca_cripta",
+   "name": "Cripta de Velmora",
+   "x": 27.5,
+   "z": 4.5
+  },
+  {
+   "type": "grace",
+   "id": "graca_patio",
+   "name": "Pátio do Castelo",
+   "x": 30.5,
+   "z": 23.5
+  },
+  {
+   "type": "exit",
+   "id": "subida_cemiterio",
+   "to": "ato1_floresta",
+   "spawn": "saida_cripta",
+   "label": "Subir ao cemitério",
+   "auto": false,
+   "sprite": "stairs_up",
+   "x": 33.5,
+   "z": 3.5
+  },
+  {
+   "type": "emitter",
+   "id": "vitral_cripta",
+   "dir": "E",
+   "sprite": "moon_shaft",
+   "color": [
+    0.8,
+    0.85,
+    1.0
+   ],
+   "x": 10.5,
+   "z": 7.5
+  },
+  {
+   "type": "mirror",
+   "id": "espelho_a",
+   "state": 1,
+   "x": 24.5,
+   "z": 7.5
+  },
+  {
+   "type": "mirror",
+   "id": "espelho_b",
+   "state": 1,
+   "x": 24.5,
+   "z": 13.5
+  },
+  {
+   "type": "crystal",
+   "id": "receptor_cripta",
+   "receiver": true,
+   "color": [
+    0.7,
+    0.8,
+    1.0
+   ],
+   "latch": true,
+   "targets": [
+    "porta_cripta_norte"
+   ],
+   "x": 35.5,
+   "z": 13.5
+  },
+  {
+   "type": "door",
+   "id": "porta_cripta_norte",
+   "sprite": "gate_iron",
+   "half": [
+    0.5,
+    0.5
+   ],
+   "top": 3.0,
+   "message": "A luz da lua desperta o mecanismo: o portão norte se ergue.",
+   "x": 30.5,
+   "z": 16.5
+  },
+  {
+   "type": "document",
+   "doc": "carta_condessa",
+   "sprite": "note",
+   "x": 14.5,
+   "z": 9.5
+  },
+  {
+   "type": "document",
+   "doc": "vitral_lenda",
+   "sprite": "stone_tablet",
+   "x": 33.5,
+   "z": 11.5
+  },
+  {
+   "type": "chest",
+   "id": "bau_mordomo",
+   "loot": [
+    {
+     "item": "chave_castelo"
+    },
+    {
+     "grace": 200
+    },
+    {
+     "flag": "q_condessa_inicio"
+    }
+   ],
+   "x": 12.5,
+   "z": 14.5
+  },
+  {
+   "type": "chest",
+   "id": "bau_cripta_leste",
+   "loot": [
+    {
+     "item": "semente_dourada"
+    }
+   ],
+   "x": 54.5,
+   "z": 3.5
+  },
+  {
+   "type": "pickup",
+   "id": "medalhao",
+   "loot": {
+    "item": "medalhao_lina",
+    "flag": "pegou_medalhao"
+   },
+   "sprite": "locket",
+   "x": 50.5,
+   "z": 7.5
+  },
+  {
+   "type": "dial",
+   "id": "estatua_esq",
+   "sprite": "king_statue",
+   "symbols": [
+    "sul",
+    "leste",
+    "norte",
+    "oeste"
+   ],
+   "state": 0,
+   "prompt": "Girar estátua",
+   "x": 26.5,
+   "z": 32.5
+  },
+  {
+   "type": "dial",
+   "id": "estatua_meio",
+   "sprite": "king_statue",
+   "symbols": [
+    "sul",
+    "leste",
+    "norte",
+    "oeste"
+   ],
+   "state": 0,
+   "prompt": "Girar estátua",
+   "x": 30.5,
+   "z": 32.5
+  },
+  {
+   "type": "dial",
+   "id": "estatua_dir",
+   "sprite": "king_statue",
+   "symbols": [
+    "sul",
+    "leste",
+    "norte",
+    "oeste"
+   ],
+   "state": 0,
+   "prompt": "Girar estátua",
+   "x": 34.5,
+   "z": 32.5
+  },
+  {
+   "type": "door",
+   "id": "passagem_vitral",
+   "sprite": "secret_wall",
+   "half": [
+    0.5,
+    0.5
+   ],
+   "top": 3.0,
+   "message": "Uma passagem se abre atrás da parede!",
+   "x": 8.5,
+   "z": 25.5
+  },
+  {
+   "type": "document",
+   "doc": "fragmento_ciclo_1",
+   "sprite": "bone_shard",
+   "x": 5.5,
+   "z": 26.5
+  },
+  {
+   "type": "chest",
+   "id": "bau_secreto_castelo",
+   "loot": [
+    {
+     "rune": "trovao"
+    },
+    {
+     "points": 1
+    }
+   ],
+   "x": 4.5,
+   "z": 25.5
+  },
+  {
+   "type": "lever",
+   "id": "alavanca_oeste",
+   "targets": [
+    "portao_lua"
+   ],
+   "x": 4.5,
+   "z": 41.5
+  },
+  {
+   "type": "lever",
+   "id": "alavanca_leste",
+   "targets": [
+    "portao_lua"
+   ],
+   "x": 55.5,
+   "z": 41.5
+  },
+  {
+   "type": "door",
+   "id": "portao_lua",
+   "need": 2,
+   "sprite": "gate_iron",
+   "half": [
+    2.5,
+    0.5
+   ],
+   "top": 3.5,
+   "message": "Os dois mecanismos giram. O Salão da Lua Partida está aberto.",
+   "x": 30.5,
+   "z": 43.5
+  },
+  {
+   "type": "exit",
+   "id": "entrada_arena",
+   "to": "ato1_arena",
+   "spawn": "entrada",
+   "label": "Salão da Lua Partida",
+   "auto": true,
+   "x": 30.5,
+   "z": 46.5
+  },
+  {
+   "type": "door",
+   "id": "porta_salao_carmesim",
+   "key": "chave_castelo",
+   "sprite": "door_red",
+   "half": [
+    0.5,
+    0.5
+   ],
+   "top": 3.0,
+   "x": 43.5,
+   "z": 24.5
+  },
+  {
+   "type": "door",
+   "id": "salao_tranca",
+   "sprite": "blood_seal",
+   "half": [
+    0.5,
+    0.5
+   ],
+   "top": 3.0,
+   "open": true,
+   "transient": true,
+   "close_on": "boss_start",
+   "open_on": "boss_defeated",
+   "x": 44.5,
+   "z": 24.5
+  },
+  {
+   "type": "boss",
+   "boss": "condessa_rubra",
+   "angle": 180,
+   "x": 51.5,
+   "z": 24.5
+  },
+  {
+   "type": "chest",
+   "id": "bau_condessa",
+   "loot": [
+    {
+     "materials": 4
+    }
+   ],
+   "if": {
+    "flag": "boss:condessa_rubra"
+   },
+   "x": 55.5,
+   "z": 21.5
+  },
+  {
+   "type": "decor",
+   "sprite": "wall_torch",
+   "light": {
+    "color": [
+     1.0,
+     0.55,
+     0.25
+    ],
+    "intensity": 1.8,
+    "radius": 6.0,
+    "h": 1.8,
+    "flicker": 0.3
+   },
+   "x": 22.5,
+   "z": 13.5
+  },
+  {
+   "type": "decor",
+   "sprite": "wall_torch",
+   "light": {
+    "color": [
+     1.0,
+     0.55,
+     0.25
+    ],
+    "intensity": 1.8,
+    "radius": 6.0,
+    "h": 1.8,
+    "flicker": 0.3
+   },
+   "x": 38.5,
+   "z": 14.5
+  },
+  {
+   "type": "decor",
+   "sprite": "wall_torch",
+   "light": {
+    "color": [
+     1.0,
+     0.55,
+     0.25
+    ],
+    "intensity": 1.8,
+    "radius": 6.0,
+    "h": 1.8,
+    "flicker": 0.3
+   },
+   "x": 15.5,
+   "z": 5.5
+  },
+  {
+   "type": "decor",
+   "sprite": "wall_torch",
+   "light": {
+    "color": [
+     1.0,
+     0.55,
+     0.25
+    ],
+    "intensity": 1.8,
+    "radius": 6.0,
+    "h": 1.8,
+    "flicker": 0.3
+   },
+   "x": 44.5,
+   "z": 5.5
+  },
+  {
+   "type": "decor",
+   "sprite": "wall_torch",
+   "light": {
+    "color": [
+     1.0,
+     0.55,
+     0.25
+    ],
+    "intensity": 1.8,
+    "radius": 6.0,
+    "h": 1.8,
+    "flicker": 0.3
+   },
+   "x": 28.5,
+   "z": 9.5
+  },
+  {
+   "type": "decor",
+   "sprite": "wall_torch",
+   "light": {
+    "color": [
+     1.0,
+     0.55,
+     0.25
+    ],
+    "intensity": 1.8,
+    "radius": 6.0,
+    "h": 1.8,
+    "flicker": 0.3
+   },
+   "x": 32.5,
+   "z": 4.5
+  },
+  {
+   "type": "decor",
+   "sprite": "candelabra",
+   "light": {
+    "color": [
+     1.0,
+     0.7,
+     0.35
+    ],
+    "intensity": 1.6,
+    "radius": 5.5,
+    "h": 1.5,
+    "flicker": 0.2
+   },
+   "x": 26.5,
+   "z": 38.5
+  },
+  {
+   "type": "decor",
+   "sprite": "candelabra",
+   "light": {
+    "color": [
+     1.0,
+     0.7,
+     0.35
+    ],
+    "intensity": 1.6,
+    "radius": 5.5,
+    "h": 1.5,
+    "flicker": 0.2
+   },
+   "x": 34.5,
+   "z": 38.5
+  },
+  {
+   "type": "decor",
+   "sprite": "candelabra",
+   "light": {
+    "color": [
+     1.0,
+     0.7,
+     0.35
+    ],
+    "intensity": 1.6,
+    "radius": 5.5,
+    "h": 1.5,
+    "flicker": 0.2
+   },
+   "x": 26.5,
+   "z": 33.5
+  },
+  {
+   "type": "decor",
+   "sprite": "candelabra",
+   "light": {
+    "color": [
+     1.0,
+     0.7,
+     0.35
+    ],
+    "intensity": 1.6,
+    "radius": 5.5,
+    "h": 1.5,
+    "flicker": 0.2
+   },
+   "x": 34.5,
+   "z": 33.5
+  },
+  {
+   "type": "decor",
+   "sprite": "candelabra",
+   "light": {
+    "color": [
+     1.0,
+     0.7,
+     0.35
+    ],
+    "intensity": 1.6,
+    "radius": 5.5,
+    "h": 1.5,
+    "flicker": 0.2
+   },
+   "x": 6.5,
+   "z": 35.5
+  },
+  {
+   "type": "decor",
+   "sprite": "candelabra",
+   "light": {
+    "color": [
+     1.0,
+     0.7,
+     0.35
+    ],
+    "intensity": 1.6,
+    "radius": 5.5,
+    "h": 1.5,
+    "flicker": 0.2
+   },
+   "x": 15.5,
+   "z": 32.5
+  },
+  {
+   "type": "decor",
+   "sprite": "candelabra",
+   "light": {
+    "color": [
+     1.0,
+     0.7,
+     0.35
+    ],
+    "intensity": 1.6,
+    "radius": 5.5,
+    "h": 1.5,
+    "flicker": 0.2
+   },
+   "x": 45.5,
+   "z": 35.5
+  },
+  {
+   "type": "decor",
+   "sprite": "candelabra",
+   "light": {
+    "color": [
+     1.0,
+     0.7,
+     0.35
+    ],
+    "intensity": 1.6,
+    "radius": 5.5,
+    "h": 1.5,
+    "flicker": 0.2
+   },
+   "x": 53.5,
+   "z": 32.5
+  },
+  {
+   "type": "decor",
+   "sprite": "candelabra",
+   "light": {
+    "color": [
+     1.0,
+     0.7,
+     0.35
+    ],
+    "intensity": 1.6,
+    "radius": 5.5,
+    "h": 1.5,
+    "flicker": 0.2
+   },
+   "x": 10.5,
+   "z": 22.5
+  },
+  {
+   "type": "decor",
+   "sprite": "candelabra",
+   "light": {
+    "color": [
+     1.0,
+     0.7,
+     0.35
+    ],
+    "intensity": 1.6,
+    "radius": 5.5,
+    "h": 1.5,
+    "flicker": 0.2
+   },
+   "x": 20.5,
+   "z": 26.5
+  },
+  {
+   "type": "decor",
+   "sprite": "candelabra",
+   "light": {
+    "color": [
+     1.0,
+     0.7,
+     0.35
+    ],
+    "intensity": 1.6,
+    "radius": 5.5,
+    "h": 1.5,
+    "flicker": 0.2
+   },
+   "x": 40.5,
+   "z": 26.5
+  },
+  {
+   "type": "decor",
+   "sprite": "candelabra",
+   "light": {
+    "color": [
+     1.0,
+     0.7,
+     0.35
+    ],
+    "intensity": 1.6,
+    "radius": 5.5,
+    "h": 1.5,
+    "flicker": 0.2
+   },
+   "x": 50.5,
+   "z": 25.5
+  },
+  {
+   "type": "decor",
+   "sprite": "blood_candle",
+   "light": {
+    "color": [
+     1.0,
+     0.15,
+     0.2
+    ],
+    "intensity": 1.8,
+    "radius": 5.0,
+    "h": 1.2,
+    "flicker": 0.25
+   },
+   "x": 47.5,
+   "z": 27.5
+  },
+  {
+   "type": "decor",
+   "sprite": "blood_candle",
+   "light": {
+    "color": [
+     1.0,
+     0.15,
+     0.2
+    ],
+    "intensity": 1.8,
+    "radius": 5.0,
+    "h": 1.2,
+    "flicker": 0.25
+   },
+   "x": 53.5,
+   "z": 27.5
+  },
+  {
+   "type": "decor",
+   "sprite": "blood_candle",
+   "light": {
+    "color": [
+     1.0,
+     0.15,
+     0.2
+    ],
+    "intensity": 1.8,
+    "radius": 5.0,
+    "h": 1.2,
+    "flicker": 0.25
+   },
+   "x": 47.5,
+   "z": 21.5
+  },
+  {
+   "type": "decor",
+   "sprite": "blood_candle",
+   "light": {
+    "color": [
+     1.0,
+     0.15,
+     0.2
+    ],
+    "intensity": 1.8,
+    "radius": 5.0,
+    "h": 1.2,
+    "flicker": 0.25
+   },
+   "x": 53.5,
+   "z": 21.5
+  },
+  {
+   "type": "decor",
+   "sprite": "statue_knight",
+   "solid": true,
+   "half": [
+    0.4,
+    0.4
+   ],
+   "top": 2.5,
+   "x": 15.5,
+   "z": 26.5
+  },
+  {
+   "type": "decor",
+   "sprite": "statue_knight",
+   "solid": true,
+   "half": [
+    0.4,
+    0.4
+   ],
+   "top": 2.5,
+   "x": 45.5,
+   "z": 23.5
+  },
+  {
+   "type": "decor",
+   "sprite": "armor_stand",
+   "solid": true,
+   "half": [
+    0.3,
+    0.3
+   ],
+   "top": 1.8,
+   "x": 5.5,
+   "z": 33.5
+  },
+  {
+   "type": "decor",
+   "sprite": "armor_stand",
+   "solid": true,
+   "half": [
+    0.3,
+    0.3
+   ],
+   "top": 1.8,
+   "x": 14.5,
+   "z": 33.5
+  },
+  {
+   "type": "decor",
+   "sprite": "armor_stand",
+   "solid": true,
+   "half": [
+    0.3,
+    0.3
+   ],
+   "top": 1.8,
+   "x": 42.5,
+   "z": 40.5
+  },
+  {
+   "type": "decor",
+   "sprite": "armor_stand",
+   "solid": true,
+   "half": [
+    0.3,
+    0.3
+   ],
+   "top": 1.8,
+   "x": 46.5,
+   "z": 31.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "esqueleto",
+   "x": 14.5,
+   "z": 6.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "esqueleto",
+   "x": 22.5,
+   "z": 4.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "esqueleto",
+   "x": 40.5,
+   "z": 6.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "esqueleto",
+   "x": 50.5,
+   "z": 4.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "esqueleto",
+   "x": 30.5,
+   "z": 11.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "esqueleto",
+   "x": 44.5,
+   "z": 13.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "guarda_morto",
+   "x": 15.5,
+   "z": 13.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "guarda_morto",
+   "x": 22.5,
+   "z": 25.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "guarda_morto",
+   "x": 38.5,
+   "z": 22.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "cacador_amaldicoado",
+   "x": 12.5,
+   "z": 22.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "lobo_corrompido",
+   "x": 34.5,
+   "z": 26.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "lobo_corrompido",
+   "x": 36.5,
+   "z": 25.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "licano",
+   "x": 8.5,
+   "z": 36.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "esqueleto",
+   "x": 14.5,
+   "z": 37.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "esqueleto",
+   "x": 16.5,
+   "z": 33.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "vampiro_menor",
+   "x": 44.5,
+   "z": 37.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "vampiro_menor",
+   "x": 52.5,
+   "z": 34.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "morcego_sanguineo",
+   "x": 48.5,
+   "z": 40.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "morcego_sanguineo",
+   "x": 55.5,
+   "z": 35.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "guarda_morto",
+   "elite": true,
+   "unique": "a1_capitao",
+   "x": 30.5,
+   "z": 36.5
+  },
+  {
+   "type": "enemy",
+   "enemy": "vampiro_menor",
+   "x": 26.5,
+   "z": 31.5
+  },
+  {
+   "type": "breakable",
+   "sprite": "urn",
+   "x": 10.5,
+   "z": 27.5
+  },
+  {
+   "type": "breakable",
+   "sprite": "urn",
+   "x": 25.5,
+   "z": 21.5
+  },
+  {
+   "type": "breakable",
+   "sprite": "urn",
+   "x": 50.5,
+   "z": 40.5
+  }
+ ],
+ "puzzles": [
+  {
+   "id": "luz_cripta",
+   "type": "beam",
+   "props": [
+    "receptor_cripta"
+   ],
+   "message": "O feixe de luar atravessa a cripta!",
+   "grace": 150
+  },
+  {
+   "id": "estatuas_vitral",
+   "type": "combination",
+   "props": [
+    "estatua_esq",
+    "estatua_meio",
+    "estatua_dir"
+   ],
+   "solution": [
+    "leste",
+    "norte",
+    "oeste"
+   ],
+   "open": [
+    "passagem_vitral"
+   ],
+   "lock": [
+    "estatua_esq",
+    "estatua_meio",
+    "estatua_dir"
+   ],
+   "message": "Os três reis contemplam o vitral. Algo range na ala oeste do pátio.",
+   "grace": 200
+  },
+  {
+   "id": "alavancas_alas",
+   "type": "all_on",
+   "props": [
+    "alavanca_oeste",
+    "alavanca_leste"
+   ],
+   "message": "O portão do Salão da Lua Partida está aberto.",
+   "grace": 100
+  }
+ ],
+ "regions": [
+  {
+   "id": "cripta",
+   "name": "Cripta de Velmora",
+   "rect": [
+    1,
+    1,
+    59,
+    17
+   ]
+  },
+  {
+   "id": "patio",
+   "name": "Pátio do Castelo",
+   "rect": [
+    1,
+    17,
+    43,
+    29
+   ]
+  },
+  {
+   "id": "salao_carmesim",
+   "name": "Salão Carmesim",
+   "rect": [
+    43,
+    20,
+    59,
+    29
+   ]
+  },
+  {
+   "id": "castelo",
+   "name": "Castelo de Varkhan",
+   "rect": [
+    0,
+    0,
+    60,
+    48
+   ]
+  }
+ ]
+}

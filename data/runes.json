@@ -1,0 +1,601 @@
+{
+ "predador": {
+  "name": "Runa do Predador",
+  "category": "ofensiva",
+  "rarity": "comum",
+  "mods": {
+   "vs_bleeding_mult": 0.25
+  },
+  "effects": [],
+  "desc": "+25% de dano contra inimigos sangrando."
+ },
+ "carrasco": {
+  "name": "Runa do Carrasco",
+  "category": "ofensiva",
+  "rarity": "rara",
+  "mods": {
+   "execution_mult": 0.15
+  },
+  "effects": [
+   {
+    "on": "posture_break",
+    "do": "cooldown",
+    "amount": 2.5,
+    "cd": 0.5
+   }
+  ],
+  "desc": "Romper a postura de um inimigo reduz o tempo de recarga das habilidades em 2,5s. Execuções +15%."
+ },
+ "trovao": {
+  "name": "Runa do Trovão",
+  "category": "ofensiva",
+  "rarity": "rara",
+  "mods": {},
+  "effects": [
+   {
+    "on": "finisher_hit",
+    "do": "chain",
+    "chance": 0.45,
+    "jumps": 3,
+    "dmg": 0.5,
+    "radius": 5,
+    "cd": 0.6
+   }
+  ],
+  "desc": "Golpes finalizadores podem disparar uma descarga elétrica que salta entre inimigos."
+ },
+ "tempestade_ascendente": {
+  "name": "Runa da Tempestade Ascendente",
+  "category": "ofensiva",
+  "rarity": "rara",
+  "mods": {},
+  "effects": [
+   {
+    "on": "launch_hit",
+    "do": "chain",
+    "jumps": 2,
+    "dmg": 0.45,
+    "radius": 4,
+    "cd": 0.8
+   }
+  ],
+  "desc": "Lançar um inimigo ao ar libera uma descarga elétrica."
+ },
+ "furia_cega": {
+  "name": "Runa da Fúria Cega",
+  "category": "ofensiva",
+  "rarity": "comum",
+  "mods": {
+   "atk_mult": 0.15,
+   "dmg_taken_mult": 0.1
+  },
+  "effects": [],
+  "exclusive": "pacto",
+  "desc": "+15% de dano, mas recebe +10% de dano."
+ },
+ "ferro": {
+  "name": "Runa de Ferro",
+  "category": "defensiva",
+  "rarity": "comum",
+  "mods": {
+   "def_flat": 5,
+   "posture_max": 15
+  },
+  "effects": [],
+  "desc": "Defesa e postura aumentadas."
+ },
+ "bastiao": {
+  "name": "Runa do Bastião",
+  "category": "defensiva",
+  "rarity": "rara",
+  "mods": {
+   "block_reduction": 0.1
+  },
+  "effects": [
+   {
+    "on": "block",
+    "do": "barrier",
+    "amount": 0.05,
+    "time": 4,
+    "cd": 1.0
+   }
+  ],
+  "desc": "Bloqueios ficam mais fortes e criam pequenas barreiras."
+ },
+ "julgamento": {
+  "name": "Runa do Julgamento",
+  "category": "defensiva",
+  "rarity": "rara",
+  "mods": {},
+  "effects": [
+   {
+    "on": "parry",
+    "do": "zone",
+    "at": "attacker",
+    "zone": {
+     "zone": "pillar",
+     "radius": 1.5,
+     "dur": 0.25,
+     "dmg": 1.6,
+     "pure": {
+      "sagrado": 1.0
+     },
+     "kb": 3,
+     "launch": 6,
+     "posture": 25,
+     "stun": 0.6,
+     "visual": "light_pillar"
+    },
+    "cd": 0.5
+   }
+  ],
+  "desc": "Aparar perfeitamente desencadeia um contra-ataque sagrado sobre o atacante."
+ },
+ "ultimo_suspiro": {
+  "name": "Runa do Último Suspiro",
+  "category": "defensiva",
+  "rarity": "lendaria",
+  "mods": {},
+  "effects": [
+   {
+    "type": "flag",
+    "flag": "last_stand"
+   }
+  ],
+  "desc": "Uma vez por descanso, sobrevive a um golpe fatal com 20% de vida."
+ },
+ "peregrino": {
+  "name": "Runa do Peregrino",
+  "category": "mobilidade",
+  "rarity": "comum",
+  "mods": {},
+  "effects": [
+   {
+    "on": "perfect_dodge",
+    "do": "buff",
+    "buff": {
+     "id": "peregrino",
+     "mods": {
+      "speed_mult": 0.3,
+      "atk_mult": 0.1
+     },
+     "time": 3.0,
+     "color": [
+      0.6,
+      1.0,
+      0.8
+     ]
+    }
+   }
+  ],
+  "desc": "Esquiva perfeita concede velocidade e dano por 3s."
+ },
+ "sombra_fugaz": {
+  "name": "Runa da Sombra Fugaz",
+  "category": "mobilidade",
+  "rarity": "comum",
+  "mods": {
+   "dodge_distance": 0.2,
+   "dodge_iframes": 0.03
+  },
+  "effects": [],
+  "desc": "Esquivas mais longas e seguras."
+ },
+ "corvo": {
+  "name": "Runa do Corvo",
+  "category": "mobilidade",
+  "rarity": "rara",
+  "mods": {},
+  "effects": [
+   {
+    "type": "flag",
+    "flag": "launch_teleport"
+   }
+  ],
+  "desc": "Ao lançar um inimigo, pressione Esquiva para se teletransportar até ele no ar."
+ },
+ "asa_vendaval": {
+  "name": "Runa da Asa do Vendaval",
+  "category": "mobilidade",
+  "rarity": "rara",
+  "mods": {
+   "dodge_charges": 1,
+   "jump_mult": 0.1
+  },
+  "effects": [],
+  "desc": "Uma carga de esquiva extra e saltos mais altos."
+ },
+ "fluxo": {
+  "name": "Runa do Fluxo",
+  "category": "arcana",
+  "rarity": "comum",
+  "mods": {
+   "fp_regen": 1.2,
+   "fp_on_hit": 0.6
+  },
+  "effects": [],
+  "desc": "Foco regenera mais rápido e golpes devolvem Foco."
+ },
+ "astrolabio": {
+  "name": "Runa do Astrolábio",
+  "category": "arcana",
+  "rarity": "rara",
+  "mods": {
+   "skill_mult": 0.2,
+   "cooldown_mult": -0.1
+  },
+  "effects": [],
+  "desc": "Habilidades mais fortes e com recarga menor."
+ },
+ "estrela_guia": {
+  "name": "Runa da Estrela-Guia",
+  "category": "arcana",
+  "rarity": "rara",
+  "mods": {},
+  "effects": [
+   {
+    "on": "skill",
+    "do": "proj",
+    "proj": {
+     "proj": "estrela",
+     "speed": 12,
+     "dmg": 0.5,
+     "pure": {
+      "arcano": 1.0
+     },
+     "radius": 0.3,
+     "range": 14,
+     "count": 3,
+     "spread": 90,
+     "homing": 200,
+     "visual": "star_bolt",
+     "light": [
+      0.8,
+      0.8,
+      1.0,
+      1.2
+     ],
+     "posture": 4,
+     "kb": 1,
+     "stun": 0.3,
+     "scale": "intelecto"
+    },
+    "cd": 0.5
+   }
+  ],
+  "desc": "Usar uma habilidade dispara três estrelas teleguiadas."
+ },
+ "abismo": {
+  "name": "Runa do Abismo",
+  "category": "arcana",
+  "rarity": "lendaria",
+  "mods": {
+   "elem_arcano": 0.2,
+   "elem_trevas": 0.2
+  },
+  "effects": [
+   {
+    "on": "kill",
+    "do": "zone",
+    "at": "target",
+    "zone": {
+     "zone": "burst",
+     "radius": 2.4,
+     "dur": 0.2,
+     "dmg": 0.8,
+     "pure": {
+      "trevas": 0.5,
+      "arcano": 0.5
+     },
+     "kb": 3,
+     "posture": 10,
+     "stun": 0.4,
+     "visual": "abyss_burst"
+    },
+    "cd": 0.3
+   }
+  ],
+  "desc": "Inimigos derrotados implodem num vórtice abissal."
+ },
+ "sangue_eterno": {
+  "name": "Runa do Sangue Eterno",
+  "category": "sangue",
+  "rarity": "rara",
+  "mods": {},
+  "effects": [
+   {
+    "on": "crit",
+    "do": "heal",
+    "amount": 0.02,
+    "cd": 0.3
+   }
+  ],
+  "desc": "Críticos recuperam 2% da vida."
+ },
+ "sede": {
+  "name": "Runa da Sede",
+  "category": "sangue",
+  "rarity": "comum",
+  "mods": {
+   "lifesteal": 0.03
+  },
+  "effects": [],
+  "desc": "Rouba 3% do dano causado como vida."
+ },
+ "carne_viva": {
+  "name": "Runa da Carne Viva",
+  "category": "sangue",
+  "rarity": "rara",
+  "mods": {
+   "hp_regen": 0.6,
+   "hp_max": 40
+  },
+  "effects": [],
+  "desc": "Vida máxima maior e regeneração constante."
+ },
+ "mutacao": {
+  "name": "Runa da Mutação",
+  "category": "sangue",
+  "rarity": "rara",
+  "mods": {
+   "atk_mult": 0.2,
+   "heal_mult": -0.2
+  },
+  "effects": [],
+  "exclusive": "pacto",
+  "desc": "+20% de dano, mas curas são 20% menores."
+ },
+ "eclipse": {
+  "name": "Runa do Eclipse",
+  "category": "sombras",
+  "rarity": "rara",
+  "mods": {},
+  "effects": [
+   {
+    "on": "dodge",
+    "do": "clone",
+    "time": 1.4,
+    "mode": "strike",
+    "power": 0.55,
+    "cd": 1.2
+   }
+  ],
+  "desc": "Esquivas deixam um clone sombrio que ataca o inimigo mais próximo."
+ },
+ "veu_noturno": {
+  "name": "Runa do Véu Noturno",
+  "category": "sombras",
+  "rarity": "comum",
+  "mods": {
+   "backstab_mult": 0.3,
+   "crit_chance": 0.05
+  },
+  "effects": [],
+  "desc": "Golpes pelas costas mais fortes e críticos mais frequentes."
+ },
+ "marca_negra": {
+  "name": "Runa da Marca Negra",
+  "category": "sombras",
+  "rarity": "comum",
+  "mods": {},
+  "effects": [
+   {
+    "on": "crit",
+    "do": "mark",
+    "time": 6,
+    "kind": "sombra",
+    "cd": 0.5
+   }
+  ],
+  "desc": "Críticos marcam o alvo: o próximo golpe nele causa +25% de dano."
+ },
+ "lamina_sombria": {
+  "name": "Runa da Lâmina Sombria",
+  "category": "sombras",
+  "rarity": "comum",
+  "mods": {
+   "elem_trevas": 0.2,
+   "curse_add": 6
+  },
+  "effects": [],
+  "desc": "Golpes acumulam maldição; trevas mais fortes."
+ },
+ "forja": {
+  "name": "Runa da Forja",
+  "category": "maquinas",
+  "rarity": "rara",
+  "mods": {},
+  "effects": [
+   {
+    "on": "heavy_hit",
+    "do": "heat",
+    "needed": 4,
+    "dmg": 1.3,
+    "cd": 0.15
+   }
+  ],
+  "desc": "Golpes pesados acumulam calor; o quarto provoca uma explosão de fogo."
+ },
+ "engrenagem": {
+  "name": "Runa da Engrenagem",
+  "category": "maquinas",
+  "rarity": "comum",
+  "mods": {
+   "attack_speed": 0.1
+  },
+  "effects": [],
+  "desc": "Ataques 10% mais rápidos."
+ },
+ "polvora": {
+  "name": "Runa da Pólvora",
+  "category": "maquinas",
+  "rarity": "comum",
+  "mods": {
+   "ranged_mult": 0.25
+  },
+  "effects": [],
+  "desc": "Projéteis causam +25% de dano."
+ },
+ "sobrecarga": {
+  "name": "Runa da Sobrecarga",
+  "category": "maquinas",
+  "rarity": "rara",
+  "mods": {
+   "art_mult": 0.15
+  },
+  "effects": [
+   {
+    "on": "art",
+    "do": "zone",
+    "at": "self",
+    "zone": {
+     "zone": "ring",
+     "radius": 4.0,
+     "ring_speed": 12,
+     "dur": 0.35,
+     "dmg": 0.6,
+     "pure": {
+      "raio": 1.0
+     },
+     "kb": 3,
+     "posture": 10,
+     "stun": 0.4,
+     "visual": "shock_ring_blue",
+     "status": {
+      "choque": 35
+     }
+    },
+    "cd": 1.0
+   }
+  ],
+  "desc": "Usar uma arte de combate libera um anel elétrico."
+ },
+ "lua_partida": {
+  "name": "Runa da Lua Partida",
+  "category": "feras",
+  "rarity": "lendaria",
+  "mods": {
+   "beast_mult": 0.15
+  },
+  "effects": [
+   {
+    "type": "flag",
+    "flag": "beast_reach"
+   },
+   {
+    "on": "transform",
+    "do": "fervor",
+    "amount": 30
+   }
+  ],
+  "desc": "Ataques bestiais têm 30% mais alcance durante a transformação e golpes bestiais ficam mais fortes."
+ },
+ "lua_cheia": {
+  "name": "Runa da Lua Cheia",
+  "category": "feras",
+  "rarity": "comum",
+  "mods": {
+   "beast_mult": 0.1
+  },
+  "effects": [
+   {
+    "on": "hit",
+    "do": "fury",
+    "amount": 1.5,
+    "cd": 0.1
+   }
+  ],
+  "desc": "Fúria cresce mais rápido e golpes bestiais ficam mais fortes."
+ },
+ "faro": {
+  "name": "Runa do Faro de Caça",
+  "category": "feras",
+  "rarity": "comum",
+  "mods": {
+   "vs_low_hp_mult": 0.2,
+   "speed_mult": 0.05
+  },
+  "effects": [],
+  "desc": "Mais dano contra presas feridas e mais velocidade."
+ },
+ "matilha": {
+  "name": "Runa do Chamado da Matilha",
+  "category": "feras",
+  "rarity": "rara",
+  "mods": {},
+  "effects": [
+   {
+    "on": "kill",
+    "do": "buff",
+    "buff": {
+     "id": "matilha",
+     "mods": {
+      "atk_mult": 0.08
+     },
+     "time": 8,
+     "max_stacks": 3,
+     "color": [
+      1,
+      0.6,
+      0.3
+     ]
+    }
+   }
+  ],
+  "desc": "Cada abate dá +8% de dano por 8s (acumula 3 vezes)."
+ },
+ "prece": {
+  "name": "Runa da Prece",
+  "category": "divina",
+  "rarity": "comum",
+  "mods": {
+   "heal_mult": 0.2,
+   "flask_heal": 0.06
+  },
+  "effects": [],
+  "desc": "Curas e frascos mais eficientes."
+ },
+ "aureola": {
+  "name": "Runa da Auréola",
+  "category": "divina",
+  "rarity": "rara",
+  "mods": {
+   "holy_mult": 0.25,
+   "vs_undead_mult": 0.2
+  },
+  "effects": [],
+  "desc": "Dano sagrado e contra mortos-vivos aumentado."
+ },
+ "juramento": {
+  "name": "Runa do Juramento",
+  "category": "divina",
+  "rarity": "rara",
+  "mods": {},
+  "effects": [
+   {
+    "on": "low_hp",
+    "do": "barrier",
+    "amount": 0.25,
+    "time": 6,
+    "cd": 30
+   }
+  ],
+  "desc": "Ao ficar com pouca vida, ganha uma barreira de 25% (recarga de 30s)."
+ },
+ "graca_pura": {
+  "name": "Runa da Graça Pura",
+  "category": "divina",
+  "rarity": "lendaria",
+  "mods": {
+   "fervor_gain": 0.3,
+   "elem_fogo": 0.05,
+   "elem_gelo": 0.05,
+   "elem_raio": 0.05,
+   "elem_sagrado": 0.05,
+   "elem_arcano": 0.05,
+   "grace_gain": 0.1
+  },
+  "effects": [],
+  "desc": "Fervor sobe mais rápido, todos os elementos ficam mais fortes e você ganha +10% de Graça."
+ }
+}

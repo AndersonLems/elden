@@ -1,0 +1,23 @@
+{
+ "q_principal": {"name": "O Crepúsculo dos Deuses", "auto_start": true, "stages": {
+   "0": "Converse com a Irmã Velária no Santuário da Última Chama.",
+   "1": "Atravesse o portal do Domínio da Lua Sangrenta e derrote VARKHAN, o Primeiro Licano.",
+   "2": "Desça à Forja das Almas e destrua SERAFIM-09.",
+   "3": "Entre na Catedral da Carne e liberte o SANTO IMPERFEITO.",
+   "4": "Suba o Observatório do Abismo e enfrente MALACHAR.",
+   "5": "Ascenda ao Trono da Graça e confronte AURELION."},
+   "advance": [{"stage": 0, "on": "intro_velaria", "to": 1}, {"stage": 1, "on": "boss:varkhan", "to": 2}, {"stage": 2, "on": "boss:serafim_09", "to": 3},
+               {"stage": 3, "on": "boss:santo_imperfeito", "to": 4}, {"stage": 4, "on": "boss:malachar", "to": 5}, {"stage": 5, "on": "boss:aurelion", "to": "done"}]},
+ "q_bram": {"name": "O Medalhão de Lina", "stages": {"1": "Bram perdeu o medalhão da filha na Cripta de Velmora. Encontre-o.", "2": "Leve o medalhão de volta a Bram, na estrada da floresta."},
+   "advance": [{"stage": 1, "on": "pegou_medalhao", "to": 2}], "reward": [{"rune": "faro"}, {"grace": 400}]},
+ "q_condessa": {"name": "O Baile da Condessa", "stages": {"1": "Uma convidada morta-viva espera no Salão Carmesim do castelo. Encontre a chave do salão."},
+   "advance": [{"stage": 1, "on": "boss:condessa_rubra", "to": "done"}], "reward": [{"grace": 300}]},
+ "q_lise": {"name": "Pressão nas Veias", "stages": {"1": "Lise precisa que a energia volte à casa de máquinas. Encontre a manivela e distribua a energia.", "2": "Volte a falar com Lise."},
+   "advance": [{"stage": 1, "on": "puzzle:forja_energia", "to": 2}], "reward": [{"weapon": "pistola_mecanica"}, {"materials": 4}]},
+ "q_agathe": {"name": "Absolvição", "stages": {"1": "Encontre as três Páginas da Absolvição espalhadas pela catedral.", "2": "Leve as páginas à Irmã Agathe."},
+   "advance": [{"stage": 1, "on_all": ["pagina_1", "pagina_2", "pagina_3"], "to": 2}], "reward": [{"rune": "aureola"}, {"grace": 800}]},
+ "q_corvin": {"name": "O Aprendiz na Gaiola", "stages": {"1": "Corvin está preso numa gaiola rúnica na biblioteca. Desative o selo.", "2": "Fale com Corvin."},
+   "advance": [{"stage": 1, "on": "corvin_livre", "to": 2}], "reward": [{"weapon": "cajado_tempestade"}, {"grace": 1200}]},
+ "q_ciclo": {"name": "Os Fragmentos do Ciclo", "stages": {"1": "Ysolde fala de cinco Fragmentos do Ciclo escondidos nos cinco reinos. Encontre-os para conhecer a verdade."},
+   "advance": [{"stage": 1, "on": "ciclo_completo", "to": "done"}], "reward": [{"rune": "ultimo_suspiro"}]}
+}

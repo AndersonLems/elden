@@ -1,0 +1,5 @@
+ursina>=8.0
+panda3d>=1.10.14
+pygame-ce>=2.5
+numpy>=1.26
+pillow>=10.0

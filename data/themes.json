@@ -1,0 +1,802 @@
+{
+ "santuario": {
+  "marker_floor": ".",
+  "legend": {
+   ".": {
+    "t": "floor",
+    "top": "sanctuary_floor"
+   },
+   ",": {
+    "t": "floor",
+    "top": "cobble_moss"
+   },
+   ":": {
+    "t": "floor",
+    "top": "rune_gold",
+    "emissive": 0.0
+   },
+   "_": {
+    "t": "floor",
+    "top": "carpet_red"
+   },
+   "#": {
+    "t": "wall",
+    "h": 3,
+    "top": "sanctuary_top",
+    "wall": "sanctuary_wall"
+   },
+   "H": {
+    "t": "wall",
+    "h": 4,
+    "top": "sanctuary_top",
+    "wall": "sanctuary_wall"
+   },
+   "h": {
+    "t": "wall",
+    "h": 1,
+    "top": "sanctuary_top",
+    "wall": "sanctuary_wall"
+   },
+   "B": {
+    "t": "wall",
+    "h": 3,
+    "top": "sanctuary_top",
+    "wall": "bookshelf"
+   },
+   "1": {
+    "t": "floor",
+    "h": 1,
+    "top": "sanctuary_floor",
+    "wall": "sanctuary_wall"
+   },
+   "2": {
+    "t": "floor",
+    "h": 2,
+    "top": "sanctuary_floor",
+    "wall": "sanctuary_wall"
+   },
+   "a": {
+    "t": "ramp",
+    "h0": 0,
+    "h1": 1,
+    "top": "sanctuary_floor",
+    "wall": "sanctuary_wall"
+   },
+   "b": {
+    "t": "ramp",
+    "h0": 1,
+    "h1": 2,
+    "top": "sanctuary_floor",
+    "wall": "sanctuary_wall"
+   },
+   "P": {
+    "t": "wall",
+    "h": 3,
+    "solid": true,
+    "top": "sanctuary_top",
+    "wall": "castle_wall"
+   },
+   "~": {
+    "t": "void"
+   },
+   "w": {
+    "t": "floor",
+    "h": -0.4,
+    "top": "water",
+    "liquid": "agua",
+    "slow": 0.3
+   },
+   "T": {
+    "t": "floor",
+    "solid": true,
+    "render": false,
+    "top": "cobble_moss",
+    "occ": 2.5,
+    "deco": "tree_dead"
+   },
+   "=": {
+    "t": "floor",
+    "top": "wood_floor"
+   }
+  }
+ },
+ "ato1_floresta": {
+  "marker_floor": ".",
+  "legend": {
+   ".": {
+    "t": "floor",
+    "top": "forest_floor"
+   },
+   ",": {
+    "t": "floor",
+    "top": "forest_grass"
+   },
+   ":": {
+    "t": "floor",
+    "top": "forest_dirt"
+   },
+   ";": {
+    "t": "floor",
+    "top": "forest_roots"
+   },
+   "_": {
+    "t": "floor",
+    "top": "cobble"
+   },
+   "-": {
+    "t": "floor",
+    "top": "grave_dirt"
+   },
+   "#": {
+    "t": "wall",
+    "h": 3,
+    "top": "rock_top",
+    "wall": "rock_wall"
+   },
+   "H": {
+    "t": "wall",
+    "h": 4,
+    "top": "castle_top",
+    "wall": "castle_wall"
+   },
+   "h": {
+    "t": "wall",
+    "h": 1,
+    "top": "rock_top",
+    "wall": "rock_wall"
+   },
+   "C": {
+    "t": "wall",
+    "h": 3,
+    "top": "roof_slate",
+    "wall": "castle_brick"
+   },
+   "1": {
+    "t": "floor",
+    "h": 1,
+    "top": "forest_grass",
+    "wall": "rock_wall"
+   },
+   "2": {
+    "t": "floor",
+    "h": 2,
+    "top": "forest_floor",
+    "wall": "rock_wall"
+   },
+   "a": {
+    "t": "ramp",
+    "h0": 0,
+    "h1": 1,
+    "top": "forest_dirt",
+    "wall": "rock_wall"
+   },
+   "b": {
+    "t": "ramp",
+    "h0": 1,
+    "h1": 2,
+    "top": "forest_dirt",
+    "wall": "rock_wall"
+   },
+   "T": {
+    "t": "floor",
+    "solid": true,
+    "render": false,
+    "top": "forest_floor",
+    "occ": 3.0,
+    "deco": "tree_twisted"
+   },
+   "Y": {
+    "t": "floor",
+    "solid": true,
+    "render": false,
+    "top": "forest_grass",
+    "occ": 2.5,
+    "deco": "tree_dead"
+   },
+   "t": {
+    "t": "floor",
+    "solid": true,
+    "render": false,
+    "top": "grave_dirt",
+    "occ": 0.8,
+    "deco": "tombstone"
+   },
+   "+": {
+    "t": "floor",
+    "solid": true,
+    "render": false,
+    "top": "grave_dirt",
+    "occ": 1.2,
+    "deco": "cross"
+   },
+   "~": {
+    "t": "void"
+   },
+   "w": {
+    "t": "floor",
+    "h": -0.4,
+    "top": "blood_pool",
+    "liquid": "sangue",
+    "slow": 0.35
+   },
+   "=": {
+    "t": "floor",
+    "top": "wood_floor"
+   },
+   "P": {
+    "t": "wall",
+    "h": 3,
+    "solid": true,
+    "top": "castle_top",
+    "wall": "castle_wall"
+   }
+  }
+ },
+ "ato1_castelo": {
+  "marker_floor": ".",
+  "legend": {
+   ".": {
+    "t": "floor",
+    "top": "cobble"
+   },
+   ",": {
+    "t": "floor",
+    "top": "cobble_moss"
+   },
+   "_": {
+    "t": "floor",
+    "top": "carpet_red"
+   },
+   ":": {
+    "t": "floor",
+    "top": "crypt_floor"
+   },
+   ";": {
+    "t": "floor",
+    "top": "bones"
+   },
+   "#": {
+    "t": "wall",
+    "h": 3,
+    "top": "castle_top",
+    "wall": "castle_wall"
+   },
+   "H": {
+    "t": "wall",
+    "h": 4,
+    "top": "castle_top",
+    "wall": "castle_wall"
+   },
+   "h": {
+    "t": "wall",
+    "h": 1,
+    "top": "castle_top",
+    "wall": "castle_brick"
+   },
+   "C": {
+    "t": "wall",
+    "h": 3,
+    "top": "castle_top",
+    "wall": "castle_brick"
+   },
+   "G": {
+    "t": "wall",
+    "h": 3,
+    "top": "castle_top",
+    "wall": "glass_red",
+    "trim": "castle_wall",
+    "wall_emissive": 0.6
+   },
+   "P": {
+    "t": "wall",
+    "h": 3,
+    "solid": true,
+    "top": "castle_top",
+    "wall": "castle_wall"
+   },
+   "1": {
+    "t": "floor",
+    "h": 1,
+    "top": "cobble",
+    "wall": "castle_brick"
+   },
+   "2": {
+    "t": "floor",
+    "h": 2,
+    "top": "cobble",
+    "wall": "castle_brick"
+   },
+   "a": {
+    "t": "ramp",
+    "h0": 0,
+    "h1": 1,
+    "top": "cobble",
+    "wall": "castle_brick"
+   },
+   "b": {
+    "t": "ramp",
+    "h0": 1,
+    "h1": 2,
+    "top": "cobble",
+    "wall": "castle_brick"
+   },
+   "t": {
+    "t": "floor",
+    "solid": true,
+    "render": false,
+    "top": "crypt_floor",
+    "occ": 0.9,
+    "deco": "coffin"
+   },
+   "~": {
+    "t": "void"
+   },
+   "w": {
+    "t": "floor",
+    "h": -0.4,
+    "top": "blood_pool",
+    "liquid": "sangue",
+    "slow": 0.35
+   },
+   "=": {
+    "t": "floor",
+    "top": "wood_floor"
+   }
+  }
+ },
+ "ato2": {
+  "marker_floor": ".",
+  "legend": {
+   ".": {
+    "t": "floor",
+    "top": "forge_plate"
+   },
+   ",": {
+    "t": "floor",
+    "top": "soot_floor"
+   },
+   ":": {
+    "t": "floor",
+    "top": "grate"
+   },
+   ";": {
+    "t": "floor",
+    "top": "gear_floor"
+   },
+   "_": {
+    "t": "floor",
+    "top": "copper_plate"
+   },
+   "#": {
+    "t": "wall",
+    "h": 3,
+    "top": "forge_top",
+    "wall": "forge_wall"
+   },
+   "H": {
+    "t": "wall",
+    "h": 4,
+    "top": "forge_top",
+    "wall": "forge_wall"
+   },
+   "h": {
+    "t": "wall",
+    "h": 1,
+    "top": "forge_top",
+    "wall": "forge_brick"
+   },
+   "C": {
+    "t": "wall",
+    "h": 3,
+    "top": "forge_top",
+    "wall": "forge_brick"
+   },
+   "p": {
+    "t": "wall",
+    "h": 3,
+    "top": "forge_top",
+    "wall": "pipes"
+   },
+   "P": {
+    "t": "wall",
+    "h": 3,
+    "solid": true,
+    "top": "forge_top",
+    "wall": "pipes"
+   },
+   "1": {
+    "t": "floor",
+    "h": 1,
+    "top": "forge_plate",
+    "wall": "forge_brick"
+   },
+   "2": {
+    "t": "floor",
+    "h": 2,
+    "top": "forge_plate",
+    "wall": "forge_brick"
+   },
+   "3": {
+    "t": "floor",
+    "h": 3,
+    "top": "copper_plate",
+    "wall": "forge_brick"
+   },
+   "a": {
+    "t": "ramp",
+    "h0": 0,
+    "h1": 1,
+    "top": "grate",
+    "wall": "forge_brick"
+   },
+   "b": {
+    "t": "ramp",
+    "h0": 1,
+    "h1": 2,
+    "top": "grate",
+    "wall": "forge_brick"
+   },
+   "c": {
+    "t": "ramp",
+    "h0": 2,
+    "h1": 3,
+    "top": "grate",
+    "wall": "forge_brick"
+   },
+   "~": {
+    "t": "void"
+   },
+   "w": {
+    "t": "floor",
+    "h": -0.6,
+    "top": "lava",
+    "liquid": "lava",
+    "damage": 0.1,
+    "element": "fogo",
+    "emissive": 1.0
+   },
+   "=": {
+    "t": "floor",
+    "top": "grate"
+   }
+  }
+ },
+ "ato3_catedral": {
+  "marker_floor": ".",
+  "legend": {
+   ".": {
+    "t": "floor",
+    "top": "cathedral_floor"
+   },
+   ",": {
+    "t": "floor",
+    "top": "lab_tiles"
+   },
+   "_": {
+    "t": "floor",
+    "top": "carpet_red"
+   },
+   ":": {
+    "t": "floor",
+    "top": "flesh"
+   },
+   ";": {
+    "t": "floor",
+    "top": "bones"
+   },
+   "#": {
+    "t": "wall",
+    "h": 3,
+    "top": "cathedral_top",
+    "wall": "cathedral_wall"
+   },
+   "H": {
+    "t": "wall",
+    "h": 4,
+    "top": "cathedral_top",
+    "wall": "cathedral_wall"
+   },
+   "h": {
+    "t": "wall",
+    "h": 1,
+    "top": "cathedral_top",
+    "wall": "cathedral_wall"
+   },
+   "F": {
+    "t": "wall",
+    "h": 3,
+    "top": "flesh",
+    "wall": "flesh_wall"
+   },
+   "G": {
+    "t": "wall",
+    "h": 3,
+    "top": "cathedral_top",
+    "wall": "glass_gold",
+    "trim": "cathedral_wall",
+    "wall_emissive": 0.6
+   },
+   "B": {
+    "t": "wall",
+    "h": 3,
+    "top": "cathedral_top",
+    "wall": "bookshelf"
+   },
+   "P": {
+    "t": "wall",
+    "h": 4,
+    "solid": true,
+    "top": "cathedral_top",
+    "wall": "cathedral_wall"
+   },
+   "1": {
+    "t": "floor",
+    "h": 1,
+    "top": "cathedral_floor",
+    "wall": "cathedral_wall"
+   },
+   "2": {
+    "t": "floor",
+    "h": 2,
+    "top": "cathedral_floor",
+    "wall": "cathedral_wall"
+   },
+   "a": {
+    "t": "ramp",
+    "h0": 0,
+    "h1": 1,
+    "top": "cathedral_floor",
+    "wall": "cathedral_wall"
+   },
+   "b": {
+    "t": "ramp",
+    "h0": 1,
+    "h1": 2,
+    "top": "cathedral_floor",
+    "wall": "cathedral_wall"
+   },
+   "~": {
+    "t": "void"
+   },
+   "w": {
+    "t": "floor",
+    "h": -0.4,
+    "top": "blood_pool",
+    "liquid": "sangue",
+    "slow": 0.35
+   },
+   "x": {
+    "t": "floor",
+    "h": -0.4,
+    "top": "acid",
+    "liquid": "acido",
+    "damage": 0.06,
+    "element": "trevas",
+    "slow": 0.3
+   }
+  }
+ },
+ "ato4": {
+  "marker_floor": ".",
+  "legend": {
+   ".": {
+    "t": "floor",
+    "top": "arcane_floor"
+   },
+   ",": {
+    "t": "floor",
+    "top": "library_floor"
+   },
+   ":": {
+    "t": "floor",
+    "top": "rune_floor"
+   },
+   "_": {
+    "t": "floor",
+    "top": "carpet_red"
+   },
+   ";": {
+    "t": "floor",
+    "top": "astral"
+   },
+   "#": {
+    "t": "wall",
+    "h": 3,
+    "top": "arcane_top",
+    "wall": "arcane_wall"
+   },
+   "H": {
+    "t": "wall",
+    "h": 4,
+    "top": "arcane_top",
+    "wall": "arcane_wall"
+   },
+   "h": {
+    "t": "wall",
+    "h": 1,
+    "top": "arcane_top",
+    "wall": "arcane_wall"
+   },
+   "B": {
+    "t": "wall",
+    "h": 3,
+    "top": "arcane_top",
+    "wall": "bookshelf"
+   },
+   "G": {
+    "t": "wall",
+    "h": 3,
+    "top": "arcane_top",
+    "wall": "glass_blue",
+    "trim": "arcane_wall",
+    "wall_emissive": 0.6
+   },
+   "P": {
+    "t": "wall",
+    "h": 4,
+    "solid": true,
+    "top": "arcane_top",
+    "wall": "arcane_wall"
+   },
+   "1": {
+    "t": "floor",
+    "h": 1,
+    "top": "arcane_floor",
+    "wall": "arcane_wall"
+   },
+   "2": {
+    "t": "floor",
+    "h": 2,
+    "top": "arcane_floor",
+    "wall": "arcane_wall"
+   },
+   "3": {
+    "t": "floor",
+    "h": 3,
+    "top": "rune_floor",
+    "wall": "arcane_wall"
+   },
+   "a": {
+    "t": "ramp",
+    "h0": 0,
+    "h1": 1,
+    "top": "arcane_floor",
+    "wall": "arcane_wall"
+   },
+   "b": {
+    "t": "ramp",
+    "h0": 1,
+    "h1": 2,
+    "top": "arcane_floor",
+    "wall": "arcane_wall"
+   },
+   "c": {
+    "t": "ramp",
+    "h0": 2,
+    "h1": 3,
+    "top": "arcane_floor",
+    "wall": "arcane_wall"
+   },
+   "~": {
+    "t": "void"
+   },
+   "w": {
+    "t": "floor",
+    "h": -0.5,
+    "top": "astral",
+    "liquid": "astral",
+    "damage": 0.05,
+    "element": "arcano",
+    "emissive": 0.4
+   }
+  }
+ },
+ "ato5": {
+  "marker_floor": ".",
+  "legend": {
+   ".": {
+    "t": "floor",
+    "top": "marble_floor"
+   },
+   ",": {
+    "t": "floor",
+    "top": "marble_cracked"
+   },
+   "_": {
+    "t": "floor",
+    "top": "carpet_red"
+   },
+   ":": {
+    "t": "floor",
+    "top": "gold_trim"
+   },
+   ";": {
+    "t": "floor",
+    "top": "rune_gold"
+   },
+   "#": {
+    "t": "wall",
+    "h": 3,
+    "top": "marble_top",
+    "wall": "marble_wall"
+   },
+   "H": {
+    "t": "wall",
+    "h": 4,
+    "top": "marble_top",
+    "wall": "marble_wall"
+   },
+   "h": {
+    "t": "wall",
+    "h": 1,
+    "top": "marble_top",
+    "wall": "marble_wall"
+   },
+   "G": {
+    "t": "wall",
+    "h": 3,
+    "top": "marble_top",
+    "wall": "glass_white",
+    "trim": "marble_wall",
+    "wall_emissive": 0.7
+   },
+   "P": {
+    "t": "wall",
+    "h": 4,
+    "solid": true,
+    "top": "marble_top",
+    "wall": "marble_wall"
+   },
+   "1": {
+    "t": "floor",
+    "h": 1,
+    "top": "marble_floor",
+    "wall": "marble_wall"
+   },
+   "2": {
+    "t": "floor",
+    "h": 2,
+    "top": "marble_floor",
+    "wall": "marble_wall"
+   },
+   "3": {
+    "t": "floor",
+    "h": 3,
+    "top": "marble_floor",
+    "wall": "marble_wall"
+   },
+   "a": {
+    "t": "ramp",
+    "h0": 0,
+    "h1": 1,
+    "top": "marble_floor",
+    "wall": "marble_wall"
+   },
+   "b": {
+    "t": "ramp",
+    "h0": 1,
+    "h1": 2,
+    "top": "marble_floor",
+    "wall": "marble_wall"
+   },
+   "c": {
+    "t": "ramp",
+    "h0": 2,
+    "h1": 3,
+    "top": "marble_floor",
+    "wall": "marble_wall"
+   },
+   "~": {
+    "t": "void"
+   },
+   "w": {
+    "t": "floor",
+    "h": -0.4,
+    "top": "stars",
+    "liquid": "luz",
+    "slow": 0.2,
+    "emissive": 0.6
+   }
+  }
+ }
+}

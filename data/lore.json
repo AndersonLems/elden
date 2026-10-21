@@ -1,0 +1,242 @@
+{
+ "livro_portadores": {
+  "title": "Livro dos Portadores",
+  "act": 0,
+  "text": "Quando o Deus da Luz se partiu, cada fragmento caiu como uma estrela sobre Elden. Os homens chamaram de Graça o brilho que tocaram. A cada era um Portador desperta junto à Última Chama, reúne o que se espalhou e sobe ao Trono. Assim foi. Assim será. — Primeira página, letra antiga."
+ },
+ "carta_velaria": {
+  "title": "Carta sem Remetente",
+  "act": 0,
+  "text": "Velária, eles sempre perguntam por que a chama nunca se apaga. Nunca diga a eles o que a alimenta. Deixe que subam. Deixe que escolham. — A tinta está borrada, como se alguém tivesse chorado sobre ela."
+ },
+ "diario_cacador": {
+  "title": "Diário de Bram",
+  "act": 1,
+  "text": "Dia 41 desde a lua vermelha. Lina saiu atrás do lobo branco e não voltou. Achei pegadas pequenas perto da cripta. Os guardas mortos não deixam ninguém entrar. Se eu morrer, que alguém encontre o medalhão dela — é tudo o que restou da mãe."
+ },
+ "inscricao_cripta": {
+  "title": "Inscrição no Selo da Cripta",
+  "act": 1,
+  "flag": "dica_lunar",
+  "text": "\"A lua nasce NOVA no leste, CRESCE no norte, enche-se CHEIA no oeste e MINGUA no sul. Só quem respeita o caminho da lua desce até os mortos.\" (Os mostradores do selo seguem a ordem: leste, norte, oeste, sul.)"
+ },
+ "cronica_licanos": {
+  "title": "Crônica dos Clãs da Lua",
+  "act": 1,
+  "text": "Varkhan foi o primeiro a beber da Graça sob a lua cheia. Não pediu poder: pediu nunca mais sentir frio. A Graça atendeu do seu jeito. Hoje o castelo em ruínas é sua toca, e cada uivo dele faz a lua sangrar."
+ },
+ "carta_condessa": {
+  "title": "Convite Carmesim",
+  "act": 1,
+  "text": "A Condessa Elvira Rubra convida Vossa Excelência ao último baile antes da alvorada. Traje: luto. Presente: sangue fresco. A chave do salão estará com o mordomo, que repousa nas criptas da ala leste."
+ },
+ "vitral_lenda": {
+  "title": "Legenda do Vitral",
+  "act": 1,
+  "flag": "dica_vitral",
+  "text": "\"Quando a luz do vitral beija o olho da estátua, o caminho dos antigos se abre.\" Há marcas de giro no pedestal do espelho."
+ },
+ "fragmento_ciclo_1": {
+  "title": "Fragmento do Ciclo I — O Primeiro Portador",
+  "act": 1,
+  "grants": [
+   {
+    "fragment": "ciclo_1"
+   }
+  ],
+  "text": "Escrito numa lasca de osso: \"Eu subi. Ele me sorriu. Eu devolvi a luz e ele me devorou. Acordei de novo ao lado da chama, sem memória, com um nome novo.\""
+ },
+ "manual_operario": {
+  "title": "Manual do Operário, 3ª Edição",
+  "act": 2,
+  "text": "Regra 1: nunca encare o Núcleo. Regra 2: a Graça não é combustível, é inquilina. Regra 3: se ouvir cantoria nas caldeiras, abandone o turno."
+ },
+ "relatorio_serafim": {
+  "title": "Relatório do Projeto SERAFIM",
+  "act": 2,
+  "text": "Protótipos 01 a 08 falharam: a Graça rejeita o metal. O 09 aceitou — mas agora ele pede mais. Recomendo interromper. (Abaixo, outra caligrafia: \"Recomendação negada. A Cidade precisa de um deus que obedeça.\")"
+ },
+ "diagrama_valvulas": {
+  "title": "Diagrama das Válvulas",
+  "act": 2,
+  "flag": "dica_valvulas",
+  "text": "Rede de vapor da casa de caldeiras: a pressão parte da CALDEIRA e deve chegar ao PISTÃO PRINCIPAL. A válvula de alívio leste DESCARREGA no corredor dos operários — mantenha-a fechada. Válvula A abre o ramal norte; válvula B abre o ramal oeste."
+ },
+ "carta_lise": {
+  "title": "Bilhete de Lise",
+  "act": 2,
+  "text": "Pai, se você ler isso: consegui religar as luzes do refeitório. Os autômatos não me reconhecem mais. Vou tentar a casa de máquinas amanhã. A manivela ficou com o capataz, aquele que não dorme."
+ },
+ "fragmento_ciclo_2": {
+  "title": "Fragmento do Ciclo II — A Engrenagem Divina",
+  "act": 2,
+  "grants": [
+   {
+    "fragment": "ciclo_2"
+   }
+  ],
+  "text": "Gravado numa engrenagem: \"Construímos o Serafim para guardar a Graça longe do Trono. Pela primeira vez o ciclo atrasou. O deus ficou com fome. O deus ficou com medo.\""
+ },
+ "sermao_carne": {
+  "title": "Sermão da Carne Santa",
+  "act": 3,
+  "text": "Irmãos, a carne é imperfeita porque o deus é perfeito. Se costurarmos Graça em cada fibra, seremos santos sem precisar morrer. O Irmão Aldric se ofereceu primeiro. Glória a ele."
+ },
+ "diario_cirurgiao": {
+  "title": "Diário do Cirurgião-Chefe",
+  "act": 3,
+  "text": "Sessão 112. Aldric não grita mais. Hoje nasceu-lhe um terceiro braço e ele agradeceu. Os monges que ajudaram nas primeiras sessões estão mudando também. Talvez a Graça não seja doença. Talvez seja contágio."
+ },
+ "prontuario_aldric": {
+  "title": "Prontuário: Sir Aldric",
+  "act": 3,
+  "text": "Antigo campeão da Ordem. Espadachim sem igual. Causa da internação: pediu para ser digno. Estado atual: perfeito (rasurado). Imperfeito (rasurado). Santo."
+ },
+ "pagina_absolvicao_1": {
+  "title": "Página da Absolvição (1/3)",
+  "act": 3,
+  "grants": [
+   {
+    "item": "pagina_absolvicao"
+   },
+   {
+    "flag": "pagina_1"
+   }
+  ],
+  "text": "\"Perdoa-nos a fome, ó Luz, pois fomos feitos à tua imagem.\""
+ },
+ "pagina_absolvicao_2": {
+  "title": "Página da Absolvição (2/3)",
+  "act": 3,
+  "grants": [
+   {
+    "flag": "pagina_2"
+   }
+  ],
+  "text": "\"Perdoa-nos o medo, ó Luz, pois vimos o que tu comes.\""
+ },
+ "pagina_absolvicao_3": {
+  "title": "Página da Absolvição (3/3)",
+  "act": 3,
+  "grants": [
+   {
+    "flag": "pagina_3"
+   }
+  ],
+  "text": "\"E se não houver perdão, que ao menos haja fim.\""
+ },
+ "receita_alquimica": {
+  "title": "Receituário Alquímico",
+  "act": 3,
+  "flag": "dica_alquimia",
+  "text": "Para o Soro da Purificação, a ordem dos reagentes é sagrada: primeiro o SAL (branco), depois o MERCÚRIO (prata), depois o ENXOFRE (amarelo) e por fim o SANGUE (vermelho). Errar a ordem desperdiça tudo."
+ },
+ "fragmento_ciclo_3": {
+  "title": "Fragmento do Ciclo III — A Carne Lembra",
+  "act": 3,
+  "grants": [
+   {
+    "fragment": "ciclo_3"
+   }
+  ],
+  "text": "Costurado num manto: \"O Santo gritou um nome antes de perder a voz: YSOLDE. Ela também subiu. Ela também voltou. Por que todos os Portadores têm os mesmos olhos?\""
+ },
+ "tratado_runas": {
+  "title": "Tratado das Runas, por Malachar",
+  "act": 4,
+  "text": "Toda runa é uma pergunta feita à Graça. Passei trinta anos perguntando. Ontem ela respondeu: \"Eu não sou dádiva. Eu sou o deus apodrecendo.\" Queimei a Academia para que ninguém mais ouvisse."
+ },
+ "mapa_estelar": {
+  "title": "Mapa Estelar do Planetário",
+  "act": 4,
+  "flag": "dica_estrelas",
+  "text": "Três constelações guardam o selo: a COROA ao norte, a ESPADA a leste e o OLHO a oeste. Cada espelho deve levar a luz da lente até a sua estrela. Gire-os com paciência."
+ },
+ "carta_corvin": {
+  "title": "Bilhete de Corvin",
+  "act": 4,
+  "text": "Mestre Malachar me trancou na gaiola de runas \"para minha proteção\". A chave é uma alavanca de bronze atrás das estantes de astronomia. Se alguém achar este papel: por favor."
+ },
+ "confissao_malachar": {
+  "title": "Confissão do Arquiteto",
+  "act": 4,
+  "text": "Se você está lendo isto, eu falhei e você venceu. Então saiba: o Trono não quer ser purificado. Quer ser ALIMENTADO. Cada Portador que devolve a luz é uma refeição. Quebre o ciclo. Ou sente-se nele."
+ },
+ "fragmento_ciclo_4": {
+  "title": "Fragmento do Ciclo IV — A Pergunta",
+  "act": 4,
+  "grants": [
+   {
+    "fragment": "ciclo_4"
+   }
+  ],
+  "text": "Numa lente rachada: \"E se ninguém subir? E se o fragmento for partido em vez de devolvido? A Graça se espalharia pelo mundo — fraca, livre, de todos.\""
+ },
+ "hino_trono": {
+  "title": "Hino do Trono",
+  "act": 5,
+  "text": "Glória ao Deus Despedaçado, que se partiu para que vivêssemos. Glória ao Portador, que o recompõe. Glória ao ciclo, que nunca termina."
+ },
+ "lamento_anjo": {
+  "title": "Lamento de um Anjo",
+  "act": 5,
+  "text": "Fomos criados para guardar o Trono. Agora guardamos um cadáver que respira. Se o Portador chegar até aqui, Senhor, perdoe-nos por desejar que ele vença."
+ },
+ "testemunho_ysolde": {
+  "title": "Testemunho de Ysolde",
+  "act": 5,
+  "text": "Eu escolhi a purificação. O mundo floresceu por cem anos. Depois a Graça apodreceu de novo e eu acordei como sombra, vendo outro Portador subir. Não escolha por medo. Escolha sabendo."
+ },
+ "fragmento_ciclo_5": {
+  "title": "Fragmento do Ciclo V — O Fim do Ciclo",
+  "act": 5,
+  "grants": [
+   {
+    "fragment": "ciclo_5"
+   }
+  ],
+  "text": "Na base do Trono, em letras que você reconhece como suas: \"Desta vez, eu lembro.\""
+ },
+ "placa_engrenagens": {
+  "title": "Placa do Portão da Fundição",
+  "act": 2,
+  "flag": "dica_engrenagens",
+  "text": "Para abrir o portão, os dentes marcados das três engrenagens devem apontar, da esquerda para a direita: LESTE, OESTE e SUL. Engrenagens faltando estão com os operários. (Interaja para girar 90°.)"
+ },
+ "vitral_ordem": {
+  "title": "Os Quatro Sinos da Ordem",
+  "act": 3,
+  "flag": "dica_sinos",
+  "text": "Na Ordem da Carne Santa, a missa começava pelo CORDEIRO, seguia ao CÁLICE, erguia a ESPADA e terminava na COROA. Tocar os sinos fora de ordem não abre a escada da cripta."
+ },
+ "diagrama_anatomico": {
+  "title": "Diagrama Anatômico (rasgado)",
+  "act": 3,
+  "flag": "dica_diagrama",
+  "text": "As três lâminas do diagrama ficam nos painéis da sala cirúrgica. O coração aponta para o SUL, o olho para o NORTE e a mão para o LESTE. Só o diagrama completo destrava a porta da sala de operações."
+ },
+ "selo_academia": {
+  "title": "Selo da Academia Abissal",
+  "act": 4,
+  "flag": "dica_selo",
+  "text": "Os quatro selos rúnicos da escadaria devem formar a pergunta proibida: CÍRCULO, TRIÂNGULO, CRUZ, LOSANGO."
+ },
+ "relogio_astral": {
+  "title": "Relógio Astral",
+  "act": 4,
+  "flag": "dica_relogio",
+  "text": "Para alinhar o planetário, gire os anéis até que mostrem: QUADRADO no primeiro, X no segundo e CÍRCULO no terceiro. Assim estavam as estrelas na noite em que o deus caiu."
+ },
+ "estatuas_anjos": {
+  "title": "Inscrição dos Três Anjos",
+  "act": 5,
+  "flag": "dica_anjos",
+  "text": "Três anjos guardam o Portão Celeste. O primeiro olha o nascente (LESTE), o segundo vigia o Trono (NORTE) e o terceiro chora o poente (OESTE)."
+ },
+ "placa_energia": {
+  "title": "Placa da Distribuição",
+  "act": 2,
+  "flag": "dica_energia",
+  "text": "Leve a energia do DÍNAMO ao ELEVADOR. Se ela chegar ao nó de SOBRECARGA, os cabos queimam. Cada chave liga um caminho diferente: experimente e observe as faíscas."
+ }
+}

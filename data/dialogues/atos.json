@@ -1,0 +1,64 @@
+{
+ "bram_intro": {"speaker": "Bram, o Caçador", "nodes": {
+   "start": {"text": "Abaixe a lâmina, estranho. Não sou um deles... ainda. A lua vermelha transformou meus companheiros em lobos.", "do": [{"set_flag": "conheceu_bram"}], "next": "n2"},
+   "n2": {"text": "Minha filha, Lina, fugiu para o cemitério. Só encontrei pegadas perto da cripta. Se achar o medalhão dela... traga para mim.", "choices": [
+     {"text": "Vou procurar.", "do": [{"quest": ["q_bram", 1]}], "next": "aceita"},
+     {"text": "Não tenho tempo.", "next": "recusa"}]},
+   "aceita": {"text": "Obrigado. A cripta está selada por um enigma de luas. As inscrições perto do portão explicam a ordem — se você souber ler.", "next": null},
+   "recusa": {"text": "...Entendo. Se mudar de ideia, estarei aqui, perto do fogo.", "next": null}}},
+ "bram_padrao": {"speaker": "Bram, o Caçador", "nodes": {
+   "start": {"text": "Alguma notícia de Lina?", "choices": [{"text": "Ainda não.", "next": null},
+     {"text": "Vou procurar o medalhão.", "if": {"quest": ["q_bram", 0]}, "do": [{"quest": ["q_bram", 1]}], "next": null}]}}},
+ "bram_medalhao": {"speaker": "Bram, o Caçador", "nodes": {
+   "start": {"text": "Esse... esse é o medalhão dela! Então ela passou pela cripta. Ainda pode estar viva.", "next": "n2"},
+   "n2": {"text": "Tome, era de meu pai: uma runa de caçador. Ela fareja presas feridas. Que a lua tenha piedade de você.", "do": [{"take_item": "medalhao_lina"}, {"quest": ["q_bram", "done"]}], "next": null}}},
+ "bram_fim": {"speaker": "Bram, o Caçador", "nodes": {
+   "start": {"text": "Vou atrás de Lina quando a lua clarear. Mate aquela fera do castelo, Portador. Por todos nós.", "next": null}}},
+
+ "lise_intro": {"speaker": "Lise, a Engenheira", "nodes": {
+   "start": {"text": "Ei! Cuidado com as engrenagens soltas. Eu sou Lise. Meu pai trabalhava aqui antes de tudo virar... isto.", "do": [{"set_flag": "conheceu_lise"}], "next": "n2"},
+   "n2": {"text": "A casa de máquinas está sem energia. Se eu conseguir religar, os elevadores voltam a funcionar — e você chega até o Núcleo da Forja.", "next": "n3"},
+   "n3": {"text": "Os nós de energia ficam na sala de distribuição. O caminho certo leva a força ao elevador; o errado sobrecarrega tudo. Topa ajudar?", "choices": [
+     {"text": "Eu religo a energia.", "do": [{"quest": ["q_lise", 1]}], "next": "ok"}, {"text": "Agora não.", "next": null}]},
+   "ok": {"text": "Ótimo! O diagrama ficou preso na parede do refeitório. Volte quando terminar.", "next": null}}},
+ "lise_padrao": {"speaker": "Lise, a Engenheira", "nodes": {
+   "start": {"text": "A energia ainda não chegou ao elevador. Os nós ficam na sala de distribuição, ao norte.", "next": null}}},
+ "lise_energia": {"speaker": "Lise, a Engenheira", "nodes": {
+   "start": {"text": "Você conseguiu! Ouça isso: as máquinas cantando de novo. Tome a pistola do meu pai — ele ia querer que fosse sua.", "do": [{"quest": ["q_lise", "done"]}], "next": null}}},
+ "lise_fim": {"speaker": "Lise, a Engenheira", "nodes": {
+   "start": {"text": "O Serafim está lá embaixo, no Núcleo. Dizem que ele tem braços que esmagam trilhos. Destrua os braços primeiro!", "next": null}}},
+
+ "agathe_intro": {"speaker": "Irmã Agathe", "nodes": {
+   "start": {"text": "Não se aproxime do altar. Eles costuram Graça nos fiéis aqui. Eu fui a única que se recusou.", "do": [{"set_flag": "conheceu_agathe"}], "next": "n2"},
+   "n2": {"text": "O Livro da Absolvição foi rasgado em três páginas e escondido pela catedral. Com ele, posso dar aos mortos daqui um descanso verdadeiro.", "choices": [
+     {"text": "Encontrarei as páginas.", "do": [{"quest": ["q_agathe", 1]}], "next": null}, {"text": "Não é problema meu.", "next": null}]}}},
+ "agathe_padrao": {"speaker": "Irmã Agathe", "nodes": {
+   "start": {"text": "As páginas... uma está na biblioteca médica, outra entre os mártires, e a última no laboratório. Que a luz o proteja.", "next": null}}},
+ "agathe_corrompido": {"speaker": "Irmã Agathe", "nodes": {
+   "start": {"text": "Você carrega a mesma sombra que transformou meus irmãos. Afaste-se de mim... por favor.", "next": null}}},
+ "agathe_paginas": {"speaker": "Irmã Agathe", "nodes": {
+   "start": {"text": "As três páginas! Que a luz... não. Que o FIM os abençoe. Rezarei pelos mortos desta casa.", "next": "n2"},
+   "n2": {"text": "Tome esta runa: uma auréola de quem ainda acredita. E escute: o Santo foi um homem bom. Liberte-o.", "do": [{"take_item": "pagina_absolvicao"}, {"quest": ["q_agathe", "done"]}, {"corruption": -6}], "next": null}}},
+ "agathe_fim": {"speaker": "Irmã Agathe", "nodes": {
+   "start": {"text": "Os sinos tocam sozinhos agora. Acho que é um bom sinal.", "next": null}}},
+
+ "corvin_preso": {"speaker": "Corvin, o Aprendiz", "nodes": {
+   "start": {"text": "Você é real? Por favor, me tire daqui! O mestre Malachar me prendeu nesta gaiola de runas \"para meu bem\".", "do": [{"quest": ["q_corvin", 1]}], "next": "n2"},
+   "n2": {"text": "Tem uma alavanca de bronze atrás das estantes de astronomia. Ela desfaz o selo. Eu escrevi um bilhete, mas ninguém leu.", "next": null}}},
+ "corvin_livre": {"speaker": "Corvin, o Aprendiz", "nodes": {
+   "start": {"text": "Livre! Obrigado, obrigado! Leve o cajado de tempestade do meu mestre. Ele... já não precisa dele.", "do": [{"quest": ["q_corvin", "done"]}], "next": "n2"},
+   "n2": {"text": "Malachar descobriu algo sobre a Graça e enlouqueceu. Disse que o Trono não quer ser curado, quer ser alimentado.", "next": null}}},
+ "corvin_fim": {"speaker": "Corvin, o Aprendiz", "nodes": {
+   "start": {"text": "Vou estudar as runas por conta própria agora. Talvez um dia eu entenda o que meu mestre viu.", "next": null}}},
+
+ "ysolde_intro": {"speaker": "Ysolde, a Última Portadora", "nodes": {
+   "start": {"text": "Outro Portador... Eu também subi estas escadas. Purifiquei o deus. E acordei como sombra, vendo você chegar.", "do": [{"set_flag": "conheceu_ysolde"}], "next": "n2"},
+   "n2": {"text": "Existem cinco Fragmentos do Ciclo, um em cada reino. Quem os reúne pode partir o Trono em vez de alimentá-lo.", "choices": [
+     {"text": "Onde estão os fragmentos?", "next": "onde"}, {"text": "Por que me contar isso?", "next": "porque"}]},
+   "onde": {"text": "Em lugares esquecidos: atrás de paredes falsas, em altares antigos, no fundo das coisas. Procure o brilho que não é Graça.", "do": [{"quest": ["q_ciclo", 1]}], "next": null},
+   "porque": {"text": "Porque desta vez alguém deveria escolher sabendo.", "do": [{"quest": ["q_ciclo", 1]}], "next": null}}},
+ "ysolde_padrao": {"speaker": "Ysolde, a Última Portadora", "nodes": {
+   "start": {"text": "O Trono espera no alto. Lembre-se de mim quando estiver lá.", "next": null}}},
+ "ysolde_ciclo": {"speaker": "Ysolde, a Última Portadora", "nodes": {
+   "start": {"text": "Você os encontrou. Todos os cinco. Então quebre-o, {nome}. Ou não. Mas agora a escolha é verdadeiramente sua.", "next": null}}}
+}

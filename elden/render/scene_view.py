@@ -201,7 +201,7 @@ class SceneView:
             for spec in lvl.data.get("visual_assets", []):
                 node = self.assets.instantiate_model(spec.get("asset"), self.pipe.world_root,
                                                      (spec.get("x", 0), spec.get("y", 0), spec.get("z", 0)),
-                                                     spec.get("angle", 0))
+                                                     spec.get("angle", 0), spec.get("scale", 1.0))
                 if node is not None:
                     self.external_nodes.append(node)
         self.pipe.set_occupancy(occupancy_texture(lvl), 0, 0, lvl.width, lvl.depth)
@@ -290,7 +290,8 @@ class SceneView:
             if t == "platform":
                 return PlatformView(self, e)
             if e.spec.get("asset") and self.assets is not None:
-                node = self.assets.instantiate_model(e.spec["asset"], self.pipe.world_root)
+                node = self.assets.instantiate_model(e.spec["asset"], self.pipe.world_root,
+                                                     scale=e.spec.get("asset_scale", 1.0))
                 if node is not None:
                     return ExternalModelView(node, e)
             if t == "emitter":
@@ -416,7 +417,7 @@ class ExternalModelView:
     def update(self, dt):
         e = self.entity
         self.node.set_pos(e.x, e.y, e.z)
-        self.node.set_h(e.spec.get("angle", 0))
+        self.node.set_r(e.spec.get("angle", 0))
         self.node.show() if getattr(e, "visible", True) and e.alive else self.node.hide()
 
     def remove(self):

@@ -34,7 +34,23 @@ for i in range(6):
     a = i / 6 * math.tau + 0.3
     x = round(cx + math.cos(a) * 10.5)
     r = round(cr + math.sin(a) * 10.5)
-    E(x, r, type="decor", sprite="brazier_red", light={"color": [1.0, 0.25, 0.15], "intensity": 2.4, "radius": 8, "h": 1.4, "flicker": 0.3})
+    E(x, r, type="decor", sprite="brazier_red", light={"color": [1.0, 0.46, 0.16], "intensity": 1.9, "radius": 6.5, "h": 1.4, "flicker": 0.3})
+visual_assets = [
+    {"asset": "ato1_piso_cerimonial", "x": 15.0, "y": 0.015, "z": 14.0},
+    # Eixo cerimonial: entrada em arco, escadaria e portão monumental ao fundo.
+    {"asset": "ato1_arco_gotico", "x": 15.5, "y": 0, "z": 2.0},
+    {"asset": "ato1_escadaria_gotica", "x": 15.5, "y": 0, "z": 23.0, "angle": 180},
+    {"asset": "ato1_portao_gotico", "x": 15.5, "y": 1.3, "z": 25.2},
+    # Colunata quebrada delimita o combate sem mudar colisões.
+    *({"asset": "ato1_coluna_gotica", "x": x, "y": 0, "z": z, "scale": s}
+      for x, z, s in ((6.2, 8.0, 0.9), (24.8, 8.0, 0.9), (4.7, 14.5, 1.05),
+                      (26.3, 14.5, 1.05), (7.0, 21.2, 0.95), (24.0, 21.2, 0.95))),
+    {"asset": "ato1_estatua_alada", "x": 8.0, "y": 0, "z": 23.8, "scale": 1.15},
+    {"asset": "ato1_estatua_alada", "x": 23.0, "y": 0, "z": 23.8, "angle": 180, "scale": 1.15},
+    *({"asset": "ato1_contraforte_gotico", "x": x, "y": 0, "z": z, "scale": 1.1}
+      for x, z in ((2.8, 6.0), (28.2, 6.0), (2.4, 18.0), (28.6, 18.0))),
+]
 save({"id": "ato1_arena", "name": "Salão da Lua Partida", "act": 1, "theme": "ato1_castelo", "env": "lua_arena", "music": "chefe1",
       "rows": g.rows(), "entities": g.entities, "arena_center": list(g.pos(cx, cr)), "boss_arena": True,
+      "visual_assets": visual_assets,
       "regions": [{"id": "arena", "name": "Salão da Lua Partida", "rect": [0, 0, W, D]}]})

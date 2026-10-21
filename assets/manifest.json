@@ -1,4 +1,53 @@
 {
   "version": 1,
-  "assets": []
+  "assets": [
+    {
+      "id": "ato1_pedra_gotica",
+      "kind": "texture",
+      "path": "textures/ato1/gothic_stone_atlas.png",
+      "pixel_art": true
+    },
+    {
+      "id": "ato1_coluna_gotica",
+      "kind": "model",
+      "path": "models/ato1/gothic_column.bam",
+      "texture": "ato1_pedra_gotica"
+    },
+    {
+      "id": "ato1_arco_gotico",
+      "kind": "model",
+      "path": "models/ato1/gothic_arch.bam",
+      "texture": "ato1_pedra_gotica"
+    },
+    {
+      "id": "ato1_portao_gotico",
+      "kind": "model",
+      "path": "models/ato1/gothic_gate.bam",
+      "texture": "ato1_pedra_gotica"
+    },
+    {
+      "id": "ato1_estatua_alada",
+      "kind": "model",
+      "path": "models/ato1/gothic_statue.bam",
+      "texture": "ato1_pedra_gotica"
+    },
+    {
+      "id": "ato1_escadaria_gotica",
+      "kind": "model",
+      "path": "models/ato1/gothic_stairs.bam",
+      "texture": "ato1_pedra_gotica"
+    },
+    {
+      "id": "ato1_contraforte_gotico",
+      "kind": "model",
+      "path": "models/ato1/gothic_buttress.bam",
+      "texture": "ato1_pedra_gotica"
+    },
+    {
+      "id": "ato1_piso_cerimonial",
+      "kind": "model",
+      "path": "models/ato1/gothic_dais.bam",
+      "texture": "ato1_pedra_gotica"
+    }
+  ]
 }

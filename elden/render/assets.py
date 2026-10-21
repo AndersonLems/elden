@@ -31,6 +31,7 @@ class AssetSpec:
     path: str
     scale: float = 1.0
     pixel_art: bool = False
+    texture: str | None = None
 
 
 def _safe_path(relative):
@@ -84,6 +85,15 @@ def validate_manifest(data=None, require_files=True):
             errors.append(f"{where}: arquivo inexistente '{rel}'")
         if "scale" in item and (not isinstance(item["scale"], (int, float)) or item["scale"] <= 0):
             errors.append(f"{where}: scale deve ser positivo")
+    ids = {item.get("id"): item for item in items if isinstance(item, dict)}
+    for i, item in enumerate(items):
+        if not isinstance(item, dict) or not item.get("texture"):
+            continue
+        dep = ids.get(item["texture"])
+        if dep is None:
+            errors.append(f"assets[{i}]: textura dependente inexistente '{item['texture']}'")
+        elif dep.get("kind") not in ("texture", "sprite_sheet"):
+            errors.append(f"assets[{i}]: dependência '{item['texture']}' não é textura")
     return errors
 
 
@@ -98,9 +108,17 @@ class ExternalAssets:
         for item in data.get("assets", []):
             if isinstance(item, dict) and all(k in item for k in ("id", "kind", "path")):
                 self.specs[item["id"]] = AssetSpec(item["id"], item["kind"], item["path"],
-                                                    float(item.get("scale", 1.0)), bool(item.get("pixel_art", False)))
+                                                    float(item.get("scale", 1.0)), bool(item.get("pixel_art", False)),
+                                                    item.get("texture"))
         self.models = {}
         self.textures = {}
+        for error in self.errors:
+            print("asset externo:", error)
+
+    def _error(self, message):
+        if message not in self.errors:
+            self.errors.append(message)
+            print("asset externo:", message)
 
     def has(self, asset_id, kind=None):
         spec = self.specs.get(asset_id)
@@ -113,8 +131,15 @@ class ExternalAssets:
         if asset_id not in self.models:
             node = self.loader.loadModel(_safe_path(spec.path), noCache=False)
             if node is None or node.is_empty():
+                self._error(f"{asset_id}: modelo não carregou")
                 return None
             node.set_scale(spec.scale)
+            if spec.texture:
+                tex = self.texture(spec.texture)
+                if tex is None:
+                    self._error(f"{asset_id}: textura '{spec.texture}' não carregou")
+                    return None
+                node.set_texture(tex, 1)
             self.models[asset_id] = node
         return self.models[asset_id]
 
@@ -125,6 +150,7 @@ class ExternalAssets:
         if asset_id not in self.textures:
             tex = self.loader.loadTexture(_safe_path(spec.path))
             if tex is None:
+                self._error(f"{asset_id}: textura não carregou")
                 return None
             filt = SamplerState.FT_nearest if spec.pixel_art else SamplerState.FT_linear
             tex.set_minfilter(filt)
@@ -132,12 +158,14 @@ class ExternalAssets:
             self.textures[asset_id] = tex
         return self.textures[asset_id]
 
-    def instantiate_model(self, asset_id, parent, pos=(0, 0, 0), heading=0.0):
+    def instantiate_model(self, asset_id, parent, pos=(0, 0, 0), heading=0.0, scale=1.0):
         template = self.model(asset_id)
         if template is None:
             return None
-        node = template.copy_to(parent)
+        node = template.instance_to(parent)
         node.set_pos(*pos)
-        node.set_h(heading)
+        node.set_scale(node.get_scale().x * scale)
+        # O mundo do ELDEN usa Y vertical; no Panda, roll gira em torno de Y.
+        node.set_r(heading)
         node.set_two_sided(True)
         return node

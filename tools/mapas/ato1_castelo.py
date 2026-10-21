@@ -165,5 +165,20 @@ regions = [
  {"id": "patio", "name": "Pátio do Castelo", "rect": g.rect_world(1, 19, 42, 30)},
  {"id": "salao_carmesim", "name": "Salão Carmesim", "rect": g.rect_world(43, 19, 58, 27)},
  {"id": "castelo", "name": "Castelo de Varkhan", "rect": [0, 0, W, D]}]
+def V(asset, x, r, **extra):
+    wx, wz = g.pos(x, r)
+    return {"asset": asset, "x": wx, "y": 0, "z": wz, **extra}
+
+
+visual_assets = [
+ V("ato1_arco_gotico", 30, 30, scale=0.9),
+ V("ato1_arco_gotico", 30, 18, angle=180, scale=1.05),
+ V("ato1_escadaria_gotica", 30, 29, scale=0.75),
+ V("ato1_estatua_alada", 10, 20, scale=0.9),
+ V("ato1_estatua_alada", 40, 20, angle=180, scale=0.9),
+ *(V("ato1_coluna_gotica", x, r, scale=0.78) for x, r in
+   ((13, 20), (20, 26), (40, 26), (47, 20), (24, 8), (36, 8), (24, 15), (36, 15))),
+]
 save({"id": "ato1_castelo", "name": "Castelo de Varkhan", "act": 1, "theme": "ato1_castelo", "env": "lua_castelo", "music": "ato1",
-      "rows": g.rows(), "entities": g.entities, "puzzles": puzzles, "regions": regions})
+      "rows": g.rows(), "entities": g.entities, "puzzles": puzzles, "regions": regions,
+      "visual_assets": visual_assets})

@@ -16,3 +16,18 @@ Exemplo:
 
 Valide o pacote com `python3 tools/dev/validar_assets.py`. Caminhos absolutos ou que escapem deste
 diretório são rejeitados. Arquivos artísticos grandes podem usar Git LFS.
+
+## Pacote gótico do Ato I
+
+`textures/ato1/gothic_stone_atlas.png` contém quatro materiais em quadrantes. Os modelos BAM em
+`models/ato1/` usam Y como altura, origem no contato com o piso e compartilham esse atlas. Eles podem
+ser regenerados com `python3 tools/assets/build_gothic_modules.py`. O manifesto liga cada modelo à
+textura por `texture`; dependências ausentes fazem a validação falhar.
+
+Mapas instanciam os módulos por `visual_assets`:
+
+```json
+{"asset":"ato1_coluna_gotica","x":6.2,"y":0,"z":8.0,"angle":0,"scale":0.9}
+```
+
+Use `ELDEN_DISABLE_EXTERNAL_ASSETS=1` para testar deliberadamente o fallback procedural.

@@ -71,5 +71,5 @@ class Aurelion(Boss):
                     if g is None:
                         continue
                     w.spawn_zone(self, {"zone": "pillar", "radius": 1.2, "delay": 1.2 + k * 0.08, "dur": 0.4,
-                                        "dmg": 0.6, "pure": {"sagrado": 1.0}, "kb": 2, "posture": 15,
+                                        "dmg": 0.45, "pure": {"sagrado": 1.0}, "kb": 2, "posture": 15,
                                         "visual": "light_pillar", "unblockable": True}, x, g, z, 0.0)

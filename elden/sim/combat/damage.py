@@ -95,17 +95,21 @@ def compute_damage(att, tgt, hit):
         if "undead" in getattr(tgt, "tags", ()):
             mult += s.get("vs_undead_mult")
         mult += getattr(att, "dynamic_damage_bonus", lambda t, h: 0.0)(tgt, hit)
-    # crítico e costas
+    # crítico e costas. Contra o jogador: sem crítico aleatório, e "pelas costas" só vale para golpes corpo a corpo
+    # (zona/projétil vem de onde está, não do corpo do chefe); empilhados, chegavam a 97% da vida num golpe
+    contra_jogador = getattr(tgt, "team", None) == "player"
+    corpo_a_corpo = hit.source is None or isinstance(hit.source, str)
     if att is not None and hit.can_crit:
         chance = 0.05 + s.get("crit_chance") + hit.crit_bonus
         if att.world is not None:
             roll = att.world.rng.random()
         else:
             roll = random.random()
-        if roll < chance:
+        if roll < chance and not contra_jogador:
             hit.crit = True
             mult *= 1.5 + s.get("crit_mult")
-        if hit.move_type not in ("execution",) and tgt.is_behind(att) and getattr(tgt, "can_be_backstabbed", True):
+        if hit.move_type not in ("execution",) and tgt.is_behind(att) and getattr(tgt, "can_be_backstabbed", True) \
+                and (corpo_a_corpo or not contra_jogador):
             hit.backstab = True
             mult *= 1.25 + s.get("backstab_mult") + getattr(tgt, "weak_back", 0.0)
     total = 0.0

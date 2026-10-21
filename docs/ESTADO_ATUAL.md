@@ -14,7 +14,7 @@
 | Verificação | Resultado |
 |---|---|
 | `python3 -m unittest discover -s tests` | ✅ 30 testes OK em ~22 s (`test_basico`, `test_render`, `test_chefes` 6 chefes, `test_fases`, `test_finais`) |
-| Bot de chefe (`tests/bot.py`), 5 seeds, preparo do ato (arma +ato, ~5 níveis/ato em CORPO) | ✅ 25/25: Varkhan 129–149 s, Serafim 92–108 s, Santo 181–210 s, Malachar 154–321 s, Aurelion 354–463 s (tempo simulado; só ataque leve, sem esquiva) |
+| Bot de chefe (`tests/bot.py`), preparo do ato (arma +ato, ~5 níveis/ato em CORPO) | ✅ todos vencidos (Aurelion 268–525 s simulados). Golpe mediano/p90 em % da vida: Varkhan 15/33, Serafim 25/32, Santo 15/29, Malachar 12/23, Aurelion 17/42 |
 | Captura offscreen de todas as fases novas (`tour.py`) | ✅ Atos II–V renderizam (125–330 FPS offscreen) |
 | Lutas no app real (`scenarios/luta_chefe.py`): Santo, Malachar, Aurelion | ✅ 3 fases, efeitos, morte, portal/Graça revelados; achou e corrigiu travamento do HUD (alfa negativo) |
 | Telas dos 3 finais (`scenarios/finais.py`) | ✅ texto e créditos renderizam |
@@ -56,11 +56,13 @@ Medições de desempenho (feitas pelo PR #1, offscreen, Intel Iris Xe, 1280x720,
 
 ## Próximos trabalhos (ordem)
 1. Jogar a campanha inteira em janela real (o usuário testa em 2026-10-22) e registrar o resultado aqui.
-2. Balanceamento: dano dos chefes tardios contra o bot sem esquiva é alto (Aurelion ~50–76 mil por luta).
+2. Balanceamento fino com jogo humano (números do bot estão na tabela acima; inimigos comuns dos Atos IV–V não medidos).
 3. Testes automáticos de puzzles de rede e engrenagens.
 4. Propagar o padrão visual da arena do Ato I (assets góticos) para as outras fases.
 
 ## Histórico curto
+- 2026-10-21 — `main`: balanceamento — vida +6/nível; sem crítico aleatório contra o jogador; costas só corpo a corpo;
+  rajada inimiga acerta 1×; Aurelion −20% ataque e impacto/pilares/lanças menores; Santo e Malachar com picos menores.
 - 2026-10-21 — `main`: Ato V completo — **todas as 15 fases existem**. Portal/Graça/altar pós-chefe agora surgem na
   hora (antes só após recarregar). Teste novo: porta de puzzle/chave precisa bloquear algo — achou contornos em
   `ato2_fabrica` (pistão) e `ato3_catedral` (escada), corrigidos. Bot de chefe usa preparo do ato.

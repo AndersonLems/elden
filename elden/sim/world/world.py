@@ -180,11 +180,15 @@ class World:
         if spec.get("aim", "target") == "target" and tgt is not None and actor.dist_to(tgt) < spec.get("range", 14) * 1.3:
             base = actor.angle_to(tgt) + math.radians(spec.get("angle_offset", 0.0))
         projs = []
+        # rajadas inimigas acertam cada alvo uma vez só (à queima-roupa, 5 projéteis somavam 85% da vida)
+        rajada = set() if n > 1 and getattr(actor, "team", None) != "player" else None
         for i in range(n):
             a = base + (spread * (i / (n - 1) - 0.5) if n > 1 else 0.0)
             fx, fz = dir_of(a)
             p = Projectile(actor, actor.x + fx * fwd, actor.y + up * actor.scale, actor.z + fz * fwd, a, spec, power,
                            move_type, tags, target=tgt)
+            if rajada is not None:
+                p.already = rajada
             projs.append(self.spawn(p))
         self.fx.push("shoot", actor=actor.id, visual=spec.get("visual", "bolt"), x=actor.x, y=actor.y + up, z=actor.z)
         return projs

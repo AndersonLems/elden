@@ -991,8 +991,8 @@
   "hp": 7200,
   "posture": 480,
   "atk": {
-   "fisico": 50,
-   "sagrado": 30
+   "fisico": 40,
+   "sagrado": 24
   },
   "speed": 5.0,
   "scale": 1.8,

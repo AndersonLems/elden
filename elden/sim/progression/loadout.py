@@ -85,7 +85,8 @@ def compute(char):
     L.mods["crit_chance"] = L.mods.get("crit_chance", 0.0) + wdef.get("crit", 0.0)
     L.mods["fp_cost_mult"] = L.mods.get("fp_cost_mult", 0.0)
     # recursos
-    L.hp_max = 80 + attrs["vigor"] * 8 + L.mods.get("hp_max", 0.0)
+    # cada nível também dá +6 de vida: só com vigor, a vida mal crescia (200 → 256 até o Ato V)
+    L.hp_max = 80 + attrs["vigor"] * 8 + (char.level - 1) * 6 + L.mods.get("hp_max", 0.0)
     L.fp_max = 40 + attrs["mente"] * 5 + L.mods.get("fp_max", 0.0)
     L.posture_max = 55 + attrs["vigor"] * 1.5 + attrs["forca"] * 1.5 + L.mods.get("posture_max", 0.0)
     L.def_flat = attrs["vigor"] * 0.15 + attrs["forca"] * 0.1

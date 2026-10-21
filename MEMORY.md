@@ -18,7 +18,11 @@ Movido para `docs/ESTADO_ATUAL.md` (fonte única de progresso e validação). Es
   - Os pixels emissivos usam alfa 120 (o shader trata alfa < 0,6 como brilho).
   - As folhas ficam em cache em `~/.cache/elden-jogo/sprites` e o nome inclui um hash da especificação.
 - **Elites** usam sprite com sufixo `@1.15` (gerado na escala certa, sem esticar pixels).
-- **Progressão:** a Graça é a moeda de evolução; cada nível dá 1 ponto na árvore. Os atributos vêm da classe mais os nós da árvore.
+- **Progressão:** a Graça é a moeda de evolução; cada nível dá 1 ponto na árvore e +6 de vida máxima. Os atributos vêm da
+  classe mais os nós da árvore (vida = 80 + vigor×8 + (nível−1)×6).
+- **Dano contra o jogador:** sem crítico aleatório; "pelas costas" só em golpe corpo a corpo; rajadas inimigas
+  (`count` > 1) acertam cada alvo uma vez. Alvo de balanceamento: golpe mediano ~10–25% da vida do personagem
+  preparado para o ato, p90 ≤ ~40% (medido pelo bot, `tests/bot.py` → `preparar`).
 - **Fervor** é o recurso de combate da suprema. A **Fúria** é exclusiva do Lobisomem. A munição é exclusiva do Soldado.
 - **Corrupção:**
   - de 0 a 100, em faixas de 25;

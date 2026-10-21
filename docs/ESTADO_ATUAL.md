@@ -13,7 +13,8 @@
 ## Última validação registrada (2026-10-21, `feature/ato2-arena`)
 | Verificação | Resultado |
 |---|---|
-| `python3 -m unittest discover -s tests` | ✅ 32 testes OK em ~23 s (`test_basico`, `test_render`, `test_chefes`, `test_fases`, `test_finais`, `test_campanha`) |
+| `python3 -m unittest discover -s tests` | ✅ 35 testes OK em ~23 s (`test_basico`, `test_render`, `test_chefes`, `test_fases`, `test_finais`, `test_campanha`, `test_dialogos`) |
+| Diálogos (`test_dialogos`) | ✅ 36 diálogos, 518 estados percorridos, 227 finais de caminho sem nó inexistente; missões de Agathe e Corvin avançam |
 | Solucionador lógico da campanha (`test_campanha`) | ✅ os 5 atos chegam ao chefe partindo do Santuário (baús, saques, puzzles, chaves, alavancas, plataformas) |
 | Inimigos comuns × personagem preparado (medição ad hoc) | ✅ 5–20% por golpe; elites 28–35%; pico ~50% (julgamento do Cavaleiro Divino, com aviso e imbloqueável) |
 | Bot de chefe (`tests/bot.py`), preparo do ato (arma +ato, ~5 níveis/ato em CORPO) | ✅ todos vencidos (Aurelion 268–525 s simulados). Golpe mediano/p90 em % da vida: Varkhan 15/33, Serafim 25/32, Santo 15/29, Malachar 12/23, Aurelion 17/42 |

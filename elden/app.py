@@ -1,4 +1,5 @@
 """Aplicação: janela Ursina/Panda3D, pipeline de renderização, interface, áudio, entrada e pilha de cenas."""
+import os
 import sys
 import time as _time
 
@@ -27,6 +28,8 @@ class App:
             self.settings["quality"] = args["quality"]
         if args.get("novsync"):
             self.settings["vsync"] = False
+        if args.get("offscreen") or os.environ.get("ELDEN_OFFSCREEN") == "1":
+            loadPrcFileData("", "window-type offscreen")
         configure_panda(self.settings)
         from ursina import Ursina, Entity, application, window, held_keys, time as utime
         self.ursina_time = utime
@@ -57,6 +60,7 @@ class App:
         from .render.pipeline import PixelPipeline
         from .render.sprite_bank import SpriteBank, PropAtlas
         from .render.fx import FxManager
+        from .render.assets import ExternalAssets
         from .render.scene_view import SceneView
         from .ui.canvas import Canvas
         from .input_map import InputManager
@@ -66,6 +70,7 @@ class App:
         self.input = InputManager()
         self.audio = AudioManager(self.base, self.settings)
         self.bank = SpriteBank()
+        self.assets = ExternalAssets(self.base.loader)
         self._props = None
         self.fx = FxManager(self.pipe)
         self.scene_view = None
@@ -102,7 +107,7 @@ class App:
 
     def get_scene_view(self):
         if self.scene_view is None:
-            self.scene_view = self.SceneView(self.pipe, self.bank, self.props, self.fx)
+            self.scene_view = self.SceneView(self.pipe, self.bank, self.props, self.fx, self.assets)
         return self.scene_view
 
     # ------------------------------------------------------------------ pilha de cenas

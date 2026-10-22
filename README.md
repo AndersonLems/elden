@@ -11,21 +11,20 @@ Roda localmente no Linux e no Windows, sem internet.
 
 ## Como instalar e jogar
 
-Requisitos: **Python 3.10+** e placa de vídeo com **OpenGL 3.3**.
+Requisitos: placa de vídeo com **OpenGL 3.3** e internet na primeira instalação. O Python (3.10+) é instalado
+automaticamente se faltar; as dependências ficam num ambiente próprio em `.venv`, sem mexer no sistema.
 
 ### Linux
 ```bash
-./instalar.sh        # instala dependências (pip --user) e pré-gera sprites/sons/músicas
-./jogar.sh           # inicia o jogo
+./instalar.sh        # instala o Python se faltar (apt, dnf, pacman, zypper ou apk; pode pedir a senha),
+                     # cria o .venv, instala as dependências e pré-gera sprites/sons/músicas
+./jogar.sh           # inicia o jogo (roda a instalação sozinho se faltar algo)
 ./jogar.sh --tela-cheia --qualidade alta --resolucao 1600x900
 ```
 
 ### Windows
-Instale o Python em python.org marcando **"Add Python to PATH"**, depois dê dois cliques em:
-```
-instalar.bat
-jogar.bat
-```
+Dois cliques em `instalar.bat` e depois em `jogar.bat`. Se não houver Python 3.10+, o instalador baixa o
+Python 3.12 (winget ou python.org) e instala só para o usuário, sem precisar de administrador.
 
 A primeira execução gera caches em `~/.cache/elden-jogo` (Windows: `%LOCALAPPDATA%\ELDEN\cache`).
 Saves e configurações ficam em `~/.local/share/elden-jogo` (Windows: `%APPDATA%\ELDEN`).

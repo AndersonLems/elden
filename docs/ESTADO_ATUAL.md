@@ -22,6 +22,7 @@
 | Lutas no app real (`scenarios/luta_chefe.py`): Santo, Malachar, Aurelion | ✅ 3 fases, efeitos, morte, portal/Graça revelados; achou e corrigiu travamento do HUD (alfa negativo) |
 | Telas dos 3 finais (`scenarios/finais.py`) | ✅ texto e créditos renderizam |
 | `DB.validate()` | ✅ `[]` |
+| Instaladores (2026-10-22) | ✅ `instalar.sh` em contêineres limpos Ubuntu 24.04, Fedora 41 e Arch (instala Python, `.venv`, deps importam); `instalar.bat` no Wine: Python 3.12.10 silencioso, `.venv`, deps, `jogar.bat` usa o `.venv`. Windows real, winget e download (curl/PowerShell) não testados |
 | `python3 tools/dev/validar_assets.py` | ✅ manifesto válido |
 | Jogo em janela real após o PR #1 | ⚠️ não executado nesta sessão |
 
@@ -64,6 +65,8 @@ Medições de desempenho (feitas pelo PR #1, offscreen, Intel Iris Xe, 1280x720,
 4. Propagar o padrão visual da arena do Ato I (assets góticos) para as outras fases.
 
 ## Histórico curto
+- 2026-10-22 — `main`: instaladores instalam o Python se faltar (Linux: apt/dnf/pacman/zypper/apk; Windows: winget
+  ou python.org, por usuário) e usam `.venv`; `jogar.*` aceitam a instalação antiga `pip --user`.
 - 2026-10-21 — `main`: **Ato II não podia ser terminado** — a Manivela de Lise (porta da distribuição de energia →
   elevador → arena) não era entregue por ninguém. Agora o Capataz a carrega (`loot` em inimigo de mapa, novo).
   `test_campanha` (solucionador lógico) e `test_chaves_obteniveis` impedem regressões desse tipo.
